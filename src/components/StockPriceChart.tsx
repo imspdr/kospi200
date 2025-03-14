@@ -1,17 +1,55 @@
 import { css } from "@emotion/react";
 import { AnalysisData } from "@src/store/types";
 import { useState, useEffect, useRef } from "react";
-import { Skeleton } from "@mui/material";
+import { Checkbox, Typography, Skeleton, IconButton } from "@mui/material";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
-export default function TimeseriesChart(props: {
+function CheckButton(props: {
+  title: string;
+  color: string;
+  height: number;
+  v: boolean;
+  setV: (v: boolean) => void;
+}) {
+  return (
+    <div
+      css={css`
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: ${props.height}px;
+      `}
+    >
+      <Typography>{props.title}</Typography>
+      <Checkbox
+        value={props.v}
+        checked={props.v}
+        onChange={(e, v) => {
+          props.setV(e.target.checked);
+        }}
+        sx={{
+          color: props.color,
+          "&.Mui-checked": { color: props.color },
+        }}
+      />
+    </div>
+  );
+}
+
+export default function StockPriceChart(props: {
   data: AnalysisData[];
   width: number;
   height: number;
 }) {
   const width = Math.max(Math.min(1600, props.width), 280);
-  const height = Math.max(Math.min(1000, props.height), 300);
+  const inputHeight = Math.max(Math.min(1000, props.height), 300);
+
+  const buttonHeight = (80 / 1000) * inputHeight;
+  const height = inputHeight - buttonHeight;
+
   const padding = (50 / 1000) * height;
-  const paddingTop = (50 / 1000) * height;
+  const paddingTop = 0;
   const leftPadding = (30 / 1600) * width;
   const scrollWidth = (5 / 1000) * height;
   const smallFont = (30 / 1000) * height;
@@ -19,11 +57,14 @@ export default function TimeseriesChart(props: {
   const rightPadding = smallFont * 5;
   const maxScale = 32;
 
+  const [ma5On, setMa5On] = useState(true);
+  const [ma20On, setMa20On] = useState(true);
+  const [bandOn, setBandOn] = useState(false);
+
   const [scale, setScale] = useState(1);
   const [nowIndex, setNowIndex] = useState(0);
   const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
-  const transitionOn = useRef<boolean | null>(null);
   const scrolling = useRef<boolean | null>(null);
   const nowX = useRef<number>(0);
   const startX = useRef<number>(0);
@@ -148,21 +189,82 @@ export default function TimeseriesChart(props: {
           variant="rectangular"
           css={css`
             width: ${width}px;
-            height: ${height}px;
+            height: ${inputHeight}px;
           `}
         />
       ) : (
         <div
           css={css`
-            height: ${height}px;
+            height: ${inputHeight}px;
             width: ${width}px;
+            display: flex;
+            flex-direction: column;
             background-color: var(--paper);
             cursor: ${scrolling.current ? "grabbing" : "grab"};
-            .y-transition {
-              transition: ${transitionOn.current ? "0.3s ease-in" : "0s"};
-            }
           `}
         >
+          <div
+            css={css`
+              height: ${buttonHeight}px;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 0px 10px;
+            `}
+          >
+            <div
+              css={css`
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+              `}
+            >
+              <CheckButton
+                v={ma5On}
+                setV={setMa5On}
+                title={"MA 5"}
+                color={"var(--highlight)"}
+                height={buttonHeight}
+              />
+              <CheckButton
+                v={ma20On}
+                setV={setMa20On}
+                title={"MA 20"}
+                color={"var(--warning)"}
+                height={buttonHeight}
+              />
+              <CheckButton
+                v={bandOn}
+                setV={setBandOn}
+                title={"Bollinger Bands"}
+                color={"var(--chart-gray)"}
+                height={buttonHeight}
+              />
+            </div>
+            <div
+              css={css`
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 3px;
+              `}
+            >
+              <IconButton
+                onClick={() => {
+                  setScale((v) => Math.max(1, v / 2));
+                }}
+              >
+                <RemoveCircleOutlineIcon />
+              </IconButton>
+              <IconButton
+                onClick={() => {
+                  setScale((v) => Math.min(32, v * 2));
+                }}
+              >
+                <AddCircleOutlineIcon />
+              </IconButton>
+            </div>
+          </div>
           <svg
             viewBox={`0 0 ${width} ${height}`}
             onMouseDown={(e) => {
@@ -226,26 +328,101 @@ export default function TimeseriesChart(props: {
                   d={`M ${xAxis[0]} ${yScale(y)} L ${xAxis[1]} ${yScale(y)}`}
                   stroke="var(--chart-grid)"
                   strokeWidth={1}
-                  className="y-transition"
                 />
                 <text
                   x={width - rightPadding + smallFont - 5}
                   y={yScale(y) + 10}
                   fontSize={smallFont}
                   fill={"var(--foreground)"}
-                  className="y-transition"
                 >
                   {y}
                 </text>
               </>
             ))}
+            {/* moving average lines */}
+            {
+              <>
+                {ma5On && (
+                  <path
+                    d={`${selectedGivenData
+                      .map((d, index) =>
+                        index === 0
+                          ? `M ${xScale(nowIndex + index)},${yScale(d.ma5)}`
+                          : `L ${xScale(nowIndex + index)},${yScale(d.ma5)}`
+                      )
+                      .join(" ")}`}
+                    fill={"none"}
+                    strokeWidth={2}
+                    stroke={"var(--highlight)"}
+                    opacity="0.3"
+                  />
+                )}
+                {ma20On && (
+                  <path
+                    d={`${selectedGivenData
+                      .map((d, index) =>
+                        index === 0
+                          ? `M ${xScale(nowIndex + index)},${yScale(d.ma20)}`
+                          : `L ${xScale(nowIndex + index)},${yScale(d.ma20)}`
+                      )
+                      .join(" ")}`}
+                    fill={"none"}
+                    strokeWidth={2}
+                    stroke={"var(--warning)"}
+                    opacity="0.3"
+                  />
+                )}
+                {bandOn && (
+                  <>
+                    <path
+                      d={`${selectedGivenData
+                        .map((d, index) =>
+                          index === 0
+                            ? `M ${xScale(nowIndex + index)},${yScale(d.middleBand)}`
+                            : `L ${xScale(nowIndex + index)},${yScale(d.middleBand)}`
+                        )
+                        .join(" ")}`}
+                      fill={"none"}
+                      strokeWidth={4}
+                      stroke={"var(--chart-gray)"}
+                      opacity="0.3"
+                    />
+                    <path
+                      d={`${selectedGivenData
+                        .map((d, index) =>
+                          index === 0
+                            ? `M ${xScale(nowIndex + index)},${yScale(d.upperBand)}`
+                            : `L ${xScale(nowIndex + index)},${yScale(d.upperBand)}`
+                        )
+                        .join(" ")}`}
+                      fill={"none"}
+                      strokeWidth={4}
+                      stroke={"var(--chart-gray)"}
+                      opacity="0.3"
+                    />
+                    <path
+                      d={`${selectedGivenData
+                        .map((d, index) =>
+                          index === 0
+                            ? `M ${xScale(nowIndex + index)},${yScale(d.lowerBand)}`
+                            : `L ${xScale(nowIndex + index)},${yScale(d.lowerBand)}`
+                        )
+                        .join(" ")}`}
+                      fill={"none"}
+                      strokeWidth={4}
+                      stroke={"var(--chart-gray)"}
+                      opacity="0.3"
+                    />
+                  </>
+                )}
+              </>
+            }
             {/* givenData chart */}
             {selectedGivenData.map((data: AnalysisData, i: number) => {
               const realIndex = nowIndex + i;
               return (
                 <>
                   <rect
-                    className="y-transition"
                     x={
                       xScale(realIndex) -
                       ((1 / (scaledLength - 1)) * (width - leftPadding - rightPadding)) / 4
@@ -260,7 +437,6 @@ export default function TimeseriesChart(props: {
                     fill={data.start > data.end ? "var(--chart-blue)" : "var(--chart-red)"}
                   />
                   <rect
-                    className="y-transition"
                     x={xScale(realIndex) - 0.5}
                     y={yScale(data.high)}
                     height={yScale(data.low) - yScale(data.high)}
@@ -304,7 +480,6 @@ export default function TimeseriesChart(props: {
                           d={`M ${xAxis[0]} ${y} L ${xAxis[1]} ${y}`}
                           stroke="var(--chart-grid)"
                           strokeWidth={3}
-                          className="y-transition"
                         />
                         <rect
                           x={width - rightPadding}
@@ -320,7 +495,6 @@ export default function TimeseriesChart(props: {
                           y={y + priceBoxHeight / 2 - largeFont / 5}
                           fontSize={largeFont}
                           fill={"var(--paper)"}
-                          className="y-transition"
                           text-anchor="middle"
                         >
                           {price}
@@ -331,7 +505,6 @@ export default function TimeseriesChart(props: {
                       d={`M ${x} ${padding + paddingTop} L ${x} ${height - padding}`}
                       stroke="var(--chart-grid)"
                       strokeWidth={3}
-                      className="y-transition"
                     />
                     <rect
                       x={Math.max(0, x - rightPadding * 0.6)}
@@ -347,7 +520,6 @@ export default function TimeseriesChart(props: {
                       y={height - padding / 2 + priceBoxHeight / 5}
                       fontSize={largeFont}
                       fill={"var(--paper)"}
-                      className="y-transition"
                       text-anchor="middle"
                     >
                       {nowIndex + idx < props.data.length

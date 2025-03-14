@@ -1,7 +1,4 @@
-export type ChartData = {
-  stockData: StockData;
-  posData: Dragable;
-};
+import { ReactNode } from "react";
 
 export type StockData = {
   code: string;
@@ -35,8 +32,10 @@ export type AnalysisData = {
 };
 
 export type Dragable = {
+  id: string;
   top: number;
   left: number;
   width: number;
   height: number;
+  comp: ReactNode;
 };
