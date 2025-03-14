@@ -1,6 +1,6 @@
 import { css, keyframes } from "@emotion/react";
 import React, { useRef, useState, FC, ReactNode, useEffect } from "react";
-import { Playable } from "./types";
+import { Dragable } from "@src/store/types";
 
 const vibrate = keyframes`
   0% { transform: translate(0, 0); }
@@ -9,25 +9,13 @@ const vibrate = keyframes`
   100% { transform: translate(0, 0); }
 `;
 
-const PlayableComponent: FC<
-  Playable & {
-    setPos: (v: Playable, radius: number) => void;
+const DragableComponent: FC<
+  Dragable & {
+    setPos: (v: Dragable) => void;
     children: ReactNode;
   }
-> = ({ id, top, left, setPos, children }) => {
+> = ({ top, left, width, height, setPos, children }) => {
   const [dragging, setDragging] = useState(false);
-  const sizeRef = useRef<{ width: number; height: number }>({ width: 100, height: 100 });
-  const childRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (childRef.current) {
-      const { width, height } = childRef.current.getBoundingClientRect();
-      sizeRef.current = {
-        width: width,
-        height: height,
-      };
-    }
-  }, []);
   let timeoutId: number;
 
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -46,14 +34,12 @@ const PlayableComponent: FC<
     const offSetX = e.clientX - left;
     const offSetY = e.clientY - top;
     const handleMouseMove = (ev: MouseEvent) => {
-      setPos(
-        {
-          id: id,
-          top: ev.clientY - offSetY,
-          left: ev.clientX - offSetX,
-        },
-        Math.max(sizeRef.current.height, sizeRef.current.width)
-      );
+      setPos({
+        top: ev.clientY - offSetY,
+        left: ev.clientX - offSetX,
+        width: width,
+        height: height,
+      });
     };
 
     const draggingMouseUp = () => {
@@ -96,7 +82,6 @@ const PlayableComponent: FC<
             animation: ${vibrate} 0.2s infinite;
           `}
         `}
-        ref={childRef}
       >
         {children}
       </div>
@@ -104,4 +89,4 @@ const PlayableComponent: FC<
   );
 };
 
-export default PlayableComponent;
+export default DragableComponent;

@@ -1,11 +1,10 @@
 import { css } from "@emotion/react";
-import { GivenData, PredictedData } from "@src/store/types";
+import { AnalysisData } from "@src/store/types";
 import { useState, useEffect, useRef } from "react";
 import { Skeleton } from "@mui/material";
 
 export default function TimeseriesChart(props: {
-  givenData: GivenData[];
-  predictedData: PredictedData[];
+  data: AnalysisData[];
   width: number;
   height: number;
 }) {
@@ -20,10 +19,6 @@ export default function TimeseriesChart(props: {
   const rightPadding = smallFont * 5;
   const maxScale = 32;
 
-  const predictedColor = "var(--highlight)";
-  const givenColor = "var(--chart-gray)";
-
-  const [divided, setDivided] = useState(false);
   const [scale, setScale] = useState(1);
   const [nowIndex, setNowIndex] = useState(0);
   const [mousePos, setMousePos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -32,7 +27,6 @@ export default function TimeseriesChart(props: {
   const scrolling = useRef<boolean | null>(null);
   const nowX = useRef<number>(0);
   const startX = useRef<number>(0);
-  const scaleDistance = useRef<number | null>(null);
   const velocity = useRef<number>(0);
   const lastTimestamp = useRef<number>(0);
 
@@ -40,14 +34,6 @@ export default function TimeseriesChart(props: {
     setNowIndex((v) => Math.min(length - scaledLength, v));
   }, [scale]);
 
-  useEffect(() => {
-    transitionOn.current = false;
-  }, [divided]);
-
-  const divide = () => {
-    transitionOn.current = true;
-    setDivided((v) => !v);
-  };
   // add key down scroll effect
   const keyDownEvent = function (ev: KeyboardEvent) {
     if (ev.key === "ArrowRight") {
@@ -58,8 +44,6 @@ export default function TimeseriesChart(props: {
       setScale((v) => Math.min(maxScale, v * 2));
     } else if (ev.key === "ArrowDown") {
       setScale((v) => Math.max(1, v / 2));
-    } else if (ev.key === " ") {
-      divide();
     }
   };
   useEffect(() => {
@@ -97,6 +81,7 @@ export default function TimeseriesChart(props: {
       requestAnimationFrame(applyInertia);
     }
   };
+
   const setIndex = (clientPos: number) => {
     const gap =
       (startX.current - clientPos) / ((width - leftPadding - rightPadding) / scaledLength);
@@ -111,11 +96,11 @@ export default function TimeseriesChart(props: {
   const hoverTexts = [
     {
       label: "날짜",
-      value: "ds",
+      value: "date",
     },
     {
       label: "종가",
-      value: "y",
+      value: "end",
     },
     {
       label: "시가",
@@ -123,59 +108,23 @@ export default function TimeseriesChart(props: {
     },
     {
       label: "고가",
-      value: "upper",
+      value: "high",
     },
     {
       label: "저가",
-      value: "lower",
-    },
-  ];
-
-  const topperTexts = [
-    {
-      label: "y hat",
-      value: "yhat",
-    },
-    {
-      label: "trend",
-      value: "trend",
-    },
-    {
-      label: "pattern",
-      value: "additive_terms",
+      value: "low",
     },
   ];
 
   // select data using state
-  const length = props.predictedData.length;
+  const length = props.data.length;
   const scaledLength = Math.floor(length / scale);
 
-  const selectedGivenData = props.givenData.slice(nowIndex, nowIndex + scaledLength);
-  const selectedPredictedData = props.predictedData.slice(nowIndex, nowIndex + scaledLength);
-
-  const givenPrediction = selectedPredictedData.filter((data) => data.predicted == 0);
-  const predictedData = selectedPredictedData.filter((data) => data.predicted == 1);
+  const selectedGivenData = props.data.slice(nowIndex, nowIndex + scaledLength);
 
   // calc min max value to get proper size
-  const maxY = Math.max(
-    ...selectedPredictedData.map((d) => d.yhat_upper),
-    ...selectedGivenData.map((d) => d.upper)
-  );
-  const minY = Math.min(
-    ...selectedPredictedData.map((d) => d.yhat_lower),
-    ...selectedGivenData.map((d) => d.lower)
-  );
-  const maxTrend = Math.max(
-    ...selectedPredictedData.map((d) => d.trend_upper),
-    ...selectedGivenData.map((d) => d.upper)
-  );
-  const minTrend = Math.min(
-    ...selectedPredictedData.map((d) => d.trend_lower),
-    ...selectedGivenData.map((d) => d.lower)
-  );
-  const maxAbsAdditive = Math.ceil(
-    Math.max(...props.predictedData.map((d) => Math.abs(d.additive_terms)))
-  );
+  const maxY = Math.max(...selectedGivenData.map((d) => d.high));
+  const minY = Math.min(...selectedGivenData.map((d) => d.low));
 
   // functions to transform coordinate to svg's
   const xScale = (x: number) =>
@@ -183,55 +132,23 @@ export default function TimeseriesChart(props: {
   const baseScale = (y: number) =>
     height - padding - ((y - minY) / (maxY - minY)) * (height - 2 * padding - paddingTop);
 
-  const trendScale = (y: number) =>
-    paddingTop +
-    (height - paddingTop) / 2 -
-    padding -
-    ((y - minTrend) / (maxTrend - minTrend)) * ((height - paddingTop) / 2 - 2 * padding);
-  const additiveScale = (y: number) =>
-    height -
-    padding -
-    ((height - paddingTop) / 2 - padding * 2) / 2 -
-    (y / maxAbsAdditive) * ((height - paddingTop) / 4 - padding);
-
   const yScale = (y: number) => {
-    if (divided) {
-      return trendScale(y);
-    } else {
-      return baseScale(y);
-    }
+    return baseScale(y);
   };
   // values for grid
   const yGap = Math.round((maxY - minY) / 8);
-  const trendGap = Math.round((maxTrend - minTrend) / 8);
   const xAxis = [leftPadding, width - rightPadding];
   const yAxis = [...new Array(9)].map((_, i) => {
-    return Math.round(divided ? minTrend : minY) + i * (divided ? trendGap : yGap);
+    return Math.round(minY) + i * yGap;
   });
-  const additiveYAxis = [-maxAbsAdditive, 0, maxAbsAdditive];
-  const datas = [
-    {
-      name: "given",
-      data: givenPrediction,
-      start: nowIndex,
-      color: givenColor,
-    },
-    {
-      name: "predicted",
-      data: predictedData,
-      start: nowIndex + givenPrediction.length,
-      color: predictedColor,
-    },
-  ];
   return (
     <>
-      {!(props.givenData.length > 0) ? (
+      {!(props.data.length > 0) ? (
         <Skeleton
           variant="rectangular"
           css={css`
             width: ${width}px;
             height: ${height}px;
-            border-radius: 10px;
           `}
         />
       ) : (
@@ -244,8 +161,6 @@ export default function TimeseriesChart(props: {
             .y-transition {
               transition: ${transitionOn.current ? "0.3s ease-in" : "0s"};
             }
-            border-radius: 10px;
-            border: 1px solid;
           `}
         >
           <svg
@@ -277,19 +192,6 @@ export default function TimeseriesChart(props: {
             }}
             onTouchMove={(ev) => {
               const t1 = ev.touches[0];
-              // const t2 = ev.touches[1];
-              // if (t1 && t2) {
-              //   const distance = Math.sqrt(
-              //     Math.pow(t1.clientX - t2.clientX, 2) + Math.pow(t1.clientY - t2.clientY, 2)
-              //   );
-              //   if (scaleDistance.current !== null) {
-              //     const delta = distance - scaleDistance.current;
-              //     setScale((v) =>
-              //       Math.max(1, Math.min(maxScale, v + Math.round(v + delta * 0.005)))
-              //     );
-              //   }
-              //   scaleDistance.current = distance;
-              // } else
               if (scrolling.current && scale > 1 && t1) {
                 setIndex(t1.clientX);
               }
@@ -308,6 +210,15 @@ export default function TimeseriesChart(props: {
               scrolling.current = false;
             }}
           >
+            {scale > 1 && (
+              <rect
+                x={(nowIndex / length) * width}
+                y={height - scrollWidth}
+                height={scrollWidth}
+                width={width / scale}
+                fill="var(--scroll-color)"
+              />
+            )}
             {/* {grid line} */}
             {yAxis.map((y) => (
               <>
@@ -328,127 +239,8 @@ export default function TimeseriesChart(props: {
                 </text>
               </>
             ))}
-            {divided && (
-              <>
-                {additiveYAxis.map((y) => {
-                  return (
-                    <>
-                      <path
-                        d={`M ${xAxis[0]} ${additiveScale(y)} L ${xAxis[1]} ${additiveScale(y)}`}
-                        stroke="var(--chart-grid)"
-                        strokeWidth={1}
-                      />
-                      <text
-                        x={width - rightPadding + smallFont - 5}
-                        y={additiveScale(y) + 10}
-                        fontSize={smallFont}
-                        fill={"var(--foreground)"}
-                      >
-                        {y}
-                      </text>
-                    </>
-                  );
-                })}
-              </>
-            )}
-            {/* main line  */}
-            {datas.map((dataType) => {
-              return (
-                <>
-                  {divided ? (
-                    <path
-                      className="y-transition"
-                      d={`${dataType.data
-                        .map((d) =>
-                          d.index === dataType.start
-                            ? `M ${xScale(d.index)} ${trendScale(d.trend_upper)}`
-                            : `L ${xScale(d.index)} ${trendScale(d.trend_upper)}`
-                        )
-                        .join(" ")} ${dataType.data
-                        .slice()
-                        .reverse()
-                        .map((d) => `L ${xScale(d.index)} ${trendScale(d.trend_lower)}`)} Z`}
-                      fill={dataType.color}
-                      opacity="0.3"
-                    />
-                  ) : (
-                    <path
-                      className="y-transition"
-                      d={`${dataType.data
-                        .map((d) =>
-                          d.index === dataType.start
-                            ? `M ${xScale(d.index)} ${yScale(d.yhat_upper)}`
-                            : `L ${xScale(d.index)} ${yScale(d.yhat_upper)}`
-                        )
-                        .join(" ")} ${dataType.data
-                        .slice()
-                        .reverse()
-                        .map((d) => `L ${xScale(d.index)} ${yScale(d.yhat_lower)}`)} Z`}
-                      fill={dataType.color}
-                      opacity="0.3"
-                    />
-                  )}
-
-                  <path
-                    className="y-transition"
-                    d={
-                      divided
-                        ? dataType.data
-                            .map((d) =>
-                              d.index === dataType.start
-                                ? `M ${xScale(d.index)} ${trendScale(d.trend)}`
-                                : `L ${xScale(d.index)} ${trendScale(d.trend)}`
-                            )
-                            .join(" ")
-                        : dataType.data
-                            .map((d) =>
-                              d.index === dataType.start
-                                ? `M ${xScale(d.index)} ${yScale(d.yhat)}`
-                                : `L ${xScale(d.index)} ${yScale(d.yhat)}`
-                            )
-                            .join(" ")
-                    }
-                    fill="none"
-                    stroke={dataType.color}
-                    strokeWidth="3"
-                  />
-                  <path
-                    className="y-transition"
-                    d={
-                      divided
-                        ? dataType.data
-                            .map((d) =>
-                              d.index === dataType.start
-                                ? `M ${xScale(d.index)} ${additiveScale(d.additive_terms)}`
-                                : `L ${xScale(d.index)} ${additiveScale(d.additive_terms)}`
-                            )
-                            .join(" ")
-                        : dataType.data
-                            .map((d) =>
-                              d.index === dataType.start
-                                ? `M ${xScale(d.index)} ${yScale(d.yhat)}`
-                                : `L ${xScale(d.index)} ${yScale(d.yhat)}`
-                            )
-                            .join(" ")
-                    }
-                    fill="none"
-                    stroke={dataType.color}
-                    strokeWidth="3"
-                  />
-                </>
-              );
-            })}
-            {scale > 1 && (
-              <rect
-                x={(nowIndex / length) * width}
-                y={height - scrollWidth}
-                height={scrollWidth}
-                width={width / scale}
-                fill="var(--scroll-color)"
-              />
-            )}
             {/* givenData chart */}
-            {selectedGivenData.map((data: GivenData, i: number) => {
+            {selectedGivenData.map((data: AnalysisData, i: number) => {
               const realIndex = nowIndex + i;
               return (
                 <>
@@ -458,22 +250,22 @@ export default function TimeseriesChart(props: {
                       xScale(realIndex) -
                       ((1 / (scaledLength - 1)) * (width - leftPadding - rightPadding)) / 4
                     }
-                    y={yScale(Math.max(data.y, data.start))}
-                    height={Math.max(1, Math.abs(yScale(data.start) - yScale(data.y)))}
+                    y={yScale(Math.max(data.end, data.start))}
+                    height={Math.max(1, Math.abs(yScale(data.start) - yScale(data.end)))}
                     width={
                       ((1 / (scaledLength - 1)) * (width - leftPadding - rightPadding)) /
                       2 /
                       (xScale(realIndex) >= width - rightPadding - 10 ? 2 : 1)
                     }
-                    fill={data.start > data.y ? "var(--chart-blue)" : "var(--chart-red)"}
+                    fill={data.start > data.end ? "var(--chart-blue)" : "var(--chart-red)"}
                   />
                   <rect
                     className="y-transition"
                     x={xScale(realIndex) - 0.5}
-                    y={yScale(data.upper)}
-                    height={yScale(data.lower) - yScale(data.upper)}
+                    y={yScale(data.high)}
+                    height={yScale(data.low) - yScale(data.high)}
                     width={1}
-                    fill={data.start > data.y ? "var(--chart-blue)" : "var(--chart-red)"}
+                    fill={data.start > data.end ? "var(--chart-blue)" : "var(--chart-red)"}
                   />
                 </>
               );
@@ -484,29 +276,13 @@ export default function TimeseriesChart(props: {
               mousePos.y <= height - padding + 1 &&
               mousePos.y >= padding + paddingTop - 1 &&
               (function () {
-                const price = !divided
-                  ? Math.round(
-                      (1 -
-                        (mousePos.y - padding - paddingTop) / (height - padding * 2 - paddingTop)) *
-                        (maxY - minY) +
-                        minY
-                    )
-                  : mousePos.y < paddingTop + (height - paddingTop) / 2 - padding + 10
-                  ? Math.round(
-                      (1 -
-                        (mousePos.y - padding - paddingTop) /
-                          ((height - paddingTop) / 2 - padding * 2)) *
-                        (maxTrend - minTrend) +
-                        minTrend
-                    )
-                  : mousePos.y < paddingTop + (height - paddingTop) / 2 + padding - 10
-                  ? undefined
-                  : Math.round(
-                      ((((height - paddingTop) * 3) / 4 + paddingTop - mousePos.y) /
-                        ((height - paddingTop) / 4 - padding)) *
-                        maxAbsAdditive
-                    );
-                const y = divided ? Math.min(mousePos.y) : mousePos.y;
+                const price = Math.round(
+                  (1 - (mousePos.y - padding - paddingTop) / (height - padding * 2 - paddingTop)) *
+                    (maxY - minY) +
+                    minY
+                );
+
+                const y = mousePos.y;
                 const idx = Math.floor(
                   ((mousePos.x - leftPadding) / (width - leftPadding - rightPadding)) * scaledLength
                 );
@@ -515,8 +291,8 @@ export default function TimeseriesChart(props: {
                 const drawBox =
                   selectedGivenData[idx] &&
                   price &&
-                  price >= selectedGivenData[idx]?.lower &&
-                  price <= selectedGivenData[idx]?.upper;
+                  price >= selectedGivenData[idx]?.low &&
+                  price <= selectedGivenData[idx]?.high;
                 const drawBoxHeight = smallFont * 7;
                 const drawBoxWidth = smallFont * 8;
                 const priceBoxHeight = largeFont * 1.1;
@@ -574,19 +350,12 @@ export default function TimeseriesChart(props: {
                       className="y-transition"
                       text-anchor="middle"
                     >
-                      {nowIndex + idx < props.givenData.length
-                        ? selectedGivenData[idx]?.ds
+                      {nowIndex + idx < props.data.length
+                        ? selectedGivenData[idx]?.date
                         : nowIndex + idx}
                     </text>
                     {drawBox && (
                       <>
-                        <rect
-                          y={y > height / 2 ? y - drawBoxHeight : y}
-                          x={x > width / 2 ? x - drawBoxWidth : x}
-                          width={drawBoxWidth}
-                          height={drawBoxHeight}
-                          fill={"var(--paper)"}
-                        />
                         {hoverTexts.map((item, index) => {
                           return (
                             <text
@@ -599,37 +368,12 @@ export default function TimeseriesChart(props: {
                               fill={"var(--foreground)"}
                             >
                               {`${item.label} - ${
-                                selectedGivenData[idx]![item.value as keyof GivenData]
+                                selectedGivenData[idx]![item.value as keyof AnalysisData]
                               }`}
                             </text>
                           );
                         })}
                       </>
-                    )}
-                    {idx < props.predictedData.length &&
-                    width > rightPadding * 2 + smallFont * 22 + leftPadding ? (
-                      <>
-                        {topperTexts.map((item, index) => {
-                          return (
-                            !!props.predictedData[nowIndex + idx] && (
-                              <text
-                                y={paddingTop}
-                                x={leftPadding + index * smallFont * 7}
-                                fontSize={smallFont}
-                                fill={"var(--foreground)"}
-                              >
-                                {`${item.label} ${
-                                  props.predictedData[nowIndex + idx]![
-                                    item.value as keyof PredictedData
-                                  ]
-                                }`}
-                              </text>
-                            )
-                          );
-                        })}
-                      </>
-                    ) : (
-                      <></>
                     )}
                   </>
                 );
@@ -637,28 +381,6 @@ export default function TimeseriesChart(props: {
             {/* {top side buttons} */}
             {
               <>
-                <rect
-                  x={width - rightPadding * 2}
-                  y={paddingTop - smallFont}
-                  height={paddingTop}
-                  width={rightPadding}
-                  rx={paddingTop / 2}
-                  ry={paddingTop / 2}
-                  fill="var(--highlight)"
-                  onClick={() => {
-                    transitionOn.current = true;
-                    setDivided((v) => !v);
-                  }}
-                ></rect>
-                <text
-                  x={width - rightPadding * 2 + smallFont + 2}
-                  y={paddingTop + 2}
-                  fontSize={smallFont}
-                  fill={"var(--foreground)"}
-                  onClick={divide}
-                >
-                  {divided ? "합치기" : "펼치기"}
-                </text>
                 <text
                   x={width - rightPadding + smallFont * 1}
                   y={paddingTop}

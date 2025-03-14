@@ -4,6 +4,7 @@ import { Typography } from "@mui/material";
 import { css } from "@emotion/react";
 import { unselectable } from "@src/util";
 import ThemeToggle from "@src/components/ThemeToggle";
+import MainPage from "./pages/MainPage";
 
 const lightTheme = createTheme({
   palette: {
@@ -99,7 +100,7 @@ export default function App() {
             ${unselectable}
           `}
         >
-          here
+          <MainPage />
         </div>
       </>
     </ThemeProvider>

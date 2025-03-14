@@ -1,4 +1,7 @@
-import { ReactNode } from "react";
+export type ChartData = {
+  stockData: StockData;
+  posData: Dragable;
+};
 
 export type StockData = {
   code: string;
@@ -14,19 +17,26 @@ export type NewsData = {
 };
 
 export type AnalysisData = {
-  ds: string;
-  y: number;
+  date: string;
+  end: number;
   start: number;
-  upper: number;
-  lower: number;
+  high: number;
+  low: number;
+  amount: number;
+  ma5: number;
+  ma20: number;
+  macd: number;
+  signal: number;
+  rsi: number;
+  middleBand: number;
+  upperBand: number;
+  lowerBand: number;
+  obv: number;
 };
 
-export type Playable = {
-  id: string;
+export type Dragable = {
   top: number;
   left: number;
-};
-
-export type PlayableComp = Playable & {
-  comp: ReactNode;
+  width: number;
+  height: number;
 };

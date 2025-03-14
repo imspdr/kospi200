@@ -16,7 +16,7 @@ if __name__ == "__main__":
         last_result.append({
             "code": stock["code"],
             "name": stock["name"],
-            "given": analysis,
+            "analysis": analysis,
             "news": news,
         })
         break
