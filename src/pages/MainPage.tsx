@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { useRecoilValue } from "recoil";
 import { nowData } from "@src/store/atoms";
-import StockPriceChart from "@src/components/StockPriceChart";
+import StockPriceChart from "@src/components/charts/StockPriceChart";
 
 export default function MainPage() {
   const nowStockData = useRecoilValue(nowData);
@@ -16,7 +16,13 @@ export default function MainPage() {
       `}
     >
       <div>selector</div>
-      {nowStockData && <StockPriceChart data={nowStockData.analysis} width={1200} height={600} />}
+      {nowStockData && (
+        <StockPriceChart
+          data={nowStockData.analysis}
+          width={1200}
+          height={window.innerHeight - 49}
+        />
+      )}
       <div>news</div>
     </div>
   );

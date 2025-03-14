@@ -11,3 +11,13 @@ export const nowData = atom<StockData | undefined>({
   key: "nowData",
   default: testData[0]!,
 });
+
+export const chartScale = atom<number>({
+  key: "chartScale",
+  default: 1,
+});
+
+export const chartIndex = atom<number>({
+  key: "chartIndex",
+  default: 1,
+});

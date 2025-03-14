@@ -42,18 +42,19 @@ export default function StockPriceChart(props: {
   width: number;
   height: number;
 }) {
-  const width = Math.max(Math.min(1600, props.width), 280);
-  const inputHeight = Math.max(Math.min(1000, props.height), 300);
+  const width = Math.max(props.width, 280);
+  const inputHeight = Math.max(props.height, 300);
 
   const buttonHeight = (80 / 1000) * inputHeight;
-  const height = inputHeight - buttonHeight;
+  const svgHeight = inputHeight - buttonHeight;
+  const mainChartHeight = (520 / 1000) * inputHeight;
 
-  const padding = (50 / 1000) * height;
+  const padding = (50 / 1000) * mainChartHeight;
   const paddingTop = 0;
   const leftPadding = (30 / 1600) * width;
-  const scrollWidth = (5 / 1000) * height;
-  const smallFont = (30 / 1000) * height;
-  const largeFont = (35 / 1000) * height;
+  const scrollWidth = (5 / 1000) * mainChartHeight;
+  const smallFont = (30 / 1000) * mainChartHeight;
+  const largeFont = (35 / 1000) * mainChartHeight;
   const rightPadding = smallFont * 5;
   const maxScale = 32;
 
@@ -171,7 +172,9 @@ export default function StockPriceChart(props: {
   const xScale = (x: number) =>
     ((x - nowIndex) / (scaledLength - 1)) * (width - leftPadding - rightPadding) + leftPadding;
   const baseScale = (y: number) =>
-    height - padding - ((y - minY) / (maxY - minY)) * (height - 2 * padding - paddingTop);
+    mainChartHeight -
+    padding -
+    ((y - minY) / (maxY - minY)) * (mainChartHeight - 2 * padding - paddingTop);
 
   const yScale = (y: number) => {
     return baseScale(y);
@@ -258,7 +261,7 @@ export default function StockPriceChart(props: {
               </IconButton>
               <IconButton
                 onClick={() => {
-                  setScale((v) => Math.min(32, v * 2));
+                  setScale((v) => Math.min(maxScale, v * 2));
                 }}
               >
                 <AddCircleOutlineIcon />
@@ -266,7 +269,7 @@ export default function StockPriceChart(props: {
             </div>
           </div>
           <svg
-            viewBox={`0 0 ${width} ${height}`}
+            viewBox={`0 0 ${width} ${mainChartHeight}`}
             onMouseDown={(e) => {
               calcStart(e.clientX);
             }}
@@ -281,10 +284,10 @@ export default function StockPriceChart(props: {
               const rect = svgElement.getBoundingClientRect();
 
               const x = ((e.clientX - rect.left) / rect.width) * width;
-              const y = ((e.clientY - rect.top) / rect.height) * height;
+              const y = ((e.clientY - rect.top) / rect.height) * mainChartHeight;
               setMousePos({
                 x: Math.max(leftPadding, Math.min(x, width - rightPadding)),
-                y: Math.max(padding + paddingTop - 10, Math.min(y, height - padding + 10)),
+                y: Math.max(padding + paddingTop - 10, Math.min(y, mainChartHeight - padding + 10)),
               });
             }}
             onTouchStart={(e) => {
@@ -315,7 +318,7 @@ export default function StockPriceChart(props: {
             {scale > 1 && (
               <rect
                 x={(nowIndex / length) * width}
-                y={height - scrollWidth}
+                y={mainChartHeight - scrollWidth}
                 height={scrollWidth}
                 width={width / scale}
                 fill="var(--scroll-color)"
@@ -449,11 +452,13 @@ export default function StockPriceChart(props: {
             {/* hovered text */}
             {mousePos.x > leftPadding &&
               mousePos.x < width - rightPadding &&
-              mousePos.y <= height - padding + 1 &&
+              mousePos.y <= mainChartHeight - padding + 1 &&
               mousePos.y >= padding + paddingTop - 1 &&
               (function () {
                 const price = Math.round(
-                  (1 - (mousePos.y - padding - paddingTop) / (height - padding * 2 - paddingTop)) *
+                  (1 -
+                    (mousePos.y - padding - paddingTop) /
+                      (mainChartHeight - padding * 2 - paddingTop)) *
                     (maxY - minY) +
                     minY
                 );
@@ -502,13 +507,13 @@ export default function StockPriceChart(props: {
                       </>
                     )}
                     <path
-                      d={`M ${x} ${padding + paddingTop} L ${x} ${height - padding}`}
+                      d={`M ${x} ${padding + paddingTop} L ${x} ${mainChartHeight - padding}`}
                       stroke="var(--chart-grid)"
                       strokeWidth={3}
                     />
                     <rect
                       x={Math.max(0, x - rightPadding * 0.6)}
-                      y={height - padding / 2 - priceBoxHeight / 2}
+                      y={mainChartHeight - padding / 2 - priceBoxHeight / 2}
                       fill={"var(--foreground)"}
                       width={rightPadding * 1.2}
                       height={priceBoxHeight}
@@ -517,7 +522,7 @@ export default function StockPriceChart(props: {
                     />
                     <text
                       x={Math.max(rightPadding * 0.6, x)}
-                      y={height - padding / 2 + priceBoxHeight / 5}
+                      y={mainChartHeight - padding / 2 + priceBoxHeight / 5}
                       fontSize={largeFont}
                       fill={"var(--paper)"}
                       text-anchor="middle"
@@ -532,7 +537,7 @@ export default function StockPriceChart(props: {
                           return (
                             <text
                               y={
-                                (y > height / 2 ? y - drawBoxHeight : y) +
+                                (y > mainChartHeight / 2 ? y - drawBoxHeight : y) +
                                 (index + 1) * (smallFont * 1.2)
                               }
                               x={(x > width / 2 ? x - drawBoxWidth : x) + smallFont / 3}
@@ -550,44 +555,6 @@ export default function StockPriceChart(props: {
                   </>
                 );
               })()}{" "}
-            {/* {top side buttons} */}
-            {
-              <>
-                <text
-                  x={width - rightPadding + smallFont * 1}
-                  y={paddingTop}
-                  fontSize={smallFont}
-                  fill={"var(--foreground)"}
-                  text-anchor="middle"
-                  onClick={() => {
-                    setScale((v) => Math.max(1, v / 2));
-                  }}
-                >
-                  {"<"}
-                </text>
-                <text
-                  x={width - rightPadding + smallFont * 2.5}
-                  y={paddingTop}
-                  fontSize={smallFont}
-                  fill={"var(--foreground)"}
-                  text-anchor="middle"
-                >
-                  {`x${scale.toFixed(0)}`}
-                </text>
-                <text
-                  x={width - rightPadding + smallFont * 4}
-                  y={paddingTop}
-                  fontSize={smallFont}
-                  fill={"var(--foreground)"}
-                  text-anchor="middle"
-                  onClick={() => {
-                    setScale((v) => Math.min(maxScale, v * 2));
-                  }}
-                >
-                  {">"}
-                </text>
-              </>
-            }
           </svg>
         </div>
       )}

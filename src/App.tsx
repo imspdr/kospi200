@@ -85,6 +85,7 @@ export default function App() {
             height: 48px;
             width: calc(100% - 20px);
             padding: 0px 10px;
+            background-color: var(--paper);
             ${unselectable}
           `}
         >
@@ -94,9 +95,9 @@ export default function App() {
         <div
           css={css`
             position: absolute;
-            top: 48px;
+            top: 49px;
             width: 100%;
-            height: calc(100% - 48px);
+            height: calc(100% - 49px);
             ${unselectable}
           `}
         >
