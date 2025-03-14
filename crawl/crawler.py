@@ -1,23 +1,25 @@
 from crawl.api.crawl_news import crawl_news
 from crawl.api.crawl_stock_data import crawl_stock_data
 from crawl.api.crawl_kospi200 import crawl_kospi200
+from crawl.api.build_analysis import analysis_df
 import os
 import json
+
 
 if __name__ == "__main__":
     last_result = []
     kospi200 = crawl_kospi200()
     for i, stock in enumerate(kospi200):
-        data = crawl_stock_data(stock["code"], 20)
+        data = crawl_stock_data(stock["code"], 32)
         news = crawl_news(stock["name"])
+        analysis = analysis_df(data)
         last_result.append({
             "code": stock["code"],
             "name": stock["name"],
-            "given": data,
+            "given": analysis,
             "news": news,
-            "result": result
         })
-
+        break
 
     filename = "data.json"
 

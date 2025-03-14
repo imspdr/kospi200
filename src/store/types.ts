@@ -1,10 +1,11 @@
+import { ReactNode } from "react";
+
 export type StockData = {
   code: string;
   name: string;
 } & {
   news: NewsData[];
-  given: GivenData[];
-  result: PredictedData[];
+  analysis: AnalysisData[];
 };
 
 export type NewsData = {
@@ -12,22 +13,20 @@ export type NewsData = {
   link: string;
 };
 
-export type GivenData = {
+export type AnalysisData = {
   ds: string;
   y: number;
   start: number;
   upper: number;
   lower: number;
 };
-export type PredictedData = {
-  index: number;
-  predicted: number;
-  ds: string;
-  trend: number;
-  trend_lower: number;
-  trend_upper: number;
-  yhat_lower: number;
-  yhat_upper: number;
-  additive_terms: number;
-  yhat: number;
+
+export type Playable = {
+  id: string;
+  top: number;
+  left: number;
+};
+
+export type PlayableComp = Playable & {
+  comp: ReactNode;
 };
