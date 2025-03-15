@@ -10,6 +10,7 @@ if __name__ == "__main__":
     last_result = []
     kospi200 = crawl_kospi200()
     for i, stock in enumerate(kospi200):
+        print(f"{i}th" + stock["name"])
         data = crawl_stock_data(stock["code"], 32)
         news = crawl_news(stock["name"])
         analysis = analysis_df(data)
@@ -19,7 +20,6 @@ if __name__ == "__main__":
             "analysis": analysis,
             "news": news,
         })
-        break
 
     filename = "data.json"
 

@@ -5,20 +5,13 @@ import { useState } from "react";
 const NewsCardContainer = (width: number, height: number, padding: number, hover: boolean) => css`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   width: ${width - padding * 2}px;
   height: ${height - padding * 2}px;
   padding: ${padding + (hover ? -1 : 0)}px;
   background-color: var(--paper);
   overflow: hidden;
   ${hover && "border: 1px solid;"}
-`;
-
-const NewsCardInner = css`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
 `;
 
 export default function NewsCard(props: {
@@ -41,11 +34,9 @@ export default function NewsCard(props: {
         window.open(link, "_blank", "noopener,noreferrer");
       }}
     >
-      <div css={NewsCardInner}>
-        <Typography variant="h6" fontWeight="bold" sx={{ fontSize: titleFontSize }}>
-          {title}
-        </Typography>
-      </div>
+      <Typography variant="h6" fontWeight="bold" sx={{ fontSize: titleFontSize }}>
+        {title}
+      </Typography>
     </div>
   );
 }

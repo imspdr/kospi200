@@ -9,7 +9,7 @@ export const wholeData = atom<StockData[]>({
 
 export const nowData = atom<StockData | undefined>({
   key: "nowData",
-  default: testData[0]!,
+  default: undefined,
 });
 
 export const chartScale = atom<number>({

@@ -5,6 +5,7 @@ import { nowData, wholeData } from "@src/store/atoms";
 import StockPriceChart from "@src/components/charts/StockPriceChart";
 import AutoComplete from "@src/components/AutoComplete";
 import NewsCard from "@src/components/NewsCard";
+import NewsAnimation from "@src/components/NewsAnimation";
 
 export default function MainPage() {
   const [nowStockData, setNowStockData] = useRecoilState(nowData);
@@ -22,12 +23,12 @@ export default function MainPage() {
     return () => removeEventListener("resize", resize);
   }, []);
 
-  return (
+  return width > 1500 ? (
     <div
       css={css`
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 3px;
       `}
     >
@@ -63,6 +64,30 @@ export default function MainPage() {
           width={(width / 3) * 2}
           height={height - 51}
         />
+      )}
+    </div>
+  ) : (
+    <div
+      css={css`
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 3px;
+      `}
+    >
+      <AutoComplete
+        kospi200={wholeStockData}
+        width={width - 10}
+        height={(height - 51) * 0.08}
+        onSelected={(v) => {
+          setNowStockData(wholeStockData.find((item) => item.code === v));
+        }}
+      />
+      {nowStockData && (
+        <>
+          <NewsAnimation newsData={nowStockData.news} height={(height - 51) * 0.08} />
+          <StockPriceChart data={nowStockData.analysis} width={width - 10} height={height - 51} />
+        </>
       )}
     </div>
   );

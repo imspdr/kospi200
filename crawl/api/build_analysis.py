@@ -25,6 +25,7 @@ def analysis_df(given_data):
     loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
     rs = gain / loss
     df["rsi"] = 100 - (100 / (1 + rs))
+    df["rsi"] = df["rsi"].fillna(0)
 
     # ✅ 4️⃣ 볼린저 밴드 계산
     df["middleBand"] = df["end"].rolling(window=20).mean()

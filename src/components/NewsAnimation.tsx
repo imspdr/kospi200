@@ -20,12 +20,11 @@ export default function NewsAnimation(props: { newsData: NewsData[]; height: num
         <div
           css={css`
             position: relative;
-            border-radius: 10px;
-            background-color: var(--background);
-            padding: 0px 20px;
+            background-color: var(--paper);
+            padding: 0px 10px;
             min-width: 240px;
             max-width: 1000px;
-            width: calc(100% - 40px);
+            width: calc(100% - 20px);
             height: ${props.height}px;
             overflow: hidden;
           `}
