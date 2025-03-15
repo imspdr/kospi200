@@ -23,7 +23,7 @@ export default function MainPage() {
     return () => removeEventListener("resize", resize);
   }, []);
 
-  return width > 1500 ? (
+  return width > 1200 ? (
     <div
       css={css`
         display: flex;
@@ -42,21 +42,26 @@ export default function MainPage() {
         <AutoComplete
           kospi200={wholeStockData}
           width={width / 3 - 10}
-          height={(height - 51) * 0.08}
+          height={48}
           onSelected={(v) => {
             setNowStockData(wholeStockData.find((item) => item.code === v));
           }}
         />
-        {nowStockData?.news.map((item) => {
-          return (
-            <NewsCard
-              title={item.title}
-              link={item.link}
-              width={width / 3 - 10}
-              height={(height - 51) * 0.08}
-            />
-          );
-        })}
+        <div
+          css={css`
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            gap: 3px;
+            height: ${height - 102}px;
+          `}
+        >
+          {nowStockData?.news.map((item) => {
+            return (
+              <NewsCard title={item.title} link={item.link} width={width / 3 - 10} height={36} />
+            );
+          })}
+        </div>
       </div>
       {nowStockData && (
         <StockPriceChart
@@ -77,16 +82,20 @@ export default function MainPage() {
     >
       <AutoComplete
         kospi200={wholeStockData}
-        width={width - 10}
-        height={(height - 51) * 0.08}
+        width={width}
+        height={48}
         onSelected={(v) => {
           setNowStockData(wholeStockData.find((item) => item.code === v));
         }}
       />
       {nowStockData && (
         <>
-          <NewsAnimation newsData={nowStockData.news} height={48} />
-          <StockPriceChart data={nowStockData.analysis} width={width - 10} height={height - 51} />
+          <NewsAnimation newsData={nowStockData.news} height={32} width={width} />
+          <StockPriceChart
+            data={nowStockData.analysis}
+            width={width}
+            height={height - 51 - 51 - 51}
+          />
         </>
       )}
     </div>

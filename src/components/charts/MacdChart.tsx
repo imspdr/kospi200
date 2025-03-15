@@ -10,31 +10,41 @@ export default function MacdChart(props: {
   xScale: (x: number) => number;
   width: number;
   height: number;
+  startTop: number;
 }) {
-  const { givenData, leftPadding, rightPadding, smallFont, nowIndex, xScale, width, height } =
-    props;
+  const {
+    givenData,
+    leftPadding,
+    rightPadding,
+    smallFont,
+    nowIndex,
+    xScale,
+    width,
+    height,
+    startTop,
+  } = props;
 
-  const padding = 10;
+  const padding = 0;
   const maxY = Math.max(...givenData.map((d) => d.macd), ...givenData.map((d) => d.signal));
   const minY = Math.min(...givenData.map((d) => d.macd), ...givenData.map((d) => d.signal));
 
   const yScale = (y: number) =>
-    height - ((y - minY) / (maxY - minY)) * (height - 2 * padding) - padding;
+    startTop - ((y - minY) / (maxY - minY)) * (height - 2 * padding) - padding;
 
   // values for grid
   const xAxis = [leftPadding, width - rightPadding];
   const yAxis = [Math.round(minY), 0, Math.round(maxY)];
   return (
-    <svg
-      viewBox={`0 0 ${width} ${height}`}
-      css={css`
-        background-color: var(--paper);
-      `}
-    >
-      <circle cx={leftPadding + smallFont} cy={padding + smallFont} r="5" fill="var(--sunblue)" />
+    <>
+      <circle
+        cx={leftPadding + smallFont}
+        cy={startTop - smallFont - 5}
+        r="5"
+        fill="var(--sunblue)"
+      />
       <text
         x={leftPadding + smallFont + 10}
-        y={padding + smallFont + 5}
+        y={startTop - smallFont}
         font-size={smallFont}
         fill={"var(--foreground)"}
       >
@@ -43,13 +53,13 @@ export default function MacdChart(props: {
 
       <circle
         cx={leftPadding + smallFont}
-        cy={padding + 2 * smallFont}
+        cy={startTop - 2 * smallFont - 5}
         r="5"
         fill="var(--sunred)"
       />
       <text
         x={leftPadding + smallFont + 10}
-        y={padding + 2 * smallFont + 5}
+        y={startTop - 2 * smallFont}
         font-size={smallFont}
         fill={"var(--foreground)"}
       >
@@ -104,6 +114,6 @@ export default function MacdChart(props: {
           />
         </>
       }
-    </svg>
+    </>
   );
 }

@@ -10,16 +10,26 @@ export default function ObvChart(props: {
   xScale: (x: number) => number;
   width: number;
   height: number;
+  startTop: number;
 }) {
-  const { givenData, leftPadding, rightPadding, smallFont, nowIndex, xScale, width, height } =
-    props;
+  const {
+    givenData,
+    leftPadding,
+    rightPadding,
+    smallFont,
+    nowIndex,
+    xScale,
+    width,
+    height,
+    startTop,
+  } = props;
 
-  const padding = 10;
+  const padding = 0;
   const maxY = Math.max(...givenData.map((d) => d.obv));
   const minY = Math.min(...givenData.map((d) => d.obv));
 
   const yScale = (y: number) =>
-    height - ((y - minY) / (maxY - minY)) * (height - 2 * padding) - padding;
+    startTop - ((y - minY) / (maxY - minY)) * (height - 2 * padding) - padding;
 
   // values for grid
   const yGap = Math.round((maxY - minY) / 4);
@@ -28,15 +38,10 @@ export default function ObvChart(props: {
     return Math.round(minY) + i * yGap;
   });
   return (
-    <svg
-      viewBox={`0 0 ${width} ${height}`}
-      css={css`
-        background-color: var(--paper);
-      `}
-    >
+    <>
       <text
         x={leftPadding + smallFont}
-        y={padding + smallFont + 5}
+        y={startTop - padding - 5}
         font-size={smallFont}
         fill={"var(--foreground)"}
       >
@@ -79,6 +84,6 @@ export default function ObvChart(props: {
           />
         </>
       }
-    </svg>
+    </>
   );
 }

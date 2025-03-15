@@ -11,6 +11,7 @@ export default function AmountChart(props: {
   xScale: (x: number) => number;
   width: number;
   height: number;
+  startTop: number;
 }) {
   const {
     givenData,
@@ -22,14 +23,15 @@ export default function AmountChart(props: {
     xScale,
     width,
     height,
+    startTop,
   } = props;
 
-  const padding = 10;
+  const padding = 0;
   const maxY = Math.max(...givenData.map((d) => d.amount));
   const minY = 0;
 
   const yScale = (y: number) =>
-    height - ((y - minY) / (maxY - minY)) * (height - 2 * padding) - padding;
+    startTop - ((y - minY) / (maxY - minY)) * (height - 2 * padding) - padding;
 
   // values for grid
   const yGap = Math.round((maxY - minY) / 4);
@@ -38,12 +40,7 @@ export default function AmountChart(props: {
     return Math.round(minY) + i * yGap;
   });
   return (
-    <svg
-      viewBox={`0 0 ${width} ${height}`}
-      css={css`
-        background-color: var(--paper);
-      `}
-    >
+    <>
       {/* {grid line} */}
       {yAxis.map((y) => (
         <>
@@ -81,6 +78,6 @@ export default function AmountChart(props: {
           ></rect>
         );
       })}
-    </svg>
+    </>
   );
 }

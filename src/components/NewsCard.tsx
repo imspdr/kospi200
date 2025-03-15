@@ -7,7 +7,6 @@ const NewsCardContainer = (width: number, height: number, padding: number, hover
   flex-direction: column;
   justify-content: center;
   width: ${width - padding * 2}px;
-  height: ${height - padding * 2}px;
   padding: ${padding + (hover ? -1 : 0)}px;
   background-color: var(--paper);
   overflow: hidden;
@@ -23,7 +22,7 @@ export default function NewsCard(props: {
   const [hover, setHover] = useState(false);
   const { title, link, width, height } = props;
   const titleFontSize = Math.max(width / 30, 12);
-  const PADDING = 15;
+  const PADDING = 10;
   return (
     <div
       key={`${title}`}

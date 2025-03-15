@@ -6,6 +6,7 @@ export type StockData = {
 } & {
   news: NewsData[];
   analysis: AnalysisData[];
+  to_buy: string[];
 };
 
 export type NewsData = {

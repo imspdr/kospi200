@@ -29,7 +29,10 @@ export default function AutoComplete(props: {
             `}
             options={props.kospi200.map((stock) => {
               return {
-                label: stock.name,
+                label:
+                  stock.name +
+                  (stock.to_buy.includes("rsi") ? " #rsi" : "") +
+                  (stock.to_buy.includes("band") ? " #band" : ""),
                 id: stock.code,
               };
             })}

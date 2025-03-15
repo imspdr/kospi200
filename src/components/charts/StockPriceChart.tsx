@@ -28,9 +28,7 @@ function CheckButton(props: {
         height: ${props.height}px;
       `}
     >
-      {!props.small && (
-        <Typography style={{ fontSize: `${props.fontSize}px` }}>{props.title}</Typography>
-      )}
+      {!props.small && <Typography>{props.title}</Typography>}
       <Checkbox
         value={props.v}
         checked={props.v}
@@ -54,6 +52,9 @@ export default function StockPriceChart(props: {
   const width = Math.max(props.width, 280);
   const inputHeight = Math.max(props.height, 300) - 10;
 
+  const smallFont = (20 / 1000) * inputHeight;
+  const largeFont = (25 / 1000) * inputHeight;
+
   const [ma5On, setMa5On] = useState(true);
   const [ma20On, setMa20On] = useState(true);
   const [bandOn, setBandOn] = useState(false);
@@ -64,6 +65,9 @@ export default function StockPriceChart(props: {
 
   const buttonHeight = (80 / 1000) * inputHeight;
 
+  const svgHeight = inputHeight - buttonHeight;
+
+  const chartGap = smallFont;
   const macdHeight = (150 / 1000) * inputHeight;
   const obvHeight = (150 / 1000) * inputHeight;
   const rsiHeight = (150 / 1000) * inputHeight;
@@ -72,17 +76,15 @@ export default function StockPriceChart(props: {
   const mainChartHeight =
     inputHeight -
     buttonHeight -
-    (obvOn ? obvHeight : 0) -
-    (rsiOn ? rsiHeight : 0) -
-    (macdOn ? macdHeight : 0) -
-    (amountOn ? amountHeight : 0);
+    (obvOn ? obvHeight + chartGap : 0) -
+    (rsiOn ? rsiHeight + chartGap : 0) -
+    (macdOn ? macdHeight + chartGap : 0) -
+    (amountOn ? amountHeight + chartGap : 0);
 
-  const padding = (50 / 1000) * mainChartHeight;
+  const padding = largeFont;
   const paddingTop = 0;
-  const leftPadding = (30 / 1600) * width;
-  const scrollWidth = (5 / 1000) * mainChartHeight;
-  const smallFont = (30 / 1000) * mainChartHeight;
-  const largeFont = (35 / 1000) * mainChartHeight;
+  const leftPadding = 10;
+  const scrollWidth = (5 / 1000) * svgHeight;
   const rightPadding = smallFont * 5;
   const maxScale = 32;
 
@@ -189,20 +191,23 @@ export default function StockPriceChart(props: {
   const selectedGivenData = props.data.slice(nowIndex, nowIndex + scaledLength);
 
   // calc min max value to get proper size
-  const maxY = Math.max(...selectedGivenData.map((d) => d.high));
-  const minY = Math.min(...selectedGivenData.map((d) => d.low));
+  const maxY = Math.max(
+    ...selectedGivenData.map((d) => d.high),
+    ...selectedGivenData.map((d) => d.upperBand)
+  );
+  const minY = Math.min(
+    ...selectedGivenData.map((d) => d.low),
+    ...selectedGivenData.map((d) => d.lowerBand)
+  );
 
   // functions to transform coordinate to svg's
   const xScale = (x: number) =>
     ((x - nowIndex) / (scaledLength - 1)) * (width - leftPadding - rightPadding) + leftPadding;
-  const baseScale = (y: number) =>
+
+  const yScale = (y: number) =>
     mainChartHeight -
     padding -
     ((y - minY) / (maxY - minY)) * (mainChartHeight - 2 * padding - paddingTop);
-
-  const yScale = (y: number) => {
-    return baseScale(y);
-  };
   // values for grid
   const yGap = Math.round((maxY - minY) / 8);
   const xAxis = [leftPadding, width - rightPadding];
@@ -339,7 +344,7 @@ export default function StockPriceChart(props: {
             css={css`
               background-color: var(--paper);
             `}
-            viewBox={`0 0 ${width} ${mainChartHeight}`}
+            viewBox={`0 0 ${width} ${svgHeight}`}
             onMouseDown={(e) => {
               calcStart(e.clientX);
             }}
@@ -354,10 +359,10 @@ export default function StockPriceChart(props: {
               const rect = svgElement.getBoundingClientRect();
 
               const x = ((e.clientX - rect.left) / rect.width) * width;
-              const y = ((e.clientY - rect.top) / rect.height) * mainChartHeight;
+              const y = ((e.clientY - rect.top) / rect.height) * svgHeight;
               setMousePos({
                 x: Math.max(leftPadding, Math.min(x, width - rightPadding)),
-                y: Math.max(padding + paddingTop - 10, Math.min(y, mainChartHeight - padding + 10)),
+                y: Math.max(padding + paddingTop - 10, Math.min(y, svgHeight - padding + 10)),
               });
             }}
             onTouchStart={(e) => {
@@ -388,7 +393,7 @@ export default function StockPriceChart(props: {
             {scale > 1 && (
               <rect
                 x={(nowIndex / length) * width}
-                y={mainChartHeight - scrollWidth}
+                y={svgHeight - scrollWidth}
                 height={scrollWidth}
                 width={width / scale}
                 fill="var(--scroll-color)"
@@ -522,7 +527,7 @@ export default function StockPriceChart(props: {
             {/* hovered text */}
             {mousePos.x > leftPadding &&
               mousePos.x < width - rightPadding &&
-              mousePos.y <= mainChartHeight - padding + 1 &&
+              mousePos.y <= svgHeight - padding + 1 &&
               mousePos.y >= padding + paddingTop - 1 &&
               (function () {
                 const price = Math.round(
@@ -577,13 +582,13 @@ export default function StockPriceChart(props: {
                       </>
                     )}
                     <path
-                      d={`M ${x} ${padding + paddingTop} L ${x} ${mainChartHeight - padding}`}
+                      d={`M ${x} ${padding + paddingTop} L ${x} ${svgHeight - padding}`}
                       stroke="var(--chart-grid)"
                       strokeWidth={3}
                     />
                     <rect
                       x={Math.max(0, x - rightPadding * 0.6)}
-                      y={mainChartHeight - padding / 2 - priceBoxHeight / 2}
+                      y={svgHeight - padding / 2 - priceBoxHeight / 2}
                       fill={"var(--foreground)"}
                       width={rightPadding * 1.2}
                       height={priceBoxHeight}
@@ -592,7 +597,7 @@ export default function StockPriceChart(props: {
                     />
                     <text
                       x={Math.max(rightPadding * 0.6, x)}
-                      y={mainChartHeight - padding / 2 + priceBoxHeight / 5}
+                      y={svgHeight - padding / 2 + priceBoxHeight / 5}
                       fontSize={largeFont}
                       fill={"var(--paper)"}
                       text-anchor="middle"
@@ -625,56 +630,71 @@ export default function StockPriceChart(props: {
                   </>
                 );
               })()}{" "}
+            {macdOn && (
+              <MacdChart
+                givenData={selectedGivenData}
+                leftPadding={leftPadding}
+                rightPadding={rightPadding}
+                smallFont={smallFont}
+                nowIndex={nowIndex}
+                xScale={xScale}
+                width={width}
+                height={macdHeight}
+                startTop={
+                  svgHeight -
+                  padding -
+                  (amountOn ? amountHeight + chartGap : 0) -
+                  (rsiOn ? rsiHeight + chartGap : 0) -
+                  (obvOn ? obvHeight + chartGap : 0)
+                }
+              />
+            )}
+            {obvOn && (
+              <ObvChart
+                givenData={selectedGivenData}
+                leftPadding={leftPadding}
+                rightPadding={rightPadding}
+                smallFont={smallFont}
+                nowIndex={nowIndex}
+                xScale={xScale}
+                width={width}
+                height={obvHeight}
+                startTop={
+                  svgHeight -
+                  padding -
+                  (amountOn ? amountHeight + chartGap : 0) -
+                  (rsiOn ? rsiHeight + chartGap : 0)
+                }
+              />
+            )}
+            {rsiOn && (
+              <RsiChart
+                givenData={selectedGivenData}
+                leftPadding={leftPadding}
+                rightPadding={rightPadding}
+                smallFont={smallFont}
+                nowIndex={nowIndex}
+                xScale={xScale}
+                width={width}
+                height={rsiHeight}
+                startTop={svgHeight - padding - (amountOn ? amountHeight + chartGap : 0)}
+              />
+            )}
+            {amountOn && (
+              <AmountChart
+                givenData={selectedGivenData}
+                leftPadding={leftPadding}
+                rightPadding={rightPadding}
+                smallFont={smallFont}
+                scaledLength={scaledLength}
+                nowIndex={nowIndex}
+                xScale={xScale}
+                width={width}
+                height={amountHeight}
+                startTop={svgHeight - padding}
+              />
+            )}
           </svg>
-          {macdOn && (
-            <MacdChart
-              givenData={selectedGivenData}
-              leftPadding={leftPadding}
-              rightPadding={rightPadding}
-              smallFont={smallFont}
-              nowIndex={nowIndex}
-              xScale={xScale}
-              width={width}
-              height={macdHeight}
-            />
-          )}
-          {obvOn && (
-            <ObvChart
-              givenData={selectedGivenData}
-              leftPadding={leftPadding}
-              rightPadding={rightPadding}
-              smallFont={smallFont}
-              nowIndex={nowIndex}
-              xScale={xScale}
-              width={width}
-              height={obvHeight}
-            />
-          )}
-          {rsiOn && (
-            <RsiChart
-              givenData={selectedGivenData}
-              leftPadding={leftPadding}
-              rightPadding={rightPadding}
-              smallFont={smallFont}
-              nowIndex={nowIndex}
-              xScale={xScale}
-              width={width}
-              height={rsiHeight}
-            />
-          )}
-          {amountOn && (
-            <AmountChart
-              givenData={selectedGivenData}
-              leftPadding={leftPadding}
-              rightPadding={rightPadding}
-              smallFont={smallFont}
-              scaledLength={scaledLength}
-              nowIndex={nowIndex}
-              xScale={xScale}
-              width={width}
-              height={amountHeight}
-            />
-          )}
         </div>
       )}
     </>

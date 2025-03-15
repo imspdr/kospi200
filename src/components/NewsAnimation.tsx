@@ -3,7 +3,11 @@ import { NewsData } from "@src/store/types";
 import { Typography, Skeleton } from "@mui/material";
 import { useState, useEffect } from "react";
 
-export default function NewsAnimation(props: { newsData: NewsData[]; height: number }) {
+export default function NewsAnimation(props: {
+  newsData: NewsData[];
+  width: number;
+  height: number;
+}) {
   const [nowIndex, setNowIndex] = useState(0);
   const divideLength = props.newsData.length;
   useEffect(() => {
@@ -21,9 +25,8 @@ export default function NewsAnimation(props: { newsData: NewsData[]; height: num
           css={css`
             position: relative;
             background-color: var(--paper);
-            padding: 0px 10px;
             min-width: 240px;
-            width: calc(100% - 30px);
+            width: ${props.width}px;
             height: ${props.height}px;
             overflow: hidden;
           `}

@@ -4,7 +4,7 @@ import testData from "./data.json";
 
 export const wholeData = atom<StockData[]>({
   key: "wholeData",
-  default: testData,
+  default: testData.sort((a, b) => b.to_buy.length - a.to_buy.length),
 });
 
 export const nowData = atom<StockData | undefined>({
