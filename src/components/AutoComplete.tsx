@@ -3,6 +3,7 @@ import { Skeleton, TextField, Autocomplete } from "@mui/material";
 import { StockData } from "@src/store/types";
 
 export default function AutoComplete(props: {
+  width: number;
   height: number;
   kospi200: StockData[];
   onSelected: (v: string) => void;
@@ -12,9 +13,7 @@ export default function AutoComplete(props: {
       {props.kospi200.length > 0 ? (
         <div
           css={css`
-            min-width: 260px;
-            max-width: 500px;
-            width: calc(100% - 20px);
+            width: ${props.width}px;
           `}
         >
           <Autocomplete
@@ -22,8 +21,6 @@ export default function AutoComplete(props: {
             css={css`
               height: ${props.height}px;
               .MuiOutlinedInput-root {
-                border: 1px solid;
-                border-radius: 10px;
                 height: ${props.height}px;
               }
               .MuiInputBase-root {
@@ -47,6 +44,10 @@ export default function AutoComplete(props: {
                   font-size: ${props.height}px;
                   background-color: var(--paper);
                 `}
+                variant="outlined"
+                sx={{
+                  "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+                }}
               />
             )}
             onChange={(e, v) => {
@@ -54,17 +55,32 @@ export default function AutoComplete(props: {
                 props.onSelected(v.id);
               }
             }}
+            slotProps={{
+              popper: {
+                modifiers: [
+                  {
+                    name: "preventOverflow",
+                    options: {
+                      boundary: "window",
+                    },
+                  },
+                ],
+              },
+              paper: {
+                sx: {
+                  boxShadow: "none",
+                  border: "none",
+                },
+              },
+            }}
           />
         </div>
       ) : (
         <Skeleton
           variant="rectangular"
           css={css`
-            min-width: 260px;
-            max-width: 500px;
-            width: calc(100% - 20px);
+            width: ${props.width}px;
             height: ${props.height}px;
-            border-radius: 10px;
           `}
         />
       )}

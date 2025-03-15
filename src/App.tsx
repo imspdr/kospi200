@@ -95,9 +95,9 @@ export default function App() {
         <div
           css={css`
             position: absolute;
-            top: 49px;
+            top: 51px;
             width: 100%;
-            height: calc(100% - 49px);
+            height: calc(100% - 51px);
             ${unselectable}
           `}
         >

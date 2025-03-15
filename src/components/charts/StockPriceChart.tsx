@@ -47,7 +47,7 @@ export default function StockPriceChart(props: {
   width: number;
   height: number;
 }) {
-  const width = Math.max(props.width, 280);
+  const width = Math.max(props.width, 1000);
   const inputHeight = Math.max(props.height, 300) - 10;
 
   const [ma5On, setMa5On] = useState(true);
