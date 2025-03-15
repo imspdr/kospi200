@@ -561,24 +561,28 @@ export default function StockPriceChart(props: {
                           stroke="var(--chart-grid)"
                           strokeWidth={3}
                         />
-                        <rect
-                          x={width - rightPadding}
-                          y={y - priceBoxHeight / 2}
-                          fill={"var(--foreground)"}
-                          width={rightPadding}
-                          height={priceBoxHeight}
-                          rx={largeFont / 4}
-                          ry={largeFont / 4}
-                        />
-                        <text
-                          x={width - rightPadding / 2}
-                          y={y + priceBoxHeight / 2 - largeFont / 5}
-                          fontSize={largeFont}
-                          fill={"var(--paper)"}
-                          text-anchor="middle"
-                        >
-                          {price}
-                        </text>
+                        {y <= mainChartHeight && (
+                          <>
+                            <rect
+                              x={width - rightPadding}
+                              y={y - priceBoxHeight / 2}
+                              fill={"var(--foreground)"}
+                              width={rightPadding}
+                              height={priceBoxHeight}
+                              rx={largeFont / 4}
+                              ry={largeFont / 4}
+                            />
+                            <text
+                              x={width - rightPadding / 2}
+                              y={y + priceBoxHeight / 2 - largeFont / 5}
+                              fontSize={largeFont}
+                              fill={"var(--paper)"}
+                              text-anchor="middle"
+                            >
+                              {price}
+                            </text>
+                          </>
+                        )}
                       </>
                     )}
                     <path
