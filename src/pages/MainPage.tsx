@@ -85,7 +85,7 @@ export default function MainPage() {
       />
       {nowStockData && (
         <>
-          <NewsAnimation newsData={nowStockData.news} height={(height - 51) * 0.08} />
+          <NewsAnimation newsData={nowStockData.news} height={48} />
           <StockPriceChart data={nowStockData.analysis} width={width - 10} height={height - 51} />
         </>
       )}

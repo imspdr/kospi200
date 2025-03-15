@@ -23,8 +23,7 @@ export default function NewsAnimation(props: { newsData: NewsData[]; height: num
             background-color: var(--paper);
             padding: 0px 10px;
             min-width: 240px;
-            max-width: 1000px;
-            width: calc(100% - 20px);
+            width: calc(100% - 30px);
             height: ${props.height}px;
             overflow: hidden;
           `}
