@@ -28,7 +28,15 @@ function CheckButton(props: {
         height: ${props.height}px;
       `}
     >
-      {!props.small && <Typography>{props.title}</Typography>}
+      {!props.small && (
+        <Typography
+          sx={{
+            fontSize: `${props.fontSize}px`,
+          }}
+        >
+          {props.title}
+        </Typography>
+      )}
       <Checkbox
         value={props.v}
         checked={props.v}
@@ -56,7 +64,7 @@ export default function StockPriceChart(props: {
   const smallFont = (20 / 1000) * inputHeight;
   const largeFont = (25 / 1000) * inputHeight;
 
-  const smallButton = width < 900;
+  const smallButton = width < 800;
 
   const [ma5On, setMa5On] = useState(true);
   const [ma20On, setMa20On] = useState(true);

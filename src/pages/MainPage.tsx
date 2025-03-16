@@ -94,7 +94,7 @@ export default function MainPage() {
           <StockPriceChart
             data={nowStockData.analysis}
             width={width}
-            height={height - 51 - 51 - 51}
+            height={height - 51 - 51 - 35}
           />
         </>
       )}
