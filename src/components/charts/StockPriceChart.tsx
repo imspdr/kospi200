@@ -32,6 +32,7 @@ function CheckButton(props: {
       <Checkbox
         value={props.v}
         checked={props.v}
+        size={props.small ? "small" : "medium"}
         onChange={(e, v) => {
           props.setV(e.target.checked);
         }}
@@ -54,6 +55,8 @@ export default function StockPriceChart(props: {
 
   const smallFont = (20 / 1000) * inputHeight;
   const largeFont = (25 / 1000) * inputHeight;
+
+  const smallButton = width < 900;
 
   const [ma5On, setMa5On] = useState(true);
   const [ma20On, setMa20On] = useState(true);
@@ -252,38 +255,43 @@ export default function StockPriceChart(props: {
                 gap: 10px;
               `}
             >
-              <CheckButton
-                v={ma5On}
-                setV={setMa5On}
-                fontSize={smallFont}
-                small={width < 1000}
-                title={"MA 5"}
-                color={"var(--highlight)"}
-                height={buttonHeight}
-              />
-              <CheckButton
-                v={ma20On}
-                setV={setMa20On}
-                fontSize={smallFont}
-                small={width < 1000}
-                title={"MA 20"}
-                color={"var(--warning)"}
-                height={buttonHeight}
-              />
-              <CheckButton
-                v={amountOn}
-                setV={setAmountOn}
-                fontSize={smallFont}
-                small={width < 1000}
-                title={"거래량"}
-                color={"var(--chart-gray)"}
-                height={buttonHeight}
-              />
+              {!smallButton && (
+                <>
+                  <CheckButton
+                    v={ma5On}
+                    setV={setMa5On}
+                    fontSize={smallFont}
+                    small={smallButton}
+                    title={"MA 5"}
+                    color={"var(--highlight)"}
+                    height={buttonHeight}
+                  />
+                  <CheckButton
+                    v={ma20On}
+                    setV={setMa20On}
+                    fontSize={smallFont}
+                    small={smallButton}
+                    title={"MA 20"}
+                    color={"var(--warning)"}
+                    height={buttonHeight}
+                  />
+                  <CheckButton
+                    v={amountOn}
+                    setV={setAmountOn}
+                    fontSize={smallFont}
+                    small={smallButton}
+                    title={"거래량"}
+                    color={"var(--chart-gray)"}
+                    height={buttonHeight}
+                  />
+                </>
+              )}
+
               <CheckButton
                 v={bandOn}
                 setV={setBandOn}
                 fontSize={smallFont}
-                small={width < 1000}
+                small={smallButton}
                 title={"Bollinger Bands"}
                 color={"var(--chart-gray)"}
                 height={buttonHeight}
@@ -292,7 +300,7 @@ export default function StockPriceChart(props: {
                 v={obvOn}
                 setV={setObvOn}
                 fontSize={smallFont}
-                small={width < 1000}
+                small={smallButton}
                 title={"OBV"}
                 color={"var(--gold)"}
                 height={buttonHeight}
@@ -301,7 +309,7 @@ export default function StockPriceChart(props: {
                 v={rsiOn}
                 setV={setRsiOn}
                 fontSize={smallFont}
-                small={width < 1000}
+                small={smallButton}
                 title={"RSI"}
                 color={"var(--violet)"}
                 height={buttonHeight}
@@ -310,7 +318,7 @@ export default function StockPriceChart(props: {
                 v={macdOn}
                 setV={setMacdOn}
                 fontSize={smallFont}
-                small={width < 1000}
+                small={smallButton}
                 title={"MACD & signal"}
                 color={"var(--chart-gray)"}
                 height={buttonHeight}

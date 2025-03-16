@@ -40,7 +40,7 @@ export default function NewsAnimation(props: {
                 css={css`
                   white-space: nowrap;
                   overflow: hidden;
-                  width: calc(100% - 40px);
+                  width: 100%;
                   textp-overflow: ellipsis;
                   position: absolute;
                   font-size: ${props.height / 2}px;
@@ -94,9 +94,8 @@ export default function NewsAnimation(props: {
           css={css`
             min-width: 280px;
             max-width: 1000px;
-            width: calc(100% - 10px);
+            width: 100%;
             height: ${props.height}px;
-            border-radius: 10px;
           `}
         />
       )}
