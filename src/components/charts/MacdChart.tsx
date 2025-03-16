@@ -33,7 +33,7 @@ export default function MacdChart(props: {
 
   // values for grid
   const xAxis = [leftPadding, width - rightPadding];
-  const yAxis = [Math.round(minY), 0, Math.round(maxY)];
+  const yAxis = [Math.round(minY), Math.round(maxY)];
   return (
     <>
       <circle
