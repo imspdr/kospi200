@@ -8,9 +8,9 @@ import NewsCard from "@src/components/NewsCard";
 import NewsAnimation from "@src/components/NewsAnimation";
 
 export default function MainPage() {
-  const [nowStockData, setNowStockData] = useRecoilState(nowData);
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
+  const nowStockData = useRecoilValue(nowData);
   const wholeStockData = useRecoilValue(wholeData);
 
   const resize = () => {
@@ -39,14 +39,7 @@ export default function MainPage() {
           gap: 3px;
         `}
       >
-        <AutoComplete
-          kospi200={wholeStockData}
-          width={width / 3 - 10}
-          height={48}
-          onSelected={(v) => {
-            setNowStockData(wholeStockData.find((item) => item.code === v));
-          }}
-        />
+        <AutoComplete kospi200={wholeStockData} width={width / 3 - 10} height={48} />
         <div
           css={css`
             display: flex;
@@ -80,14 +73,7 @@ export default function MainPage() {
         gap: 3px;
       `}
     >
-      <AutoComplete
-        kospi200={wholeStockData}
-        width={width}
-        height={48}
-        onSelected={(v) => {
-          setNowStockData(wholeStockData.find((item) => item.code === v));
-        }}
-      />
+      <AutoComplete kospi200={wholeStockData} width={width} height={48} />
       {nowStockData && (
         <>
           <NewsAnimation newsData={nowStockData.news} height={32} width={width} />

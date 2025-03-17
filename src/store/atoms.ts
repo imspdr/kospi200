@@ -1,28 +1,24 @@
 import { selector, atom } from "recoil";
-import { StockData } from "./types";
+import { StockData, StockInfo } from "./types";
 
-export const wholeData = selector<StockData[]>({
+export const wholeData = selector<StockInfo[]>({
   key: "wholeData",
   get: async () => {
-    const res = await fetch("./data/data.json");
+    const res = await fetch("/kospi200/codes.json");
     if (!res.ok) {
       return [];
     }
-    return await res.json();
+    const jsonData: StockInfo[] = await res.json();
+    return jsonData.sort((a, b) => b.to_buy.length - a.to_buy.length);
   },
+});
+
+export const cachedStockData = atom<StockData[]>({
+  key: "cachedStockData",
+  default: [],
 });
 
 export const nowData = atom<StockData | undefined>({
   key: "nowData",
   default: undefined,
-});
-
-export const chartScale = atom<number>({
-  key: "chartScale",
-  default: 1,
-});
-
-export const chartIndex = atom<number>({
-  key: "chartIndex",
-  default: 1,
 });

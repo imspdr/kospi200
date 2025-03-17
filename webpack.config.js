@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = (env) => {
   if(env.development){
@@ -104,7 +105,7 @@ module.exports = (env) => {
         new CopyWebpackPlugin({
           patterns: [
             {
-              from: path.resolve(__dirname, 'public/recruit'), 
+              from: path.resolve(__dirname, 'public/kospi200'), 
               to: path.resolve(__dirname, 'docs/'), 
             },
           ],

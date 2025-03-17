@@ -1,13 +1,30 @@
 import { css } from "@emotion/react";
 import { Skeleton, TextField, Autocomplete } from "@mui/material";
-import { StockData } from "@src/store/types";
+import { StockInfo } from "@src/store/types";
+import { cachedStockData, nowData } from "@src/store/atoms";
+import { useRecoilState } from "recoil";
 
 export default function AutoComplete(props: {
   width: number;
   height: number;
-  kospi200: StockData[];
-  onSelected: (v: string) => void;
+  kospi200: StockInfo[];
 }) {
+  const [now, setNow] = useRecoilState(nowData);
+  const [cachedData, setCachedData] = useRecoilState(cachedStockData);
+  const onSelected = async (v: string) => {
+    const cached = cachedData.find((item) => item.code === v);
+    if (cached) {
+      setNow(cached);
+    } else {
+      const res = await fetch(`/kospi200/data${v}.json`);
+      if (!res.ok) {
+        return undefined;
+      }
+      const nowdata = await res.json();
+      setCachedData((v) => [...v, nowdata]);
+      setNow(nowdata);
+    }
+  };
   return (
     <>
       {props.kospi200.length > 0 ? (
@@ -55,7 +72,7 @@ export default function AutoComplete(props: {
             )}
             onChange={(e, v) => {
               if (v) {
-                props.onSelected(v.id);
+                onSelected(v.id);
               }
             }}
             slotProps={{

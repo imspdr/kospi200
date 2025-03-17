@@ -1,12 +1,13 @@
 import { ReactNode } from "react";
 
-export type StockData = {
+export type StockInfo = {
   code: string;
   name: string;
-} & {
+  to_buy: string[];
+};
+export type StockData = StockInfo & {
   news: NewsData[];
   analysis: AnalysisData[];
-  to_buy: string[];
 };
 
 export type NewsData = {
