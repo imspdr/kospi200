@@ -11,17 +11,24 @@ export default function AutoComplete(props: {
 }) {
   const [now, setNow] = useRecoilState(nowData);
   const [cachedData, setCachedData] = useRecoilState(cachedStockData);
-  const onSelected = async (v: string) => {
-    const cached = cachedData.find((item) => item.code === v);
+  const onSelected = async (v: { label: string; id: string; to_buy: string[] }) => {
+    const cached = cachedData.find((item) => item.code === v.id);
     if (cached) {
       setNow(cached);
     } else {
-      const res = await fetch(`/kospi200/data${v}.json`);
+      setNow({
+        code: v.id,
+        name: v.label,
+        to_buy: v.to_buy,
+        news: [],
+        analysis: [],
+      });
+      const res = await fetch(`/kospi200/data${v.id}.json`);
       if (!res.ok) {
         return undefined;
       }
       const nowdata = await res.json();
-      setCachedData((v) => [...v, nowdata]);
+      setCachedData((item) => [...item, nowdata]);
       setNow(nowdata);
     }
   };
@@ -51,6 +58,7 @@ export default function AutoComplete(props: {
                   (stock.to_buy.includes("rsi") ? " #rsi" : "") +
                   (stock.to_buy.includes("band") ? " #band" : ""),
                 id: stock.code,
+                to_buy: stock.to_buy,
               };
             })}
             isOptionEqualToValue={(option, value) => {
@@ -72,7 +80,7 @@ export default function AutoComplete(props: {
             )}
             onChange={(e, v) => {
               if (v) {
-                onSelected(v.id);
+                onSelected(v);
               }
             }}
             slotProps={{

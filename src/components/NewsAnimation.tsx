@@ -92,8 +92,7 @@ export default function NewsAnimation(props: {
         <Skeleton
           variant="rectangular"
           css={css`
-            min-width: 280px;
-            max-width: 1000px;
+            min-width: 240px;
             width: 100%;
             height: ${props.height}px;
           `}

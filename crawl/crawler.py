@@ -4,7 +4,7 @@ from crawl.api.crawl_kospi200 import crawl_kospi200
 from crawl.api.build_analysis import analysis_df, is_buy_signal
 import os
 import json
-
+import time
 
 if __name__ == "__main__":
 
@@ -16,6 +16,7 @@ if __name__ == "__main__":
     codes_with_to_buy = []
 
     for i, stock in enumerate(kospi200):
+        time.sleep(0.01)
         code = stock["code"]
         filename = f"data{code}.json"
         try:
@@ -34,6 +35,7 @@ if __name__ == "__main__":
         else:
             data = crawl_stock_data(stock["code"], 52)
             analysis = analysis_df(data)
+
         news = crawl_news(stock["name"])
         to_buy = is_buy_signal(analysis[-1], analysis[-2])
 
