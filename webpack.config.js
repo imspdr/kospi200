@@ -101,6 +101,14 @@ module.exports = (env) => {
           template: path.resolve(__dirname, "src/404.html"),
           filename: "404.html",
         }),
+        new CopyWebpackPlugin({
+          patterns: [
+            {
+              from: path.resolve(__dirname, 'public/recruit'), 
+              to: path.resolve(__dirname, 'docs/'), 
+            },
+          ],
+        }),
       ],
       module: {
         rules: [

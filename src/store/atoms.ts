@@ -1,10 +1,15 @@
-import { atom } from "recoil";
+import { selector, atom } from "recoil";
 import { StockData } from "./types";
-import testData from "./data.json";
 
-export const wholeData = atom<StockData[]>({
+export const wholeData = selector<StockData[]>({
   key: "wholeData",
-  default: testData.sort((a, b) => b.to_buy.length - a.to_buy.length),
+  get: async () => {
+    const res = await fetch("./data/data.json");
+    if (!res.ok) {
+      return [];
+    }
+    return await res.json();
+  },
 });
 
 export const nowData = atom<StockData | undefined>({
