@@ -8503,7 +8503,40 @@
             "obv": 21839570.0
         }
     ],
-    "news": [],
+    "news": [
+        {
+            "title": "영화 예매 빼고 오픈AI 모델 더한 에이닷…유료화 예고 후 AI비서 집중",
+            "link": "https://view.asiae.co.kr/article/2025031409090786019"
+        },
+        {
+            "title": "SK텔레콤-엘리스그룹, AI DC 모듈러 분야 협력 [MWC 2025]",
+            "link": "https://biz.heraldcorp.com/article/10435027?ref=naver"
+        },
+        {
+            "title": "GPU도 빌려쓰는 시대…대여업체 경쟁 뜨겁네",
+            "link": "https://www.hankyung.com/article/2025030702061"
+        },
+        {
+            "title": "SKT, 美 아이온큐와 '양자 혈맹'…'차세대 AI에 대비'",
+            "link": "https://www.hankyung.com/article/2025022743551"
+        },
+        {
+            "title": "[MWC25]SK텔레콤 AI 피라미드 2.0, 돈버는 AI 전략으로 '업그레이드'",
+            "link": "https://www.etnews.com/20250303000126"
+        },
+        {
+            "title": "SK텔레콤 ‘AI 기지국’ 기술 개발",
+            "link": "http://www.segye.com/newsView/20250226516185?OutUrl=naver"
+        },
+        {
+            "title": "[역경의 열매] 최경주 (59) 2024 SK텔레콤 오픈 우승은 하나님이 만들어 낸 기적",
+            "link": "https://www.kmib.co.kr/article/view.asp?arcid=1740466018&code=23111513&cp=nv"
+        },
+        {
+            "title": "SKT 'AI 스타트업 군단' 글로벌 진출 지원",
+            "link": "https://www.hankyung.com/article/202502245385i"
+        }
+    ],
     "to_buy": [
         "rsi"
     ]

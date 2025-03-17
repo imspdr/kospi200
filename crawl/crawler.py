@@ -16,7 +16,7 @@ if __name__ == "__main__":
     codes_with_to_buy = []
 
     for i, stock in enumerate(kospi200):
-        time.sleep(0.01)
+        time.sleep(1)
         code = stock["code"]
         filename = f"data{code}.json"
         try:
@@ -37,6 +37,7 @@ if __name__ == "__main__":
             analysis = analysis_df(data)
 
         news = crawl_news(stock["name"])
+        print(news)
         to_buy = is_buy_signal(analysis[-1], analysis[-2])
 
         last_result = {

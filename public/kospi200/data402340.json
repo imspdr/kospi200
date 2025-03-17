@@ -8503,6 +8503,35 @@
             "obv": 19606937.0
         }
     ],
-    "news": [],
+    "news": [
+        {
+            "title": "SK스퀘어 자회사, 해외 첫 배터리 물류 수주",
+            "link": "https://www.hankyung.com/article/202503178445i"
+        },
+        {
+            "title": "SKT, 美 아이온큐와 '양자 혈맹'…'차세대 AI에 대비'",
+            "link": "https://www.hankyung.com/article/2025022743551"
+        },
+        {
+            "title": "삼성·현대·SK 등 출동…온오프라인 `채용박람회` 10일부터 줄줄이 열린다",
+            "link": "https://www.dt.co.kr/contents.html?article_no=2025030902109902050005&ref=naver"
+        },
+        {
+            "title": "“마음이 통했나”…SK, 아이온큐와 3300억 지분 맞교환(종합)",
+            "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=04742886642074784"
+        },
+        {
+            "title": "[단독]SK스퀘어 덮친 행동주의 펀드, 단기차익 뒤 '후퇴'[시그널]",
+            "link": "https://www.sedaily.com/NewsView/2GP06TUL8L"
+        },
+        {
+            "title": "SK ‘선택과 집중’ 리밸런싱…미래 먹거리 투자는 확대",
+            "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=03102886642102008"
+        },
+        {
+            "title": "1년새 주가 44%↑…밸류업 올라타고 SK스퀘어 주가 '훨훨'",
+            "link": "http://news.mt.co.kr/mtview.php?no=2025020713462461558"
+        }
+    ],
     "to_buy": []
 }
