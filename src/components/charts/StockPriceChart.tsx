@@ -109,10 +109,6 @@ export default function StockPriceChart(props: {
   const velocity = useRef<number>(0);
   const lastTimestamp = useRef<number>(0);
 
-  useEffect(() => {
-    setNowIndex((v) => Math.min(length - scaledLength, v));
-  }, [scale]);
-
   // add key down scroll effect
   const keyDownEvent = function (ev: KeyboardEvent) {
     if (ev.key === "ArrowRight") {
@@ -127,6 +123,8 @@ export default function StockPriceChart(props: {
   };
   useEffect(() => {
     window.addEventListener("keydown", keyDownEvent);
+    velocity.current = 0;
+    setNowIndex((v) => Math.min(length - scaledLength, v));
     return () => {
       window.removeEventListener("keydown", keyDownEvent);
     };
