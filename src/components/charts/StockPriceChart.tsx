@@ -5,10 +5,9 @@ import { Checkbox, Typography, Skeleton, IconButton } from "@mui/material";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
-import MacdChart from "./MacdChart";
-import ObvChart from "./ObvChart";
-import RsiChart from "./RsiChart";
-import AmountChart from "./AmountChart";
+import BarChart from "./BarChart";
+import LineChart from "./LineChart";
+import MultiLineChart from "./MultiLineChart";
 
 function CheckButton(props: {
   title: string;
@@ -524,7 +523,7 @@ export default function StockPriceChart(props: {
                     width={
                       ((1 / (scaledLength - 1)) * (width - leftPadding - rightPadding)) /
                       2 /
-                      (xScale(realIndex) >= width - rightPadding - 10 ? 2 : 1)
+                      (xScale(realIndex) >= width - rightPadding ? 2 : 1)
                     }
                     fill={data.start > data.end ? "var(--chart-blue)" : "var(--chart-red)"}
                   />
@@ -649,13 +648,14 @@ export default function StockPriceChart(props: {
                 );
               })()}{" "}
             {macdOn && (
-              <MacdChart
-                givenData={selectedGivenData}
+              <MultiLineChart
+                givenData={[
+                  selectedGivenData.map((d) => d.macd),
+                  selectedGivenData.map((d) => d.signal),
+                ]}
                 leftPadding={leftPadding}
                 rightPadding={rightPadding}
                 smallFont={smallFont}
-                nowIndex={nowIndex}
-                xScale={xScale}
                 width={width}
                 height={macdHeight}
                 startTop={
@@ -665,16 +665,16 @@ export default function StockPriceChart(props: {
                   (rsiOn ? rsiHeight + chartGap : 0) -
                   (obvOn ? obvHeight + chartGap : 0)
                 }
+                titles={["MACD", "signal"]}
+                colors={["var(--sunblue)", "var(--sunred)"]}
               />
             )}
             {obvOn && (
-              <ObvChart
-                givenData={selectedGivenData}
+              <LineChart
+                givenData={selectedGivenData.map((d) => d.obv)}
                 leftPadding={leftPadding}
                 rightPadding={rightPadding}
                 smallFont={smallFont}
-                nowIndex={nowIndex}
-                xScale={xScale}
                 width={width}
                 height={obvHeight}
                 startTop={
@@ -683,33 +683,36 @@ export default function StockPriceChart(props: {
                   (amountOn ? amountHeight + chartGap : 0) -
                   (rsiOn ? rsiHeight + chartGap : 0)
                 }
+                color={"var(--gold)"}
+                title={"OBV"}
               />
             )}
             {rsiOn && (
-              <RsiChart
-                givenData={selectedGivenData}
+              <LineChart
+                givenData={selectedGivenData.map((d) => d.rsi)}
                 leftPadding={leftPadding}
                 rightPadding={rightPadding}
                 smallFont={smallFont}
-                nowIndex={nowIndex}
-                xScale={xScale}
                 width={width}
                 height={rsiHeight}
+                min={0}
+                max={100}
+                customYAxis={[30, 70]}
+                title={"RSI"}
+                color={"var(--violet)"}
                 startTop={svgHeight - padding - (amountOn ? amountHeight + chartGap : 0)}
               />
             )}
             {amountOn && (
-              <AmountChart
-                givenData={selectedGivenData}
+              <BarChart
+                givenData={selectedGivenData.map((d) => d.amount)}
                 leftPadding={leftPadding}
                 rightPadding={rightPadding}
                 smallFont={smallFont}
-                scaledLength={scaledLength}
-                nowIndex={nowIndex}
-                xScale={xScale}
                 width={width}
                 height={amountHeight}
                 startTop={svgHeight - padding}
+                color={"var(--chart-gray)"}
               />
             )}
           </svg>
