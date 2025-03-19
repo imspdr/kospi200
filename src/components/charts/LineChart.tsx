@@ -29,8 +29,8 @@ export default function LineChart(props: {
 
   const scaledLength = givenData.length;
   const padding = 0;
-  const maxY = max ? max : Math.max(...givenData);
-  const minY = min ? min : Math.min(...givenData);
+  const maxY = max || max == 0 ? max : Math.max(...givenData);
+  const minY = min || min == 0 ? min : Math.min(...givenData);
 
   const yScale = (y: number) =>
     startTop - ((y - minY) / (maxY - minY)) * (height - 2 * padding) - padding;
