@@ -28,16 +28,14 @@ if __name__ == "__main__":
         print(f"{i}" + stock["name"])
         if cached_data:
             new_data = crawl_stock_data(stock["code"], 1)
-            new_analysis = analysis_df(new_data)
             old_analysis = cached_data["analysis"]
-            merged_dict = {item["date"]: item for item in old_analysis + new_analysis}
-            analysis = list(merged_dict.values())
+            merged_dict = {item["date"]: item for item in old_analysis + new_data}
+            analysis = analysis_df(list(merged_dict.values())[-500:])
         else:
             data = crawl_stock_data(stock["code"], 52)
             analysis = analysis_df(data)
 
         news = crawl_news(stock["name"])
-        print(news)
         to_buy = is_buy_signal(analysis[-1], analysis[-2])
 
         last_result = {
