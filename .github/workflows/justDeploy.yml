@@ -1,4 +1,4 @@
-name: run-python-crawler-build-page-deploy
+name: build-page-deploy
 permissions:
   pages: write
   id-token: write
