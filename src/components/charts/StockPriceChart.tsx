@@ -391,14 +391,12 @@ export default function StockPriceChart(props: {
               if (t1 && t2) {
                 ev.preventDefault();
                 ev.stopPropagation();
-                const distance = Math.sqrt(
-                  Math.pow(t1.clientX - t2.clientX, 2) + Math.pow(t1.clientY - t2.clientY, 2)
-                );
-                if (scaleDistance.current !== null) {
-                  const delta = distance - scaleDistance.current;
-                  setScale((v) =>
-                    Math.max(1, Math.min(maxScale, v + Math.round(v + delta * 0.005)))
-                  );
+                console.log("multi touch");
+                console.log(`${t1.clientX} ${t2.clientY}`);
+                const distance = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+                if (scaleDistance.current !== null && scaleDistance.current !== 0) {
+                  const delta = distance / scaleDistance.current;
+                  setScale((v) => Math.max(1, Math.min(maxScale, v * delta)));
                 }
                 scaleDistance.current = distance;
               } else if (scrolling.current && scale > 1 && t1) {

@@ -40,14 +40,14 @@ if __name__ == "__main__":
 
         last_result = {
             "code": stock["code"],
-            "name": stock["name"],
+            "name": stock["name"].replace("amp;", ""),
             "analysis": analysis,
             "news": news,
             "to_buy": to_buy
         }
         codes_with_to_buy.append({
             "code": stock["code"],
-            "name": stock["name"],
+            "name": stock["name"].replace("amp;", ""),
             "to_buy": to_buy,
             "today": analysis[-1]["end"],
             "last": analysis[-2]["end"]
