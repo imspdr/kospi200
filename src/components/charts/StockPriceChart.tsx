@@ -404,6 +404,7 @@ export default function StockPriceChart(props: {
               }
             }}
             onTouchEnd={(e) => {
+              scaleDistance.current = null;
               calcEnd();
             }}
             onWheel={(e) => {
