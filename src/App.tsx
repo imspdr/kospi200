@@ -1,5 +1,7 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useRecoilValue } from "recoil";
+import { nowData } from "./store/atoms";
 import { Typography } from "@mui/material";
 import { css } from "@emotion/react";
 import { unselectable } from "@src/util";
@@ -20,6 +22,7 @@ const darkTheme = createTheme({
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const nowSelected = useRecoilValue(nowData);
 
   const toggleTheme = () => {
     const styles = getComputedStyle(document.body);
@@ -89,7 +92,9 @@ export default function App() {
             ${unselectable}
           `}
         >
-          <Typography>{"IMSPDR / kospi200"}</Typography>
+          <Typography>{`IMSPDR / KOSPI200 ${
+            nowSelected ? `/ ${nowSelected.name}` : ""
+          }`}</Typography>
           <ThemeToggle onClick={toggleTheme} isDark={darkMode} />
         </div>
         <div

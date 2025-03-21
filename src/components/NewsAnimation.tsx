@@ -45,8 +45,9 @@ export default function NewsAnimation(props: {
                   position: absolute;
                   font-size: ${props.height / 2}px;
                   display: flex;
+                  padding-left: 10px;
                   flex-direction: column;
-                  align-items: center;
+                  align-items: flex-start;
                   top: ${(nowIndex % divideLength === i
                     ? 0
                     : nowIndex % divideLength === (i + 1) % divideLength

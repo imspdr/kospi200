@@ -4,8 +4,12 @@ export type StockInfo = {
   code: string;
   name: string;
   to_buy: string[];
+  today: number;
+  last: number;
 };
-export type StockData = StockInfo & {
+export type StockData = {
+  code: string;
+  name: string;
   news: NewsData[];
   analysis: AnalysisData[];
 };

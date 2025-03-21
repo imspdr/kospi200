@@ -48,7 +48,9 @@ if __name__ == "__main__":
         codes_with_to_buy.append({
             "code": stock["code"],
             "name": stock["name"],
-            "to_buy": to_buy
+            "to_buy": to_buy,
+            "today": analysis[-1]["end"],
+            "last": analysis[-2]["end"]
         })
         with open(os.path.join(store_path, filename), "w", encoding="utf-8") as f:
             json.dump(last_result, f, ensure_ascii=False, indent=4)

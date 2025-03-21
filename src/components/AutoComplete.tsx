@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { Skeleton, TextField, Autocomplete } from "@mui/material";
+import { Skeleton, TextField, Autocomplete, Typography, Chip } from "@mui/material";
 import { StockInfo } from "@src/store/types";
 import { cachedStockData, nowData } from "@src/store/atoms";
 import { useRecoilState } from "recoil";
@@ -19,7 +19,6 @@ export default function AutoComplete(props: {
       setNow({
         code: v.id,
         name: v.label,
-        to_buy: v.to_buy,
         news: [],
         analysis: [],
       });
@@ -53,12 +52,9 @@ export default function AutoComplete(props: {
             `}
             options={props.kospi200.map((stock) => {
               return {
-                label:
-                  stock.name +
-                  (stock.to_buy.includes("rsi") ? " #rsi" : "") +
-                  (stock.to_buy.includes("band") ? " #band" : ""),
+                label: stock.name,
                 id: stock.code,
-                to_buy: stock.to_buy,
+                ...stock,
               };
             })}
             isOptionEqualToValue={(option, value) => {
@@ -77,6 +73,39 @@ export default function AutoComplete(props: {
                   "& .MuiOutlinedInput-notchedOutline": { border: "none" },
                 }}
               />
+            )}
+            renderOption={(props, option) => (
+              <li
+                {...props}
+                css={css`
+                  display: flex;
+                  flex-direction: row;
+                  gap: 10px;
+                `}
+              >
+                <Typography>{option.label.replace("amp;", "")}</Typography>
+                <Typography
+                  css={css`
+                    color: ${option.today > option.last
+                      ? "var(--chart-red)"
+                      : option.today === option.last
+                      ? "var(--chart-gray)"
+                      : "var(--chart-blue)"};
+                  `}
+                >
+                  {`${option.today} (${option.today > option.last ? "+" : ""}${
+                    option.today - option.last ? option.today - option.last : "-"
+                  })`}
+                </Typography>
+                {option.to_buy.map((v) => (
+                  <Chip
+                    label={v}
+                    css={css`
+                      background-color: ${v === "rsi" ? "var(--highlight)" : "var(--warning)"};
+                    `}
+                  />
+                ))}
+              </li>
             )}
             onChange={(e, v) => {
               if (v) {
