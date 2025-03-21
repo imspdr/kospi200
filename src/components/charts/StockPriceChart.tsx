@@ -108,6 +108,8 @@ export default function StockPriceChart(props: {
   const velocity = useRef<number>(0);
   const lastTimestamp = useRef<number>(0);
 
+  const scaleDistance = useRef<number | null>(null);
+
   // add key down scroll effect
   const keyDownEvent = function (ev: KeyboardEvent) {
     if (ev.key === "ArrowRight") {
@@ -385,7 +387,21 @@ export default function StockPriceChart(props: {
             }}
             onTouchMove={(ev) => {
               const t1 = ev.touches[0];
-              if (scrolling.current && scale > 1 && t1) {
+              const t2 = ev.touches[1];
+              if (t1 && t2) {
+                ev.preventDefault();
+                ev.stopPropagation();
+                const distance = Math.sqrt(
+                  Math.pow(t1.clientX - t2.clientX, 2) + Math.pow(t1.clientY - t2.clientY, 2)
+                );
+                if (scaleDistance.current !== null) {
+                  const delta = distance - scaleDistance.current;
+                  setScale((v) =>
+                    Math.max(1, Math.min(maxScale, v + Math.round(v + delta * 0.005)))
+                  );
+                }
+                scaleDistance.current = distance;
+              } else if (scrolling.current && scale > 1 && t1) {
                 setIndex(t1.clientX);
               }
             }}
