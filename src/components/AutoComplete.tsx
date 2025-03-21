@@ -81,6 +81,10 @@ export default function AutoComplete(props: {
                   display: flex;
                   flex-direction: row;
                   gap: 10px;
+
+                  white-space: nowrap;
+                  overflow: hidden;
+                  textp-overflow: ellipsis;
                 `}
               >
                 <Typography>{option.label.replace("amp;", "")}</Typography>

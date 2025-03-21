@@ -20,7 +20,7 @@ export default function NewsAnimation(props: {
   }, []);
   return (
     <>
-      {props.newsData.length > 0 ? (
+      {props.newsData.length > 0 && (
         <div
           css={css`
             position: relative;
@@ -89,15 +89,6 @@ export default function NewsAnimation(props: {
             );
           })}
         </div>
-      ) : (
-        <Skeleton
-          variant="rectangular"
-          css={css`
-            min-width: 240px;
-            width: 100%;
-            height: ${props.height}px;
-          `}
-        />
       )}
     </>
   );
