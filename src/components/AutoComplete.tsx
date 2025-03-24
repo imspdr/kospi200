@@ -115,6 +115,9 @@ export default function AutoComplete(props: {
               if (v) {
                 onSelected(v);
               }
+              if (e) {
+                (e.target as HTMLInputElement).blur();
+              }
             }}
             slotProps={{
               popper: {
