@@ -1,5 +1,6 @@
 name: run-python-crawler-build-page-deploy
 permissions:
+  contents: write
   pages: write
   id-token: write
 
@@ -11,7 +12,6 @@ on:
 jobs:
   run-python-and-build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
