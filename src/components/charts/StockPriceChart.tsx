@@ -125,11 +125,16 @@ export default function StockPriceChart(props: {
   useEffect(() => {
     window.addEventListener("keydown", keyDownEvent);
     velocity.current = 0;
-    setNowIndex((v) => Math.min(length - scaledLength, v));
+    setNowIndex((v) => Math.min(length - scaledLength, v + scaledLength));
     return () => {
       window.removeEventListener("keydown", keyDownEvent);
     };
   }, [scale]);
+
+  useEffect(() => {
+    setScale(1);
+    setNowIndex(0);
+  }, [props.data]);
 
   const calcStart = (clientX: number) => {
     scrolling.current = true;
