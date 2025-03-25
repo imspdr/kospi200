@@ -393,8 +393,6 @@ export default function StockPriceChart(props: {
               if (t1 && t2) {
                 ev.preventDefault();
                 ev.stopPropagation();
-                console.log("multi touch");
-                console.log(`${t1.clientX} ${t2.clientY}`);
                 const distance = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
                 if (scaleDistance.current !== null && scaleDistance.current !== 0) {
                   const delta = distance / scaleDistance.current;
@@ -411,9 +409,9 @@ export default function StockPriceChart(props: {
             }}
             onWheel={(e) => {
               if (e.deltaY < 0) {
-                setScale((v) => Math.min(maxScale, v * 2));
+                setScale((v) => Math.min(maxScale, v * 1.1));
               } else {
-                setScale((v) => Math.max(1, v / 2));
+                setScale((v) => Math.max(1, v / 1.1));
               }
             }}
             onMouseLeave={() => {
