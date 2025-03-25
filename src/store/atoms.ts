@@ -22,3 +22,8 @@ export const nowData = atom<StockData | undefined>({
   key: "nowData",
   default: undefined,
 });
+
+export const isDarkTheme = atom<boolean>({
+  key: "nowTheme",
+  default: false,
+});
