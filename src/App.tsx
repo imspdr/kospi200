@@ -5,8 +5,6 @@ import { isDarkTheme } from "./store/atoms";
 import { css } from "@emotion/react";
 import { unselectable } from "@src/util";
 import MainPage from "./pages/MainPage";
-import DetailPage from "./pages/DetailPage";
-
 const lightTheme = createTheme({
   palette: {
     mode: "light",
@@ -32,7 +30,6 @@ export default function App() {
       >
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/detail" element={<DetailPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
