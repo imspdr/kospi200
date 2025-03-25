@@ -23,7 +23,7 @@ export default function MainPage() {
     return () => removeEventListener("resize", resize);
   }, []);
 
-  return width > 1200 ? (
+  return width > 768 ? (
     <div
       css={css`
         display: flex;

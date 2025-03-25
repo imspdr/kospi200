@@ -27,15 +27,13 @@ function CheckButton(props: {
         height: ${props.height}px;
       `}
     >
-      {!props.small && (
-        <Typography
-          sx={{
-            fontSize: `${props.fontSize}px`,
-          }}
-        >
-          {props.title}
-        </Typography>
-      )}
+      <Typography
+        sx={{
+          fontSize: `${props.fontSize}px`,
+        }}
+      >
+        {props.title}
+      </Typography>
       <Checkbox
         value={props.v}
         checked={props.v}
@@ -264,7 +262,6 @@ export default function StockPriceChart(props: {
               css={css`
                 display: flex;
                 flex-direction: row;
-                gap: 10px;
               `}
             >
               {!smallButton && (
@@ -304,7 +301,7 @@ export default function StockPriceChart(props: {
                 setV={setBandOn}
                 fontSize={smallFont}
                 small={smallButton}
-                title={"Bollinger Bands"}
+                title={smallButton ? "Bands" : "Bollinger Bands"}
                 color={"var(--chart-gray)"}
                 height={buttonHeight}
               />
@@ -331,7 +328,7 @@ export default function StockPriceChart(props: {
                 setV={setMacdOn}
                 fontSize={smallFont}
                 small={smallButton}
-                title={"MACD & signal"}
+                title={smallButton ? "MACD" : "MACD & signal"}
                 color={"var(--chart-gray)"}
                 height={buttonHeight}
               />
@@ -539,7 +536,10 @@ export default function StockPriceChart(props: {
                       ((1 / (scaledLength - 1)) * (width - leftPadding - rightPadding)) / 4
                     }
                     y={yScale(Math.max(data.end, data.start))}
-                    height={Math.max(1, Math.abs(yScale(data.start) - yScale(data.end)))}
+                    height={Math.max(
+                      1,
+                      data.start ? Math.abs(yScale(data.start) - yScale(data.end)) : 1
+                    )}
                     width={
                       ((1 / (scaledLength - 1)) * (width - leftPadding - rightPadding)) /
                       2 /

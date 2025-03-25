@@ -92,9 +92,7 @@ export default function App() {
             ${unselectable}
           `}
         >
-          <Typography>{`IMSPDR / KOSPI200 ${
-            nowSelected ? `/ ${nowSelected.name}` : ""
-          }`}</Typography>
+          <Typography>{"KOSPI200" + (nowSelected ? ` / ${nowSelected.name}` : "")}</Typography>
           <ThemeToggle onClick={toggleTheme} isDark={darkMode} />
         </div>
         <div
