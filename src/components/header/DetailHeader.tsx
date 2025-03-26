@@ -3,12 +3,14 @@ import Title from "./Title";
 import ThemeToggle from "./ThemeToggle";
 import { unselectable } from "@src/util";
 import { Divider, IconButton } from "@mui/material";
-import { FilterAlt } from "@mui/icons-material";
-import { useSetRecoilState } from "recoil";
-import { filterState } from "@src/store/atoms";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import { useNavigate } from "react-router-dom";
+import { selectedStockData } from "@src/store/atoms";
+import { useRecoilValue } from "recoil";
 
-export default function MainHeader() {
-  const setFilterOpen = useSetRecoilState(filterState);
+export default function DetailHeader() {
+  const navigate = useNavigate();
+  const selectedStock = useRecoilValue(selectedStockData);
   return (
     <div
       css={css`
@@ -27,12 +29,10 @@ export default function MainHeader() {
           width: calc(100% - 20px);
           align-items: center;
           justify-content: space-between;
-          max-width: 1000px;
           height: 48px;
           padding: 0px 10px;
         `}
       >
-        <Title title={"KOSPI200"} />
         <div
           css={css`
             display: flex;
@@ -42,19 +42,17 @@ export default function MainHeader() {
           `}
         >
           <IconButton
-            onClick={() =>
-              setFilterOpen((v) => {
-                return { ...v, open: !v.open };
-              })
-            }
+            onClick={() => navigate("/")}
             css={css`
               margin: 5px;
             `}
           >
-            <FilterAlt />
+            <ArrowBackIosNewIcon />
           </IconButton>
-          <ThemeToggle />
+          <Title title={selectedStock ? selectedStock.name : "-"} />
         </div>
+
+        <ThemeToggle />
       </div>
 
       <Divider

@@ -2,6 +2,7 @@ import CardLayout from "@src/components/body/CardLayout";
 import RowLayout from "@src/components/body/RowLayout";
 import MainHeader from "@src/components/header/MainHeader";
 import SearchBar from "@src/components/header/SearchBar";
+import TagSelector from "@src/components/header/TagSelector";
 import { Divider } from "@mui/material";
 import { css } from "@emotion/react";
 import { useRecoilValue } from "recoil";
@@ -33,7 +34,7 @@ export default function MainPage() {
             `}
           >
             <SearchBar />
-            {/* <TagSelector /> */}
+            <TagSelector />
           </div>
 
           <Divider

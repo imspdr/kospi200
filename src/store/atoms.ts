@@ -24,12 +24,9 @@ export const filterState = atom<{
   },
 });
 
-export const selectedStockData = atom<{
-  data: StockData | undefined;
-  loading: boolean;
-}>({
+export const selectedStockData = atom<StockData | undefined>({
   key: "selectedStockData",
-  default: { data: undefined, loading: false },
+  default: undefined,
 });
 
 export const screenSize = atom<{ width: number; height: number }>({
