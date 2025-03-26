@@ -15,5 +15,5 @@ export default function DetailPage() {
     }
   }, []);
 
-  return <>{size.width < 768 ? <div></div> : <div></div>}</>;
+  return <>{size.width < 768 ? <div>{code}</div> : <div>{code}</div>}</>;
 }
