@@ -38,7 +38,7 @@ def analysis_df(given_data):
     # ✅ 결과 확인
     return df.to_dict(orient="records")[20:]
 
-def is_buy_signal(data, last_data):
+def is_buy_signal(data):
     """
     주어진 데이터가 매수 신호 조건을 만족하는지 판단하는 함수
 
@@ -64,14 +64,10 @@ def is_buy_signal(data, last_data):
     condition1 = end_price < lower_band
     if condition1:
         ret.append("band")
-    # MACD 상향 돌파 여부
-    condition2 = macd > signal
 
     # RSI 과매도 상태 여부
     condition3 = rsi <= 30
     if condition3:
         ret.append("rsi")
-    # OBV 상승세 여부
-    condition4 = obv > last_data["obv"]
 
     return ret

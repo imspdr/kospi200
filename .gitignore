@@ -6,3 +6,4 @@ venv
 dist
 !.gitkeep
 node_modules/
+docs/
