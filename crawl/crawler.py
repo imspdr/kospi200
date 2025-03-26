@@ -35,7 +35,8 @@ if __name__ == "__main__":
             data = crawl_stock_data(stock["code"], 52)
             analysis = analysis_df(data)
 
-        news = crawl_news(stock["name"])
+        # news = crawl_news(stock["name"])
+        news = []
         to_buy = is_buy_signal(analysis[-1], analysis[-2])
 
         last_result = {
