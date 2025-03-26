@@ -1,29 +1,43 @@
-import { selector, atom } from "recoil";
-import { StockData, StockInfo } from "./types";
+import { atom } from "recoil";
+import { StockData, StockInfo, Tags } from "./types";
 
-export const wholeData = selector<StockInfo[]>({
-  key: "wholeData",
-  get: async () => {
-    const res = await fetch("/kospi200/codes.json");
-    if (!res.ok) {
-      return [];
-    }
-    const jsonData: StockInfo[] = await res.json();
-    return jsonData.sort((a, b) => b.to_buy.length - a.to_buy.length);
-  },
-});
-
-export const cachedStockData = atom<StockData[]>({
-  key: "cachedStockData",
+export const stockInfos = atom<StockInfo[]>({
+  key: "stockInfos",
   default: [],
 });
 
-export const nowData = atom<StockData | undefined>({
-  key: "nowData",
-  default: undefined,
+export const cachedStockDatas = atom<StockData[]>({
+  key: "cachedStockDatas",
+  default: [],
+});
+
+export const filterState = atom<{
+  open: boolean;
+  searchText: string;
+  tags: Tags[];
+}>({
+  key: "filterState",
+  default: {
+    open: false,
+    searchText: "",
+    tags: [],
+  },
+});
+
+export const selectedStockData = atom<{
+  data: StockData | undefined;
+  loading: boolean;
+}>({
+  key: "selectedStockData",
+  default: { data: undefined, loading: false },
+});
+
+export const screenSize = atom<{ width: number; height: number }>({
+  key: "screenSize",
+  default: { width: window.innerWidth, height: window.innerHeight },
 });
 
 export const isDarkTheme = atom<boolean>({
-  key: "nowTheme",
+  key: "isDarkTheme",
   default: false,
 });

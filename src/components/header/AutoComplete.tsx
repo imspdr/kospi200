@@ -1,36 +1,14 @@
 import { css } from "@emotion/react";
 import { Skeleton, TextField, Autocomplete, Typography, Chip } from "@mui/material";
 import { StockInfo } from "@src/store/types";
-import { cachedStockData, nowData } from "@src/store/atoms";
-import { useRecoilState } from "recoil";
+import { useSelectedStockSetter } from "@src/hooks/useSelectedStockSetter";
 
 export default function AutoComplete(props: {
   width: number;
   height: number;
   kospi200: StockInfo[];
 }) {
-  const [now, setNow] = useRecoilState(nowData);
-  const [cachedData, setCachedData] = useRecoilState(cachedStockData);
-  const onSelected = async (v: { label: string; id: string; to_buy: string[] }) => {
-    const cached = cachedData.find((item) => item.code === v.id);
-    if (cached) {
-      setNow(cached);
-    } else {
-      setNow({
-        code: v.id,
-        name: v.label,
-        news: [],
-        analysis: [],
-      });
-      const res = await fetch(`/kospi200/data${v.id}.json`);
-      if (!res.ok) {
-        return undefined;
-      }
-      const nowdata = await res.json();
-      setCachedData((item) => [...item, nowdata]);
-      setNow(nowdata);
-    }
-  };
+  const setCode = useSelectedStockSetter();
   return (
     <>
       {props.kospi200.length > 0 ? (
@@ -113,7 +91,7 @@ export default function AutoComplete(props: {
             )}
             onChange={(e, v) => {
               if (v) {
-                onSelected(v);
+                setCode(v.id);
               }
               if (e) {
                 (e.target as HTMLInputElement).blur();

@@ -1,89 +1,56 @@
+import CardLayout from "@src/components/body/CardLayout";
+import RowLayout from "@src/components/body/RowLayout";
+import MainHeader from "@src/components/header/MainHeader";
+import SearchBar from "@src/components/header/SearchBar";
+import { Divider } from "@mui/material";
 import { css } from "@emotion/react";
-import { useState, useEffect } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { nowData, wholeData } from "@src/store/atoms";
-import StockPriceChart from "@src/components/charts/StockPriceChart";
-import AutoComplete from "@src/components/AutoComplete";
-import NewsCard from "@src/components/NewsCard";
-import NewsAnimation from "@src/components/NewsAnimation";
+import { useRecoilValue } from "recoil";
+import { filterState, screenSize } from "@src/store/atoms";
 
 export default function MainPage() {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
-  const nowStockData = useRecoilValue(nowData);
-  const wholeStockData = useRecoilValue(wholeData);
-
-  const resize = () => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-  };
-  useEffect(() => {
-    resize();
-    addEventListener("resize", resize);
-    return () => removeEventListener("resize", resize);
-  }, []);
-
-  return width > 1200 ? (
-    <div
-      css={css`
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 3px;
-      `}
-    >
-      <div
-        css={css`
-          display: flex;
-          flex-direction: column;
-          gap: 3px;
-        `}
-      >
-        <AutoComplete kospi200={wholeStockData} width={width / 3 - 10} height={48} />
-        <div
-          css={css`
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            gap: 3px;
-            height: ${height - 102}px;
-          `}
-        >
-          {nowStockData?.news.map((item) => {
-            return (
-              <NewsCard title={item.title} link={item.link} width={width / 3 - 10} height={36} />
-            );
-          })}
-        </div>
-      </div>
-      {nowStockData && (
-        <StockPriceChart
-          data={nowStockData.analysis}
-          width={(width / 3) * 2}
-          height={height - 51}
-        />
-      )}
-    </div>
-  ) : (
+  const size = useRecoilValue(screenSize);
+  const filter = useRecoilValue(filterState);
+  return (
     <div
       css={css`
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        gap: 3px;
+        height: 100vh;
       `}
     >
-      <AutoComplete kospi200={wholeStockData} width={width} height={48} />
-      {nowStockData && (
+      <MainHeader />
+      {filter.open && (
         <>
-          <NewsAnimation newsData={nowStockData.news} height={32} width={width} />
-          <StockPriceChart
-            data={nowStockData.analysis}
-            width={width}
-            height={height - 51 - 51 - 35}
+          <div
+            css={css`
+              background-color: var(--paper);
+              width: 100%;
+              padding: 10px 0px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 10px;
+            `}
+          >
+            <SearchBar />
+            {/* <TagSelector /> */}
+          </div>
+
+          <Divider
+            css={css`
+              width: 100%;
+            `}
           />
         </>
       )}
+      <div
+        css={css`
+          flex: 1;
+          overflow: auto;
+        `}
+      >
+        {size.width < 768 ? <RowLayout /> : <CardLayout />}
+      </div>
     </div>
   );
 }

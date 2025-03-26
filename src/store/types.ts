@@ -1,9 +1,8 @@
-import { ReactNode } from "react";
-
+export type Tags = "rsi" | "band";
 export type StockInfo = {
   code: string;
   name: string;
-  to_buy: string[];
+  to_buy: Tags[];
   today: number;
   last: number;
 };
@@ -35,13 +34,4 @@ export type AnalysisData = {
   upperBand: number;
   lowerBand: number;
   obv: number;
-};
-
-export type Dragable = {
-  id: string;
-  top: number;
-  left: number;
-  width: number;
-  height: number;
-  comp: ReactNode;
 };
