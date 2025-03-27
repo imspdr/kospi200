@@ -16,7 +16,7 @@ export default function MainPage() {
       css={css`
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        height: ${size.height}px;
       `}
     >
       <MainHeader />
