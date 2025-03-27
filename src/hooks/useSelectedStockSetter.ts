@@ -10,7 +10,6 @@ export const useSelectedStockSetter = () => {
   const [cachedData, setCachedData] = useRecoilState(cachedStockDatas);
 
   const fetchNewData = async (code: string) => {
-    sleep(1000);
     const res = await fetch(`/kospi200/data${code}.json`);
     if (!res.ok) {
       // todo: error handling
@@ -29,6 +28,8 @@ export const useSelectedStockSetter = () => {
       } else {
         fetchNewData(code);
       }
+    } else {
+      setData(undefined);
     }
   }, [code, setCode]);
 

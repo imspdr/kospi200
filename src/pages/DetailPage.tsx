@@ -18,6 +18,7 @@ export default function DetailPage() {
     if (code) {
       setCode(code);
     }
+    return () => setCode("");
   }, []);
 
   return (
