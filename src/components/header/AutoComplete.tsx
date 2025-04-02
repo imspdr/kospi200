@@ -1,17 +1,16 @@
 import { css } from "@emotion/react";
 import { Skeleton, TextField, Autocomplete, Typography, Chip } from "@mui/material";
 import { StockInfo } from "@src/store/types";
+import { useRecoilValue } from "recoil";
+import { stockInfos } from "@src/store/atoms";
 import { useSelectedStockSetter } from "@src/hooks/useSelectedStockSetter";
 
-export default function AutoComplete(props: {
-  width: number;
-  height: number;
-  kospi200: StockInfo[];
-}) {
+export default function AutoComplete(props: { width: number; height: number }) {
+  const kospi200 = useRecoilValue(stockInfos);
   const setCode = useSelectedStockSetter();
   return (
     <>
-      {props.kospi200.length > 0 ? (
+      {kospi200.length > 0 ? (
         <div
           css={css`
             width: ${props.width}px;
@@ -28,7 +27,7 @@ export default function AutoComplete(props: {
                 font-size: ${props.height / 3}px;
               }
             `}
-            options={props.kospi200.map((stock) => {
+            options={kospi200.map((stock) => {
               return {
                 label: stock.name,
                 id: stock.code,

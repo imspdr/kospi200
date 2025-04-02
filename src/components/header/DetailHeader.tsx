@@ -5,12 +5,14 @@ import { unselectable } from "@src/util";
 import { Divider, IconButton } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { useNavigate } from "react-router-dom";
-import { selectedStockData } from "@src/store/atoms";
+import { selectedStockData, screenSize } from "@src/store/atoms";
 import { useRecoilValue } from "recoil";
+import AutoComplete from "./AutoComplete";
 
 export default function DetailHeader() {
   const navigate = useNavigate();
   const selectedStock = useRecoilValue(selectedStockData);
+  const size = useRecoilValue(screenSize);
   return (
     <div
       css={css`
@@ -50,6 +52,7 @@ export default function DetailHeader() {
             <ArrowBackIosNewIcon />
           </IconButton>
           <Title title={selectedStock ? selectedStock.name : "-"} />
+          {size.width >= 768 && <AutoComplete width={300} height={48} />}
         </div>
 
         <ThemeToggle />

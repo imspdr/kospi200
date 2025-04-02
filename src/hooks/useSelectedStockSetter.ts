@@ -31,7 +31,7 @@ export const useSelectedStockSetter = () => {
     } else {
       setData(undefined);
     }
-  }, [code, setCode]);
+  }, [code]);
 
   return setCode;
 };
