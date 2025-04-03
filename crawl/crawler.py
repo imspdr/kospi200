@@ -30,7 +30,7 @@ if __name__ == "__main__":
             new_data = crawl_stock_data(stock["code"], 1)
             old_analysis = cached_data["analysis"]
             merged_dict = {item["date"]: item for item in old_analysis + new_data}
-            analysis = analysis_df(list(merged_dict.values())[-500:])
+            analysis = analysis_df(list(merged_dict.values())[-520:])
         else:
             data = crawl_stock_data(stock["code"], 52)
             analysis = analysis_df(data)

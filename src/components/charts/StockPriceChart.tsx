@@ -67,10 +67,10 @@ export default function StockPriceChart(props: {
 
   const [ma5On, setMa5On] = useState(true);
   const [ma20On, setMa20On] = useState(true);
-  const [bandOn, setBandOn] = useState(false);
-  const [obvOn, setObvOn] = useState(false);
-  const [rsiOn, setRsiOn] = useState(false);
-  const [macdOn, setMacdOn] = useState(false);
+  const [bandOn, setBandOn] = useState(true);
+  const [obvOn, setObvOn] = useState(true);
+  const [rsiOn, setRsiOn] = useState(true);
+  const [macdOn, setMacdOn] = useState(true);
   const [amountOn, setAmountOn] = useState(true);
 
   const buttonHeight = (80 / 1000) * inputHeight;

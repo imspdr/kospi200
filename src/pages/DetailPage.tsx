@@ -31,7 +31,7 @@ export default function DetailPage() {
       <DetailHeader />
       {selectedStock && (
         <StockPriceChart
-          data={selectedStock.analysis}
+          data={selectedStock.analysis.slice(20)}
           width={size.width}
           height={size.height - 49}
         />

@@ -35,8 +35,9 @@ def analysis_df(given_data):
     # ✅ 5️⃣ 거래량 분석 (OBV)
     df["obv"] = (np.sign(df["end"].diff()) * df["amount"]).fillna(0).cumsum()
 
+    df = df.fillna(0)
     # ✅ 결과 확인
-    return df.to_dict(orient="records")[20:]
+    return df.to_dict(orient="records")
 
 def is_buy_signal(data):
     """

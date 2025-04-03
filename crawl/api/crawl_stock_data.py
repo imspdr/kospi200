@@ -31,4 +31,4 @@ def crawl_stock_data(code: str, length: int = 10):
     return result_data
 
 if __name__ == "__main__":
-    print(crawl_stock_data("005930"))
+    print(crawl_stock_data("489790"))
