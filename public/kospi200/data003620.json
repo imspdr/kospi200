@@ -3,23 +3,6 @@
     "name": "KG모빌리티",
     "analysis": [
         {
-            "date": "2023.02.20",
-            "end": 8760,
-            "start": 0,
-            "high": 0,
-            "low": 0,
-            "amount": 0,
-            "ma5": 0.0,
-            "ma20": 0.0,
-            "macd": 0.0,
-            "signal": 0.0,
-            "rsi": 0.0,
-            "middleBand": 0.0,
-            "upperBand": 0.0,
-            "lowerBand": 0.0,
-            "obv": 0.0
-        },
-        {
             "date": "2023.02.21",
             "end": 8760,
             "start": 0,
@@ -77,7 +60,7 @@
             "high": 0,
             "low": 0,
             "amount": 0,
-            "ma5": 8760.0,
+            "ma5": 0.0,
             "ma20": 0.0,
             "macd": 0.0,
             "signal": 0.0,
@@ -333,13 +316,13 @@
             "low": 0,
             "amount": 0,
             "ma5": 8760.0,
-            "ma20": 8760.0,
+            "ma20": 0.0,
             "macd": 0.0,
             "signal": 0.0,
             "rsi": 0.0,
-            "middleBand": 8760.0,
-            "upperBand": 8760.0,
-            "lowerBand": 8760.0,
+            "middleBand": 0.0,
+            "upperBand": 0.0,
+            "lowerBand": 0.0,
             "obv": 0.0
         },
         {
@@ -8841,10 +8824,28 @@
             "upperBand": 4038.060717291746,
             "lowerBand": 3450.939282708254,
             "obv": 38684348.0
+        },
+        {
+            "date": "2025.04.09",
+            "end": 3260,
+            "start": 3350,
+            "high": 3400,
+            "low": 3200,
+            "amount": 670867,
+            "ma5": 3470.0,
+            "ma20": 3718.0,
+            "macd": -154.17081109472065,
+            "signal": -100.11369359483001,
+            "rsi": 20.370370370370367,
+            "middleBand": 3718.0,
+            "upperBand": 4081.5989693691636,
+            "lowerBand": 3354.4010306308364,
+            "obv": 38013481.0
         }
     ],
     "news": [],
     "to_buy": [
-        "band"
+        "band",
+        "rsi"
     ]
 }
