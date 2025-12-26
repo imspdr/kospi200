@@ -3,400 +3,414 @@
         "code": "005930",
         "name": "삼성전자",
         "to_buy": [],
-        "today": 111100,
-        "last": 111500
+        "today": 117000,
+        "last": 111100
     },
     {
         "code": "000660",
         "name": "SK하이닉스",
         "to_buy": [],
-        "today": 588000,
-        "last": 584000
+        "today": 599000,
+        "last": 588000
     },
     {
         "code": "373220",
         "name": "LG에너지솔루션",
         "to_buy": [],
-        "today": 390500,
-        "last": 388000
+        "today": 383500,
+        "last": 390500
     },
     {
         "code": "207940",
         "name": "삼성바이오로직스",
         "to_buy": [],
-        "today": 1691000,
-        "last": 1720000
+        "today": 1692000,
+        "last": 1691000
     },
     {
         "code": "005380",
         "name": "현대차",
-        "to_buy": [],
-        "today": 289000,
-        "last": 287000
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 286000,
+        "last": 289000
     },
     {
         "code": "329180",
         "name": "HD현대중공업",
         "to_buy": [],
-        "today": 519000,
-        "last": 533000
-    },
-    {
-        "code": "034020",
-        "name": "두산에너빌리티",
-        "to_buy": [],
-        "today": 75900,
-        "last": 77600
+        "today": 512000,
+        "last": 519000
     },
     {
         "code": "105560",
         "name": "KB금융",
         "to_buy": [],
-        "today": 126100,
-        "last": 126000
+        "today": 124600,
+        "last": 126100
+    },
+    {
+        "code": "034020",
+        "name": "두산에너빌리티",
+        "to_buy": [],
+        "today": 73600,
+        "last": 75900
     },
     {
         "code": "000270",
         "name": "기아",
         "to_buy": [],
-        "today": 121000,
-        "last": 120200
+        "today": 119800,
+        "last": 121000
     },
     {
         "code": "012450",
         "name": "한화에어로스페이스",
         "to_buy": [],
-        "today": 878000,
-        "last": 900000
+        "today": 870000,
+        "last": 878000
     },
     {
         "code": "402340",
         "name": "SK스퀘어",
         "to_buy": [],
-        "today": 321000,
-        "last": 315000
+        "today": 334500,
+        "last": 321000
     },
     {
         "code": "068270",
         "name": "셀트리온",
-        "to_buy": [],
-        "today": 182000,
-        "last": 182800
+        "to_buy": [
+            "band"
+        ],
+        "today": 180000,
+        "last": 182000
     },
     {
         "code": "028260",
         "name": "삼성물산",
         "to_buy": [],
-        "today": 240000,
-        "last": 240500
+        "today": 240500,
+        "last": 240000
     },
     {
         "code": "055550",
         "name": "신한지주",
         "to_buy": [],
-        "today": 77800,
-        "last": 76500
+        "today": 76800,
+        "last": 77800
     },
     {
         "code": "035420",
         "name": "NAVER",
-        "to_buy": [],
-        "today": 236500,
-        "last": 237000
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 231500,
+        "last": 236500
     },
     {
         "code": "042660",
         "name": "한화오션",
         "to_buy": [],
-        "today": 119000,
-        "last": 123400
-    },
-    {
-        "code": "012330",
-        "name": "현대모비스",
-        "to_buy": [],
-        "today": 365000,
-        "last": 363000
+        "today": 116500,
+        "last": 119000
     },
     {
         "code": "032830",
         "name": "삼성생명",
         "to_buy": [],
-        "today": 163700,
-        "last": 163900
+        "today": 162500,
+        "last": 163700
+    },
+    {
+        "code": "012330",
+        "name": "현대모비스",
+        "to_buy": [],
+        "today": 358000,
+        "last": 365000
     },
     {
         "code": "015760",
         "name": "한국전력",
         "to_buy": [],
-        "today": 48150,
-        "last": 48350
+        "today": 48500,
+        "last": 48150
     },
     {
         "code": "009540",
         "name": "HD한국조선해양",
         "to_buy": [],
-        "today": 416000,
-        "last": 432000
+        "today": 403000,
+        "last": 416000
     },
     {
         "code": "267260",
         "name": "HD현대일렉트릭",
         "to_buy": [],
-        "today": 780000,
-        "last": 794000
-    },
-    {
-        "code": "035720",
-        "name": "카카오",
-        "to_buy": [],
-        "today": 59800,
-        "last": 59000
+        "today": 764000,
+        "last": 780000
     },
     {
         "code": "086790",
         "name": "하나금융지주",
         "to_buy": [],
-        "today": 94900,
-        "last": 93000
+        "today": 93800,
+        "last": 94900
     },
     {
-        "code": "010130",
-        "name": "고려아연",
+        "code": "035720",
+        "name": "카카오",
         "to_buy": [],
-        "today": 1316000,
-        "last": 1356000
+        "today": 58100,
+        "last": 59800
     },
     {
         "code": "005490",
         "name": "POSCO홀딩스",
         "to_buy": [],
-        "today": 314000,
-        "last": 304000
+        "today": 308000,
+        "last": 314000
+    },
+    {
+        "code": "010130",
+        "name": "고려아연",
+        "to_buy": [],
+        "today": 1288000,
+        "last": 1316000
     },
     {
         "code": "051910",
         "name": "LG화학",
         "to_buy": [],
-        "today": 346000,
-        "last": 345500
+        "today": 336000,
+        "last": 346000
     },
     {
         "code": "000810",
         "name": "삼성화재",
         "to_buy": [],
-        "today": 499000,
-        "last": 498000
+        "today": 491500,
+        "last": 499000
     },
     {
         "code": "006400",
         "name": "삼성SDI",
-        "to_buy": [],
-        "today": 280000,
-        "last": 279500
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 274000,
+        "last": 280000
     },
     {
         "code": "010140",
         "name": "삼성중공업",
         "to_buy": [],
-        "today": 24500,
-        "last": 25150
+        "today": 23950,
+        "last": 24500
     },
     {
         "code": "316140",
         "name": "우리금융지주",
         "to_buy": [],
-        "today": 28500,
-        "last": 28200
+        "today": 28300,
+        "last": 28500
     },
     {
         "code": "064350",
         "name": "현대로템",
         "to_buy": [],
-        "today": 183600,
-        "last": 188700
-    },
-    {
-        "code": "011200",
-        "name": "HMM",
-        "to_buy": [],
-        "today": 20650,
-        "last": 20500
-    },
-    {
-        "code": "138040",
-        "name": "메리츠금융지주",
-        "to_buy": [],
-        "today": 109300,
-        "last": 109500
+        "today": 179800,
+        "last": 183600
     },
     {
         "code": "009150",
         "name": "삼성전기",
         "to_buy": [],
-        "today": 253500,
-        "last": 251500
+        "today": 259000,
+        "last": 253500
+    },
+    {
+        "code": "011200",
+        "name": "HMM",
+        "to_buy": [],
+        "today": 20300,
+        "last": 20650
+    },
+    {
+        "code": "138040",
+        "name": "메리츠금융지주",
+        "to_buy": [],
+        "today": 108200,
+        "last": 109300
     },
     {
         "code": "034730",
         "name": "SK",
         "to_buy": [],
-        "today": 247000,
-        "last": 248500
+        "today": 245000,
+        "last": 247000
     },
     {
         "code": "096770",
         "name": "SK이노베이션",
-        "to_buy": [],
-        "today": 105500,
-        "last": 106200
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 103300,
+        "last": 105500
     },
     {
         "code": "003670",
         "name": "포스코퓨처엠",
         "to_buy": [],
-        "today": 198000,
-        "last": 196500
+        "today": 196200,
+        "last": 198000
     },
     {
         "code": "033780",
         "name": "KT&G",
         "to_buy": [],
-        "today": 145000,
-        "last": 145500
+        "today": 144800,
+        "last": 145000
+    },
+    {
+        "code": "0126Z0",
+        "name": "삼성에피스홀딩스",
+        "to_buy": [],
+        "today": 680000,
+        "last": 638000
     },
     {
         "code": "024110",
         "name": "기업은행",
         "to_buy": [],
         "today": 21200,
-        "last": 21150
+        "last": 21200
     },
     {
         "code": "298040",
         "name": "효성중공업",
-        "to_buy": [],
-        "today": 1790000,
-        "last": 1828000
-    },
-    {
-        "code": "0126Z0",
-        "name": "삼성에피스홀딩스",
-        "to_buy": [],
-        "today": 638000,
-        "last": 652000
-    },
-    {
-        "code": "267250",
-        "name": "HD현대",
-        "to_buy": [],
-        "today": 192800,
-        "last": 193300
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 1757000,
+        "last": 1790000
     },
     {
         "code": "066570",
         "name": "LG전자",
         "to_buy": [],
-        "today": 92500,
-        "last": 92700
+        "today": 91600,
+        "last": 92500
+    },
+    {
+        "code": "267250",
+        "name": "HD현대",
+        "to_buy": [],
+        "today": 188500,
+        "last": 192800
     },
     {
         "code": "010120",
         "name": "LS ELECTRIC",
-        "to_buy": [],
-        "today": 464500,
-        "last": 464000
-    },
-    {
-        "code": "352820",
-        "name": "하이브",
-        "to_buy": [],
-        "today": 323000,
-        "last": 324500
-    },
-    {
-        "code": "086280",
-        "name": "현대글로비스",
-        "to_buy": [],
-        "today": 179800,
-        "last": 178300
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 455000,
+        "last": 464500
     },
     {
         "code": "030200",
         "name": "KT",
         "to_buy": [],
         "today": 53400,
-        "last": 53100
+        "last": 53400
     },
     {
-        "code": "000150",
-        "name": "두산",
+        "code": "086280",
+        "name": "현대글로비스",
         "to_buy": [],
-        "today": 811000,
-        "last": 780000
+        "today": 178600,
+        "last": 179800
     },
     {
-        "code": "006800",
-        "name": "미래에셋증권",
+        "code": "352820",
+        "name": "하이브",
         "to_buy": [],
-        "today": 23150,
-        "last": 23900
+        "today": 314500,
+        "last": 323000
     },
     {
         "code": "018260",
         "name": "삼성에스디에스",
         "to_buy": [],
-        "today": 169500,
-        "last": 169700
+        "today": 170600,
+        "last": 169500
     },
     {
-        "code": "003550",
-        "name": "LG",
+        "code": "006800",
+        "name": "미래에셋증권",
         "to_buy": [],
-        "today": 82800,
-        "last": 82300
+        "today": 22900,
+        "last": 23150
+    },
+    {
+        "code": "000150",
+        "name": "두산",
+        "to_buy": [],
+        "today": 787000,
+        "last": 811000
     },
     {
         "code": "042700",
         "name": "한미반도체",
         "to_buy": [],
-        "today": 124600,
-        "last": 127000
+        "today": 132600,
+        "last": 124600
+    },
+    {
+        "code": "003550",
+        "name": "LG",
+        "to_buy": [],
+        "today": 81500,
+        "last": 82800
     },
     {
         "code": "259960",
         "name": "크래프톤",
         "to_buy": [],
-        "today": 248000,
-        "last": 250000
+        "today": 242500,
+        "last": 248000
     },
     {
         "code": "017670",
         "name": "SK텔레콤",
         "to_buy": [],
-        "today": 53400,
+        "today": 53100,
         "last": 53400
     },
     {
         "code": "047810",
         "name": "한국항공우주",
         "to_buy": [],
-        "today": 113800,
+        "today": 110100,
         "last": 113800
     },
     {
         "code": "272210",
         "name": "한화시스템",
         "to_buy": [],
-        "today": 56300,
-        "last": 58800
+        "today": 54700,
+        "last": 56300
     },
     {
         "code": "323410",
         "name": "카카오뱅크",
         "to_buy": [],
-        "today": 22100,
-        "last": 21900
+        "today": 21600,
+        "last": 22100
     },
     {
         "code": "326030",
@@ -404,248 +418,253 @@
         "to_buy": [
             "rsi"
         ],
-        "today": 127000,
-        "last": 128500
+        "today": 125100,
+        "last": 127000
     },
     {
         "code": "003230",
         "name": "삼양식품",
         "to_buy": [],
-        "today": 1266000,
-        "last": 1269000
+        "today": 1233000,
+        "last": 1266000
     },
     {
         "code": "010950",
         "name": "S-Oil",
         "to_buy": [],
-        "today": 83200,
-        "last": 84000
-    },
-    {
-        "code": "000100",
-        "name": "유한양행",
-        "to_buy": [],
-        "today": 115200,
-        "last": 116200
+        "today": 82000,
+        "last": 83200
     },
     {
         "code": "005830",
         "name": "DB손해보험",
         "to_buy": [],
-        "today": 129700,
-        "last": 128800
+        "today": 128600,
+        "last": 129700
     },
     {
-        "code": "079550",
-        "name": "LIG넥스원",
+        "code": "000100",
+        "name": "유한양행",
         "to_buy": [],
-        "today": 414000,
-        "last": 417000
-    },
-    {
-        "code": "047050",
-        "name": "포스코인터내셔널",
-        "to_buy": [],
-        "today": 51300,
-        "last": 51200
+        "today": 112700,
+        "last": 115200
     },
     {
         "code": "071050",
         "name": "한국금융지주",
         "to_buy": [],
-        "today": 161200,
-        "last": 161100
+        "today": 158200,
+        "last": 161200
     },
     {
-        "code": "443060",
-        "name": "HD현대마린솔루션",
-        "to_buy": [],
-        "today": 196800,
-        "last": 195800
-    },
-    {
-        "code": "180640",
-        "name": "한진칼",
-        "to_buy": [],
-        "today": 131200,
-        "last": 122100
+        "code": "047050",
+        "name": "포스코인터내셔널",
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 50100,
+        "last": 51300
     },
     {
         "code": "007660",
         "name": "이수페타시스",
         "to_buy": [],
-        "today": 119100,
-        "last": 121200
+        "today": 120000,
+        "last": 119100
+    },
+    {
+        "code": "079550",
+        "name": "LIG넥스원",
+        "to_buy": [],
+        "today": 398000,
+        "last": 414000
     },
     {
         "code": "278470",
         "name": "에이피알",
         "to_buy": [],
-        "today": 233000,
-        "last": 236000
+        "today": 230000,
+        "last": 233000
+    },
+    {
+        "code": "443060",
+        "name": "HD현대마린솔루션",
+        "to_buy": [],
+        "today": 191900,
+        "last": 196800
     },
     {
         "code": "003490",
         "name": "대한항공",
         "to_buy": [],
-        "today": 23000,
-        "last": 22650
+        "today": 22850,
+        "last": 23000
+    },
+    {
+        "code": "180640",
+        "name": "한진칼",
+        "to_buy": [],
+        "today": 119600,
+        "last": 131200
     },
     {
         "code": "039490",
         "name": "키움증권",
         "to_buy": [],
-        "today": 300000,
-        "last": 301500
+        "today": 298500,
+        "last": 300000
     },
     {
         "code": "307950",
         "name": "현대오토에버",
         "to_buy": [],
-        "today": 287500,
-        "last": 294500
+        "today": 290000,
+        "last": 287500
     },
     {
         "code": "000720",
         "name": "현대건설",
         "to_buy": [],
-        "today": 70000,
+        "today": 68700,
         "last": 70000
     },
     {
         "code": "005940",
         "name": "NH투자증권",
         "to_buy": [],
-        "today": 21300,
-        "last": 21350
+        "today": 21100,
+        "last": 21300
     },
     {
         "code": "161390",
         "name": "한국타이어앤테크놀로지",
         "to_buy": [],
-        "today": 59100,
-        "last": 59400
+        "today": 58100,
+        "last": 59100
     },
     {
         "code": "016360",
         "name": "삼성증권",
         "to_buy": [],
-        "today": 79700,
-        "last": 79500
+        "today": 79900,
+        "last": 79700
     },
     {
         "code": "090430",
         "name": "아모레퍼시픽",
         "to_buy": [],
-        "today": 120500,
-        "last": 121000
+        "today": 118900,
+        "last": 120500
     },
     {
         "code": "377300",
         "name": "카카오페이",
         "to_buy": [],
-        "today": 49400,
-        "last": 49050
-    },
-    {
-        "code": "032640",
-        "name": "LG유플러스",
-        "to_buy": [],
-        "today": 15490,
-        "last": 15420
+        "today": 48150,
+        "last": 49400
     },
     {
         "code": "029780",
         "name": "삼성카드",
         "to_buy": [],
-        "today": 56400,
-        "last": 56100
+        "today": 56000,
+        "last": 56400
+    },
+    {
+        "code": "032640",
+        "name": "LG유플러스",
+        "to_buy": [],
+        "today": 15060,
+        "last": 15490
     },
     {
         "code": "011070",
         "name": "LG이노텍",
         "to_buy": [],
         "today": 272500,
-        "last": 274500
+        "last": 272500
     },
     {
         "code": "021240",
         "name": "코웨이",
         "to_buy": [],
-        "today": 88900,
-        "last": 88600
+        "today": 87500,
+        "last": 88900
     },
     {
         "code": "000880",
         "name": "한화",
         "to_buy": [],
-        "today": 83400,
-        "last": 84300
-    },
-    {
-        "code": "006260",
-        "name": "LS",
-        "to_buy": [],
-        "today": 193500,
-        "last": 186000
+        "today": 80800,
+        "last": 83400
     },
     {
         "code": "064400",
         "name": "LG씨엔에스",
         "to_buy": [],
-        "today": 62800,
-        "last": 63500
+        "today": 62100,
+        "last": 62800
+    },
+    {
+        "code": "006260",
+        "name": "LS",
+        "to_buy": [],
+        "today": 189200,
+        "last": 193500
     },
     {
         "code": "034220",
         "name": "LG디스플레이",
-        "to_buy": [],
-        "today": 12050,
-        "last": 11920
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 11770,
+        "last": 12050
     },
     {
         "code": "128940",
         "name": "한미약품",
         "to_buy": [],
-        "today": 440500,
-        "last": 440000
+        "today": 450500,
+        "last": 440500
     },
     {
         "code": "241560",
         "name": "두산밥캣",
         "to_buy": [],
-        "today": 57800,
-        "last": 58000
-    },
-    {
-        "code": "454910",
-        "name": "두산로보틱스",
-        "to_buy": [],
-        "today": 78700,
-        "last": 82800
+        "today": 56500,
+        "last": 57800
     },
     {
         "code": "138930",
         "name": "BNK금융지주",
         "to_buy": [],
-        "today": 16200,
-        "last": 16140
+        "today": 16000,
+        "last": 16200
+    },
+    {
+        "code": "454910",
+        "name": "두산로보틱스",
+        "to_buy": [],
+        "today": 77300,
+        "last": 78700
     },
     {
         "code": "078930",
         "name": "GS",
         "to_buy": [
+            "band",
             "rsi"
         ],
-        "today": 54500,
-        "last": 55100
+        "today": 53500,
+        "last": 54500
     },
     {
         "code": "175330",
         "name": "JB금융지주",
         "to_buy": [],
-        "today": 26300,
-        "last": 26000
+        "today": 26050,
+        "last": 26300
     },
     {
         "code": "001040",
@@ -653,50 +672,50 @@
         "to_buy": [
             "rsi"
         ],
-        "today": 170000,
-        "last": 171900
+        "today": 167000,
+        "last": 170000
     },
     {
         "code": "028050",
         "name": "삼성E&A",
         "to_buy": [],
-        "today": 24750,
-        "last": 24850
+        "today": 24400,
+        "last": 24750
     },
     {
         "code": "009830",
         "name": "한화솔루션",
         "to_buy": [],
-        "today": 27550,
-        "last": 28100
+        "today": 26650,
+        "last": 27550
     },
     {
         "code": "036570",
         "name": "엔씨소프트",
         "to_buy": [],
-        "today": 209000,
-        "last": 199900
+        "today": 204500,
+        "last": 209000
     },
     {
         "code": "022100",
         "name": "포스코DX",
         "to_buy": [],
-        "today": 29450,
-        "last": 29750
+        "today": 28100,
+        "last": 29450
     },
     {
         "code": "271560",
         "name": "오리온",
         "to_buy": [],
-        "today": 107700,
-        "last": 106000
+        "today": 106700,
+        "last": 107700
     },
     {
-        "code": "251270",
-        "name": "넷마블",
+        "code": "004020",
+        "name": "현대제철",
         "to_buy": [],
-        "today": 49500,
-        "last": 49100
+        "today": 31200,
+        "last": 31650
     },
     {
         "code": "066970",
@@ -704,73 +723,78 @@
         "to_buy": [
             "rsi"
         ],
-        "today": 105200,
-        "last": 106600
+        "today": 103500,
+        "last": 105200
     },
     {
-        "code": "004020",
-        "name": "현대제철",
+        "code": "251270",
+        "name": "넷마블",
         "to_buy": [],
-        "today": 31650,
-        "last": 30750
+        "today": 48350,
+        "last": 49500
     },
     {
         "code": "001440",
         "name": "대한전선",
         "to_buy": [],
-        "today": 22550,
-        "last": 22700
-    },
-    {
-        "code": "062040",
-        "name": "산일전기",
-        "to_buy": [],
-        "today": 133600,
-        "last": 133400
-    },
-    {
-        "code": "051900",
-        "name": "LG생활건강",
-        "to_buy": [],
-        "today": 264000,
-        "last": 263000
-    },
-    {
-        "code": "035250",
-        "name": "강원랜드",
-        "to_buy": [],
-        "today": 18880,
-        "last": 18810
+        "today": 21900,
+        "last": 22550
     },
     {
         "code": "011790",
         "name": "SKC",
         "to_buy": [],
-        "today": 106000,
-        "last": 107200
+        "today": 105600,
+        "last": 106000
+    },
+    {
+        "code": "051900",
+        "name": "LG생활건강",
+        "to_buy": [],
+        "today": 260000,
+        "last": 264000
+    },
+    {
+        "code": "035250",
+        "name": "강원랜드",
+        "to_buy": [],
+        "today": 18540,
+        "last": 18880
+    },
+    {
+        "code": "062040",
+        "name": "산일전기",
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 129900,
+        "last": 133600
     },
     {
         "code": "450080",
         "name": "에코프로머티",
         "to_buy": [],
-        "today": 56800,
+        "today": 55500,
         "last": 56800
     },
     {
         "code": "302440",
         "name": "SK바이오사이언스",
         "to_buy": [
+            "band",
             "rsi"
         ],
-        "today": 50200,
-        "last": 50700
+        "today": 49100,
+        "last": 50200
     },
     {
         "code": "036460",
         "name": "한국가스공사",
-        "to_buy": [],
-        "today": 40850,
-        "last": 40950
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 40700,
+        "last": 40850
     },
     {
         "code": "111770",
@@ -778,211 +802,199 @@
         "to_buy": [
             "band"
         ],
-        "today": 84700,
-        "last": 86500
-    },
-    {
-        "code": "082740",
-        "name": "한화엔진",
-        "to_buy": [],
-        "today": 44700,
-        "last": 45200
+        "today": 83600,
+        "last": 84700
     },
     {
         "code": "002380",
         "name": "KCC",
         "to_buy": [],
-        "today": 417500,
-        "last": 416500
+        "today": 410500,
+        "last": 417500
+    },
+    {
+        "code": "082740",
+        "name": "한화엔진",
+        "to_buy": [],
+        "today": 42900,
+        "last": 44700
     },
     {
         "code": "017800",
         "name": "현대엘리베이터",
         "to_buy": [],
-        "today": 90400,
-        "last": 89600
+        "today": 90900,
+        "last": 90400
     },
     {
         "code": "052690",
         "name": "한전기술",
         "to_buy": [],
-        "today": 91000,
-        "last": 91800
+        "today": 90000,
+        "last": 91000
     },
     {
         "code": "011780",
         "name": "금호석유화학",
         "to_buy": [],
-        "today": 125400,
-        "last": 126000
+        "today": 122600,
+        "last": 125400
     },
     {
         "code": "097950",
         "name": "CJ제일제당",
         "to_buy": [],
-        "today": 211000,
+        "today": 210500,
         "last": 211000
     },
     {
         "code": "011170",
         "name": "롯데케미칼",
         "to_buy": [],
-        "today": 74200,
-        "last": 74100
-    },
-    {
-        "code": "012750",
-        "name": "에스원",
-        "to_buy": [],
-        "today": 79200,
-        "last": 78200
-    },
-    {
-        "code": "088350",
-        "name": "한화생명",
-        "to_buy": [],
-        "today": 3395,
-        "last": 3425
+        "today": 72500,
+        "last": 74200
     },
     {
         "code": "103140",
         "name": "풍산",
         "to_buy": [],
-        "today": 105100,
-        "last": 105200
+        "today": 105800,
+        "last": 105100
+    },
+    {
+        "code": "012750",
+        "name": "에스원",
+        "to_buy": [],
+        "today": 77600,
+        "last": 79200
     },
     {
         "code": "004990",
         "name": "롯데지주",
         "to_buy": [],
-        "today": 28000,
-        "last": 27700
+        "today": 27650,
+        "last": 28000
     },
     {
         "code": "026960",
         "name": "동서",
         "to_buy": [],
-        "today": 29350,
-        "last": 29200
+        "today": 28900,
+        "last": 29350
+    },
+    {
+        "code": "088350",
+        "name": "한화생명",
+        "to_buy": [],
+        "today": 3270,
+        "last": 3395
     },
     {
         "code": "383220",
         "name": "F&F",
         "to_buy": [],
-        "today": 74800,
-        "last": 75500
+        "today": 72900,
+        "last": 74800
     },
     {
         "code": "001450",
         "name": "현대해상",
         "to_buy": [],
-        "today": 31450,
-        "last": 30600
+        "today": 30350,
+        "last": 31450
     },
     {
         "code": "004370",
         "name": "농심",
         "to_buy": [],
-        "today": 444500,
-        "last": 433500
+        "today": 433000,
+        "last": 444500
     },
     {
         "code": "081660",
         "name": "미스토홀딩스",
         "to_buy": [],
-        "today": 44650,
-        "last": 44200
+        "today": 43700,
+        "last": 44650
     },
     {
         "code": "042670",
         "name": "HD현대인프라코어",
         "to_buy": [],
-        "today": 14090,
-        "last": 13880
-    },
-    {
-        "code": "009970",
-        "name": "영원무역홀딩스",
-        "to_buy": [],
-        "today": 194700,
-        "last": 201000
+        "today": 13800,
+        "last": 14090
     },
     {
         "code": "030000",
         "name": "제일기획",
         "to_buy": [],
-        "today": 22700,
-        "last": 22800
+        "today": 22500,
+        "last": 22700
     },
     {
-        "code": "139130",
-        "name": "iM금융지주",
+        "code": "009970",
+        "name": "영원무역홀딩스",
         "to_buy": [],
-        "today": 15760,
-        "last": 15610
+        "today": 191200,
+        "last": 194700
     },
     {
         "code": "204320",
         "name": "HL만도",
         "to_buy": [],
-        "today": 54300,
-        "last": 53400
+        "today": 53900,
+        "last": 54300
     },
     {
         "code": "008930",
         "name": "한미사이언스",
         "to_buy": [],
-        "today": 36800,
-        "last": 37200
+        "today": 37000,
+        "last": 36800
+    },
+    {
+        "code": "139130",
+        "name": "iM금융지주",
+        "to_buy": [],
+        "today": 15520,
+        "last": 15760
     },
     {
         "code": "014680",
         "name": "한솔케미칼",
         "to_buy": [],
-        "today": 221000,
-        "last": 224000
+        "today": 221500,
+        "last": 221000
     },
     {
         "code": "000240",
         "name": "한국앤컴퍼니",
-        "to_buy": [],
-        "today": 26100,
-        "last": 26200
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 25350,
+        "last": 26100
     },
     {
         "code": "004170",
         "name": "신세계",
         "to_buy": [],
-        "today": 254000,
-        "last": 251000
+        "today": 247500,
+        "last": 254000
     },
     {
         "code": "051600",
         "name": "한전KPS",
         "to_buy": [],
-        "today": 52600,
-        "last": 52800
+        "today": 52400,
+        "last": 52600
     },
     {
         "code": "139480",
         "name": "이마트",
         "to_buy": [],
-        "today": 85200,
-        "last": 85300
-    },
-    {
-        "code": "010060",
-        "name": "OCI홀딩스",
-        "to_buy": [],
-        "today": 120900,
-        "last": 121900
-    },
-    {
-        "code": "361610",
-        "name": "SK아이이테크놀로지",
-        "to_buy": [],
-        "today": 27350,
-        "last": 27400
+        "today": 83100,
+        "last": 85200
     },
     {
         "code": "009420",
@@ -990,29 +1002,36 @@
         "to_buy": [
             "rsi"
         ],
-        "today": 42500,
-        "last": 42700
+        "today": 42200,
+        "last": 42500
     },
     {
-        "code": "002790",
-        "name": "아모레퍼시픽홀딩스",
+        "code": "010060",
+        "name": "OCI홀딩스",
         "to_buy": [],
-        "today": 27600,
-        "last": 27300
+        "today": 116000,
+        "last": 120900
+    },
+    {
+        "code": "361610",
+        "name": "SK아이이테크놀로지",
+        "to_buy": [],
+        "today": 26450,
+        "last": 27350
     },
     {
         "code": "000120",
         "name": "CJ대한통운",
         "to_buy": [],
-        "today": 95200,
-        "last": 93700
+        "today": 94400,
+        "last": 95200
     },
     {
-        "code": "023530",
-        "name": "롯데쇼핑",
+        "code": "002790",
+        "name": "아모레퍼시픽홀딩스",
         "to_buy": [],
-        "today": 75500,
-        "last": 74700
+        "today": 27000,
+        "last": 27600
     },
     {
         "code": "028670",
@@ -1020,22 +1039,29 @@
         "to_buy": [
             "rsi"
         ],
-        "today": 3930,
-        "last": 3935
+        "today": 3905,
+        "last": 3930
+    },
+    {
+        "code": "023530",
+        "name": "롯데쇼핑",
+        "to_buy": [],
+        "today": 73500,
+        "last": 75500
     },
     {
         "code": "069960",
         "name": "현대백화점",
         "to_buy": [],
-        "today": 91200,
-        "last": 90400
+        "today": 90500,
+        "last": 91200
     },
     {
         "code": "069620",
         "name": "대웅제약",
         "to_buy": [],
-        "today": 177400,
-        "last": 178600
+        "today": 174200,
+        "last": 177400
     },
     {
         "code": "018880",
@@ -1043,334 +1069,355 @@
         "to_buy": [
             "rsi"
         ],
-        "today": 2985,
-        "last": 3015
+        "today": 2960,
+        "last": 2985
     },
     {
         "code": "005850",
         "name": "에스엘",
         "to_buy": [],
-        "today": 42900,
-        "last": 42500
+        "today": 43200,
+        "last": 42900
     },
     {
         "code": "011210",
         "name": "현대위아",
         "to_buy": [],
-        "today": 71800,
-        "last": 71900
+        "today": 73500,
+        "last": 71800
     },
     {
         "code": "006040",
         "name": "동원산업",
         "to_buy": [],
-        "today": 43350,
-        "last": 43000
+        "today": 42300,
+        "last": 43350
+    },
+    {
+        "code": "282330",
+        "name": "BGF리테일",
+        "to_buy": [
+            "band"
+        ],
+        "today": 107700,
+        "last": 109300
     },
     {
         "code": "192820",
         "name": "코스맥스",
         "to_buy": [],
-        "today": 167200,
-        "last": 168100
-    },
-    {
-        "code": "282330",
-        "name": "BGF리테일",
-        "to_buy": [],
-        "today": 109300,
-        "last": 110200
+        "today": 162300,
+        "last": 167200
     },
     {
         "code": "112610",
         "name": "씨에스윈드",
         "to_buy": [],
-        "today": 43550,
-        "last": 43250
+        "today": 42600,
+        "last": 43550
     },
     {
         "code": "006280",
         "name": "녹십자",
         "to_buy": [],
-        "today": 156800,
-        "last": 159700
-    },
-    {
-        "code": "007070",
-        "name": "GS리테일",
-        "to_buy": [],
-        "today": 21450,
-        "last": 21500
-    },
-    {
-        "code": "008770",
-        "name": "호텔신라",
-        "to_buy": [],
-        "today": 45300,
-        "last": 45000
-    },
-    {
-        "code": "073240",
-        "name": "금호타이어",
-        "to_buy": [],
-        "today": 6100,
-        "last": 6080
-    },
-    {
-        "code": "006360",
-        "name": "GS건설",
-        "to_buy": [],
-        "today": 19780,
-        "last": 19900
+        "today": 153300,
+        "last": 156800
     },
     {
         "code": "001430",
         "name": "세아베스틸지주",
         "to_buy": [],
-        "today": 47000,
-        "last": 44500
+        "today": 49300,
+        "last": 47000
+    },
+    {
+        "code": "008770",
+        "name": "호텔신라",
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 44850,
+        "last": 45300
+    },
+    {
+        "code": "007070",
+        "name": "GS리테일",
+        "to_buy": [
+            "band",
+            "rsi"
+        ],
+        "today": 20750,
+        "last": 21450
     },
     {
         "code": "457190",
         "name": "이수스페셜티케미컬",
         "to_buy": [],
-        "today": 55400,
-        "last": 55600
+        "today": 56800,
+        "last": 55400
+    },
+    {
+        "code": "073240",
+        "name": "금호타이어",
+        "to_buy": [],
+        "today": 5900,
+        "last": 6100
+    },
+    {
+        "code": "006360",
+        "name": "GS건설",
+        "to_buy": [],
+        "today": 19250,
+        "last": 19780
     },
     {
         "code": "017960",
         "name": "한국카본",
         "to_buy": [],
-        "today": 31800,
-        "last": 34300
+        "today": 31400,
+        "last": 31800
     },
     {
         "code": "375500",
         "name": "DL이앤씨",
         "to_buy": [],
-        "today": 41800,
-        "last": 41950
-    },
-    {
-        "code": "047040",
-        "name": "대우건설",
-        "to_buy": [],
-        "today": 3795,
-        "last": 3775
+        "today": 40800,
+        "last": 41800
     },
     {
         "code": "007310",
         "name": "오뚜기",
         "to_buy": [],
-        "today": 389000,
-        "last": 388000
+        "today": 388500,
+        "last": 389000
+    },
+    {
+        "code": "047040",
+        "name": "대우건설",
+        "to_buy": [],
+        "today": 3700,
+        "last": 3795
     },
     {
         "code": "034230",
         "name": "파라다이스",
         "to_buy": [],
-        "today": 16430,
-        "last": 16400
-    },
-    {
-        "code": "007340",
-        "name": "DN오토모티브",
-        "to_buy": [],
-        "today": 25150,
-        "last": 25550
+        "today": 16160,
+        "last": 16430
     },
     {
         "code": "161890",
         "name": "한국콜마",
-        "to_buy": [],
-        "today": 62000,
-        "last": 62100
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 61100,
+        "last": 62000
+    },
+    {
+        "code": "007340",
+        "name": "DN오토모티브",
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 24500,
+        "last": 25150
     },
     {
         "code": "300720",
         "name": "한일시멘트",
         "to_buy": [],
-        "today": 19300,
-        "last": 19310
-    },
-    {
-        "code": "003090",
-        "name": "대웅",
-        "to_buy": [
-            "band"
-        ],
-        "today": 23050,
-        "last": 23750
+        "today": 19280,
+        "last": 19300
     },
     {
         "code": "000080",
         "name": "하이트진로",
         "to_buy": [],
-        "today": 19000,
-        "last": 18980
+        "today": 18940,
+        "last": 19000
+    },
+    {
+        "code": "003090",
+        "name": "대웅",
+        "to_buy": [
+            "band",
+            "rsi"
+        ],
+        "today": 22500,
+        "last": 23050
     },
     {
         "code": "005300",
         "name": "롯데칠성",
         "to_buy": [],
-        "today": 143500,
-        "last": 135300
+        "today": 140100,
+        "last": 143500
     },
     {
         "code": "001800",
         "name": "오리온홀딩스",
         "to_buy": [],
-        "today": 20800,
-        "last": 20750
+        "today": 20550,
+        "last": 20800
     },
     {
         "code": "120110",
         "name": "코오롱인더",
         "to_buy": [],
-        "today": 46150,
-        "last": 46200
-    },
-    {
-        "code": "285130",
-        "name": "SK케미칼",
-        "to_buy": [],
-        "today": 69500,
-        "last": 70100
-    },
-    {
-        "code": "004000",
-        "name": "롯데정밀화학",
-        "to_buy": [],
-        "today": 46550,
-        "last": 47250
-    },
-    {
-        "code": "192080",
-        "name": "더블유게임즈",
-        "to_buy": [],
-        "today": 55000,
-        "last": 55000
+        "today": 46300,
+        "last": 46150
     },
     {
         "code": "185750",
         "name": "종근당",
         "to_buy": [],
-        "today": 85200,
-        "last": 85100
+        "today": 85500,
+        "last": 85200
     },
     {
-        "code": "071320",
-        "name": "지역난방공사",
+        "code": "004000",
+        "name": "롯데정밀화학",
         "to_buy": [],
-        "today": 99200,
-        "last": 99600
+        "today": 45350,
+        "last": 46550
+    },
+    {
+        "code": "192080",
+        "name": "더블유게임즈",
+        "to_buy": [],
+        "today": 54400,
+        "last": 55000
+    },
+    {
+        "code": "285130",
+        "name": "SK케미칼",
+        "to_buy": [
+            "band"
+        ],
+        "today": 66600,
+        "last": 69500
     },
     {
         "code": "009240",
         "name": "한샘",
         "to_buy": [],
-        "today": 48350,
-        "last": 49250
+        "today": 48500,
+        "last": 48350
     },
     {
-        "code": "280360",
-        "name": "롯데웰푸드",
-        "to_buy": [],
-        "today": 119200,
-        "last": 118200
+        "code": "071320",
+        "name": "지역난방공사",
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 98000,
+        "last": 99200
     },
     {
         "code": "137310",
         "name": "에스디바이오센서",
         "to_buy": [],
         "today": 9030,
-        "last": 9120
+        "last": 9030
+    },
+    {
+        "code": "280360",
+        "name": "롯데웰푸드",
+        "to_buy": [
+            "band"
+        ],
+        "today": 116600,
+        "last": 119200
     },
     {
         "code": "298020",
         "name": "효성티앤씨",
         "to_buy": [],
-        "today": 237500,
-        "last": 238000
-    },
-    {
-        "code": "000670",
-        "name": "영풍",
-        "to_buy": [
-            "band",
-            "rsi"
-        ],
-        "today": 50600,
-        "last": 55800
+        "today": 235000,
+        "last": 237500
     },
     {
         "code": "006650",
         "name": "대한유화",
         "to_buy": [],
-        "today": 147900,
-        "last": 148700
+        "today": 148500,
+        "last": 147900
+    },
+    {
+        "code": "000670",
+        "name": "영풍",
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 49750,
+        "last": 50600
+    },
+    {
+        "code": "004490",
+        "name": "세방전지",
+        "to_buy": [
+            "band"
+        ],
+        "today": 64700,
+        "last": 66400
     },
     {
         "code": "114090",
         "name": "GKL",
         "to_buy": [],
-        "today": 15100,
-        "last": 15170
-    },
-    {
-        "code": "004490",
-        "name": "세방전지",
-        "to_buy": [],
-        "today": 66400,
-        "last": 65500
+        "today": 14590,
+        "last": 15100
     },
     {
         "code": "003240",
         "name": "태광산업",
         "to_buy": [],
-        "today": 780000,
-        "last": 777000
+        "today": 776000,
+        "last": 780000
     },
     {
         "code": "298050",
         "name": "HS효성첨단소재",
         "to_buy": [],
-        "today": 191500,
-        "last": 191200
+        "today": 189100,
+        "last": 191500
     },
     {
         "code": "093370",
         "name": "후성",
         "to_buy": [],
-        "today": 7720,
-        "last": 7830
+        "today": 7460,
+        "last": 7720
     },
     {
         "code": "000210",
         "name": "DL",
-        "to_buy": [],
-        "today": 38550,
-        "last": 38900
+        "to_buy": [
+            "band"
+        ],
+        "today": 37650,
+        "last": 38550
     },
     {
         "code": "069260",
         "name": "TKG휴켐스",
         "to_buy": [],
-        "today": 19640,
-        "last": 19670
+        "today": 19170,
+        "last": 19640
     },
     {
         "code": "005250",
         "name": "녹십자홀딩스",
         "to_buy": [],
-        "today": 16520,
-        "last": 16570
+        "today": 16320,
+        "last": 16520
     },
     {
         "code": "014820",
         "name": "동원시스템즈",
         "to_buy": [],
-        "today": 25950,
+        "today": 25650,
         "last": 25950
     },
     {
@@ -1378,30 +1425,21 @@
         "name": "대상",
         "to_buy": [],
         "today": 21400,
-        "last": 21600
+        "last": 21400
     },
     {
         "code": "002840",
         "name": "미원상사",
         "to_buy": [],
-        "today": 154400,
-        "last": 154300
+        "today": 154900,
+        "last": 154400
     },
     {
         "code": "268280",
         "name": "미원에스씨",
         "to_buy": [],
-        "today": 146200,
-        "last": 145600
-    },
-    {
-        "code": "008730",
-        "name": "율촌화학",
-        "to_buy": [
-            "rsi"
-        ],
-        "today": 27400,
-        "last": 27800
+        "today": 146800,
+        "last": 146200
     },
     {
         "code": "002030",
@@ -1409,21 +1447,33 @@
         "to_buy": [
             "rsi"
         ],
-        "today": 326500,
-        "last": 318500
+        "today": 325500,
+        "last": 326500
+    },
+    {
+        "code": "008730",
+        "name": "율촌화학",
+        "to_buy": [
+            "band",
+            "rsi"
+        ],
+        "today": 26700,
+        "last": 27400
     },
     {
         "code": "005420",
         "name": "코스모화학",
         "to_buy": [],
-        "today": 15410,
-        "last": 15430
+        "today": 15160,
+        "last": 15410
     },
     {
         "code": "003030",
         "name": "세아제강지주",
-        "to_buy": [],
-        "today": 129800,
-        "last": 128700
+        "to_buy": [
+            "rsi"
+        ],
+        "today": 127000,
+        "last": 129800
     }
 ]
