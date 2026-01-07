@@ -1,28 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "target": "es6",
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "sourceMap": true,
-    "allowJs": true,
-    "strict": true,
-    "noEmit": false,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "noUncheckedIndexedAccess": true,
-    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "bundler",
     "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    "paths": {
-      "@src/*": ["src/*"]
-    },
-    "jsxImportSource": "@emotion/react",
-    "types": ["@emotion/react/types/css-prop"]
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "."
   },
-  "exclude": ["node_modules"],
-  "include": ["src", "@types", "types", "src/svg.d.ts", "src/**/*.md", "src/**/*.txt"]
+  "exclude": ["node_modules"]
 }

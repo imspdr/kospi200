@@ -1,156 +1,65 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const deps = require('./package.json').dependencies;
 
-module.exports = (env) => {
-  if(env.development){
-    return {
-      mode: "development",
-      entry: path.join(__dirname, "src/index.tsx"),
-      devtool: "eval-source-map",
-      output: {
-        path: path.join(__dirname, "docs"),
-        filename: "main.[contenthash].js",
-        publicPath: "/kospi200/",
-      },
-      resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-        alias: {
-          "@src": path.resolve(__dirname, "src/"),
+module.exports = {
+  entry: './src/index.tsx',
+  output: {
+    path: path.resolve(__dirname, 'docs'),
+    filename: 'bundle.js',
+    publicPath: process.env.NODE_ENV === 'production' ? '/kospi200/' : 'auto',
+    clean: true,
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(ts|tsx|js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            configFile: path.resolve(__dirname, 'babel.config.js'),
+          },
         },
       },
-      plugins: [
-        new HtmlWebpackPlugin({
-          template: path.resolve(__dirname, "src/index.ejs"),
-          favicon: "imspdr.png",
-          filename: "index.html",
-          inject: 'body',
-        }),
-      ],
-      module: {
-        rules: [
-          {
-            test: /\.(tsx|ts|jsx|js)?$/,
-            exclude: /node_modules/,
-            use: ["babel-loader", "ts-loader"],
-          },
-          {
-            test: /\.(css)?$/,
-            use: ["style-loader", "css-loader"],
-          },
-          {
-            test: /\.s[ac]ss$/i,
-            use: ["style-loader", "css-loader"],
-          },
-          {
-            test: /\.(md|txt)$/,
-            use: 'raw-loader',
-          },
-          {
-            test: /\.svg$/i,
-            issuer: /\.[jt]sx?$/,
-            use: [
-              {
-                loader: "@svgr/webpack",
-              },
-              {
-                loader: "file-loader",
-              },
-              {
-                loader: "url-loader",
-              },
-            ],
-          },
-          {
-            test: /\.(gif|png|jpe?g|ttf|mp3|ogg|wav|woff|otf|jpg|ico)$/,
-            type: "asset/resource",
-          },
-        ],
+    ],
+  },
+  plugins: [
+    new ModuleFederationPlugin({
+      name: 'kospi200',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './App': './src/App',
       },
-      devServer: {
-        historyApiFallback: {
-          index: "/kospi200/"
-        },
-        host: "localhost",
-        port: 4545,
+      shared: {
+        react: { singleton: true, requiredVersion: deps.react },
+        'react-dom': { singleton: true, requiredVersion: deps['react-dom'] },
+        '@emotion/react': { singleton: true, requiredVersion: deps['@emotion/react'] },
+        '@emotion/styled': { singleton: true, requiredVersion: deps['@emotion/styled'] },
       },
-    }
-  } else {  
-    return {
-      mode: "production",
-      entry: path.join(__dirname, "src/index.tsx"),
-      devtool: false,
-      output: {
-        path: path.join(__dirname, "docs"),
-        filename: "main.[contenthash].js",
-        publicPath: "/kospi200/",
-      },
-      resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-        alias: {
-          "@src": path.resolve(__dirname, "src/"),
-        },
-      },
-      plugins: [
-        new HtmlWebpackPlugin({
-          template: path.resolve(__dirname, "src/index.ejs"),
-          favicon: "imspdr.png",
-          filename: "index.html",
-          inject: 'body',
-        }),
-        new HtmlWebpackPlugin({
-          template: path.resolve(__dirname, "src/404.html"),
-          filename: "404.html",
-        }),
-        new CopyWebpackPlugin({
-          patterns: [
-            {
-              from: path.resolve(__dirname, 'public/kospi200'), 
-              to: path.resolve(__dirname, 'docs/'), 
-            },
-          ],
-        }),
-      ],
-      module: {
-        rules: [
-          {
-            test: /\.(tsx|ts|jsx|js)?$/,
-            exclude: /node_modules/,
-            use: ["babel-loader", "ts-loader"],
-          },
-          {
-            test: /\.(css)?$/,
-            use: ["style-loader", "css-loader"],
-          },
-          {
-            test: /\.s[ac]ss$/i,
-            use: ["style-loader", "css-loader"],
-          },
-          {
-            test: /\.(md|txt)$/,
-            use: 'raw-loader',
-          },
-          {
-            test: /\.svg$/i,
-            issuer: /\.[jt]sx?$/,
-            use: [
-              {
-                loader: "@svgr/webpack",
-              },
-              {
-                loader: "file-loader",
-              },
-              {
-                loader: "url-loader",
-              },
-            ],
-          },
-          {
-            test: /\.(gif|png|jpe?g|ttf|mp3|ogg|wav|woff|otf|jpg|ico)$/,
-            type: "asset/resource",
-          }
-        ],
-      },
-    };
-  }
+    }),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      favicon: path.resolve(__dirname, 'imspdr.png'),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'public/data', to: 'data', noErrorOnMissing: true }],
+    }),
+  ],
+  devServer: {
+    port: 3200,
+    hot: true,
+    historyApiFallback: true,
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+  },
 };

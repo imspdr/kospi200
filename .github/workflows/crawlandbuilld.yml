@@ -48,7 +48,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Auto-update crawl data from GitHub Actions" || exit 0
+          git commit -m "auto-update crawl data from GitHub Actions" || exit 0
           git push
 
       - name: Setup Pages

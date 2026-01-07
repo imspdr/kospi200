@@ -1,0 +1,94 @@
+import { Typography } from '@imspdr/ui';
+import styled from '@emotion/styled';
+
+export const CardContainer = styled.div<{ isFolded?: boolean }>`
+  background: var(--imspdr-background-bg2);
+  border: 1px solid var(--imspdr-background-bg3);
+  border-radius: 8px;
+  padding: ${({ isFolded }) => (isFolded ? '8px' : '10px 12px')};
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  align-items: ${({ isFolded }) => (isFolded ? 'center' : 'stretch')};
+
+  &:hover {
+    border-color: var(--imspdr-primary-main);
+    background: var(--imspdr-background-bg1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--imspdr-shadow);
+  }
+`;
+
+export const TopRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+export const NameSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+`;
+
+export const StarButton = styled.button<{ isStarred: boolean }>`
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: ${({ isStarred }) => (isStarred ? '#FFD700' : 'var(--imspdr-foreground-fg3)')};
+  font-size: 14px;
+`;
+
+export const StockName = styled(Typography)`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--imspdr-foreground-fg1);
+  font-weight: 500;
+`;
+
+export const SignalTag = styled.div`
+  background: var(--imspdr-primary-main);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+`;
+
+export const BottomRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+`;
+
+export const Price = styled(Typography)`
+  color: var(--imspdr-foreground-fg1);
+`;
+
+export const Change = styled(Typography)<{ trend: 'up' | 'down' | 'flat' }>`
+  color: ${({ trend }) => (trend === 'up' ? '#e23d29' : trend === 'down' ? '#1e75d0' : '#999999')};
+`;
+
+export const FoldedIcon = styled(Typography)`
+  color: var(--imspdr-primary-main);
+`;
+
+export const SignalDot = styled.div`
+  width: 6px;
+  height: 6px;
+  background: var(--imspdr-primary-main);
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+`;

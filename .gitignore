@@ -7,3 +7,4 @@ dist
 !.gitkeep
 node_modules/
 docs/
+public/data*.json

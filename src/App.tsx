@@ -1,69 +1,83 @@
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Route, Routes, Navigate } from "react-router-dom";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { isDarkTheme, screenSize, stockInfos } from "./store/atoms";
-import { css } from "@emotion/react";
-import { unselectable } from "@src/util";
-import MainPage from "./pages/MainPage";
-import DetailPage from "./pages/DetailPage";
-import { useEffect } from "react";
-import { StockInfo } from "./store/types";
+import { useState, FC, useEffect } from 'react';
 
-const lightTheme = createTheme({
-  palette: {
-    mode: "light",
+import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import { ModalProvider, ThemeProvider, ToastProvider } from '@imspdr/ui';
+import { useDeviceType } from '@imspdr/ui';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import { useDisplayStocks } from './hooks/useDisplayStocks';
+import { useStocks } from './hooks/useKospiData';
+import { DetailPage } from './pages/DetailPage';
+import ListPage from './pages/ListPage';
+import { LayoutContainer, MainContent } from './styled';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      gcTime: 1000 * 60 * 10, // 10 minutes
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
   },
 });
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-  },
-});
+const App: FC = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <ToastProvider>
+          <ModalProvider>
+            <BrowserRouter
+              basename={
+                window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+                  ? '/'
+                  : '/kospi200'
+              }
+            >
+              <AppLayout />
+            </BrowserRouter>
+          </ModalProvider>
+        </ToastProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
+};
 
-export default function App() {
-  const isDark = useRecoilValue(isDarkTheme);
-  const setSize = useSetRecoilState(screenSize);
-  const setStockInfos = useSetRecoilState(stockInfos);
+const AppLayout: FC = () => {
+  const navigate = useNavigate();
+  const { isPc } = useDeviceType();
+  const { data: stocks } = useStocks();
+  const [isFolded, setIsFolded] = useState(!isPc);
+  const { searchOptions } = useDisplayStocks(stocks ?? []);
 
-  const resize = () => {
-    setSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
-
-  const fetchStockInfos = async () => {
-    const res = await fetch("/kospi200/codes.json");
-    if (!res.ok) {
-      setStockInfos([]);
-    }
-    const jsonData: StockInfo[] = await res.json();
-    setStockInfos(jsonData);
-  };
-
+  // Update isFolded when device type changes
   useEffect(() => {
-    resize();
-    window.addEventListener("resize", resize);
-    fetchStockInfos();
-    return () => window.removeEventListener("resize", resize);
-  }, []);
+    setIsFolded(!isPc);
+  }, [isPc]);
+
+  const handleStockClick = (code: string) => {
+    navigate(`/detail/${code}`);
+  };
 
   return (
-    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-      <div
-        css={css`
-          ${unselectable}
-          width: 100%;
-          height: 100%;
-        `}
-      >
+    <LayoutContainer>
+      <Header
+        onHomeClick={() => navigate('/list')}
+        searchOptions={searchOptions}
+        onSearchSelect={(opt) => handleStockClick(opt.value)}
+      />
+      <MainContent isFolded={isFolded}>
         <Routes>
-          <Route path="/" element={<MainPage />} />
+          <Route path="/list" element={<ListPage />} />
           <Route path="/detail/:code" element={<DetailPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/" element={<Navigate to="/list" replace />} />
         </Routes>
-      </div>
-    </ThemeProvider>
+      </MainContent>
+      <Sidebar isFolded={isFolded} onToggleFold={() => setIsFolded(!isFolded)} />
+    </LayoutContainer>
   );
-}
+};
+
+export default App;
