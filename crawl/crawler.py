@@ -17,7 +17,7 @@ if __name__ == "__main__":
     codes_with_to_buy = []
 
     for i, stock in enumerate(kospi200):
-        time.sleep(1)
+        time.sleep(0.05)
         code = stock["code"]
         filename = f"data{code}.json"
         try:
