@@ -1,12 +1,14 @@
-name: run-python-crawler-build-page-deploy
+name: Daily Crawl and Deploy
+
 permissions:
   contents: write
   pages: write
   id-token: write
+  packages: read
 
 on:
   schedule:
-    - cron: "0 9 * * 1-5"
+    - cron: "0 9 * * 1-5" # 18:00 KST (09:00 UTC) Mon-Fri
   workflow_dispatch:
 
 jobs:
@@ -36,20 +38,36 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@imspdr'
 
       - name: Install dependencies
         run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Build Frontend
         run: npm run build
 
-      - name: Commit and Push Changes
+      - name: Commit and Push Changes (Weekly - Fridays)
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "auto-update crawl data from GitHub Actions" || exit 0
-          git push
+          # 1=Mon, ..., 5=Fri, 6=Sat, 7=Sun
+          # Check day of week in UTC (which corresponds to KST Friday evening for 9AM UTC run)
+          if [ "$(date +%u)" -eq 5 ]; then
+             git config --global user.name "github-actions[bot]"
+             git config --global user.email "github-actions[bot]@users.noreply.github.com"
+             git add .
+             # Check if there are changes to commit
+             if ! git diff-index --quiet HEAD; then
+               git commit -m "auto-update crawl data from GitHub Actions (Weekly)"
+               git push
+             else
+               echo "No changes to commit."
+             fi
+          else
+             echo "Today is not Friday. Skipping commit."
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
