@@ -9,7 +9,7 @@ import time
 if __name__ == "__main__":
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    store_path = os.path.join(BASE_DIR, "../public/data/")
+    store_path = os.path.join(BASE_DIR, "../public/kospi200/")
     os.makedirs(store_path, exist_ok=True)
 
     codes_filename = "codes.json"

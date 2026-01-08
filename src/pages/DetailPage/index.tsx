@@ -13,7 +13,7 @@ import { Container, LeftColumn, RightColumn, MobileContainer, ChartWrapper } fro
 export const DetailPage: FC = () => {
   const { code } = useParams<{ code: string }>();
   const { isPc } = useDeviceType();
-  const { data: stock, isLoading } = useStockDetail(code || null);
+  const { data: stock, isLoading, isError } = useStockDetail(code || null);
   const { addRecentView } = useRecentlyViewed([]);
 
   useEffect(() => {
@@ -25,7 +25,15 @@ export const DetailPage: FC = () => {
   if (isLoading) {
     return (
       <div style={{ padding: '24px' }}>
-        <Typography>Loading...</Typography>
+        <Typography>데이터를 불러오는 중입니다...</Typography>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div style={{ padding: '24px' }}>
+        <Typography style={{ color: 'red' }}>데이터를 불러오는 중 오류가 발생했습니다.</Typography>
       </div>
     );
   }
@@ -33,7 +41,7 @@ export const DetailPage: FC = () => {
   if (!stock) {
     return (
       <div style={{ padding: '24px' }}>
-        <Typography>Stock not found</Typography>
+        <Typography>주식 정보를 찾을 수 없습니다.</Typography>
       </div>
     );
   }

@@ -47,7 +47,7 @@ export const useStocks = () => {
   return useQuery<Stock[]>({
     queryKey: ['stocks'],
     queryFn: async () => {
-      const { data } = await axios.get('/data/codes.json');
+      const { data } = await axios.get('/kospi200/codes.json');
       return data;
     },
   });
@@ -61,7 +61,7 @@ export const useStockDetail = (code: string | null) => {
     queryKey: ['stock', code],
     queryFn: async () => {
       if (!code) throw new Error('Stock code is required');
-      const { data } = await axios.get(`/data/data${code}.json`);
+      const { data } = await axios.get(`/kospi200/data${code}.json`);
       return data;
     },
     enabled: !!code, // Only run if code is provided

@@ -9,13 +9,23 @@ import { MobileList } from '../../components/MobileList';
 
 const ListPage: FC = () => {
   const { isPc } = useDeviceType();
-  const { isLoading } = useStocks();
+  const { isLoading, isError } = useStocks();
 
   if (isLoading) {
     return (
       <LoadingContainer>
         <Typography variant="body" level={1}>
-          로딩 중...
+          데이터를 불러오는 중입니다...
+        </Typography>
+      </LoadingContainer>
+    );
+  }
+
+  if (isError) {
+    return (
+      <LoadingContainer>
+        <Typography variant="body" level={1} style={{ color: 'red' }}>
+          데이터를 불러오는 중 오류가 발생했습니다.
         </Typography>
       </LoadingContainer>
     );
