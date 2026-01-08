@@ -58,7 +58,7 @@ module.exports = (env, argv) => {
         filename: "404.html",
       }),
       new CopyWebpackPlugin({
-        patterns: [{ from: 'public/kospi200', to: 'kospi200', noErrorOnMissing: true }],
+        patterns: [{ from: 'public/data', to: 'data', noErrorOnMissing: true }],
       }),
       new CleanWebpackPlugin(),
     ],

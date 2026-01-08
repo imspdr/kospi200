@@ -1,5 +1,5 @@
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 export interface Stock {
   code: string;
@@ -40,14 +40,16 @@ export interface StockDetail extends Stock {
   news: NewsItem[];
 }
 
+const API_PATH = process.env.NODE_ENV === "production" ? "/kospi200/" : "/";
+
 /**
  * Fetch all KOSPI 200 codes and summaries
  */
 export const useStocks = () => {
   return useQuery<Stock[]>({
-    queryKey: ['stocks'],
+    queryKey: ["stocks"],
     queryFn: async () => {
-      const { data } = await axios.get('/kospi200/codes.json');
+      const { data } = await axios.get(API_PATH + "data/codes.json");
       return data;
     },
   });
@@ -58,10 +60,10 @@ export const useStocks = () => {
  */
 export const useStockDetail = (code: string | null) => {
   return useQuery<StockDetail>({
-    queryKey: ['stock', code],
+    queryKey: ["stock", code],
     queryFn: async () => {
-      if (!code) throw new Error('Stock code is required');
-      const { data } = await axios.get(`/kospi200/data${code}.json`);
+      if (!code) throw new Error("Stock code is required");
+      const { data } = await axios.get(API_PATH + `data/data${code}.json`);
       return data;
     },
     enabled: !!code, // Only run if code is provided
