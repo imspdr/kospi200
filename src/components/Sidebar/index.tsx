@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { HiChevronDoubleLeft, HiChevronDoubleRight, HiClock, HiStar } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
-import { Typography } from '@imspdr/ui';
+import { Typography, useDeviceType } from '@imspdr/ui';
 import { useStocks } from '../../hooks/useKospiData';
 import { useRecentlyViewed } from '../../hooks/useRecentlyViewed';
 import { useStarred } from '../../hooks/useStarred';
@@ -27,6 +27,7 @@ interface SidebarProps {
 export default function Sidebar({ isFolded, onToggleFold }: SidebarProps) {
   const navigate = useNavigate();
   const { data: stocks } = useStocks();
+  const { isPc } = useDeviceType();
   const { toggleStar, isStarred, starredStocks } = useStarred(stocks ?? []);
   const { recentlyViewedStocks } = useRecentlyViewed(stocks ?? []);
 
@@ -34,6 +35,9 @@ export default function Sidebar({ isFolded, onToggleFold }: SidebarProps) {
 
   const handleStockClick = (code: string) => {
     navigate(`/detail/${code}`);
+    if (!isPc && !isFolded) {
+      onToggleFold();
+    }
   };
 
   const renderStockList = (stocks: any[]) => {

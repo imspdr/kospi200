@@ -17,11 +17,13 @@ export const CardContainer = styled.div<{ isFolded?: boolean }>`
   position: relative;
   align-items: ${({ isFolded }) => (isFolded ? 'center' : 'stretch')};
 
-  &:hover {
-    border-color: var(--imspdr-primary-main);
-    background: var(--imspdr-background-bg1);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--imspdr-shadow);
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--imspdr-primary-main);
+      background: var(--imspdr-background-bg1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--imspdr-shadow);
+    }
   }
 `;
 
@@ -75,7 +77,7 @@ export const Price = styled(Typography)`
   color: var(--imspdr-foreground-fg1);
 `;
 
-export const Change = styled(Typography)<{ trend: 'up' | 'down' | 'flat' }>`
+export const Change = styled(Typography) <{ trend: 'up' | 'down' | 'flat' }>`
   color: ${({ trend }) => (trend === 'up' ? '#e23d29' : trend === 'down' ? '#1e75d0' : '#999999')};
 `;
 

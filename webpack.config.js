@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, 'docs'),
       filename: 'bundle.js',
-      publicPath: isProduction ? '/kospi200/' : 'auto',
+      publicPath: isProduction ? '/kospi200/' : '/',
       clean: true,
     },
     resolve: {

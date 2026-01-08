@@ -66,8 +66,8 @@ export const SimpleStockChart: FC<SimpleStockChartProps> = ({ data }) => {
       grid: {
         left: '5%',
         right: '12%',
-        top: '10%',
-        bottom: '15%',
+        top: '5%',
+        bottom: '5%',
       },
       xAxis: {
         type: 'category',

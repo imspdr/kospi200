@@ -65,13 +65,15 @@ const SidebarIconButton = styled.button`
   cursor: pointer;
   transition: all 0.2s;
 
-  &:hover {
-    background: var(--imspdr-background-bg2);
-    color: var(--imspdr-primary-main);
+  @media (hover: hover) {
+    &:hover {
+      background: var(--imspdr-background-bg2);
+      color: var(--imspdr-primary-main);
+    }
   }
 `;
 
-export const TabButton = styled(SidebarIconButton)<{ isActive?: boolean }>`
+export const TabButton = styled(SidebarIconButton) <{ isActive?: boolean }>`
   background: ${({ isActive }) => (isActive ? 'var(--imspdr-background-bg3)' : 'transparent')};
   color: ${({ isActive }) =>
     isActive ? 'var(--imspdr-primary-main)' : 'var(--imspdr-foreground-fg2)'};
