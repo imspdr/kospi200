@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const deps = require('./package.json').dependencies;
 
 module.exports = (env, argv) => {
-  const isProduction = argv.mode === 'production';
+  const isProduction = argv.mode === 'production' || process.env.NODE_ENV === 'production';
 
   return {
     entry: './src/index.tsx',
