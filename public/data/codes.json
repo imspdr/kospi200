@@ -3,547 +3,568 @@
         "code": "005930",
         "name": "삼성전자",
         "toBuy": [],
-        "today": 139000,
-        "last": 138800,
-        "changePercent": 0.1440922190201729,
-        "absChangePercent": 0.1440922190201729
+        "today": 148900,
+        "last": 143900,
+        "changePercent": 3.4746351633078527,
+        "absChangePercent": 3.4746351633078527
     },
     {
         "code": "000660",
         "name": "SK하이닉스",
         "toBuy": [],
-        "today": 744000,
-        "last": 756000,
-        "changePercent": -1.5873015873015872,
-        "absChangePercent": 1.5873015873015872
+        "today": 756000,
+        "last": 749000,
+        "changePercent": 0.9345794392523363,
+        "absChangePercent": 0.9345794392523363
+    },
+    {
+        "code": "373220",
+        "name": "LG에너지솔루션",
+        "toBuy": [],
+        "today": 391000,
+        "last": 392000,
+        "changePercent": -0.25510204081632654,
+        "absChangePercent": 0.25510204081632654
     },
     {
         "code": "207940",
         "name": "삼성바이오로직스",
         "toBuy": [],
-        "today": 1878000,
-        "last": 1885000,
-        "changePercent": -0.3713527851458886,
-        "absChangePercent": 0.3713527851458886
-    },
-    {
-        "code": "373220",
-        "name": "LG에너지솔루션",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 363000,
-        "last": 366000,
-        "changePercent": -0.819672131147541,
-        "absChangePercent": 0.819672131147541
+        "today": 1947000,
+        "last": 1965000,
+        "changePercent": -0.9160305343511451,
+        "absChangePercent": 0.9160305343511451
     },
     {
         "code": "005380",
         "name": "현대차",
         "toBuy": [],
-        "today": 366000,
-        "last": 340500,
-        "changePercent": 7.488986784140969,
-        "absChangePercent": 7.488986784140969
-    },
-    {
-        "code": "329180",
-        "name": "HD현대중공업",
-        "toBuy": [],
-        "today": 609000,
-        "last": 582000,
-        "changePercent": 4.639175257731959,
-        "absChangePercent": 4.639175257731959
+        "today": 413000,
+        "last": 422000,
+        "changePercent": -2.132701421800948,
+        "absChangePercent": 2.132701421800948
     },
     {
         "code": "012450",
         "name": "한화에어로스페이스",
         "toBuy": [],
-        "today": 1214000,
-        "last": 1090000,
-        "changePercent": 11.376146788990827,
-        "absChangePercent": 11.376146788990827
+        "today": 1299000,
+        "last": 1294000,
+        "changePercent": 0.38639876352395675,
+        "absChangePercent": 0.38639876352395675
     },
     {
-        "code": "402340",
-        "name": "SK스퀘어",
+        "code": "329180",
+        "name": "HD현대중공업",
         "toBuy": [],
-        "today": 430500,
-        "last": 430500,
-        "changePercent": 0.0,
-        "absChangePercent": 0.0
+        "today": 622000,
+        "last": 631000,
+        "changePercent": -1.4263074484944533,
+        "absChangePercent": 1.4263074484944533
     },
     {
         "code": "034020",
         "name": "두산에너빌리티",
         "toBuy": [],
-        "today": 84200,
-        "last": 83700,
-        "changePercent": 0.5973715651135006,
-        "absChangePercent": 0.5973715651135006
+        "today": 95300,
+        "last": 89500,
+        "changePercent": 6.4804469273743015,
+        "absChangePercent": 6.4804469273743015
     },
     {
         "code": "000270",
         "name": "기아",
         "toBuy": [],
-        "today": 133200,
-        "last": 124900,
-        "changePercent": 6.645316253002402,
-        "absChangePercent": 6.645316253002402
+        "today": 151100,
+        "last": 152500,
+        "changePercent": -0.9180327868852459,
+        "absChangePercent": 0.9180327868852459
     },
     {
-        "code": "068270",
-        "name": "셀트리온",
+        "code": "402340",
+        "name": "SK스퀘어",
         "toBuy": [],
-        "today": 217000,
-        "last": 213000,
-        "changePercent": 1.8779342723004695,
-        "absChangePercent": 1.8779342723004695
+        "today": 446500,
+        "last": 429500,
+        "changePercent": 3.958090803259604,
+        "absChangePercent": 3.958090803259604
     },
     {
         "code": "105560",
         "name": "KB금융",
         "toBuy": [],
-        "today": 126600,
-        "last": 123500,
-        "changePercent": 2.5101214574898787,
-        "absChangePercent": 2.5101214574898787
+        "today": 130900,
+        "last": 130100,
+        "changePercent": 0.6149116064565718,
+        "absChangePercent": 0.6149116064565718
     },
     {
         "code": "028260",
         "name": "삼성물산",
         "toBuy": [],
-        "today": 268500,
-        "last": 270500,
-        "changePercent": -0.7393715341959335,
-        "absChangePercent": 0.7393715341959335
+        "today": 290000,
+        "last": 286000,
+        "changePercent": 1.3986013986013985,
+        "absChangePercent": 1.3986013986013985
+    },
+    {
+        "code": "068270",
+        "name": "셀트리온",
+        "toBuy": [],
+        "today": 209000,
+        "last": 210500,
+        "changePercent": -0.7125890736342043,
+        "absChangePercent": 0.7125890736342043
     },
     {
         "code": "042660",
         "name": "한화오션",
         "toBuy": [],
-        "today": 134400,
-        "last": 129700,
-        "changePercent": 3.6237471087124136,
-        "absChangePercent": 3.6237471087124136
-    },
-    {
-        "code": "035420",
-        "name": "NAVER",
-        "toBuy": [],
-        "today": 254000,
-        "last": 251000,
-        "changePercent": 1.1952191235059761,
-        "absChangePercent": 1.1952191235059761
-    },
-    {
-        "code": "055550",
-        "name": "신한지주",
-        "toBuy": [],
-        "today": 77800,
-        "last": 77500,
-        "changePercent": 0.3870967741935484,
-        "absChangePercent": 0.3870967741935484
+        "today": 147000,
+        "last": 148900,
+        "changePercent": -1.2760241773002015,
+        "absChangePercent": 1.2760241773002015
     },
     {
         "code": "012330",
         "name": "현대모비스",
         "toBuy": [],
-        "today": 399500,
-        "last": 391000,
-        "changePercent": 2.1739130434782608,
-        "absChangePercent": 2.1739130434782608
+        "today": 431000,
+        "last": 450500,
+        "changePercent": -4.328523862375139,
+        "absChangePercent": 4.328523862375139
     },
     {
-        "code": "032830",
-        "name": "삼성생명",
+        "code": "035420",
+        "name": "NAVER",
         "toBuy": [],
-        "today": 159500,
-        "last": 159200,
-        "changePercent": 0.18844221105527637,
-        "absChangePercent": 0.18844221105527637
+        "today": 245500,
+        "last": 247500,
+        "changePercent": -0.8080808080808081,
+        "absChangePercent": 0.8080808080808081
+    },
+    {
+        "code": "055550",
+        "name": "신한지주",
+        "toBuy": [],
+        "today": 79200,
+        "last": 79400,
+        "changePercent": -0.2518891687657431,
+        "absChangePercent": 0.2518891687657431
     },
     {
         "code": "015760",
         "name": "한국전력",
         "toBuy": [],
-        "today": 49400,
-        "last": 49150,
-        "changePercent": 0.508646998982706,
-        "absChangePercent": 0.508646998982706
+        "today": 54700,
+        "last": 53800,
+        "changePercent": 1.6728624535315983,
+        "absChangePercent": 1.6728624535315983
     },
     {
-        "code": "009540",
-        "name": "HD한국조선해양",
+        "code": "032830",
+        "name": "삼성생명",
         "toBuy": [],
-        "today": 447000,
-        "last": 424500,
-        "changePercent": 5.30035335689046,
-        "absChangePercent": 5.30035335689046
-    },
-    {
-        "code": "267260",
-        "name": "HD현대일렉트릭",
-        "toBuy": [],
-        "today": 848000,
-        "last": 862000,
-        "changePercent": -1.6241299303944314,
-        "absChangePercent": 1.6241299303944314
-    },
-    {
-        "code": "086790",
-        "name": "하나금융지주",
-        "toBuy": [],
-        "today": 92900,
-        "last": 91900,
-        "changePercent": 1.088139281828074,
-        "absChangePercent": 1.088139281828074
-    },
-    {
-        "code": "035720",
-        "name": "카카오",
-        "toBuy": [],
-        "today": 58200,
-        "last": 57800,
-        "changePercent": 0.6920415224913495,
-        "absChangePercent": 0.6920415224913495
-    },
-    {
-        "code": "010140",
-        "name": "삼성중공업",
-        "toBuy": [],
-        "today": 28650,
-        "last": 26350,
-        "changePercent": 8.72865275142315,
-        "absChangePercent": 8.72865275142315
-    },
-    {
-        "code": "005490",
-        "name": "POSCO홀딩스",
-        "toBuy": [],
-        "today": 304000,
-        "last": 300500,
-        "changePercent": 1.1647254575707155,
-        "absChangePercent": 1.1647254575707155
-    },
-    {
-        "code": "064350",
-        "name": "현대로템",
-        "toBuy": [],
-        "today": 219000,
-        "last": 211000,
-        "changePercent": 3.7914691943127963,
-        "absChangePercent": 3.7914691943127963
+        "today": 170600,
+        "last": 161200,
+        "changePercent": 5.831265508684864,
+        "absChangePercent": 5.831265508684864
     },
     {
         "code": "010130",
         "name": "고려아연",
         "toBuy": [],
-        "today": 1142000,
-        "last": 1203000,
-        "changePercent": -5.070656691604322,
-        "absChangePercent": 5.070656691604322
+        "today": 1585000,
+        "last": 1438000,
+        "changePercent": 10.222531293463142,
+        "absChangePercent": 10.222531293463142
+    },
+    {
+        "code": "267260",
+        "name": "HD현대일렉트릭",
+        "toBuy": [],
+        "today": 906000,
+        "last": 892000,
+        "changePercent": 1.5695067264573992,
+        "absChangePercent": 1.5695067264573992
+    },
+    {
+        "code": "009540",
+        "name": "HD한국조선해양",
+        "toBuy": [],
+        "today": 438500,
+        "last": 440000,
+        "changePercent": -0.3409090909090909,
+        "absChangePercent": 0.3409090909090909
+    },
+    {
+        "code": "086790",
+        "name": "하나금융지주",
+        "toBuy": [],
+        "today": 96400,
+        "last": 96200,
+        "changePercent": 0.2079002079002079,
+        "absChangePercent": 0.2079002079002079
+    },
+    {
+        "code": "005490",
+        "name": "POSCO홀딩스",
+        "toBuy": [],
+        "today": 331500,
+        "last": 351500,
+        "changePercent": -5.689900426742532,
+        "absChangePercent": 5.689900426742532
+    },
+    {
+        "code": "010140",
+        "name": "삼성중공업",
+        "toBuy": [],
+        "today": 29750,
+        "last": 30150,
+        "changePercent": -1.3266998341625207,
+        "absChangePercent": 1.3266998341625207
+    },
+    {
+        "code": "035720",
+        "name": "카카오",
+        "toBuy": [],
+        "today": 57300,
+        "last": 58500,
+        "changePercent": -2.051282051282051,
+        "absChangePercent": 2.051282051282051
     },
     {
         "code": "051910",
         "name": "LG화학",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 312500,
-        "last": 315000,
-        "changePercent": -0.7936507936507936,
-        "absChangePercent": 0.7936507936507936
+        "toBuy": [],
+        "today": 333500,
+        "last": 336000,
+        "changePercent": -0.744047619047619,
+        "absChangePercent": 0.744047619047619
     },
     {
-        "code": "000810",
-        "name": "삼성화재",
+        "code": "064350",
+        "name": "현대로템",
         "toBuy": [],
-        "today": 470000,
-        "last": 471500,
-        "changePercent": -0.3181336161187699,
-        "absChangePercent": 0.3181336161187699
+        "today": 215000,
+        "last": 219500,
+        "changePercent": -2.050113895216401,
+        "absChangePercent": 2.050113895216401
     },
     {
         "code": "006400",
         "name": "삼성SDI",
         "toBuy": [],
-        "today": 267500,
-        "last": 271000,
-        "changePercent": -1.2915129151291513,
-        "absChangePercent": 1.2915129151291513
+        "today": 289000,
+        "last": 291500,
+        "changePercent": -0.8576329331046313,
+        "absChangePercent": 0.8576329331046313
     },
     {
-        "code": "034730",
-        "name": "SK",
+        "code": "000810",
+        "name": "삼성화재",
         "toBuy": [],
-        "today": 284000,
-        "last": 279500,
-        "changePercent": 1.6100178890876566,
-        "absChangePercent": 1.6100178890876566
-    },
-    {
-        "code": "316140",
-        "name": "우리금융지주",
-        "toBuy": [],
-        "today": 27300,
-        "last": 27250,
-        "changePercent": 0.1834862385321101,
-        "absChangePercent": 0.1834862385321101
-    },
-    {
-        "code": "009150",
-        "name": "삼성전기",
-        "toBuy": [],
-        "today": 266000,
-        "last": 272000,
-        "changePercent": -2.2058823529411766,
-        "absChangePercent": 2.2058823529411766
-    },
-    {
-        "code": "011200",
-        "name": "HMM",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 20000,
-        "last": 19960,
-        "changePercent": 0.2004008016032064,
-        "absChangePercent": 0.2004008016032064
-    },
-    {
-        "code": "138040",
-        "name": "메리츠금융지주",
-        "toBuy": [
-            "band"
-        ],
-        "today": 101500,
-        "last": 107600,
-        "changePercent": -5.669144981412639,
-        "absChangePercent": 5.669144981412639
+        "today": 486500,
+        "last": 475500,
+        "changePercent": 2.3133543638275498,
+        "absChangePercent": 2.3133543638275498
     },
     {
         "code": "298040",
         "name": "효성중공업",
         "toBuy": [],
-        "today": 1885000,
-        "last": 1839000,
-        "changePercent": 2.5013594344752583,
-        "absChangePercent": 2.5013594344752583
+        "today": 2333000,
+        "last": 2243000,
+        "changePercent": 4.012483281319661,
+        "absChangePercent": 4.012483281319661
     },
     {
-        "code": "0126Z0",
-        "name": "삼성에피스홀딩스",
+        "code": "034730",
+        "name": "SK",
         "toBuy": [],
-        "today": 688000,
-        "last": 689000,
-        "changePercent": -0.14513788098693758,
-        "absChangePercent": 0.14513788098693758
+        "today": 299000,
+        "last": 301500,
+        "changePercent": -0.8291873963515755,
+        "absChangePercent": 0.8291873963515755
+    },
+    {
+        "code": "009150",
+        "name": "삼성전기",
+        "toBuy": [],
+        "today": 289500,
+        "last": 289500,
+        "changePercent": 0.0,
+        "absChangePercent": 0.0
+    },
+    {
+        "code": "316140",
+        "name": "우리금융지주",
+        "toBuy": [],
+        "today": 27900,
+        "last": 28000,
+        "changePercent": -0.35714285714285715,
+        "absChangePercent": 0.35714285714285715
     },
     {
         "code": "086280",
         "name": "현대글로비스",
         "toBuy": [],
-        "today": 226500,
-        "last": 223500,
-        "changePercent": 1.342281879194631,
-        "absChangePercent": 1.342281879194631
+        "today": 257000,
+        "last": 266000,
+        "changePercent": -3.3834586466165413,
+        "absChangePercent": 3.3834586466165413
     },
     {
-        "code": "096770",
-        "name": "SK이노베이션",
+        "code": "011200",
+        "name": "HMM",
         "toBuy": [],
-        "today": 99700,
-        "last": 102600,
-        "changePercent": -2.8265107212475633,
-        "absChangePercent": 2.8265107212475633
-    },
-    {
-        "code": "042700",
-        "name": "한미반도체",
-        "toBuy": [],
-        "today": 176300,
-        "last": 185700,
-        "changePercent": -5.061927840603123,
-        "absChangePercent": 5.061927840603123
-    },
-    {
-        "code": "033780",
-        "name": "KT&G",
-        "toBuy": [],
-        "today": 142200,
-        "last": 142500,
-        "changePercent": -0.21052631578947367,
-        "absChangePercent": 0.21052631578947367
-    },
-    {
-        "code": "024110",
-        "name": "기업은행",
-        "toBuy": [],
-        "today": 20400,
-        "last": 20300,
-        "changePercent": 0.49261083743842365,
-        "absChangePercent": 0.49261083743842365
+        "today": 20000,
+        "last": 20250,
+        "changePercent": -1.2345679012345678,
+        "absChangePercent": 1.2345679012345678
     },
     {
         "code": "267250",
         "name": "HD현대",
         "toBuy": [],
-        "today": 205000,
-        "last": 196500,
-        "changePercent": 4.325699745547073,
-        "absChangePercent": 4.325699745547073
+        "today": 236000,
+        "last": 235000,
+        "changePercent": 0.425531914893617,
+        "absChangePercent": 0.425531914893617
     },
     {
-        "code": "003670",
-        "name": "포스코퓨처엠",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 175900,
-        "last": 178500,
-        "changePercent": -1.4565826330532212,
-        "absChangePercent": 1.4565826330532212
+        "code": "138040",
+        "name": "메리츠금융지주",
+        "toBuy": [],
+        "today": 105400,
+        "last": 102900,
+        "changePercent": 2.4295432458697768,
+        "absChangePercent": 2.4295432458697768
+    },
+    {
+        "code": "096770",
+        "name": "SK이노베이션",
+        "toBuy": [],
+        "today": 105400,
+        "last": 107600,
+        "changePercent": -2.0446096654275094,
+        "absChangePercent": 2.0446096654275094
     },
     {
         "code": "006800",
         "name": "미래에셋증권",
         "toBuy": [],
-        "today": 27100,
-        "last": 27650,
-        "changePercent": -1.9891500904159132,
-        "absChangePercent": 1.9891500904159132
-    },
-    {
-        "code": "047810",
-        "name": "한국항공우주",
-        "toBuy": [],
-        "today": 149800,
-        "last": 142800,
-        "changePercent": 4.901960784313726,
-        "absChangePercent": 4.901960784313726
+        "today": 31200,
+        "last": 30750,
+        "changePercent": 1.4634146341463417,
+        "absChangePercent": 1.4634146341463417
     },
     {
         "code": "272210",
         "name": "한화시스템",
         "toBuy": [],
-        "today": 76900,
-        "last": 60300,
-        "changePercent": 27.52902155887231,
-        "absChangePercent": 27.52902155887231
+        "today": 90900,
+        "last": 96500,
+        "changePercent": -5.803108808290156,
+        "absChangePercent": 5.803108808290156
+    },
+    {
+        "code": "042700",
+        "name": "한미반도체",
+        "toBuy": [],
+        "today": 178500,
+        "last": 180000,
+        "changePercent": -0.8333333333333334,
+        "absChangePercent": 0.8333333333333334
+    },
+    {
+        "code": "033780",
+        "name": "KT&G",
+        "toBuy": [],
+        "today": 142300,
+        "last": 143700,
+        "changePercent": -0.9742519137091163,
+        "absChangePercent": 0.9742519137091163
+    },
+    {
+        "code": "003670",
+        "name": "포스코퓨처엠",
+        "toBuy": [],
+        "today": 188700,
+        "last": 195400,
+        "changePercent": -3.428863868986694,
+        "absChangePercent": 3.428863868986694
+    },
+    {
+        "code": "024110",
+        "name": "기업은행",
+        "toBuy": [],
+        "today": 20500,
+        "last": 20700,
+        "changePercent": -0.966183574879227,
+        "absChangePercent": 0.966183574879227
+    },
+    {
+        "code": "0126Z0",
+        "name": "삼성에피스홀딩스",
+        "toBuy": [],
+        "today": 651000,
+        "last": 685000,
+        "changePercent": -4.963503649635037,
+        "absChangePercent": 4.963503649635037
     },
     {
         "code": "066570",
         "name": "LG전자",
-        "toBuy": [
-            "band",
-            "rsi"
-        ],
-        "today": 89100,
-        "last": 92200,
-        "changePercent": -3.3622559652928414,
-        "absChangePercent": 3.3622559652928414
+        "toBuy": [],
+        "today": 98400,
+        "last": 94000,
+        "changePercent": 4.680851063829787,
+        "absChangePercent": 4.680851063829787
     },
     {
         "code": "010120",
         "name": "LS ELECTRIC",
         "toBuy": [],
-        "today": 476000,
-        "last": 482500,
-        "changePercent": -1.3471502590673576,
-        "absChangePercent": 1.3471502590673576
+        "today": 533000,
+        "last": 526000,
+        "changePercent": 1.3307984790874523,
+        "absChangePercent": 1.3307984790874523
+    },
+    {
+        "code": "047810",
+        "name": "한국항공우주",
+        "toBuy": [],
+        "today": 155900,
+        "last": 166600,
+        "changePercent": -6.422569027611044,
+        "absChangePercent": 6.422569027611044
     },
     {
         "code": "352820",
         "name": "하이브",
         "toBuy": [],
-        "today": 331000,
-        "last": 335500,
-        "changePercent": -1.3412816691505216,
-        "absChangePercent": 1.3412816691505216
+        "today": 336500,
+        "last": 338500,
+        "changePercent": -0.5908419497784343,
+        "absChangePercent": 0.5908419497784343
     },
     {
         "code": "018260",
         "name": "삼성에스디에스",
         "toBuy": [],
-        "today": 172700,
-        "last": 175500,
-        "changePercent": -1.5954415954415955,
-        "absChangePercent": 1.5954415954415955
+        "today": 180000,
+        "last": 174900,
+        "changePercent": 2.9159519725557463,
+        "absChangePercent": 2.9159519725557463
     },
     {
         "code": "030200",
         "name": "KT",
         "toBuy": [],
-        "today": 52000,
-        "last": 51500,
-        "changePercent": 0.9708737864077669,
-        "absChangePercent": 0.9708737864077669
-    },
-    {
-        "code": "307950",
-        "name": "현대오토에버",
-        "toBuy": [],
-        "today": 471500,
-        "last": 395000,
-        "changePercent": 19.367088607594937,
-        "absChangePercent": 19.367088607594937
+        "today": 53900,
+        "last": 53300,
+        "changePercent": 1.125703564727955,
+        "absChangePercent": 1.125703564727955
     },
     {
         "code": "003550",
         "name": "LG",
         "toBuy": [],
-        "today": 80300,
-        "last": 81400,
-        "changePercent": -1.3513513513513513,
-        "absChangePercent": 1.3513513513513513
+        "today": 87500,
+        "last": 84800,
+        "changePercent": 3.1839622641509435,
+        "absChangePercent": 3.1839622641509435
     },
     {
         "code": "000150",
         "name": "두산",
         "toBuy": [],
-        "today": 747000,
-        "last": 759000,
-        "changePercent": -1.5810276679841897,
-        "absChangePercent": 1.5810276679841897
+        "today": 828000,
+        "last": 834000,
+        "changePercent": -0.7194244604316548,
+        "absChangePercent": 0.7194244604316548
     },
     {
-        "code": "079550",
-        "name": "LIG넥스원",
+        "code": "307950",
+        "name": "현대오토에버",
         "toBuy": [],
-        "today": 542000,
-        "last": 531000,
-        "changePercent": 2.0715630885122414,
-        "absChangePercent": 2.0715630885122414
+        "today": 476500,
+        "last": 492000,
+        "changePercent": -3.1504065040650406,
+        "absChangePercent": 3.1504065040650406
     },
     {
         "code": "017670",
         "name": "SK텔레콤",
         "toBuy": [],
-        "today": 53000,
-        "last": 52800,
-        "changePercent": 0.3787878787878788,
-        "absChangePercent": 0.3787878787878788
+        "today": 55300,
+        "last": 54900,
+        "changePercent": 0.7285974499089253,
+        "absChangePercent": 0.7285974499089253
+    },
+    {
+        "code": "079550",
+        "name": "LIG넥스원",
+        "toBuy": [],
+        "today": 535000,
+        "last": 556000,
+        "changePercent": -3.776978417266187,
+        "absChangePercent": 3.776978417266187
+    },
+    {
+        "code": "000720",
+        "name": "현대건설",
+        "toBuy": [],
+        "today": 104300,
+        "last": 99900,
+        "changePercent": 4.404404404404405,
+        "absChangePercent": 4.404404404404405
     },
     {
         "code": "259960",
         "name": "크래프톤",
-        "toBuy": [
-            "band"
-        ],
-        "today": 230000,
-        "last": 229500,
-        "changePercent": 0.2178649237472767,
-        "absChangePercent": 0.2178649237472767
+        "toBuy": [],
+        "today": 234000,
+        "last": 233500,
+        "changePercent": 0.21413276231263384,
+        "absChangePercent": 0.21413276231263384
     },
     {
         "code": "323410",
         "name": "카카오뱅크",
         "toBuy": [],
-        "today": 21600,
+        "today": 21350,
         "last": 21300,
-        "changePercent": 1.4084507042253522,
-        "absChangePercent": 1.4084507042253522
+        "changePercent": 0.2347417840375587,
+        "absChangePercent": 0.2347417840375587
+    },
+    {
+        "code": "071050",
+        "name": "한국금융지주",
+        "toBuy": [],
+        "today": 182700,
+        "last": 177000,
+        "changePercent": 3.2203389830508473,
+        "absChangePercent": 3.2203389830508473
+    },
+    {
+        "code": "010950",
+        "name": "S-Oil",
+        "toBuy": [],
+        "today": 89700,
+        "last": 91800,
+        "changePercent": -2.287581699346405,
+        "absChangePercent": 2.287581699346405
+    },
+    {
+        "code": "047050",
+        "name": "포스코인터내셔널",
+        "toBuy": [],
+        "today": 57300,
+        "last": 57700,
+        "changePercent": -0.6932409012131715,
+        "absChangePercent": 0.6932409012131715
     },
     {
         "code": "326030",
@@ -551,221 +572,202 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 125100,
-        "last": 124800,
-        "changePercent": 0.2403846153846154,
-        "absChangePercent": 0.2403846153846154
-    },
-    {
-        "code": "071050",
-        "name": "한국금융지주",
-        "toBuy": [],
-        "today": 170500,
-        "last": 165700,
-        "changePercent": 2.896801448400724,
-        "absChangePercent": 2.896801448400724
-    },
-    {
-        "code": "010950",
-        "name": "S-Oil",
-        "toBuy": [],
-        "today": 84000,
-        "last": 81500,
-        "changePercent": 3.067484662576687,
-        "absChangePercent": 3.067484662576687
-    },
-    {
-        "code": "003230",
-        "name": "삼양식품",
-        "toBuy": [],
-        "today": 1206000,
-        "last": 1179000,
-        "changePercent": 2.2900763358778624,
-        "absChangePercent": 2.2900763358778624
-    },
-    {
-        "code": "000100",
-        "name": "유한양행",
-        "toBuy": [],
-        "today": 113300,
-        "last": 113300,
-        "changePercent": 0.0,
-        "absChangePercent": 0.0
-    },
-    {
-        "code": "005830",
-        "name": "DB손해보험",
-        "toBuy": [],
-        "today": 123600,
-        "last": 123600,
-        "changePercent": 0.0,
-        "absChangePercent": 0.0
-    },
-    {
-        "code": "443060",
-        "name": "HD현대마린솔루션",
-        "toBuy": [],
-        "today": 192200,
-        "last": 184100,
-        "changePercent": 4.399782726778924,
-        "absChangePercent": 4.399782726778924
-    },
-    {
-        "code": "047050",
-        "name": "포스코인터내셔널",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 48700,
-        "last": 47850,
-        "changePercent": 1.7763845350052248,
-        "absChangePercent": 1.7763845350052248
-    },
-    {
-        "code": "278470",
-        "name": "에이피알",
-        "toBuy": [],
-        "today": 228500,
-        "last": 217000,
-        "changePercent": 5.299539170506913,
-        "absChangePercent": 5.299539170506913
-    },
-    {
-        "code": "000720",
-        "name": "현대건설",
-        "toBuy": [],
-        "today": 75800,
-        "last": 75000,
-        "changePercent": 1.0666666666666667,
-        "absChangePercent": 1.0666666666666667
-    },
-    {
-        "code": "039490",
-        "name": "키움증권",
-        "toBuy": [],
-        "today": 315000,
-        "last": 306500,
-        "changePercent": 2.7732463295269167,
-        "absChangePercent": 2.7732463295269167
-    },
-    {
-        "code": "003490",
-        "name": "대한항공",
-        "toBuy": [],
-        "today": 22100,
-        "last": 21650,
-        "changePercent": 2.0785219399538106,
-        "absChangePercent": 2.0785219399538106
-    },
-    {
-        "code": "007660",
-        "name": "이수페타시스",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 109400,
-        "last": 108200,
-        "changePercent": 1.1090573012939002,
-        "absChangePercent": 1.1090573012939002
-    },
-    {
-        "code": "180640",
-        "name": "한진칼",
-        "toBuy": [],
-        "today": 115500,
-        "last": 114700,
-        "changePercent": 0.6974716652136007,
-        "absChangePercent": 0.6974716652136007
-    },
-    {
-        "code": "005940",
-        "name": "NH투자증권",
-        "toBuy": [],
-        "today": 20850,
-        "last": 20800,
-        "changePercent": 0.2403846153846154,
-        "absChangePercent": 0.2403846153846154
-    },
-    {
-        "code": "161390",
-        "name": "한국타이어앤테크놀로지",
-        "toBuy": [],
-        "today": 58100,
-        "last": 56200,
-        "changePercent": 3.3807829181494666,
-        "absChangePercent": 3.3807829181494666
-    },
-    {
-        "code": "090430",
-        "name": "아모레퍼시픽",
-        "toBuy": [],
-        "today": 119200,
-        "last": 120000,
-        "changePercent": -0.6666666666666667,
-        "absChangePercent": 0.6666666666666667
-    },
-    {
-        "code": "016360",
-        "name": "삼성증권",
-        "toBuy": [],
-        "today": 76900,
-        "last": 76700,
-        "changePercent": 0.2607561929595828,
-        "absChangePercent": 0.2607561929595828
+        "today": 120400,
+        "last": 119600,
+        "changePercent": 0.6688963210702341,
+        "absChangePercent": 0.6688963210702341
     },
     {
         "code": "000880",
         "name": "한화",
         "toBuy": [],
-        "today": 91400,
-        "last": 87100,
-        "changePercent": 4.936854190585533,
-        "absChangePercent": 4.936854190585533
+        "today": 124600,
+        "last": 136500,
+        "changePercent": -8.717948717948717,
+        "absChangePercent": 8.717948717948717
     },
     {
-        "code": "377300",
-        "name": "카카오페이",
+        "code": "278470",
+        "name": "에이피알",
         "toBuy": [],
-        "today": 49250,
-        "last": 48050,
-        "changePercent": 2.497398543184183,
-        "absChangePercent": 2.497398543184183
+        "today": 240500,
+        "last": 237500,
+        "changePercent": 1.263157894736842,
+        "absChangePercent": 1.263157894736842
+    },
+    {
+        "code": "003230",
+        "name": "삼양식품",
+        "toBuy": [],
+        "today": 1195000,
+        "last": 1192000,
+        "changePercent": 0.25167785234899326,
+        "absChangePercent": 0.25167785234899326
+    },
+    {
+        "code": "003490",
+        "name": "대한항공",
+        "toBuy": [],
+        "today": 24300,
+        "last": 23000,
+        "changePercent": 5.6521739130434785,
+        "absChangePercent": 5.6521739130434785
+    },
+    {
+        "code": "007660",
+        "name": "이수페타시스",
+        "toBuy": [],
+        "today": 120800,
+        "last": 122200,
+        "changePercent": -1.1456628477905073,
+        "absChangePercent": 1.1456628477905073
+    },
+    {
+        "code": "039490",
+        "name": "키움증권",
+        "toBuy": [],
+        "today": 330000,
+        "last": 326000,
+        "changePercent": 1.2269938650306749,
+        "absChangePercent": 1.2269938650306749
+    },
+    {
+        "code": "005830",
+        "name": "DB손해보험",
+        "toBuy": [],
+        "today": 123800,
+        "last": 122700,
+        "changePercent": 0.8964955175224123,
+        "absChangePercent": 0.8964955175224123
+    },
+    {
+        "code": "000100",
+        "name": "유한양행",
+        "toBuy": [
+            "band",
+            "rsi"
+        ],
+        "today": 107900,
+        "last": 108200,
+        "changePercent": -0.27726432532347506,
+        "absChangePercent": 0.27726432532347506
+    },
+    {
+        "code": "180640",
+        "name": "한진칼",
+        "toBuy": [],
+        "today": 128300,
+        "last": 124300,
+        "changePercent": 3.2180209171359615,
+        "absChangePercent": 3.2180209171359615
+    },
+    {
+        "code": "443060",
+        "name": "HD현대마린솔루션",
+        "toBuy": [],
+        "today": 189600,
+        "last": 195400,
+        "changePercent": -2.968270214943705,
+        "absChangePercent": 2.968270214943705
+    },
+    {
+        "code": "005940",
+        "name": "NH투자증권",
+        "toBuy": [],
+        "today": 22650,
+        "last": 22250,
+        "changePercent": 1.7977528089887642,
+        "absChangePercent": 1.7977528089887642
+    },
+    {
+        "code": "161390",
+        "name": "한국타이어앤테크놀로지",
+        "toBuy": [],
+        "today": 62000,
+        "last": 61800,
+        "changePercent": 0.3236245954692557,
+        "absChangePercent": 0.3236245954692557
+    },
+    {
+        "code": "016360",
+        "name": "삼성증권",
+        "toBuy": [],
+        "today": 83600,
+        "last": 82400,
+        "changePercent": 1.4563106796116505,
+        "absChangePercent": 1.4563106796116505
+    },
+    {
+        "code": "090430",
+        "name": "아모레퍼시픽",
+        "toBuy": [],
+        "today": 121400,
+        "last": 119800,
+        "changePercent": 1.335559265442404,
+        "absChangePercent": 1.335559265442404
     },
     {
         "code": "006260",
         "name": "LS",
         "toBuy": [],
-        "today": 203000,
-        "last": 201000,
-        "changePercent": 0.9950248756218906,
-        "absChangePercent": 0.9950248756218906
+        "today": 222000,
+        "last": 222000,
+        "changePercent": 0.0,
+        "absChangePercent": 0.0
     },
     {
         "code": "011070",
         "name": "LG이노텍",
         "toBuy": [],
-        "today": 261500,
-        "last": 283000,
-        "changePercent": -7.597173144876325,
-        "absChangePercent": 7.597173144876325
+        "today": 286000,
+        "last": 279500,
+        "changePercent": 2.3255813953488373,
+        "absChangePercent": 2.3255813953488373
+    },
+    {
+        "code": "064400",
+        "name": "LG씨엔에스",
+        "toBuy": [],
+        "today": 68000,
+        "last": 68100,
+        "changePercent": -0.14684287812041116,
+        "absChangePercent": 0.14684287812041116
+    },
+    {
+        "code": "377300",
+        "name": "카카오페이",
+        "toBuy": [],
+        "today": 48600,
+        "last": 49700,
+        "changePercent": -2.2132796780684103,
+        "absChangePercent": 2.2132796780684103
     },
     {
         "code": "032640",
         "name": "LG유플러스",
         "toBuy": [],
-        "today": 14350,
-        "last": 14360,
-        "changePercent": -0.06963788300835655,
-        "absChangePercent": 0.06963788300835655
+        "today": 14930,
+        "last": 15240,
+        "changePercent": -2.0341207349081363,
+        "absChangePercent": 2.0341207349081363
     },
     {
-        "code": "128940",
-        "name": "한미약품",
+        "code": "022100",
+        "name": "포스코DX",
         "toBuy": [],
-        "today": 477000,
-        "last": 463000,
-        "changePercent": 3.023758099352052,
-        "absChangePercent": 3.023758099352052
+        "today": 42000,
+        "last": 38650,
+        "changePercent": 8.667529107373868,
+        "absChangePercent": 8.667529107373868
+    },
+    {
+        "code": "034220",
+        "name": "LG디스플레이",
+        "toBuy": [],
+        "today": 12520,
+        "last": 12240,
+        "changePercent": 2.287581699346405,
+        "absChangePercent": 2.287581699346405
     },
     {
         "code": "029780",
@@ -773,419 +775,367 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 52300,
-        "last": 52200,
-        "changePercent": 0.19157088122605362,
-        "absChangePercent": 0.19157088122605362
-    },
-    {
-        "code": "034220",
-        "name": "LG디스플레이",
-        "toBuy": [],
-        "today": 11780,
-        "last": 12230,
-        "changePercent": -3.679476696647588,
-        "absChangePercent": 3.679476696647588
-    },
-    {
-        "code": "064400",
-        "name": "LG씨엔에스",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 60100,
-        "last": 60700,
-        "changePercent": -0.9884678747940692,
-        "absChangePercent": 0.9884678747940692
-    },
-    {
-        "code": "021240",
-        "name": "코웨이",
-        "toBuy": [
-            "band",
-            "rsi"
-        ],
-        "today": 79600,
-        "last": 79400,
-        "changePercent": 0.2518891687657431,
-        "absChangePercent": 0.2518891687657431
+        "today": 52800,
+        "last": 52400,
+        "changePercent": 0.7633587786259541,
+        "absChangePercent": 0.7633587786259541
     },
     {
         "code": "241560",
         "name": "두산밥캣",
         "toBuy": [],
-        "today": 56700,
-        "last": 57300,
-        "changePercent": -1.0471204188481675,
-        "absChangePercent": 1.0471204188481675
+        "today": 61900,
+        "last": 62000,
+        "changePercent": -0.16129032258064516,
+        "absChangePercent": 0.16129032258064516
     },
     {
         "code": "454910",
         "name": "두산로보틱스",
         "toBuy": [],
-        "today": 83600,
-        "last": 83100,
-        "changePercent": 0.601684717208183,
-        "absChangePercent": 0.601684717208183
+        "today": 90400,
+        "last": 91300,
+        "changePercent": -0.9857612267250823,
+        "absChangePercent": 0.9857612267250823
+    },
+    {
+        "code": "128940",
+        "name": "한미약품",
+        "toBuy": [],
+        "today": 436500,
+        "last": 436500,
+        "changePercent": 0.0,
+        "absChangePercent": 0.0
     },
     {
         "code": "078930",
         "name": "GS",
         "toBuy": [],
-        "today": 57200,
-        "last": 55800,
-        "changePercent": 2.5089605734767026,
-        "absChangePercent": 2.5089605734767026
+        "today": 59600,
+        "last": 60800,
+        "changePercent": -1.9736842105263157,
+        "absChangePercent": 1.9736842105263157
+    },
+    {
+        "code": "021240",
+        "name": "코웨이",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 76100,
+        "last": 77600,
+        "changePercent": -1.9329896907216495,
+        "absChangePercent": 1.9329896907216495
     },
     {
         "code": "001040",
         "name": "CJ",
         "toBuy": [],
-        "today": 179200,
-        "last": 174300,
-        "changePercent": 2.8112449799196786,
-        "absChangePercent": 2.8112449799196786
-    },
-    {
-        "code": "001440",
-        "name": "대한전선",
-        "toBuy": [],
-        "today": 26050,
-        "last": 25950,
-        "changePercent": 0.3853564547206166,
-        "absChangePercent": 0.3853564547206166
-    },
-    {
-        "code": "028050",
-        "name": "삼성E&A",
-        "toBuy": [],
-        "today": 24600,
-        "last": 24000,
-        "changePercent": 2.5,
-        "absChangePercent": 2.5
-    },
-    {
-        "code": "138930",
-        "name": "BNK금융지주",
-        "toBuy": [],
-        "today": 15300,
-        "last": 15330,
-        "changePercent": -0.19569471624266144,
-        "absChangePercent": 0.19569471624266144
+        "today": 187200,
+        "last": 190000,
+        "changePercent": -1.4736842105263157,
+        "absChangePercent": 1.4736842105263157
     },
     {
         "code": "036570",
         "name": "엔씨소프트",
         "toBuy": [],
-        "today": 223000,
-        "last": 227000,
-        "changePercent": -1.762114537444934,
-        "absChangePercent": 1.762114537444934
+        "today": 236500,
+        "last": 244000,
+        "changePercent": -3.0737704918032787,
+        "absChangePercent": 3.0737704918032787
     },
     {
-        "code": "175330",
-        "name": "JB금융지주",
+        "code": "028050",
+        "name": "삼성E&A",
         "toBuy": [],
-        "today": 24550,
-        "last": 24900,
-        "changePercent": -1.4056224899598393,
-        "absChangePercent": 1.4056224899598393
+        "today": 25600,
+        "last": 25900,
+        "changePercent": -1.1583011583011582,
+        "absChangePercent": 1.1583011583011582
     },
     {
         "code": "009830",
         "name": "한화솔루션",
         "toBuy": [],
-        "today": 26100,
-        "last": 26500,
-        "changePercent": -1.509433962264151,
-        "absChangePercent": 1.509433962264151
-    },
-    {
-        "code": "066970",
-        "name": "엘앤에프",
-        "toBuy": [],
-        "today": 107700,
-        "last": 104200,
-        "changePercent": 3.358925143953935,
-        "absChangePercent": 3.358925143953935
-    },
-    {
-        "code": "251270",
-        "name": "넷마블",
-        "toBuy": [],
-        "today": 48600,
-        "last": 48900,
-        "changePercent": -0.6134969325153374,
-        "absChangePercent": 0.6134969325153374
-    },
-    {
-        "code": "082740",
-        "name": "한화엔진",
-        "toBuy": [],
-        "today": 49700,
-        "last": 45550,
-        "changePercent": 9.11086717892426,
-        "absChangePercent": 9.11086717892426
-    },
-    {
-        "code": "062040",
-        "name": "산일전기",
-        "toBuy": [],
-        "today": 135200,
-        "last": 136000,
-        "changePercent": -0.5882352941176471,
-        "absChangePercent": 0.5882352941176471
-    },
-    {
-        "code": "022100",
-        "name": "포스코DX",
-        "toBuy": [],
-        "today": 27050,
-        "last": 27150,
-        "changePercent": -0.3683241252302026,
-        "absChangePercent": 0.3683241252302026
-    },
-    {
-        "code": "271560",
-        "name": "오리온",
-        "toBuy": [],
-        "today": 103100,
-        "last": 104500,
-        "changePercent": -1.3397129186602872,
-        "absChangePercent": 1.3397129186602872
-    },
-    {
-        "code": "051900",
-        "name": "LG생활건강",
-        "toBuy": [],
-        "today": 262000,
-        "last": 262500,
-        "changePercent": -0.19047619047619047,
-        "absChangePercent": 0.19047619047619047
-    },
-    {
-        "code": "004020",
-        "name": "현대제철",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 29200,
-        "last": 29050,
-        "changePercent": 0.5163511187607573,
-        "absChangePercent": 0.5163511187607573
-    },
-    {
-        "code": "011790",
-        "name": "SKC",
-        "toBuy": [],
-        "today": 102200,
-        "last": 104300,
-        "changePercent": -2.013422818791946,
-        "absChangePercent": 2.013422818791946
-    },
-    {
-        "code": "035250",
-        "name": "강원랜드",
-        "toBuy": [],
-        "today": 17970,
-        "last": 18080,
-        "changePercent": -0.6084070796460177,
-        "absChangePercent": 0.6084070796460177
-    },
-    {
-        "code": "111770",
-        "name": "영원무역",
-        "toBuy": [],
-        "today": 85100,
-        "last": 83900,
-        "changePercent": 1.430274135876043,
-        "absChangePercent": 1.430274135876043
-    },
-    {
-        "code": "302440",
-        "name": "SK바이오사이언스",
-        "toBuy": [],
-        "today": 48050,
-        "last": 47550,
-        "changePercent": 1.0515247108307046,
-        "absChangePercent": 1.0515247108307046
+        "today": 28650,
+        "last": 29600,
+        "changePercent": -3.209459459459459,
+        "absChangePercent": 3.209459459459459
     },
     {
         "code": "052690",
         "name": "한전기술",
         "toBuy": [],
-        "today": 97400,
-        "last": 96600,
-        "changePercent": 0.8281573498964804,
-        "absChangePercent": 0.8281573498964804
+        "today": 126700,
+        "last": 113400,
+        "changePercent": 11.728395061728394,
+        "absChangePercent": 11.728395061728394
     },
     {
-        "code": "450080",
-        "name": "에코프로머티",
+        "code": "001440",
+        "name": "대한전선",
         "toBuy": [],
-        "today": 51500,
-        "last": 52300,
-        "changePercent": -1.5296367112810707,
-        "absChangePercent": 1.5296367112810707
+        "today": 25750,
+        "last": 25900,
+        "changePercent": -0.5791505791505791,
+        "absChangePercent": 0.5791505791505791
+    },
+    {
+        "code": "138930",
+        "name": "BNK금융지주",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 14940,
+        "last": 15100,
+        "changePercent": -1.0596026490066226,
+        "absChangePercent": 1.0596026490066226
+    },
+    {
+        "code": "175330",
+        "name": "JB금융지주",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 23950,
+        "last": 24100,
+        "changePercent": -0.6224066390041494,
+        "absChangePercent": 0.6224066390041494
+    },
+    {
+        "code": "082740",
+        "name": "한화엔진",
+        "toBuy": [],
+        "today": 53000,
+        "last": 53300,
+        "changePercent": -0.5628517823639775,
+        "absChangePercent": 0.5628517823639775
+    },
+    {
+        "code": "066970",
+        "name": "엘앤에프",
+        "toBuy": [],
+        "today": 108700,
+        "last": 115600,
+        "changePercent": -5.968858131487889,
+        "absChangePercent": 5.968858131487889
+    },
+    {
+        "code": "062040",
+        "name": "산일전기",
+        "toBuy": [],
+        "today": 143500,
+        "last": 144700,
+        "changePercent": -0.82930200414651,
+        "absChangePercent": 0.82930200414651
+    },
+    {
+        "code": "271560",
+        "name": "오리온",
+        "toBuy": [],
+        "today": 109300,
+        "last": 108500,
+        "changePercent": 0.7373271889400922,
+        "absChangePercent": 0.7373271889400922
+    },
+    {
+        "code": "251270",
+        "name": "넷마블",
+        "toBuy": [],
+        "today": 50100,
+        "last": 50800,
+        "changePercent": -1.3779527559055118,
+        "absChangePercent": 1.3779527559055118
+    },
+    {
+        "code": "004020",
+        "name": "현대제철",
+        "toBuy": [],
+        "today": 30850,
+        "last": 32100,
+        "changePercent": -3.894080996884735,
+        "absChangePercent": 3.894080996884735
+    },
+    {
+        "code": "051900",
+        "name": "LG생활건강",
+        "toBuy": [],
+        "today": 264500,
+        "last": 263000,
+        "changePercent": 0.5703422053231939,
+        "absChangePercent": 0.5703422053231939
+    },
+    {
+        "code": "011790",
+        "name": "SKC",
+        "toBuy": [],
+        "today": 106000,
+        "last": 105500,
+        "changePercent": 0.47393364928909953,
+        "absChangePercent": 0.47393364928909953
     },
     {
         "code": "002380",
         "name": "KCC",
         "toBuy": [],
-        "today": 400000,
-        "last": 403000,
-        "changePercent": -0.7444168734491315,
-        "absChangePercent": 0.7444168734491315
+        "today": 439000,
+        "last": 441000,
+        "changePercent": -0.45351473922902497,
+        "absChangePercent": 0.45351473922902497
     },
     {
-        "code": "036460",
-        "name": "한국가스공사",
+        "code": "450080",
+        "name": "에코프로머티",
+        "toBuy": [],
+        "today": 54300,
+        "last": 55900,
+        "changePercent": -2.862254025044723,
+        "absChangePercent": 2.862254025044723
+    },
+    {
+        "code": "302440",
+        "name": "SK바이오사이언스",
+        "toBuy": [],
+        "today": 48800,
+        "last": 49250,
+        "changePercent": -0.9137055837563453,
+        "absChangePercent": 0.9137055837563453
+    },
+    {
+        "code": "035250",
+        "name": "강원랜드",
         "toBuy": [
             "rsi"
         ],
-        "today": 38200,
-        "last": 38100,
-        "changePercent": 0.26246719160104987,
-        "absChangePercent": 0.26246719160104987
+        "today": 17780,
+        "last": 17990,
+        "changePercent": -1.1673151750972763,
+        "absChangePercent": 1.1673151750972763
     },
     {
-        "code": "071970",
-        "name": "HD현대마린엔진",
+        "code": "111770",
+        "name": "영원무역",
         "toBuy": [],
-        "today": 100500,
-        "last": 96200,
-        "changePercent": 4.46985446985447,
-        "absChangePercent": 4.46985446985447
-    },
-    {
-        "code": "017800",
-        "name": "현대엘리베이터",
-        "toBuy": [],
-        "today": 86800,
-        "last": 86200,
-        "changePercent": 0.6960556844547563,
-        "absChangePercent": 0.6960556844547563
-    },
-    {
-        "code": "103140",
-        "name": "풍산",
-        "toBuy": [],
-        "today": 120900,
-        "last": 114000,
-        "changePercent": 6.052631578947368,
-        "absChangePercent": 6.052631578947368
+        "today": 84500,
+        "last": 85700,
+        "changePercent": -1.4002333722287048,
+        "absChangePercent": 1.4002333722287048
     },
     {
         "code": "011780",
         "name": "금호석유화학",
         "toBuy": [],
-        "today": 121700,
-        "last": 116600,
-        "changePercent": 4.373927958833619,
-        "absChangePercent": 4.373927958833619
+        "today": 140100,
+        "last": 142400,
+        "changePercent": -1.6151685393258428,
+        "absChangePercent": 1.6151685393258428
+    },
+    {
+        "code": "036460",
+        "name": "한국가스공사",
+        "toBuy": [],
+        "today": 39050,
+        "last": 39100,
+        "changePercent": -0.1278772378516624,
+        "absChangePercent": 0.1278772378516624
+    },
+    {
+        "code": "017800",
+        "name": "현대엘리베이터",
+        "toBuy": [],
+        "today": 88900,
+        "last": 87700,
+        "changePercent": 1.3683010262257698,
+        "absChangePercent": 1.3683010262257698
+    },
+    {
+        "code": "103140",
+        "name": "풍산",
+        "toBuy": [],
+        "today": 123400,
+        "last": 131100,
+        "changePercent": -5.8733790999237225,
+        "absChangePercent": 5.8733790999237225
+    },
+    {
+        "code": "018880",
+        "name": "한온시스템",
+        "toBuy": [],
+        "today": 3130,
+        "last": 3210,
+        "changePercent": -2.4922118380062304,
+        "absChangePercent": 2.4922118380062304
+    },
+    {
+        "code": "011170",
+        "name": "롯데케미칼",
+        "toBuy": [],
+        "today": 74300,
+        "last": 73400,
+        "changePercent": 1.226158038147139,
+        "absChangePercent": 1.226158038147139
     },
     {
         "code": "097950",
         "name": "CJ제일제당",
         "toBuy": [],
-        "today": 207500,
-        "last": 203500,
-        "changePercent": 1.9656019656019657,
-        "absChangePercent": 1.9656019656019657
+        "today": 208500,
+        "last": 211500,
+        "changePercent": -1.4184397163120568,
+        "absChangePercent": 1.4184397163120568
     },
     {
-        "code": "011170",
-        "name": "롯데케미칼",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 66900,
-        "last": 69100,
-        "changePercent": -3.183791606367583,
-        "absChangePercent": 3.183791606367583
-    },
-    {
-        "code": "012750",
-        "name": "에스원",
+        "code": "071970",
+        "name": "HD현대마린엔진",
         "toBuy": [],
-        "today": 72700,
-        "last": 72700,
-        "changePercent": 0.0,
-        "absChangePercent": 0.0
-    },
-    {
-        "code": "088350",
-        "name": "한화생명",
-        "toBuy": [],
-        "today": 3080,
-        "last": 3080,
-        "changePercent": 0.0,
-        "absChangePercent": 0.0
+        "today": 90100,
+        "last": 92800,
+        "changePercent": -2.9094827586206895,
+        "absChangePercent": 2.9094827586206895
     },
     {
         "code": "204320",
         "name": "HL만도",
         "toBuy": [],
-        "today": 56900,
-        "last": 56700,
-        "changePercent": 0.3527336860670194,
-        "absChangePercent": 0.3527336860670194
+        "today": 64200,
+        "last": 62500,
+        "changePercent": 2.7199999999999998,
+        "absChangePercent": 2.7199999999999998
     },
     {
         "code": "004990",
         "name": "롯데지주",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 25250,
-        "last": 25200,
-        "changePercent": 0.1984126984126984,
-        "absChangePercent": 0.1984126984126984
+        "toBuy": [],
+        "today": 27850,
+        "last": 27900,
+        "changePercent": -0.17921146953405018,
+        "absChangePercent": 0.17921146953405018
     },
     {
-        "code": "009420",
-        "name": "한올바이오파마",
+        "code": "012750",
+        "name": "에스원",
         "toBuy": [],
-        "today": 50500,
-        "last": 52600,
-        "changePercent": -3.9923954372623576,
-        "absChangePercent": 3.9923954372623576
+        "today": 76600,
+        "last": 78300,
+        "changePercent": -2.1711366538952745,
+        "absChangePercent": 2.1711366538952745
     },
     {
-        "code": "008930",
-        "name": "한미사이언스",
+        "code": "088350",
+        "name": "한화생명",
         "toBuy": [],
-        "today": 38400,
-        "last": 37000,
-        "changePercent": 3.783783783783784,
-        "absChangePercent": 3.783783783783784
+        "today": 3225,
+        "last": 3245,
+        "changePercent": -0.6163328197226503,
+        "absChangePercent": 0.6163328197226503
     },
     {
         "code": "014680",
         "name": "한솔케미칼",
         "toBuy": [],
-        "today": 228500,
-        "last": 236500,
-        "changePercent": -3.382663847780127,
-        "absChangePercent": 3.382663847780127
-    },
-    {
-        "code": "009970",
-        "name": "영원무역홀딩스",
-        "toBuy": [],
-        "today": 188400,
-        "last": 190000,
-        "changePercent": -0.8421052631578947,
-        "absChangePercent": 0.8421052631578947
-    },
-    {
-        "code": "081660",
-        "name": "미스토홀딩스",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 42250,
-        "last": 42250,
+        "today": 246500,
+        "last": 246500,
         "changePercent": 0.0,
         "absChangePercent": 0.0
     },
@@ -1193,19 +1143,28 @@
         "code": "004170",
         "name": "신세계",
         "toBuy": [],
-        "today": 260500,
-        "last": 256000,
-        "changePercent": 1.7578125,
-        "absChangePercent": 1.7578125
+        "today": 285500,
+        "last": 280000,
+        "changePercent": 1.9642857142857142,
+        "absChangePercent": 1.9642857142857142
     },
     {
-        "code": "011210",
-        "name": "현대위아",
+        "code": "009420",
+        "name": "한올바이오파마",
         "toBuy": [],
-        "today": 91600,
-        "last": 83800,
-        "changePercent": 9.307875894988067,
-        "absChangePercent": 9.307875894988067
+        "today": 52000,
+        "last": 47450,
+        "changePercent": 9.58904109589041,
+        "absChangePercent": 9.58904109589041
+    },
+    {
+        "code": "081660",
+        "name": "미스토홀딩스",
+        "toBuy": [],
+        "today": 44450,
+        "last": 43700,
+        "changePercent": 1.7162471395881007,
+        "absChangePercent": 1.7162471395881007
     },
     {
         "code": "026960",
@@ -1213,21 +1172,19 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 24900,
-        "last": 24900,
-        "changePercent": 0.0,
-        "absChangePercent": 0.0
+        "today": 25700,
+        "last": 26050,
+        "changePercent": -1.3435700575815739,
+        "absChangePercent": 1.3435700575815739
     },
     {
-        "code": "004370",
-        "name": "농심",
-        "toBuy": [
-            "band"
-        ],
-        "today": 406500,
-        "last": 405500,
-        "changePercent": 0.2466091245376079,
-        "absChangePercent": 0.2466091245376079
+        "code": "000240",
+        "name": "한국앤컴퍼니",
+        "toBuy": [],
+        "today": 26800,
+        "last": 27150,
+        "changePercent": -1.289134438305709,
+        "absChangePercent": 1.289134438305709
     },
     {
         "code": "383220",
@@ -1235,30 +1192,77 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 64000,
-        "last": 63800,
-        "changePercent": 0.3134796238244514,
-        "absChangePercent": 0.3134796238244514
+        "today": 65900,
+        "last": 65800,
+        "changePercent": 0.1519756838905775,
+        "absChangePercent": 0.1519756838905775
+    },
+    {
+        "code": "008930",
+        "name": "한미사이언스",
+        "toBuy": [],
+        "today": 36850,
+        "last": 36850,
+        "changePercent": 0.0,
+        "absChangePercent": 0.0
+    },
+    {
+        "code": "009970",
+        "name": "영원무역홀딩스",
+        "toBuy": [],
+        "today": 186000,
+        "last": 188900,
+        "changePercent": -1.5352038115404976,
+        "absChangePercent": 1.5352038115404976
+    },
+    {
+        "code": "004370",
+        "name": "농심",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 412500,
+        "last": 415000,
+        "changePercent": -0.6024096385542169,
+        "absChangePercent": 0.6024096385542169
+    },
+    {
+        "code": "051600",
+        "name": "한전KPS",
+        "toBuy": [],
+        "today": 55500,
+        "last": 53000,
+        "changePercent": 4.716981132075472,
+        "absChangePercent": 4.716981132075472
+    },
+    {
+        "code": "001430",
+        "name": "세아베스틸지주",
+        "toBuy": [],
+        "today": 67900,
+        "last": 67200,
+        "changePercent": 1.0416666666666665,
+        "absChangePercent": 1.0416666666666665
+    },
+    {
+        "code": "011210",
+        "name": "현대위아",
+        "toBuy": [],
+        "today": 88700,
+        "last": 88200,
+        "changePercent": 0.5668934240362812,
+        "absChangePercent": 0.5668934240362812
     },
     {
         "code": "001450",
         "name": "현대해상",
         "toBuy": [
-            "band"
+            "rsi"
         ],
-        "today": 27250,
-        "last": 27800,
-        "changePercent": -1.9784172661870503,
-        "absChangePercent": 1.9784172661870503
-    },
-    {
-        "code": "000240",
-        "name": "한국앤컴퍼니",
-        "toBuy": [],
-        "today": 25050,
-        "last": 24650,
-        "changePercent": 1.6227180527383367,
-        "absChangePercent": 1.6227180527383367
+        "today": 26800,
+        "last": 26600,
+        "changePercent": 0.7518796992481203,
+        "absChangePercent": 0.7518796992481203
     },
     {
         "code": "030000",
@@ -1266,129 +1270,111 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 20300,
-        "last": 20300,
-        "changePercent": 0.0,
-        "absChangePercent": 0.0
-    },
-    {
-        "code": "139130",
-        "name": "iM금융지주",
-        "toBuy": [],
-        "today": 14490,
-        "last": 14860,
-        "changePercent": -2.489905787348587,
-        "absChangePercent": 2.489905787348587
-    },
-    {
-        "code": "139480",
-        "name": "이마트",
-        "toBuy": [],
-        "today": 81800,
-        "last": 80700,
-        "changePercent": 1.3630731102850062,
-        "absChangePercent": 1.3630731102850062
-    },
-    {
-        "code": "051600",
-        "name": "한전KPS",
-        "toBuy": [],
-        "today": 49850,
-        "last": 49400,
-        "changePercent": 0.9109311740890688,
-        "absChangePercent": 0.9109311740890688
-    },
-    {
-        "code": "001430",
-        "name": "세아베스틸지주",
-        "toBuy": [],
-        "today": 61700,
-        "last": 58000,
-        "changePercent": 6.379310344827586,
-        "absChangePercent": 6.379310344827586
+        "today": 20800,
+        "last": 21000,
+        "changePercent": -0.9523809523809524,
+        "absChangePercent": 0.9523809523809524
     },
     {
         "code": "005850",
         "name": "에스엘",
         "toBuy": [],
-        "today": 46050,
-        "last": 43700,
-        "changePercent": 5.377574370709382,
-        "absChangePercent": 5.377574370709382
+        "today": 50000,
+        "last": 47150,
+        "changePercent": 6.044538706256628,
+        "absChangePercent": 6.044538706256628
+    },
+    {
+        "code": "139480",
+        "name": "이마트",
+        "toBuy": [],
+        "today": 83500,
+        "last": 82600,
+        "changePercent": 1.0895883777239708,
+        "absChangePercent": 1.0895883777239708
+    },
+    {
+        "code": "139130",
+        "name": "iM금융지주",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 14110,
+        "last": 14250,
+        "changePercent": -0.9824561403508772,
+        "absChangePercent": 0.9824561403508772
     },
     {
         "code": "000120",
         "name": "CJ대한통운",
         "toBuy": [],
-        "today": 93500,
-        "last": 93900,
-        "changePercent": -0.42598509052183176,
-        "absChangePercent": 0.42598509052183176
-    },
-    {
-        "code": "069960",
-        "name": "현대백화점",
-        "toBuy": [],
-        "today": 91800,
-        "last": 90800,
-        "changePercent": 1.1013215859030838,
-        "absChangePercent": 1.1013215859030838
+        "today": 97400,
+        "last": 98400,
+        "changePercent": -1.0162601626016259,
+        "absChangePercent": 1.0162601626016259
     },
     {
         "code": "028670",
         "name": "팬오션",
         "toBuy": [],
-        "today": 3880,
-        "last": 3845,
-        "changePercent": 0.9102730819245773,
-        "absChangePercent": 0.9102730819245773
+        "today": 4155,
+        "last": 4170,
+        "changePercent": -0.3597122302158274,
+        "absChangePercent": 0.3597122302158274
     },
     {
-        "code": "002790",
-        "name": "아모레퍼시픽홀딩스",
+        "code": "069960",
+        "name": "현대백화점",
         "toBuy": [],
-        "today": 26050,
-        "last": 25850,
-        "changePercent": 0.7736943907156674,
-        "absChangePercent": 0.7736943907156674
-    },
-    {
-        "code": "069620",
-        "name": "대웅제약",
-        "toBuy": [],
-        "today": 172600,
-        "last": 173100,
-        "changePercent": -0.28885037550548814,
-        "absChangePercent": 0.28885037550548814
-    },
-    {
-        "code": "017960",
-        "name": "한국카본",
-        "toBuy": [],
-        "today": 38400,
-        "last": 31400,
-        "changePercent": 22.29299363057325,
-        "absChangePercent": 22.29299363057325
+        "today": 96100,
+        "last": 94600,
+        "changePercent": 1.5856236786469344,
+        "absChangePercent": 1.5856236786469344
     },
     {
         "code": "192820",
         "name": "코스맥스",
         "toBuy": [],
-        "today": 174600,
-        "last": 173200,
-        "changePercent": 0.8083140877598153,
-        "absChangePercent": 0.8083140877598153
+        "today": 187300,
+        "last": 181600,
+        "changePercent": 3.138766519823789,
+        "absChangePercent": 3.138766519823789
+    },
+    {
+        "code": "010060",
+        "name": "OCI홀딩스",
+        "toBuy": [],
+        "today": 113700,
+        "last": 119000,
+        "changePercent": -4.453781512605042,
+        "absChangePercent": 4.453781512605042
     },
     {
         "code": "023530",
         "name": "롯데쇼핑",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 68500,
-        "last": 68900,
-        "changePercent": -0.5805515239477503,
-        "absChangePercent": 0.5805515239477503
+        "toBuy": [],
+        "today": 74900,
+        "last": 73300,
+        "changePercent": 2.1828103683492497,
+        "absChangePercent": 2.1828103683492497
+    },
+    {
+        "code": "002790",
+        "name": "아모레퍼시픽홀딩스",
+        "toBuy": [],
+        "today": 25850,
+        "last": 26000,
+        "changePercent": -0.576923076923077,
+        "absChangePercent": 0.576923076923077
+    },
+    {
+        "code": "282330",
+        "name": "BGF리테일",
+        "toBuy": [],
+        "today": 115200,
+        "last": 109700,
+        "changePercent": 5.013673655423884,
+        "absChangePercent": 5.013673655423884
     },
     {
         "code": "361610",
@@ -1396,39 +1382,64 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 23400,
-        "last": 24700,
-        "changePercent": -5.263157894736842,
-        "absChangePercent": 5.263157894736842
+        "today": 23850,
+        "last": 24400,
+        "changePercent": -2.2540983606557377,
+        "absChangePercent": 2.2540983606557377
     },
     {
-        "code": "018880",
-        "name": "한온시스템",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 2815,
-        "last": 2800,
-        "changePercent": 0.5357142857142857,
-        "absChangePercent": 0.5357142857142857
-    },
-    {
-        "code": "010060",
-        "name": "OCI홀딩스",
+        "code": "069620",
+        "name": "대웅제약",
         "toBuy": [],
-        "today": 101700,
-        "last": 101800,
-        "changePercent": -0.09823182711198428,
-        "absChangePercent": 0.09823182711198428
+        "today": 164200,
+        "last": 164800,
+        "changePercent": -0.3640776699029126,
+        "absChangePercent": 0.3640776699029126
     },
     {
         "code": "006280",
         "name": "녹십자",
         "toBuy": [],
-        "today": 156400,
-        "last": 158300,
-        "changePercent": -1.2002526847757422,
-        "absChangePercent": 1.2002526847757422
+        "today": 160300,
+        "last": 170500,
+        "changePercent": -5.9824046920821115,
+        "absChangePercent": 5.9824046920821115
+    },
+    {
+        "code": "047040",
+        "name": "대우건설",
+        "toBuy": [],
+        "today": 4500,
+        "last": 3970,
+        "changePercent": 13.350125944584383,
+        "absChangePercent": 13.350125944584383
+    },
+    {
+        "code": "008770",
+        "name": "호텔신라",
+        "toBuy": [],
+        "today": 46500,
+        "last": 46250,
+        "changePercent": 0.5405405405405406,
+        "absChangePercent": 0.5405405405405406
+    },
+    {
+        "code": "457190",
+        "name": "이수스페셜티케미컬",
+        "toBuy": [],
+        "today": 60200,
+        "last": 62200,
+        "changePercent": -3.215434083601286,
+        "absChangePercent": 3.215434083601286
+    },
+    {
+        "code": "017960",
+        "name": "한국카본",
+        "toBuy": [],
+        "today": 34950,
+        "last": 36100,
+        "changePercent": -3.1855955678670362,
+        "absChangePercent": 3.1855955678670362
     },
     {
         "code": "006040",
@@ -1436,39 +1447,28 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 40550,
-        "last": 40800,
-        "changePercent": -0.6127450980392157,
-        "absChangePercent": 0.6127450980392157
+        "today": 41000,
+        "last": 41650,
+        "changePercent": -1.56062424969988,
+        "absChangePercent": 1.56062424969988
     },
     {
-        "code": "282330",
-        "name": "BGF리테일",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 103400,
-        "last": 102300,
-        "changePercent": 1.0752688172043012,
-        "absChangePercent": 1.0752688172043012
-    },
-    {
-        "code": "008770",
-        "name": "호텔신라",
+        "code": "007070",
+        "name": "GS리테일",
         "toBuy": [],
-        "today": 44850,
-        "last": 44300,
-        "changePercent": 1.2415349887133182,
-        "absChangePercent": 1.2415349887133182
+        "today": 21100,
+        "last": 20900,
+        "changePercent": 0.9569377990430622,
+        "absChangePercent": 0.9569377990430622
     },
     {
-        "code": "457190",
-        "name": "이수스페셜티케미컬",
+        "code": "073240",
+        "name": "금호타이어",
         "toBuy": [],
-        "today": 57500,
-        "last": 57800,
-        "changePercent": -0.5190311418685121,
-        "absChangePercent": 0.5190311418685121
+        "today": 6100,
+        "last": 5850,
+        "changePercent": 4.273504273504273,
+        "absChangePercent": 4.273504273504273
     },
     {
         "code": "112610",
@@ -1476,134 +1476,100 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 39700,
-        "last": 39500,
-        "changePercent": 0.5063291139240507,
-        "absChangePercent": 0.5063291139240507
-    },
-    {
-        "code": "007070",
-        "name": "GS리테일",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 19860,
-        "last": 20150,
-        "changePercent": -1.4392059553349876,
-        "absChangePercent": 1.4392059553349876
-    },
-    {
-        "code": "073240",
-        "name": "금호타이어",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 5630,
-        "last": 5510,
-        "changePercent": 2.1778584392014517,
-        "absChangePercent": 2.1778584392014517
-    },
-    {
-        "code": "006360",
-        "name": "GS건설",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 18670,
-        "last": 18450,
-        "changePercent": 1.1924119241192412,
-        "absChangePercent": 1.1924119241192412
+        "today": 40800,
+        "last": 41250,
+        "changePercent": -1.090909090909091,
+        "absChangePercent": 1.090909090909091
     },
     {
         "code": "375500",
         "name": "DL이앤씨",
         "toBuy": [],
-        "today": 41100,
-        "last": 39400,
-        "changePercent": 4.314720812182741,
-        "absChangePercent": 4.314720812182741
+        "today": 42900,
+        "last": 41750,
+        "changePercent": 2.754491017964072,
+        "absChangePercent": 2.754491017964072
     },
     {
-        "code": "047040",
-        "name": "대우건설",
+        "code": "006360",
+        "name": "GS건설",
         "toBuy": [],
-        "today": 3770,
-        "last": 3645,
-        "changePercent": 3.4293552812071333,
-        "absChangePercent": 3.4293552812071333
+        "today": 19090,
+        "last": 18950,
+        "changePercent": 0.7387862796833773,
+        "absChangePercent": 0.7387862796833773
     },
     {
         "code": "034230",
         "name": "파라다이스",
         "toBuy": [],
-        "today": 16590,
-        "last": 15800,
-        "changePercent": 5.0,
-        "absChangePercent": 5.0
+        "today": 16780,
+        "last": 17080,
+        "changePercent": -1.756440281030445,
+        "absChangePercent": 1.756440281030445
     },
     {
         "code": "007310",
         "name": "오뚜기",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 376000,
-        "last": 375000,
-        "changePercent": 0.26666666666666666,
-        "absChangePercent": 0.26666666666666666
+        "toBuy": [],
+        "today": 384000,
+        "last": 383000,
+        "changePercent": 0.26109660574412535,
+        "absChangePercent": 0.26109660574412535
     },
     {
         "code": "161890",
         "name": "한국콜마",
         "toBuy": [],
-        "today": 63300,
-        "last": 63000,
-        "changePercent": 0.4761904761904762,
-        "absChangePercent": 0.4761904761904762
+        "today": 63900,
+        "last": 64300,
+        "changePercent": -0.6220839813374806,
+        "absChangePercent": 0.6220839813374806
     },
     {
         "code": "007340",
         "name": "DN오토모티브",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 25000,
-        "last": 23550,
-        "changePercent": 6.1571125265392785,
-        "absChangePercent": 6.1571125265392785
-    },
-    {
-        "code": "003090",
-        "name": "대웅",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 21500,
-        "last": 21350,
-        "changePercent": 0.702576112412178,
-        "absChangePercent": 0.702576112412178
-    },
-    {
-        "code": "000080",
-        "name": "하이트진로",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 17630,
-        "last": 17590,
-        "changePercent": 0.22740193291642977,
-        "absChangePercent": 0.22740193291642977
+        "toBuy": [],
+        "today": 23600,
+        "last": 23700,
+        "changePercent": -0.42194092827004215,
+        "absChangePercent": 0.42194092827004215
     },
     {
         "code": "001800",
         "name": "오리온홀딩스",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 19530,
-        "last": 19440,
-        "changePercent": 0.4629629629629629,
-        "absChangePercent": 0.4629629629629629
+        "toBuy": [],
+        "today": 20300,
+        "last": 20400,
+        "changePercent": -0.49019607843137253,
+        "absChangePercent": 0.49019607843137253
+    },
+    {
+        "code": "000080",
+        "name": "하이트진로",
+        "toBuy": [],
+        "today": 17970,
+        "last": 17910,
+        "changePercent": 0.33500837520938026,
+        "absChangePercent": 0.33500837520938026
+    },
+    {
+        "code": "003090",
+        "name": "대웅",
+        "toBuy": [],
+        "today": 21600,
+        "last": 22000,
+        "changePercent": -1.8181818181818181,
+        "absChangePercent": 1.8181818181818181
+    },
+    {
+        "code": "298020",
+        "name": "효성티앤씨",
+        "toBuy": [],
+        "today": 288000,
+        "last": 265500,
+        "changePercent": 8.47457627118644,
+        "absChangePercent": 8.47457627118644
     },
     {
         "code": "300720",
@@ -1611,101 +1577,109 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 16540,
-        "last": 16510,
-        "changePercent": 0.18170805572380377,
-        "absChangePercent": 0.18170805572380377
-    },
-    {
-        "code": "005300",
-        "name": "롯데칠성",
-        "toBuy": [],
-        "today": 125000,
-        "last": 125600,
-        "changePercent": -0.47770700636942676,
-        "absChangePercent": 0.47770700636942676
-    },
-    {
-        "code": "285130",
-        "name": "SK케미칼",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 66200,
-        "last": 66600,
-        "changePercent": -0.6006006006006006,
-        "absChangePercent": 0.6006006006006006
-    },
-    {
-        "code": "192080",
-        "name": "더블유게임즈",
-        "toBuy": [],
-        "today": 53100,
-        "last": 53300,
-        "changePercent": -0.37523452157598497,
-        "absChangePercent": 0.37523452157598497
-    },
-    {
-        "code": "185750",
-        "name": "종근당",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 82500,
-        "last": 82900,
-        "changePercent": -0.48250904704463204,
-        "absChangePercent": 0.48250904704463204
+        "today": 16800,
+        "last": 17120,
+        "changePercent": -1.8691588785046727,
+        "absChangePercent": 1.8691588785046727
     },
     {
         "code": "120110",
         "name": "코오롱인더",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 41050,
-        "last": 41150,
-        "changePercent": -0.24301336573511542,
-        "absChangePercent": 0.24301336573511542
+        "toBuy": [],
+        "today": 43650,
+        "last": 45700,
+        "changePercent": -4.485776805251642,
+        "absChangePercent": 4.485776805251642
     },
     {
         "code": "071320",
         "name": "지역난방공사",
+        "toBuy": [],
+        "today": 103400,
+        "last": 103000,
+        "changePercent": 0.3883495145631068,
+        "absChangePercent": 0.3883495145631068
+    },
+    {
+        "code": "285130",
+        "name": "SK케미칼",
+        "toBuy": [],
+        "today": 67900,
+        "last": 70300,
+        "changePercent": -3.4139402560455197,
+        "absChangePercent": 3.4139402560455197
+    },
+    {
+        "code": "005300",
+        "name": "롯데칠성",
         "toBuy": [
             "rsi"
         ],
-        "today": 96800,
-        "last": 96600,
-        "changePercent": 0.2070393374741201,
-        "absChangePercent": 0.2070393374741201
+        "today": 126300,
+        "last": 126800,
+        "changePercent": -0.3943217665615142,
+        "absChangePercent": 0.3943217665615142
     },
     {
         "code": "004000",
         "name": "롯데정밀화학",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 42450,
-        "last": 41950,
-        "changePercent": 1.1918951132300357,
-        "absChangePercent": 1.1918951132300357
+        "toBuy": [],
+        "today": 44700,
+        "last": 45200,
+        "changePercent": -1.1061946902654867,
+        "absChangePercent": 1.1061946902654867
     },
     {
-        "code": "137310",
-        "name": "에스디바이오센서",
+        "code": "185750",
+        "name": "종근당",
         "toBuy": [],
-        "today": 8710,
-        "last": 8670,
-        "changePercent": 0.461361014994233,
-        "absChangePercent": 0.461361014994233
+        "today": 83300,
+        "last": 82800,
+        "changePercent": 0.6038647342995169,
+        "absChangePercent": 0.6038647342995169
+    },
+    {
+        "code": "192080",
+        "name": "더블유게임즈",
+        "toBuy": [
+            "band",
+            "rsi"
+        ],
+        "today": 51000,
+        "last": 51900,
+        "changePercent": -1.7341040462427744,
+        "absChangePercent": 1.7341040462427744
     },
     {
         "code": "009240",
         "name": "한샘",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 44550,
+        "last": 44600,
+        "changePercent": -0.11210762331838565,
+        "absChangePercent": 0.11210762331838565
+    },
+    {
+        "code": "137310",
+        "name": "에스디바이오센서",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 8390,
+        "last": 8530,
+        "changePercent": -1.6412661195779603,
+        "absChangePercent": 1.6412661195779603
+    },
+    {
+        "code": "006650",
+        "name": "대한유화",
         "toBuy": [],
-        "today": 42300,
-        "last": 43300,
-        "changePercent": -2.3094688221709005,
-        "absChangePercent": 2.3094688221709005
+        "today": 157000,
+        "last": 159200,
+        "changePercent": -1.3819095477386936,
+        "absChangePercent": 1.3819095477386936
     },
     {
         "code": "280360",
@@ -1713,141 +1687,93 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 106900,
-        "last": 107300,
-        "changePercent": -0.3727865796831314,
-        "absChangePercent": 0.3727865796831314
-    },
-    {
-        "code": "298020",
-        "name": "효성티앤씨",
-        "toBuy": [],
-        "today": 229000,
-        "last": 222500,
-        "changePercent": 2.9213483146067416,
-        "absChangePercent": 2.9213483146067416
-    },
-    {
-        "code": "114090",
-        "name": "GKL",
-        "toBuy": [],
-        "today": 14050,
-        "last": 13750,
-        "changePercent": 2.181818181818182,
-        "absChangePercent": 2.181818181818182
-    },
-    {
-        "code": "004490",
-        "name": "세방전지",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 61900,
-        "last": 61300,
-        "changePercent": 0.9787928221859705,
-        "absChangePercent": 0.9787928221859705
+        "today": 108400,
+        "last": 107400,
+        "changePercent": 0.931098696461825,
+        "absChangePercent": 0.931098696461825
     },
     {
         "code": "000670",
         "name": "영풍",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 45150,
-        "last": 47300,
-        "changePercent": -4.545454545454546,
-        "absChangePercent": 4.545454545454546
-    },
-    {
-        "code": "006650",
-        "name": "대한유화",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 129100,
-        "last": 129200,
-        "changePercent": -0.07739938080495357,
-        "absChangePercent": 0.07739938080495357
+        "toBuy": [],
+        "today": 53700,
+        "last": 49400,
+        "changePercent": 8.704453441295547,
+        "absChangePercent": 8.704453441295547
     },
     {
         "code": "298050",
         "name": "HS효성첨단소재",
         "toBuy": [],
-        "today": 182900,
-        "last": 179000,
-        "changePercent": 2.1787709497206706,
-        "absChangePercent": 2.1787709497206706
+        "today": 201500,
+        "last": 202000,
+        "changePercent": -0.24752475247524752,
+        "absChangePercent": 0.24752475247524752
+    },
+    {
+        "code": "004490",
+        "name": "세방전지",
+        "toBuy": [],
+        "today": 63600,
+        "last": 63300,
+        "changePercent": 0.47393364928909953,
+        "absChangePercent": 0.47393364928909953
     },
     {
         "code": "003240",
         "name": "태광산업",
+        "toBuy": [],
+        "today": 744000,
+        "last": 748000,
+        "changePercent": -0.53475935828877,
+        "absChangePercent": 0.53475935828877
+    },
+    {
+        "code": "114090",
+        "name": "GKL",
         "toBuy": [
             "rsi"
         ],
-        "today": 722000,
-        "last": 709000,
-        "changePercent": 1.8335684062059237,
-        "absChangePercent": 1.8335684062059237
+        "today": 13330,
+        "last": 13450,
+        "changePercent": -0.8921933085501859,
+        "absChangePercent": 0.8921933085501859
     },
     {
         "code": "093370",
         "name": "후성",
         "toBuy": [],
-        "today": 7280,
-        "last": 7370,
-        "changePercent": -1.2211668928086838,
-        "absChangePercent": 1.2211668928086838
-    },
-    {
-        "code": "069260",
-        "name": "TKG휴켐스",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 18380,
-        "last": 18570,
-        "changePercent": -1.0231556273559503,
-        "absChangePercent": 1.0231556273559503
-    },
-    {
-        "code": "000210",
-        "name": "DL",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 34850,
-        "last": 34600,
-        "changePercent": 0.7225433526011561,
-        "absChangePercent": 0.7225433526011561
-    },
-    {
-        "code": "005250",
-        "name": "녹십자홀딩스",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 15290,
-        "last": 15580,
-        "changePercent": -1.8613607188703467,
-        "absChangePercent": 1.8613607188703467
+        "today": 7430,
+        "last": 7590,
+        "changePercent": -2.1080368906455864,
+        "absChangePercent": 2.1080368906455864
     },
     {
         "code": "001680",
         "name": "대상",
         "toBuy": [],
-        "today": 20750,
-        "last": 19830,
-        "changePercent": 4.639435199193142,
-        "absChangePercent": 4.639435199193142
+        "today": 22150,
+        "last": 22200,
+        "changePercent": -0.22522522522522523,
+        "absChangePercent": 0.22522522522522523
     },
     {
-        "code": "002840",
-        "name": "미원상사",
+        "code": "000210",
+        "name": "DL",
         "toBuy": [],
-        "today": 147400,
-        "last": 146500,
-        "changePercent": 0.614334470989761,
-        "absChangePercent": 0.614334470989761
+        "today": 36450,
+        "last": 36700,
+        "changePercent": -0.6811989100817438,
+        "absChangePercent": 0.6811989100817438
+    },
+    {
+        "code": "069260",
+        "name": "TKG휴켐스",
+        "toBuy": [],
+        "today": 18450,
+        "last": 18660,
+        "changePercent": -1.1254019292604502,
+        "absChangePercent": 1.1254019292604502
     },
     {
         "code": "014820",
@@ -1855,52 +1781,73 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 24150,
-        "last": 24250,
-        "changePercent": -0.4123711340206186,
-        "absChangePercent": 0.4123711340206186
+        "today": 24650,
+        "last": 24700,
+        "changePercent": -0.20242914979757085,
+        "absChangePercent": 0.20242914979757085
+    },
+    {
+        "code": "002840",
+        "name": "미원상사",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 146700,
+        "last": 147800,
+        "changePercent": -0.7442489851150204,
+        "absChangePercent": 0.7442489851150204
+    },
+    {
+        "code": "005250",
+        "name": "녹십자홀딩스",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 14810,
+        "last": 15280,
+        "changePercent": -3.0759162303664924,
+        "absChangePercent": 3.0759162303664924
     },
     {
         "code": "268280",
         "name": "미원에스씨",
+        "toBuy": [
+            "rsi"
+        ],
+        "today": 134700,
+        "last": 136300,
+        "changePercent": -1.173881144534116,
+        "absChangePercent": 1.173881144534116
+    },
+    {
+        "code": "008730",
+        "name": "율촌화학",
         "toBuy": [],
-        "today": 137500,
-        "last": 135900,
-        "changePercent": 1.177336276674025,
-        "absChangePercent": 1.177336276674025
+        "today": 25450,
+        "last": 25950,
+        "changePercent": -1.9267822736030826,
+        "absChangePercent": 1.9267822736030826
     },
     {
         "code": "002030",
         "name": "아세아",
         "toBuy": [
+            "band",
             "rsi"
         ],
-        "today": 318500,
-        "last": 317500,
-        "changePercent": 0.31496062992125984,
-        "absChangePercent": 0.31496062992125984
-    },
-    {
-        "code": "008730",
-        "name": "율촌화학",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 25450,
-        "last": 25350,
-        "changePercent": 0.39447731755424065,
-        "absChangePercent": 0.39447731755424065
+        "today": 281500,
+        "last": 295500,
+        "changePercent": -4.737732656514383,
+        "absChangePercent": 4.737732656514383
     },
     {
         "code": "005420",
         "name": "코스모화학",
-        "toBuy": [
-            "rsi"
-        ],
-        "today": 13420,
-        "last": 13730,
-        "changePercent": -2.2578295702840494,
-        "absChangePercent": 2.2578295702840494
+        "toBuy": [],
+        "today": 13810,
+        "last": 14150,
+        "changePercent": -2.402826855123675,
+        "absChangePercent": 2.402826855123675
     },
     {
         "code": "003030",
@@ -1908,9 +1855,9 @@
         "toBuy": [
             "rsi"
         ],
-        "today": 115300,
-        "last": 113000,
-        "changePercent": 2.0353982300884956,
-        "absChangePercent": 2.0353982300884956
+        "today": 118400,
+        "last": 119700,
+        "changePercent": -1.086048454469507,
+        "absChangePercent": 1.086048454469507
     }
 ]
