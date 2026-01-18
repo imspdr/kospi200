@@ -7,14 +7,7 @@ permissions:
 on:
   schedule:
     - cron: "0 9 * * 1-5" # 18:00 KST (09:00 UTC) Mon-Fri
-  workflow_dispatch:
-    inputs:
-      skip_crawl:
-        description: 'Skip crawling data'
-        required: false
-        default: false
-        type: boolean
-
+    
 jobs:
   run-crawler:
     runs-on: ubuntu-latest
