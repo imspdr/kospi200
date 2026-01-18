@@ -1,10 +1,8 @@
-name: Daily Crawl and Deploy
+name: Daily Crawl
 
 permissions:
-  contents: write
-  pages: write
+  contents: read
   id-token: write
-  packages: read
 
 on:
   schedule:
@@ -18,83 +16,28 @@ on:
         type: boolean
 
 jobs:
-  run-python-and-build:
+  run-crawler:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Set up Python
-        if: ${{ github.event_name == 'schedule' || inputs.skip_crawl == false }}
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
 
       - name: Install Python dependencies
-        if: ${{ github.event_name == 'schedule' || inputs.skip_crawl == false }}
         run: |
           python -m pip install --upgrade pip
           pip install -r crawl/requirements.txt
 
       - name: Set PYTHONPATH
-        if: ${{ github.event_name == 'schedule' || inputs.skip_crawl == false }}
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
+      - name: Create Service Account Key
+        run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}' > serviceAccountKey.json
+
       - name: Run python crawler
-        if: ${{ github.event_name == 'schedule' || inputs.skip_crawl == false }}
         run: python crawl/crawler.py
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@imspdr'
-
-      - name: Install dependencies
-        run: npm install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-      - name: Build Frontend
-        run: npm run build
-
-      - name: Commit and Push Changes (Weekly - Fridays)
-        run: |
-          # 1=Mon, ..., 5=Fri, 6=Sat, 7=Sun
-          # Check day of week in UTC (which corresponds to KST Friday evening for 9AM UTC run)
-          if [ "$(date +%u)" -eq 5 ]; then
-             git config --global user.name "github-actions[bot]"
-             git config --global user.email "github-actions[bot]@users.noreply.github.com"
-             git add .
-             # Check if there are changes to commit
-             if ! git diff-index --quiet HEAD; then
-               git commit -m "auto-update crawl data from GitHub Actions (Weekly)"
-               git push
-             else
-               echo "No changes to commit."
-             fi
-          else
-             echo "Today is not Friday. Skipping commit."
-          fi
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./docs
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: run-python-and-build
-    environment:
-      name: github-pages
-      url: ${{ github.pages_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

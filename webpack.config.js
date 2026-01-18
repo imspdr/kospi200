@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 const deps = require('./package.json').dependencies;
 
 module.exports = (env, argv) => {
@@ -57,10 +58,8 @@ module.exports = (env, argv) => {
         template: path.resolve(__dirname, "src/404.html"),
         filename: "404.html",
       }),
-      new CopyWebpackPlugin({
-        patterns: [{ from: 'public/data', to: 'data', noErrorOnMissing: true }],
-      }),
       new CleanWebpackPlugin(),
+      new Dotenv(),
     ],
     devServer: {
       port: 3200,

@@ -5,31 +5,33 @@ from build_analysis import analysis_df, is_buy_signal
 import os
 import json
 import time
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
 
 if __name__ == "__main__":
 
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    store_path = os.path.join(BASE_DIR, "../public/data/")
-    os.makedirs(store_path, exist_ok=True)
+    # Initialize Firebase Admin
+    cred = credentials.Certificate("serviceAccountKey.json")
+    firebase_admin.initialize_app(cred)
+    db = firestore.client()
 
-    codes_filename = "codes.json"
     kospi200 = crawl_kospi200()
     codes_with_to_buy = []
 
     for i, stock in enumerate(kospi200):
         time.sleep(0.05)
         code = stock["code"]
-        filename = f"data{code}.json"
-        try:
-            with open(os.path.join(store_path, filename), "r") as f:
-                cached_data = json.load(f)
-        except Exception:
-            cached_data = None
-
+        
         print(f"{i}" + stock["name"])
-        if cached_data:
+        
+        doc_ref = db.collection("stocks").document(code)
+        doc = doc_ref.get()
+
+        if doc.exists:
+            cached_data = doc.to_dict()
             new_data = crawl_stock_data(stock["code"], 2)
-            old_analysis = cached_data["analysis"]
+            old_analysis = cached_data.get("analysis", [])
             
             # Using a set of dates for faster lookup
             cached_dates = {item["date"] for item in old_analysis}
@@ -64,8 +66,9 @@ if __name__ == "__main__":
             "news": news,
             "to_buy": to_buy
         }
-        change = today_price - last_price
-        change_percent = (change / last_price) * 100
+        
+        # Upload to Firestore
+        db.collection("stocks").document(code).set(last_result)
         
         codes_with_to_buy.append({
             "code": stock["code"],
@@ -77,10 +80,5 @@ if __name__ == "__main__":
             "absChangePercent": abs(change_percent)
         })
 
-
-        with open(os.path.join(store_path, filename), "w", encoding="utf-8") as f:
-            json.dump(last_result, f, ensure_ascii=False, indent=4)
-
-
-    with open(os.path.join(store_path, codes_filename), "w", encoding="utf-8") as f:
-        json.dump(codes_with_to_buy, f, ensure_ascii=False, indent=4)
+    # Upload codes list to Firestore
+    db.collection("meta").document("codes").set({"list": codes_with_to_buy})

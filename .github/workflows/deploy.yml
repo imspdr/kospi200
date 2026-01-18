@@ -1,0 +1,60 @@
+name: Deploy Frontend
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  packages: read
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ github.pages_url }}
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@imspdr'
+
+      - name: Install dependencies
+        run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Firebase Config
+        run: |
+          echo "REACT_APP_FIREBASE_API_KEY=$(echo '${{ secrets.FIREBASE_CONFIG }}' | jq -r .apiKey)" >> $GITHUB_ENV
+          echo "REACT_APP_FIREBASE_AUTH_DOMAIN=$(echo '${{ secrets.FIREBASE_CONFIG }}' | jq -r .authDomain)" >> $GITHUB_ENV
+          echo "REACT_APP_FIREBASE_PROJECT_ID=$(echo '${{ secrets.FIREBASE_CONFIG }}' | jq -r .projectId)" >> $GITHUB_ENV
+          echo "REACT_APP_FIREBASE_STORAGE_BUCKET=$(echo '${{ secrets.FIREBASE_CONFIG }}' | jq -r .storageBucket)" >> $GITHUB_ENV
+          echo "REACT_APP_FIREBASE_MESSAGING_SENDER_ID=$(echo '${{ secrets.FIREBASE_CONFIG }}' | jq -r .messagingSenderId)" >> $GITHUB_ENV
+          echo "REACT_APP_FIREBASE_APP_ID=$(echo '${{ secrets.FIREBASE_CONFIG }}' | jq -r .appId)" >> $GITHUB_ENV
+
+      - name: Build Frontend
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
