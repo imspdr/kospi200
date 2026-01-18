@@ -36,7 +36,7 @@ jobs:
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
       - name: Create Service Account Key
-        run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}' > serviceAccountKey.json
+        run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}' > crawl/serviceAccountKey.json
 
       - name: Run python crawler
         run: python crawl/crawler.py
