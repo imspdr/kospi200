@@ -18,8 +18,6 @@ if __name__ == "__main__":
     cred = credentials.Certificate(cred_path)
     firebase_admin.initialize_app(cred)
     db = firestore.client()
-
-    from concurrent.futures import ThreadPoolExecutor
     
     def process_stock(stock, cached_data=None):
         try:
@@ -90,18 +88,23 @@ if __name__ == "__main__":
     cached_stocks = {doc.id: doc.to_dict() for doc in docs}
     print(f"Loaded {len(cached_stocks)} existing stocks.")
 
-    # 2. Parallel Processing
-    print("Starting parallel processing...")
+    # 2. Sequential Processing (Modified for stability)
+    print("Starting sequential processing...")
     results = []
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        # submit all tasks
-        futures = [executor.submit(process_stock, stock, cached_stocks.get(stock["code"])) for stock in kospi200]
+    
+    for i, stock in enumerate(kospi200):
+        # Respectful crawling delay
+        time.sleep(0.05)
         
-        for future in futures:
-            res, meta = future.result()
-            if res:
-                results.append(res)
-                codes_with_to_buy.append(meta)
+        # Process single stock
+        res, meta = process_stock(stock, cached_stocks.get(stock["code"]))
+        
+        if res:
+            results.append(res)
+            codes_with_to_buy.append(meta)
+            
+        if i % 10 == 0:
+            print(f"Processed {i}/{len(kospi200)} stocks...")
 
     # 3. Batch Write to Firestore
     print("Writing to Firestore...")
