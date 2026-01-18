@@ -1,10 +1,9 @@
-import { useEffect, FC } from 'react';
+import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
 import { useDeviceType } from '@imspdr/ui';
 import { StockChart } from '../../components/StockChart';
-import { useStockDetail } from '../../hooks/useKospiData';
-import { useRecentlyViewed } from '../../hooks/useRecentlyViewed';
+import { useStockDetailPage } from '../../hooks/useStockDetailPage';
 import { DetailHeader } from '../../components/DetailHeader';
 import { NewsSection } from '../../components/NewsSection';
 import { SimpleStockChart } from '../../components/SimpleStockChart';
@@ -13,14 +12,7 @@ import { Container, LeftColumn, RightColumn, MobileContainer, ChartWrapper } fro
 export const DetailPage: FC = () => {
   const { code } = useParams<{ code: string }>();
   const { isPc } = useDeviceType();
-  const { data: stock, isLoading, isError } = useStockDetail(code || null);
-  const { addRecentView } = useRecentlyViewed([]);
-
-  useEffect(() => {
-    if (code) {
-      addRecentView(code);
-    }
-  }, [code, addRecentView]);
+  const { stock, isLoading, isError, todayPrice, changePercent } = useStockDetailPage(code);
 
   if (isLoading) {
     return (
@@ -46,12 +38,7 @@ export const DetailPage: FC = () => {
     );
   }
 
-  const lastAnalysis = stock.analysis[stock.analysis.length - 1];
-  const prevAnalysis = stock.analysis[stock.analysis.length - 2];
 
-  const todayPrice = stock.today || lastAnalysis.end;
-  const lastPrice = stock.last || prevAnalysis.end;
-  const changePercent = ((todayPrice - lastPrice) / lastPrice) * 100;
 
   if (isPc) {
     return (
@@ -60,8 +47,8 @@ export const DetailPage: FC = () => {
           <DetailHeader
             name={stock.name}
             code={stock.code}
-            todayPrice={todayPrice}
-            changePercent={changePercent}
+            todayPrice={todayPrice || 0}
+            changePercent={changePercent || 0}
           />
           <NewsSection news={stock.news} />
         </LeftColumn>
@@ -78,8 +65,8 @@ export const DetailPage: FC = () => {
       <DetailHeader
         name={stock.name}
         code={stock.code}
-        todayPrice={todayPrice}
-        changePercent={changePercent}
+        todayPrice={todayPrice || 0}
+        changePercent={changePercent || 0}
       />
       <ChartWrapper>
         <SimpleStockChart data={stock.analysis} />

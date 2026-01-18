@@ -46,7 +46,7 @@ export const StarButton = styled.button<{ isStarred: boolean }>`
   border: none;
   padding: 0;
   cursor: pointer;
-  color: ${({ isStarred }) => (isStarred ? '#FFD700' : 'var(--imspdr-foreground-fg3)')};
+  color: ${({ isStarred }) => (isStarred ? 'var(--imspdr-mint-mint1)' : 'var(--imspdr-foreground-fg3)')};
   font-size: 14px;
 `;
 
@@ -78,7 +78,7 @@ export const Price = styled(Typography)`
 `;
 
 export const Change = styled(Typography) <{ trend: 'up' | 'down' | 'flat' }>`
-  color: ${({ trend }) => (trend === 'up' ? '#e23d29' : trend === 'down' ? '#1e75d0' : '#999999')};
+  color: ${({ trend }) => (trend === 'up' ? 'var(--imspdr-red-red1)' : trend === 'down' ? '#1e75d0' : 'var(--imspdr-foreground-fg3)')};
 `;
 
 export const FoldedIcon = styled(Typography)`
