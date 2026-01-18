@@ -8,5 +8,3 @@ dist
 node_modules/
 /docs
 **/serviceAccountKey.json
-.env
-firebase_config.json

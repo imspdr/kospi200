@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  "apiKey": "AIzaSyChNOGKm1OMA3iqql-rMFfJh1AMNB6vZVY",
+  "authDomain": "kospi200.firebaseapp.com",
+  "projectId": "kospi200",
+  "storageBucket": "kospi200.firebasestorage.app",
+  "messagingSenderId": "134411819686",
+  "appId": "1:134411819686:web:5bdac1a3884b614008f267"
 };
 
 const app = initializeApp(firebaseConfig);
