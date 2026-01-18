@@ -27,7 +27,7 @@ jobs:
           pip install -r crawl/requirements.txt
 
       - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/crawl" >> $GITHUB_ENV
 
       - name: Create Service Account Key
         run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}' > crawl/serviceAccountKey.json

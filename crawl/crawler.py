@@ -12,7 +12,10 @@ from firebase_admin import firestore
 if __name__ == "__main__":
 
     # Initialize Firebase Admin
-    cred = credentials.Certificate("serviceAccountKey.json")
+    import os
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    cred_path = os.path.join(BASE_DIR, "serviceAccountKey.json")
+    cred = credentials.Certificate(cred_path)
     firebase_admin.initialize_app(cred)
     db = firestore.client()
 
