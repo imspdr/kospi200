@@ -116,15 +116,34 @@ if __name__ == "__main__":
         batch.set(doc_ref, res)
         batch_count += 1
         
-        if batch_count >= 400:
-            batch.commit()
+        if batch_count >= 20: # Updated to 20 as per user request
+            for attempt in range(3):
+                try:
+                    batch.commit()
+                    print(f"Committed batch of 20.")
+                    break
+                except Exception as e:
+                    if attempt == 2:
+                        print(f"Failed to commit batch: {e}")
+                        raise e
+                    print(f"Error committing batch (attempt {attempt+1}/3): {e}. Retrying...")
+                    time.sleep(2 * (attempt + 1))
+            
             batch = db.batch()
             batch_count = 0
-            print("Committed batch of 400.")
 
     if batch_count > 0:
-        batch.commit()
-        print(f"Committed final batch of {batch_count}.")
+        for attempt in range(3):
+            try:
+                batch.commit()
+                print(f"Committed final batch of {batch_count}.")
+                break
+            except Exception as e:
+                if attempt == 2:
+                    print(f"Failed to commit final batch: {e}")
+                    raise e
+                print(f"Error committing final batch (attempt {attempt+1}/3): {e}. Retrying...")
+                time.sleep(2 * (attempt + 1))
 
     # Upload codes list to Firestore
     db.collection("meta").document("codes").set({"list": codes_with_to_buy})
