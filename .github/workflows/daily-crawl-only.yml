@@ -1,4 +1,4 @@
-name: Daily Crawl
+name: crawl and update firebase
 
 permissions:
   contents: read
