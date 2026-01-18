@@ -24,14 +24,12 @@ const queryClient = new QueryClient({
 });
 
 const App: FC = () => {
-  const basename = process.env.NODE_ENV === 'production' ? '/kospi200' : '/';
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <ToastProvider>
           <ModalProvider>
-            <BrowserRouter basename={basename}>
+            <BrowserRouter>
               <AppLayout />
             </BrowserRouter>
           </ModalProvider>

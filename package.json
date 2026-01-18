@@ -1,7 +1,7 @@
 {
   "name": "kospi200",
-  "version": "1.0.0",
-  "homepage": "imspdr.github.io/kospi200/",
+  "version": "1.0.1",
+  "homepage": "imspdr.github.io/kospi200",
   "engines": {
     "node": ">=20.0.0"
   },
