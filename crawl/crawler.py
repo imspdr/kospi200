@@ -19,69 +19,110 @@ if __name__ == "__main__":
     firebase_admin.initialize_app(cred)
     db = firestore.client()
 
+    from concurrent.futures import ThreadPoolExecutor
+    
+    def process_stock(stock, cached_data=None):
+        try:
+            code = stock["code"]
+            name = stock["name"]
+            
+            print(f"Processing {name} ({code})...")
+
+            if cached_data:
+                new_data = crawl_stock_data(code, 2)
+                old_analysis = cached_data.get("analysis", [])
+                
+                # Using a set of dates for faster lookup
+                cached_dates = {item["date"] for item in old_analysis}
+                for item in new_data:
+                    if item["date"] not in cached_dates:
+                        old_analysis.append(item)
+                
+                # Sort by date and keep latest
+                old_analysis.sort(key=lambda x: x["date"])
+                analysis = analysis_df(old_analysis[-520:])
+            else:
+                # First time crawl: 2 years (approx 52 pages of 10 days each = 520 days)
+                data = crawl_stock_data(code, 52)
+                analysis = analysis_df(data)
+
+            news = crawl_news(name)
+            to_buy = is_buy_signal(analysis[-1])
+
+            today_price = analysis[-1]["end"]
+            last_price = analysis[-2]["end"]
+            change = today_price - last_price
+            change_percent = (change / last_price) * 100
+
+            last_result = {
+                "code": code,
+                "name": name.replace("amp;", ""),
+                "today": today_price,
+                "last": last_price,
+                "changePercent": change_percent,
+                "absChangePercent": abs(change_percent),
+                "analysis": analysis[20:],
+                "news": news,
+                "to_buy": to_buy
+            }
+            
+            meta_info = {
+                "code": code,
+                "name": name.replace("amp;", ""),
+                "toBuy": to_buy,
+                "today": today_price,
+                "last": last_price,
+                "changePercent": change_percent,
+                "absChangePercent": abs(change_percent)
+            }
+            
+            return last_result, meta_info
+        except Exception as e:
+            print(f"Error processing {stock['name']}: {e}")
+            return None, None
+
     kospi200 = crawl_kospi200()
     codes_with_to_buy = []
 
-    for i, stock in enumerate(kospi200):
-        time.sleep(0.05)
-        code = stock["code"]
-        
-        print(f"{i}" + stock["name"])
-        
-        doc_ref = db.collection("stocks").document(code)
-        doc = doc_ref.get()
+    # 1. Load all existing documents to avoid N reads in loop
+    print("Loading existing data from Firestore...")
+    docs = db.collection("stocks").stream()
+    cached_stocks = {doc.id: doc.to_dict() for doc in docs}
+    print(f"Loaded {len(cached_stocks)} existing stocks.")
 
-        if doc.exists:
-            cached_data = doc.to_dict()
-            new_data = crawl_stock_data(stock["code"], 2)
-            old_analysis = cached_data.get("analysis", [])
-            
-            # Using a set of dates for faster lookup
-            cached_dates = {item["date"] for item in old_analysis}
-            for item in new_data:
-                if item["date"] not in cached_dates:
-                    old_analysis.append(item)
-            
-            # Sort by date and keep latest
-            old_analysis.sort(key=lambda x: x["date"])
-            analysis = analysis_df(old_analysis[-520:])
-        else:
-            # First time crawl: 2 years (approx 52 pages of 10 days each = 520 days)
-            data = crawl_stock_data(stock["code"], 52)
-            analysis = analysis_df(data)
-
-        news = crawl_news(stock["name"])
-        to_buy = is_buy_signal(analysis[-1])
-
-        today_price = analysis[-1]["end"]
-        last_price = analysis[-2]["end"]
-        change = today_price - last_price
-        change_percent = (change / last_price) * 100
-
-        last_result = {
-            "code": stock["code"],
-            "name": stock["name"].replace("amp;", ""),
-            "today": today_price,
-            "last": last_price,
-            "changePercent": change_percent,
-            "absChangePercent": abs(change_percent),
-            "analysis": analysis[20:],
-            "news": news,
-            "to_buy": to_buy
-        }
+    # 2. Parallel Processing
+    print("Starting parallel processing...")
+    results = []
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        # submit all tasks
+        futures = [executor.submit(process_stock, stock, cached_stocks.get(stock["code"])) for stock in kospi200]
         
-        # Upload to Firestore
-        db.collection("stocks").document(code).set(last_result)
+        for future in futures:
+            res, meta = future.result()
+            if res:
+                results.append(res)
+                codes_with_to_buy.append(meta)
+
+    # 3. Batch Write to Firestore
+    print("Writing to Firestore...")
+    batch = db.batch()
+    batch_count = 0
+    
+    for res in results:
+        doc_ref = db.collection("stocks").document(res["code"])
+        batch.set(doc_ref, res)
+        batch_count += 1
         
-        codes_with_to_buy.append({
-            "code": stock["code"],
-            "name": stock["name"].replace("amp;", ""),
-            "toBuy": to_buy,
-            "today": today_price,
-            "last": last_price,
-            "changePercent": change_percent,
-            "absChangePercent": abs(change_percent)
-        })
+        if batch_count >= 400:
+            batch.commit()
+            batch = db.batch()
+            batch_count = 0
+            print("Committed batch of 400.")
+
+    if batch_count > 0:
+        batch.commit()
+        print(f"Committed final batch of {batch_count}.")
 
     # Upload codes list to Firestore
     db.collection("meta").document("codes").set({"list": codes_with_to_buy})
+    print("Done.")
