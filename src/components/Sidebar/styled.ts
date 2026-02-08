@@ -20,7 +20,7 @@ export const SidebarContainer = styled.aside<{ isFolded: boolean }>`
     box-shadow: ${({ isFolded }) => (isFolded ? "none" : "-8px 0 24px var(--imspdr-shadow)")};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     width: 100vw;
     height: ${({ isFolded }) => (isFolded ? "60px" : "50vh")};
     top: auto;
@@ -64,7 +64,7 @@ export const TabBar = styled.div`
   gap: 16px;
   flex-shrink: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     width: 100%;
     height: 60px;
     flex-direction: row;
@@ -105,7 +105,7 @@ export const TabButton = styled(SidebarIconButton)<{ isActive?: boolean }>`
 
 export const FoldButton = styled(SidebarIconButton)`
   margin-bottom: 24px;
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     margin-bottom: 0;
   }
 `;
