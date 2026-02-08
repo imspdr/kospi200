@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { SIDEBAR_WIDTH, TAB_BAR_WIDTH } from './constants/layout';
+import styled from "@emotion/styled";
+import { SIDEBAR_WIDTH, TAB_BAR_WIDTH } from "./constants/layout";
 
 export const LayoutContainer = styled.div`
   display: flex;
@@ -23,5 +23,8 @@ export const MainContent = styled.main<MainContentProps>`
 
   @media (max-width: 1080px) {
     margin-right: ${TAB_BAR_WIDTH}px;
+  }
+  @media (max-width: 767px) {
+    margin-right: 0px;
   }
 `;
