@@ -22,7 +22,7 @@ export const BuySignalSection: FC = () => {
       </SectionTitle>
       {buySignalStocks.length === 0 ? (
         <LoadingContainer>
-          <Typography variant="body" level={2} style={{ color: '#666' }}>
+          <Typography variant="body" level={2} color="foreground.3">
             현재 매수 신호가 있는 종목이 없습니다.
           </Typography>
         </LoadingContainer>

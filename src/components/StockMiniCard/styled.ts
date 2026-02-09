@@ -2,8 +2,8 @@ import { Typography } from '@imspdr/ui';
 import styled from '@emotion/styled';
 
 export const CardContainer = styled.div<{ isFolded?: boolean }>`
-  background: var(--imspdr-background-bg2);
-  border: 1px solid var(--imspdr-background-bg3);
+  background: var(--imspdr-background-2);
+  border: 1px solid var(--imspdr-background-3);
   border-radius: 8px;
   padding: ${({ isFolded }) => (isFolded ? '8px' : '10px 12px')};
   cursor: pointer;
@@ -19,8 +19,8 @@ export const CardContainer = styled.div<{ isFolded?: boolean }>`
 
   @media (hover: hover) {
     &:hover {
-      border-color: var(--imspdr-primary-main);
-      background: var(--imspdr-background-bg1);
+      border-color: var(--imspdr-primary-1);
+      background: var(--imspdr-background-1);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px var(--imspdr-shadow);
     }
@@ -46,7 +46,7 @@ export const StarButton = styled.button<{ isStarred: boolean }>`
   border: none;
   padding: 0;
   cursor: pointer;
-  color: ${({ isStarred }) => (isStarred ? 'var(--imspdr-mint-mint1)' : 'var(--imspdr-foreground-fg3)')};
+  color: ${({ isStarred }) => (isStarred ? 'var(--imspdr-primary-1)' : 'var(--imspdr-foreground-3)')};
   font-size: 14px;
 `;
 
@@ -54,12 +54,12 @@ export const StockName = styled(Typography)`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--imspdr-foreground-fg1);
+  color: var(--imspdr-foreground-1);
   font-weight: 500;
 `;
 
 export const SignalTag = styled.div`
-  background: var(--imspdr-primary-main);
+  background: var(--imspdr-primary-1);
   color: white;
   padding: 2px 6px;
   border-radius: 4px;
@@ -74,21 +74,21 @@ export const BottomRow = styled.div`
 `;
 
 export const Price = styled(Typography)`
-  color: var(--imspdr-foreground-fg1);
+  color: var(--imspdr-foreground-1);
 `;
 
 export const Change = styled(Typography) <{ trend: 'up' | 'down' | 'flat' }>`
-  color: ${({ trend }) => (trend === 'up' ? 'var(--imspdr-red-red1)' : trend === 'down' ? '#1e75d0' : 'var(--imspdr-foreground-fg3)')};
+  color: ${({ trend }) => (trend === 'up' ? 'var(--imspdr-danger-1)' : trend === 'down' ? 'var(--imspdr-info-1)' : 'var(--imspdr-foreground-3)')};
 `;
 
 export const FoldedIcon = styled(Typography)`
-  color: var(--imspdr-primary-main);
+  color: var(--imspdr-primary-1);
 `;
 
 export const SignalDot = styled.div`
   width: 6px;
   height: 6px;
-  background: var(--imspdr-primary-main);
+  background: var(--imspdr-primary-1);
   border-radius: 50%;
   position: absolute;
   top: 4px;

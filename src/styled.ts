@@ -17,7 +17,7 @@ export const MainContent = styled.main<MainContentProps>`
   overflow-y: auto;
   margin-top: 60px;
   margin-right: ${({ isFolded }) => (isFolded ? `${TAB_BAR_WIDTH}px` : `${SIDEBAR_WIDTH}px`)};
-  background-color: var(--imspdr-background-bg2);
+  background-color: var(--imspdr-background-2);
   transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
 

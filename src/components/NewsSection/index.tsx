@@ -26,9 +26,10 @@ export const NewsSection: FC<NewsSectionProps> = ({ news }) => {
               {item.title}
             </Typography>
             <Typography
-              variant="body"
-              level={2}
-              style={{ fontSize: '12px', color: '#666', lineHeight: 1.5 }}
+              variant="caption"
+              level={1}
+              color="foreground.2"
+              style={{ lineHeight: 1.5 }}
             >
               {item.description.length > 150
                 ? item.description.substring(0, 150) + '...'
@@ -37,7 +38,7 @@ export const NewsSection: FC<NewsSectionProps> = ({ news }) => {
           </NewsItem>
         ))
       ) : (
-        <Typography variant="body" level={2} style={{ color: '#999' }}>
+        <Typography variant="body" level={2} color="foreground.3">
           뉴스가 없습니다.
         </Typography>
       )}

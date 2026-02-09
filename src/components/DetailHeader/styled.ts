@@ -5,7 +5,7 @@ export const Header = styled.div`
   flex-direction: column;
   gap: 16px;
   padding-bottom: 24px;
-  border-bottom: 1px solid var(--imspdr-background-bg3);
+  border-bottom: 1px solid var(--imspdr-background-3);
 `;
 
 export const PriceSummary = styled.div`

@@ -293,7 +293,7 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
         boundaryGap: true,
         axisLine: {
           onZero: false,
-          lineStyle: { color: tokens.foreground.fg3 },
+          lineStyle: { color: tokens.foreground[3] },
         },
         splitLine: { show: false },
         min: 'dataMin',
@@ -302,13 +302,13 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
           z: 100,
           label: {
             show: activeSubCount === 0,
-            backgroundColor: tokens.background.bg3,
-            color: tokens.foreground.fg1,
+            backgroundColor: tokens.background[3],
+            color: tokens.foreground[1],
           }, // Only show label if it's the bottom chart
         },
         axisLabel: {
           show: activeSubCount === 0,
-          color: tokens.foreground.fg3,
+          color: tokens.foreground[3],
         },
       },
     ];
@@ -329,13 +329,13 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
         },
         axisLabel: {
           formatter: (value: number) => Math.round(value).toLocaleString(),
-          color: tokens.foreground.fg3,
+          color: tokens.foreground[3],
         },
         axisLine: {
-          lineStyle: { color: tokens.foreground.fg3 },
+          lineStyle: { color: tokens.foreground[3] },
         },
         splitLine: {
-          lineStyle: { color: tokens.background.bg3, opacity: 0.5 },
+          lineStyle: { color: tokens.background[3], opacity: 0.5 },
         },
       },
     ];
@@ -359,20 +359,20 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
         boundaryGap: true,
         axisLine: {
           onZero: false,
-          lineStyle: { color: tokens.foreground.fg3 },
+          lineStyle: { color: tokens.foreground[3] },
         },
         axisTick: { show: false },
         splitLine: { show: false },
         axisPointer: {
           label: {
             show: isBottom,
-            backgroundColor: tokens.background.bg3,
-            color: tokens.foreground.fg1,
+            backgroundColor: tokens.background[3],
+            color: tokens.foreground[1],
           }, // Only show label if it's the bottom chart
         },
         axisLabel: {
           show: isBottom,
-          color: tokens.foreground.fg3,
+          color: tokens.foreground[3],
         },
         min: 'dataMin',
         max: 'dataMax',
@@ -385,7 +385,7 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
           position: 'right',
           splitNumber: 2,
           axisLabel: {
-            color: tokens.foreground.fg3,
+            color: tokens.foreground[3],
             formatter: (value: number) =>
               value >= 1000000
                 ? `${Math.round(value / 1000000)}M`
@@ -394,7 +394,7 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
           axisTick: { show: false },
           splitLine: { show: false },
           axisLine: {
-            lineStyle: { color: tokens.foreground.fg3 },
+            lineStyle: { color: tokens.foreground[3] },
           },
         });
       } else if (sc.key === 'rsi') {
@@ -407,13 +407,13 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
           interval: 10,
           axisLabel: {
             fontSize: 10,
-            color: tokens.foreground.fg3,
+            color: tokens.foreground[3],
             formatter: (value: number) => (value === 30 || value === 70 ? value : ''),
           },
           splitLine: { show: false },
           axisTick: { show: false },
           axisLine: {
-            lineStyle: { color: tokens.foreground.fg3 },
+            lineStyle: { color: tokens.foreground[3] },
           },
         });
       } else if (sc.key === 'obv') {
@@ -424,7 +424,7 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
           splitNumber: 2,
           axisLabel: {
             fontSize: 10,
-            color: tokens.foreground.fg3,
+            color: tokens.foreground[3],
             formatter: (value: number) =>
               value >= 1000000
                 ? `${(value / 1000000).toFixed(1)}M`
@@ -433,7 +433,7 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
           axisTick: { show: false },
           splitLine: { show: false },
           axisLine: {
-            lineStyle: { color: tokens.foreground.fg3 },
+            lineStyle: { color: tokens.foreground[3] },
           },
         });
       } else {
@@ -445,15 +445,15 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
           splitNumber: 2,
           axisLabel: {
             fontSize: 10,
-            color: tokens.foreground.fg3,
+            color: tokens.foreground[3],
           },
           axisTick: { show: false },
           splitLine: {
             show: true,
-            lineStyle: { type: 'dashed', opacity: 0.2, color: tokens.background.bg3 },
+            lineStyle: { type: 'dashed', opacity: 0.2, color: tokens.background[3] },
           },
           axisLine: {
-            lineStyle: { color: tokens.foreground.fg3 },
+            lineStyle: { color: tokens.foreground[3] },
           },
         });
       }
@@ -470,9 +470,9 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
         axisPointer: { type: 'cross' },
         backgroundColor: mode === 'light' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(30, 41, 59, 0.9)',
         borderWidth: 1,
-        borderColor: tokens.background.bg3,
+        borderColor: tokens.background[3],
         padding: 10,
-        textStyle: { color: tokens.foreground.fg1 },
+        textStyle: { color: tokens.foreground[1] },
         position: (pos: any, params: any, el: any, elRect: any, size: any) => {
           const tooltipWidth = elRect?.width || 200;
           const xPos = pos[0];
@@ -513,7 +513,7 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
               <div style="display: flex; justify-content: space-between; gap: 20px;">
                 <span>저가:</span> <b>${Math.round(Number(low)).toLocaleString()}</b>
               </div>
-              ${params.length > 1 ? '<div style="margin: 4px 0; border-bottom: 1px solid var(--imspdr-background-bg3); opacity: 0.3;"></div>' : ''}
+              ${params.length > 1 ? '<div style="margin: 4px 0; border-bottom: 1px solid var(--imspdr-background-3); opacity: 0.3;"></div>' : ''}
             `;
           } else if (params[0]) {
             result += `<div style="font-weight: 600; margin-bottom: 4px;">${params[0].name}</div>`;
@@ -551,7 +551,7 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
       },
       axisPointer: {
         link: [{ xAxisIndex: 'all' }],
-        label: { backgroundColor: tokens.background.bg3, color: tokens.foreground.fg1 },
+        label: { backgroundColor: tokens.background[3], color: tokens.foreground[1] },
       },
       grid: grids,
       xAxis: xAxes,
@@ -570,10 +570,10 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
           top: '92%',
           start: 70,
           end: 100,
-          backgroundColor: mode === 'light' ? '#fff' : tokens.background.bg2,
-          borderColor: tokens.background.bg3,
-          textStyle: { color: tokens.foreground.fg3 },
-          handleStyle: { color: tokens.background.bg3 },
+          backgroundColor: mode === 'light' ? '#fff' : tokens.background[2],
+          borderColor: tokens.background[3],
+          textStyle: { color: tokens.foreground[3] },
+          handleStyle: { color: tokens.background[3] },
         },
       ],
       series,

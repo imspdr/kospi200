@@ -18,7 +18,7 @@ export const DetailHeader: FC<DetailHeaderProps> = ({ name, code, todayPrice, ch
         <Typography variant="title" level={2}>
           {name}
         </Typography>
-        <Typography variant="caption" style={{ color: '#666' }}>
+        <Typography variant="caption" color="foreground.3">
           {code}
         </Typography>
       </div>
@@ -26,19 +26,15 @@ export const DetailHeader: FC<DetailHeaderProps> = ({ name, code, todayPrice, ch
         <Typography
           variant="title"
           level={1}
-          style={{
-            color: changePercent > 0 ? '#e23d29' : changePercent < 0 ? '#1e75d0' : '#999999',
-          }}
+          color={changePercent > 0 ? 'danger.1' : changePercent < 0 ? 'info.1' : 'foreground.3'}
         >
           {todayPrice.toLocaleString()}
         </Typography>
         <Typography
           variant="body"
           level={1}
-          style={{
-            color: changePercent > 0 ? '#e23d29' : changePercent < 0 ? '#1e75d0' : '#999999',
-            fontWeight: 600,
-          }}
+          style={{ fontWeight: 600 }}
+          color={changePercent > 0 ? 'danger.1' : changePercent < 0 ? 'info.1' : 'foreground.3'}
         >
           {changePercent > 0 ? '▲' : changePercent < 0 ? '▼' : '-'}{' '}
           {absChangePercent !== 0 && `${absChangePercent.toFixed(2)}%`}

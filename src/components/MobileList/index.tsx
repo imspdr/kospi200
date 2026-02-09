@@ -107,7 +107,8 @@ export const MobileList: FC = () => {
               <Typography
                 variant="body"
                 level={2}
-                style={{ color: '#999', width: '100%', textAlign: 'center' }}
+                color="foreground.3"
+                style={{ width: '100%', textAlign: 'center' }}
               >
                 현재 매수 신호가 없습니다.
               </Typography>

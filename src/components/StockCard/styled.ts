@@ -2,8 +2,8 @@ import { Typography } from '@imspdr/ui';
 import styled from '@emotion/styled';
 
 export const CardContainer = styled.div`
-  background: var(--imspdr-background-bg1);
-  border: 1px solid var(--imspdr-background-bg3);
+  background: var(--imspdr-background-1);
+  border: 1px solid var(--imspdr-background-3);
   border-radius: 16px;
   padding: 24px;
   display: flex;
@@ -21,7 +21,7 @@ export const CardContainer = styled.div`
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px var(--imspdr-shadow);
-    border-color: var(--imspdr-mint-mint1);
+    border-color: var(--imspdr-primary-1);
   }
 
   &::before {
@@ -31,7 +31,7 @@ export const CardContainer = styled.div`
     left: 0;
     width: 4px;
     height: 0;
-    background: var(--imspdr-mint-mint1);
+    background: var(--imspdr-primary-1);
     transition: height 0.3s ease;
   }
 
@@ -61,8 +61,8 @@ export const RankBadge = styled.div<{ rank: number }>`
   width: 28px;
   height: 28px;
   background: ${({ rank }) =>
-    rank <= 3 ? 'var(--imspdr-mint-mint2)' : 'var(--imspdr-background-bg2)'};
-  color: ${({ rank }) => (rank <= 3 ? 'var(--imspdr-white)' : 'var(--imspdr-foreground-fg2)')};
+    rank <= 3 ? 'var(--imspdr-primary-2)' : 'var(--imspdr-background-2)'};
+  color: ${({ rank }) => (rank <= 3 ? 'white' : 'var(--imspdr-foreground-2)')};
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -78,8 +78,8 @@ export const PriceInfo = styled.div`
   gap: 4px;
 `;
 
-export const ChangeLabel = styled(Typography)<{ isRising: boolean }>`
-  color: ${({ isRising }) => (isRising ? 'var(--imspdr-red-red1)' : '#1e75d0')};
+export const ChangeLabel = styled(Typography) <{ isRising: boolean }>`
+  color: ${({ isRising }) => (isRising ? 'var(--imspdr-danger-1)' : 'var(--imspdr-info-1)')};
   display: flex;
   align-items: center;
   gap: 4px;
@@ -97,8 +97,8 @@ export const SignalTagsContainer = styled.div`
 export const SignalTag = styled.span`
   font-size: 11px;
   padding: 4px 8px;
-  background: var(--imspdr-mint-mint1);
-  color: var(--imspdr-white);
+  background: var(--imspdr-primary-1);
+  color: white;
   border-radius: 6px;
   font-weight: 600;
   white-space: nowrap;

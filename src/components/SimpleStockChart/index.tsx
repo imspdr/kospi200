@@ -38,9 +38,9 @@ export const SimpleStockChart: FC<SimpleStockChartProps> = ({ data }) => {
         axisPointer: { type: 'cross' },
         backgroundColor: mode === 'light' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(30, 41, 59, 0.9)',
         borderWidth: 1,
-        borderColor: tokens.background.bg3,
+        borderColor: tokens.background[3],
         padding: 10,
-        textStyle: { color: tokens.foreground.fg1 },
+        textStyle: { color: tokens.foreground[1] },
         formatter: (params: any) => {
           const candle = params.find((p: any) => p.seriesName === 'Price');
           if (!candle) return '';
@@ -72,19 +72,19 @@ export const SimpleStockChart: FC<SimpleStockChartProps> = ({ data }) => {
       xAxis: {
         type: 'category',
         data: chartData.dates,
-        axisLine: { lineStyle: { color: tokens.foreground.fg3 } },
-        axisLabel: { color: tokens.foreground.fg3, fontSize: 10 },
+        axisLine: { lineStyle: { color: tokens.foreground[3] } },
+        axisLabel: { color: tokens.foreground[3], fontSize: 10 },
       },
       yAxis: {
         scale: true,
         position: 'right',
-        axisLine: { lineStyle: { color: tokens.foreground.fg3 } },
+        axisLine: { lineStyle: { color: tokens.foreground[3] } },
         axisLabel: {
-          color: tokens.foreground.fg3,
+          color: tokens.foreground[3],
           fontSize: 10,
           formatter: (value: number) => Math.round(value).toLocaleString(),
         },
-        splitLine: { lineStyle: { color: tokens.background.bg3, opacity: 0.5 } },
+        splitLine: { lineStyle: { color: tokens.background[3], opacity: 0.5 } },
       },
       series: [
         {

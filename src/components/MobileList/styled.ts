@@ -21,8 +21,8 @@ export const MobileTitle = styled(Typography)`
 `;
 
 export const ListWrapper = styled.div`
-  background: var(--imspdr-background-bg1);
-  border: 1px solid var(--imspdr-background-bg3);
+  background: var(--imspdr-background-1);
+  border: 1px solid var(--imspdr-background-3);
   border-radius: 12px;
   overflow: hidden;
 `;
@@ -31,7 +31,7 @@ export const ListItem = styled.div`
   display: flex;
   align-items: center;
   padding: 12px 16px;
-  border-bottom: 1px solid var(--imspdr-background-bg3);
+  border-bottom: 1px solid var(--imspdr-background-3);
   gap: 12px;
   cursor: pointer;
 
@@ -40,7 +40,7 @@ export const ListItem = styled.div`
   }
 
   &:active {
-    background: var(--imspdr-background-bg2);
+    background: var(--imspdr-background-2);
   }
 `;
 
@@ -48,7 +48,7 @@ export const Rank = styled.span<{ isTop?: boolean }>`
   font-weight: 800;
   font-size: 14px;
   min-width: 20px;
-  color: ${({ isTop }) => (isTop ? 'var(--imspdr-mint-mint1)' : 'var(--imspdr-foreground-fg3)')};
+  color: ${({ isTop }) => (isTop ? 'var(--imspdr-primary-1)' : 'var(--imspdr-foreground-3)')};
 `;
 
 export const Info = styled.div`
@@ -79,7 +79,7 @@ export const PriceRow = styled.div`
 `;
 
 export const SignalBadge = styled.span`
-  background: var(--imspdr-mint-mint1);
+  background: var(--imspdr-primary-1);
   color: white;
   font-size: 10px;
   padding: 1px 4px;

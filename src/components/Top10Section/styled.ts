@@ -10,8 +10,8 @@ export const CompactStockList = styled.div`
   flex-direction: column;
   width: 380px;
   gap: 8px;
-  background: var(--imspdr-background-bg1);
-  border: 1px solid var(--imspdr-background-bg3);
+  background: var(--imspdr-background-1);
+  border: 1px solid var(--imspdr-background-3);
   border-radius: 16px;
   padding: 12px;
 
@@ -33,7 +33,7 @@ export const CompactStockItem = styled.div`
   gap: 12px;
 
   &:hover {
-    background: var(--imspdr-mint-mint1_10);
+    background: var(--imspdr-background-2);
   }
 `;
 
@@ -41,7 +41,7 @@ export const RankNumber = styled.span<{ rank: number }>`
   font-weight: 800;
   font-size: 14px;
   min-width: 20px;
-  color: ${({ rank }) => (rank <= 3 ? 'var(--imspdr-mint-mint1)' : 'var(--imspdr-foreground-fg3)')};
+  color: ${({ rank }) => (rank <= 3 ? 'var(--imspdr-primary-1)' : 'var(--imspdr-foreground-3)')};
 `;
 
 export const CompactInfo = styled.div`

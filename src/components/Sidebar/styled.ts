@@ -7,8 +7,8 @@ export const SidebarContainer = styled.aside<{ isFolded: boolean }>`
   position: fixed;
   right: 0;
   top: 60px;
-  background: var(--imspdr-background-bg1);
-  border-left: 1px solid var(--imspdr-background-bg3);
+  background: var(--imspdr-background-1);
+  border-left: 1px solid var(--imspdr-background-3);
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: row;
@@ -29,7 +29,7 @@ export const SidebarContainer = styled.aside<{ isFolded: boolean }>`
     right: 0;
     flex-direction: column-reverse; /* TabBar at bottom */
     border-left: none;
-    border-top: 1px solid var(--imspdr-background-bg3);
+    border-top: 1px solid var(--imspdr-background-3);
     box-shadow: 0 -8px 24px var(--imspdr-shadow);
   }
 `;
@@ -55,8 +55,8 @@ export const SidebarContent = styled.div`
 export const TabBar = styled.div`
   width: ${TAB_BAR_WIDTH}px;
   height: 100%;
-  background: var(--imspdr-background-bg1);
-  border-left: 1px solid var(--imspdr-background-bg3);
+  background: var(--imspdr-background-1);
+  border-left: 1px solid var(--imspdr-background-3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +71,7 @@ export const TabBar = styled.div`
     justify-content: space-around;
     padding-top: 0;
     border-left: none;
-    border-top: 1px solid var(--imspdr-background-bg3);
+    border-top: 1px solid var(--imspdr-background-3);
     gap: 0;
   }
 `;
@@ -82,7 +82,7 @@ const SidebarIconButton = styled.button`
   border-radius: 8px;
   border: none;
   background: transparent;
-  color: var(--imspdr-foreground-fg2);
+  color: var(--imspdr-foreground-2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,16 +91,16 @@ const SidebarIconButton = styled.button`
 
   @media (hover: hover) {
     &:hover {
-      background: var(--imspdr-background-bg2);
-      color: var(--imspdr-primary-main);
+      background: var(--imspdr-background-2);
+      color: var(--imspdr-primary-1);
     }
   }
 `;
 
-export const TabButton = styled(SidebarIconButton)<{ isActive?: boolean }>`
-  background: ${({ isActive }) => (isActive ? "var(--imspdr-background-bg3)" : "transparent")};
+export const TabButton = styled(SidebarIconButton) <{ isActive?: boolean }>`
+  background: ${({ isActive }) => (isActive ? "var(--imspdr-background-3)" : "transparent")};
   color: ${({ isActive }) =>
-    isActive ? "var(--imspdr-primary-main)" : "var(--imspdr-foreground-fg2)"};
+    isActive ? "var(--imspdr-primary-1)" : "var(--imspdr-foreground-2)"};
 `;
 
 export const FoldButton = styled(SidebarIconButton)`
@@ -120,14 +120,14 @@ export const SectionTitle = styled.div`
   padding: 0 4px;
   display: flex;
   align-items: center;
-  color: var(--imspdr-foreground-fg3);
+  color: var(--imspdr-foreground-3);
 `;
 
 // ... existing code ...
 export const EmptyMessage = styled.div`
   padding: 20px 8px;
   text-align: center;
-  color: var(--imspdr-foreground-fg3);
+  color: var(--imspdr-foreground-3);
 `;
 
 export const MobileFoldButton = styled.button`
@@ -138,7 +138,7 @@ export const MobileFoldButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--imspdr-foreground-fg2);
+  color: var(--imspdr-foreground-2);
   cursor: pointer;
   flex-shrink: 0;
 `;

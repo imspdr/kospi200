@@ -25,7 +25,7 @@ export const DetailPage: FC = () => {
   if (isError) {
     return (
       <div style={{ padding: '24px' }}>
-        <Typography style={{ color: 'red' }}>데이터를 불러오는 중 오류가 발생했습니다.</Typography>
+        <Typography color="danger.1">데이터를 불러오는 중 오류가 발생했습니다.</Typography>
       </div>
     );
   }

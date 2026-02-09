@@ -24,7 +24,7 @@ export const LeftColumn = styled.div`
     width: 6px;
   }
   &::-webkit-scrollbar-thumb {
-    background: var(--imspdr-background-bg3);
+    background: var(--imspdr-background-3);
     border-radius: 3px;
   }
 `;
