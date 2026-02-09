@@ -10,10 +10,10 @@ import {
 } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { Typography, useDeviceType } from "@imspdr/ui";
-import { useStocks } from "../../hooks/useKospiData";
-import { useRecentlyViewed } from "../../hooks/useRecentlyViewed";
-import { useStarred } from "../../hooks/useStarred";
-import { StockMiniCard } from "../StockMiniCard";
+import { useStocks } from "@/hooks/useKospiData";
+import { useRecentlyViewed } from "@/hooks/useRecentlyViewed";
+import { useStarred } from "@/hooks/useStarred";
+import { StockMiniCard } from "./StockMiniCard";
 import {
   EmptyMessage,
   FoldButton,

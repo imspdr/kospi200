@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
-import { useStocks } from '../../hooks/useKospiData';
-import { useDisplayStocks } from '../../hooks/useDisplayStocks';
-import { StockCard } from '../StockCard';
+import { useStocks } from '@/hooks/useKospiData';
+import { useDisplayStocks } from '@/hooks/useDisplayStocks';
+import { StockCard } from '@/components/List/StockCard';
 import { LoadingContainer, SectionTitleWrapper, StockGrid, Container } from './styled';
 
 export const BuySignalSection: FC = () => {

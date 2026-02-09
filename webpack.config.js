@@ -20,6 +20,9 @@ module.exports = (env, argv) => {
       clean: true,
     },
     resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
       extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
     module: {

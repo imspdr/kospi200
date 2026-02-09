@@ -2,11 +2,11 @@ import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
 import { useDeviceType } from '@imspdr/ui';
-import { StockChart } from '../../components/StockChart';
-import { useStockDetailPage } from '../../hooks/useStockDetailPage';
-import { DetailHeader } from '../../components/DetailHeader';
-import { NewsSection } from '../../components/NewsSection';
-import { SimpleStockChart } from '../../components/SimpleStockChart';
+import { StockChart } from '@/components/Detail/StockChart';
+import { useStockDetailPage } from '@/hooks/useStockDetailPage';
+import { DetailHeader } from '@/components/Detail/DetailHeader';
+import { NewsSection } from '@/components/Detail/NewsSection';
+import { SimpleStockChart } from '@/components/Detail/SimpleStockChart';
 import { Container, LeftColumn, RightColumn, MobileContainer, ChartWrapper, MessageWrapper } from './styled';
 
 export const DetailPage: FC = () => {

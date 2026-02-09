@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { SIDEBAR_WIDTH, TAB_BAR_WIDTH } from "../../constants/layout";
+import { SIDEBAR_WIDTH, TAB_BAR_WIDTH } from "@/constants/layout";
 
 export const SidebarContainer = styled.aside<{ isFolded: boolean }>`
   width: ${({ isFolded }) => (isFolded ? `${TAB_BAR_WIDTH}px` : `${SIDEBAR_WIDTH}px`)};

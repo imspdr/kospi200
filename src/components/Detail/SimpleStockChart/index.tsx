@@ -1,7 +1,7 @@
 import { Typography, useTheme } from '@imspdr/ui';
 import ReactECharts from 'echarts-for-react';
 import { useMemo, FC } from 'react';
-import { Analysis } from '../../hooks/useKospiData';
+import { Analysis } from '@/hooks/useKospiData';
 import { ChartContainer, ChartWrapper } from './styled';
 
 interface SimpleStockChartProps {

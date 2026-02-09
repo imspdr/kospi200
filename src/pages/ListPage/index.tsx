@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { Typography } from '@imspdr/ui';
 import { useDeviceType } from '@imspdr/ui';
-import { useStocks } from '../../hooks/useKospiData';
+import { useStocks } from '@/hooks/useKospiData';
 import { FlexColumn, LoadingContainer, PageContainer } from './styled';
-import { Top10Section } from '../../components/Top10Section';
-import { BuySignalSection } from '../../components/BuySignalSection';
-import { MobileList } from '../../components/MobileList';
+import { Top10Section } from '@/components/List/Top10Section';
+import { BuySignalSection } from '@/components/List/BuySignalSection';
+import { MobileList } from '@/components/List/MobileList';
 
 const ListPage: FC = () => {
   const { isPc } = useDeviceType();

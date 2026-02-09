@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
-import { useStocks } from '../../hooks/useKospiData';
-import { useDisplayStocks } from '../../hooks/useDisplayStocks';
+import { useStocks } from '@/hooks/useKospiData';
+import { useDisplayStocks } from '@/hooks/useDisplayStocks';
 import {
   Container,
   Info,
