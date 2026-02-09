@@ -84,12 +84,9 @@ export default function Sidebar({ isFolded, onToggleFold }: SidebarProps) {
           <SidebarContent>
             <SidebarSection>
               <SectionTitle>
-                <Typography
-                  variant="title"
-                  level={3}
-                  style={{ display: "flex", alignItems: "center", gap: "8px" }}
-                >
-                  {tabIcon} {tabLabel}
+                {tabIcon}
+                <Typography variant="title" level={5} color="foreground.3" bold>
+                  {tabLabel}
                 </Typography>
               </SectionTitle>
               {currentStocks.length === 0 ? (

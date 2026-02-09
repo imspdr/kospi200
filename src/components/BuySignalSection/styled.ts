@@ -1,7 +1,13 @@
 import { Typography } from '@imspdr/ui';
 import styled from '@emotion/styled';
 
-export const SectionTitle = styled(Typography)`
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
+export const SectionTitleWrapper = styled.div`
   margin-bottom: 12px;
 `;
 
@@ -20,7 +26,7 @@ export const StockGrid = styled.div`
   flex: 1;
 
   & > * {
-    flex: 1 1 300px;
+    flex: 1 1 210px;
   }
 
   @media (max-width: 767px) {

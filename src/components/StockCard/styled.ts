@@ -4,18 +4,18 @@ import styled from '@emotion/styled';
 export const CardContainer = styled.div`
   background: var(--imspdr-background-1);
   border: 1px solid var(--imspdr-background-3);
-  border-radius: 16px;
-  padding: 24px;
+  border-radius: 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   cursor: pointer;
   transition:
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  min-width: 200px;
+  min-width: 210px;
   overflow: hidden;
 
   &:hover {
@@ -58,8 +58,8 @@ export const RankBadge = styled.div<{ rank: number }>`
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   background: ${({ rank }) =>
     rank <= 3 ? 'var(--imspdr-primary-2)' : 'var(--imspdr-background-2)'};
   color: ${({ rank }) => (rank <= 3 ? 'white' : 'var(--imspdr-foreground-2)')};
@@ -67,19 +67,18 @@ export const RankBadge = styled.div<{ rank: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
+  font-size: 11px;
   z-index: 2;
 `;
 
 export const PriceInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 `;
 
-export const ChangeLabel = styled(Typography) <{ isRising: boolean }>`
-  color: ${({ isRising }) => (isRising ? 'var(--imspdr-danger-1)' : 'var(--imspdr-info-1)')};
+
+export const ChangeLabelWrapper = styled.div<{ isRising: boolean }>`
   display: flex;
   align-items: center;
   gap: 4px;
@@ -94,12 +93,15 @@ export const SignalTagsContainer = styled.div`
   padding-top: 4px;
 `;
 
-export const SignalTag = styled.span`
-  font-size: 11px;
+export const SignalTagWrapper = styled.div`
   padding: 4px 8px;
   background: var(--imspdr-primary-1);
-  color: white;
   border-radius: 6px;
-  font-weight: 600;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > span {
+    font-size: 11px;
+  }
 `;

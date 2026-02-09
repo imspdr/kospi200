@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
 import { useStocks } from '../../hooks/useKospiData';
 import { useDisplayStocks } from '../../hooks/useDisplayStocks';
-import { ChangeLabel } from '../StockCard/styled';
 import {
   CompactInfo,
   CompactStockItem,
   CompactStockList,
-  RankNumber,
-  SectionTitle,
+  RankNumberWrapper,
+  SectionTitleWrapper,
+  ValueSection,
+  ChangeLabelWrapper,
 } from './styled';
 
 export const Top10Section: FC = () => {
@@ -23,9 +24,11 @@ export const Top10Section: FC = () => {
 
   return (
     <div>
-      <SectionTitle variant="title" level={2}>
-        상위 10개 변동 종목
-      </SectionTitle>
+      <SectionTitleWrapper>
+        <Typography variant="title" level={4} color="foreground.1" bold>
+          상위 10개 변동 종목
+        </Typography>
+      </SectionTitleWrapper>
       <CompactStockList>
         {top10Codes.map((code, index) => {
           const stock = stocks?.find((s) => s.code === code);
@@ -37,23 +40,31 @@ export const Top10Section: FC = () => {
 
           return (
             <CompactStockItem key={stock.code} onClick={() => handleStockSelect(stock.code)}>
-              <RankNumber rank={index + 1}>{index + 1}</RankNumber>
+              <RankNumberWrapper>
+                <Typography
+                  variant="body"
+                  level={2}
+                  color={index < 3 ? 'primary.1' : 'foreground.3'}
+                  as="span"
+                  bold
+                >
+                  {index + 1}
+                </Typography>
+              </RankNumberWrapper>
               <CompactInfo>
-                <Typography variant="body" level={1} style={{ fontWeight: 600 }}>
+                <Typography variant="body" level={1} color="foreground.1" bold>
                   {stock.name}
                 </Typography>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <Typography variant="body" level={2} style={{ fontWeight: 500 }}>
+                <ValueSection>
+                  <Typography variant="body" level={2} color="foreground.1" bold>
                     {stock.today.toLocaleString()}원
                   </Typography>
-                  <ChangeLabel
-                    isRising={isRising}
-                    variant="caption"
-                    style={{ minWidth: '70px', justifyContent: 'flex-end' }}
-                  >
-                    {isRising ? '▲' : '▼'} {Math.abs(changePercent).toFixed(1)}%
-                  </ChangeLabel>
-                </div>
+                  <ChangeLabelWrapper isRising={isRising}>
+                    <Typography variant="caption" color={isRising ? 'danger.1' : 'info.1'} bold>
+                      {isRising ? '▲' : '▼'} {Math.abs(changePercent).toFixed(1)}%
+                    </Typography>
+                  </ChangeLabelWrapper>
+                </ValueSection>
               </CompactInfo>
             </CompactStockItem>
           );

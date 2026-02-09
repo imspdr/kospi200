@@ -13,3 +13,4 @@ export const PriceSummary = styled.div`
   justify-content: space-between;
   align-items: flex-end;
 `;
+

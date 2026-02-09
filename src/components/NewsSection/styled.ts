@@ -21,3 +21,12 @@ export const NewsItem = styled.div`
     border-bottom: none;
   }
 `;
+
+export const NewsItemTitle = styled.div`
+  margin-bottom: 8px;
+  line-height: 1.4;
+`;
+
+export const NewsItemDescription = styled.div`
+  line-height: 1.5;
+`;

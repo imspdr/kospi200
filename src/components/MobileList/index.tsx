@@ -3,18 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
 import { useStocks } from '../../hooks/useKospiData';
 import { useDisplayStocks } from '../../hooks/useDisplayStocks';
-import { ChangeLabel } from '../StockCard/styled';
 import {
   Container,
   Info,
   ListItem,
   ListWrapper,
-  MobileTitle,
+  MobileTitleWrapper,
   PriceRow,
   Rank,
   Section,
-  StockName,
+  StockNameWrapper,
   TextContent,
+  ChangeLabelWrapper,
+  EmptyMessageWrapper,
 } from './styled';
 
 export const MobileList: FC = () => {
@@ -30,7 +31,11 @@ export const MobileList: FC = () => {
     <Container>
       {/* Top 10 Section */}
       <Section>
-        <MobileTitle variant="title">상위 10개 변동 종목</MobileTitle>
+        <MobileTitleWrapper>
+          <Typography variant="title" level={4} color="foreground.1" bold>
+            상위 10개 변동 종목
+          </Typography>
+        </MobileTitleWrapper>
         <ListWrapper>
           {top10Codes.map((code, index) => {
             const stock = stocks?.find((s) => s.code === code);
@@ -45,21 +50,21 @@ export const MobileList: FC = () => {
                 <Rank isTop={index < 3}>{index + 1}</Rank>
                 <Info>
                   <TextContent>
-                    <StockName variant="body" level={1}>
-                      {stock.name}
-                    </StockName>
+                    <StockNameWrapper>
+                      <Typography variant="body" level={1} color="foreground.1" bold>
+                        {stock.name}
+                      </Typography>
+                    </StockNameWrapper>
                   </TextContent>
                   <PriceRow>
-                    <Typography variant="body" level={2} style={{ fontWeight: 500 }}>
+                    <Typography variant="body" level={2} color="foreground.1" bold>
                       {stock.today.toLocaleString()}
                     </Typography>
-                    <ChangeLabel
-                      isRising={isRising}
-                      variant="caption"
-                      style={{ minWidth: '60px', justifyContent: 'flex-end' }}
-                    >
-                      {isRising ? '▲' : '▼'} {Math.abs(changePercent).toFixed(1)}%
-                    </ChangeLabel>
+                    <ChangeLabelWrapper isRising={isRising}>
+                      <Typography variant="caption" color={isRising ? 'danger.1' : 'info.1'} bold>
+                        {isRising ? '▲' : '▼'} {Math.abs(changePercent).toFixed(1)}%
+                      </Typography>
+                    </ChangeLabelWrapper>
                   </PriceRow>
                 </Info>
               </ListItem>
@@ -70,7 +75,11 @@ export const MobileList: FC = () => {
 
       {/* Buy Signals Section */}
       <Section>
-        <MobileTitle variant="title">매수 신호 종목</MobileTitle>
+        <MobileTitleWrapper>
+          <Typography variant="title" level={4} color="foreground.1" bold>
+            매수 신호 종목
+          </Typography>
+        </MobileTitleWrapper>
         <ListWrapper>
           {buySignalStocks.length > 0 ? (
             buySignalStocks.map((stock) => {
@@ -82,21 +91,21 @@ export const MobileList: FC = () => {
                 <ListItem key={stock.code} onClick={() => handleStockSelect(stock.code)}>
                   <Info>
                     <TextContent>
-                      <StockName variant="body" level={1}>
-                        {stock.name}
-                      </StockName>
+                      <StockNameWrapper>
+                        <Typography variant="body" level={1} color="foreground.1" bold>
+                          {stock.name}
+                        </Typography>
+                      </StockNameWrapper>
                     </TextContent>
                     <PriceRow>
-                      <Typography variant="body" level={2} style={{ fontWeight: 500 }}>
+                      <Typography variant="body" level={2} color="foreground.1" bold>
                         {stock.today.toLocaleString()}
                       </Typography>
-                      <ChangeLabel
-                        isRising={isRising}
-                        variant="caption"
-                        style={{ minWidth: '60px', justifyContent: 'flex-end' }}
-                      >
-                        {isRising ? '▲' : '▼'} {Math.abs(changePercent).toFixed(1)}%
-                      </ChangeLabel>
+                      <ChangeLabelWrapper isRising={isRising}>
+                        <Typography variant="caption" color={isRising ? 'danger.1' : 'info.1'} bold>
+                          {isRising ? '▲' : '▼'} {Math.abs(changePercent).toFixed(1)}%
+                        </Typography>
+                      </ChangeLabelWrapper>
                     </PriceRow>
                   </Info>
                 </ListItem>
@@ -104,14 +113,11 @@ export const MobileList: FC = () => {
             })
           ) : (
             <ListItem>
-              <Typography
-                variant="body"
-                level={2}
-                color="foreground.3"
-                style={{ width: '100%', textAlign: 'center' }}
-              >
-                현재 매수 신호가 없습니다.
-              </Typography>
+              <EmptyMessageWrapper>
+                <Typography variant="body" level={2} color="foreground.3">
+                  현재 매수 신호가 없습니다.
+                </Typography>
+              </EmptyMessageWrapper>
             </ListItem>
           )}
         </ListWrapper>

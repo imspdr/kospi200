@@ -14,9 +14,7 @@ export const Section = styled.section`
   gap: 12px;
 `;
 
-export const MobileTitle = styled(Typography)`
-  font-size: 18px;
-  font-weight: 700;
+export const MobileTitleWrapper = styled.div`
   padding: 0 4px;
 `;
 
@@ -45,7 +43,6 @@ export const ListItem = styled.div`
 `;
 
 export const Rank = styled.span<{ isTop?: boolean }>`
-  font-weight: 800;
   font-size: 14px;
   min-width: 20px;
   color: ${({ isTop }) => (isTop ? 'var(--imspdr-primary-1)' : 'var(--imspdr-foreground-3)')};
@@ -65,11 +62,24 @@ export const TextContent = styled.div`
   min-width: 0;
 `;
 
-export const StockName = styled(Typography)`
-  font-weight: 600;
+export const StockNameWrapper = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+
+export const ChangeLabelWrapper = styled.div<{ isRising: boolean }>`
+  min-width: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: ${({ isRising }) => (isRising ? 'var(--imspdr-danger-1)' : 'var(--imspdr-info-1)')};
+`;
+
+export const EmptyMessageWrapper = styled.div`
+  width: 100%;
+  text-align: center;
 `;
 
 export const PriceRow = styled.div`
@@ -84,6 +94,5 @@ export const SignalBadge = styled.span`
   font-size: 10px;
   padding: 1px 4px;
   border-radius: 3px;
-  font-weight: 700;
   margin-left: 4px;
 `;

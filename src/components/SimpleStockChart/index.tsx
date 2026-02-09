@@ -1,8 +1,8 @@
-import { useTheme } from '@imspdr/ui';
+import { Typography, useTheme } from '@imspdr/ui';
 import ReactECharts from 'echarts-for-react';
 import { useMemo, FC } from 'react';
 import { Analysis } from '../../hooks/useKospiData';
-import { ChartContainer } from './styled';
+import { ChartContainer, ChartWrapper } from './styled';
 
 interface SimpleStockChartProps {
   data: Analysis[];
@@ -47,7 +47,7 @@ export const SimpleStockChart: FC<SimpleStockChartProps> = ({ data }) => {
           const date = candle.name;
           const [open, close, low, high] = candle.data;
           return `
-            <div style="font-weight: 600; margin-bottom: 4px;">${date}</div>
+            <div style="font-weight: bold; margin-bottom: 4px;">${date}</div>
             <div style="display: flex; justify-content: space-between; gap: 20px;">
               <span>시가:</span> <b>${Math.round(open).toLocaleString()}</b>
             </div>
@@ -146,12 +146,20 @@ export const SimpleStockChart: FC<SimpleStockChartProps> = ({ data }) => {
   }, [chartData, mode, tokens]);
 
   if (data.length === 0) {
-    return <ChartContainer>No Data Available</ChartContainer>;
+    return (
+      <ChartContainer>
+        <Typography variant="body" level={2} color="foreground.3">
+          No Data Available
+        </Typography>
+      </ChartContainer>
+    );
   }
 
   return (
     <ChartContainer>
-      <ReactECharts option={option} style={{ height: '100%', width: '100%' }} notMerge={true} />
+      <ChartWrapper>
+        <ReactECharts option={option} notMerge={true} style={{ height: '100%', width: '100%' }} />
+      </ChartWrapper>
     </ChartContainer>
   );
 };

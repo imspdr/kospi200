@@ -50,12 +50,12 @@ export const StarButton = styled.button<{ isStarred: boolean }>`
   font-size: 14px;
 `;
 
-export const StockName = styled(Typography)`
+export const StockNameWrapper = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--imspdr-foreground-1);
-  font-weight: 500;
+  flex: 1;
+  min-width: 0;
 `;
 
 export const SignalTag = styled.div`
@@ -64,6 +64,13 @@ export const SignalTag = styled.div`
   padding: 2px 6px;
   border-radius: 4px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > span {
+    font-size: 10px;
+  }
 `;
 
 export const BottomRow = styled.div`
@@ -73,16 +80,17 @@ export const BottomRow = styled.div`
   width: 100%;
 `;
 
-export const Price = styled(Typography)`
-  color: var(--imspdr-foreground-1);
+
+export const ChangeWrapper = styled.div<{ trend: 'up' | 'down' | 'flat' }>`
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `;
 
-export const Change = styled(Typography) <{ trend: 'up' | 'down' | 'flat' }>`
-  color: ${({ trend }) => (trend === 'up' ? 'var(--imspdr-danger-1)' : trend === 'down' ? 'var(--imspdr-info-1)' : 'var(--imspdr-foreground-3)')};
-`;
-
-export const FoldedIcon = styled(Typography)`
-  color: var(--imspdr-primary-1);
+export const FoldedIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const SignalDot = styled.div`

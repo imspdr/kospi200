@@ -1391,10 +1391,10 @@
     protobufjs "^7.2.5"
     yargs "^17.7.2"
 
-"@imspdr/ui@^1.0.1":
-  version "1.0.1"
-  resolved "https://npm.pkg.github.com/download/@imspdr/ui/1.0.1/044b43fa2c454f8ab61c565909c0a5693aa18d1d#044b43fa2c454f8ab61c565909c0a5693aa18d1d"
-  integrity sha512-5IbKSasOM/XwepLXFue/BBW5bSUwlUve1jPMgT19DKsfTa4WxIbTGkX6pWhqSyjgGoHfTdHymOmX7OTNMNNtQQ==
+"@imspdr/ui@^1.0.2":
+  version "1.0.2"
+  resolved "https://npm.pkg.github.com/download/@imspdr/ui/1.0.2/79dbabd698177732ecca52ad0203e2f2b2022980#79dbabd698177732ecca52ad0203e2f2b2022980"
+  integrity sha512-vHv/e7LQy0ntk0/+ZqDrqT3rK4Ks4D9TKUSIR0ryzxERykENaBBYc7LxXX22SfnERjMniK6aNtZxSO0SLpOkxw==
   dependencies:
     "@emotion/react" "^11.11.0"
     "@emotion/styled" "^11.11.0"

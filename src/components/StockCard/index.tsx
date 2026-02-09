@@ -4,9 +4,9 @@ import {
   CardContainer,
   RankBadge,
   PriceInfo,
-  ChangeLabel,
+  ChangeLabelWrapper,
   SignalTagsContainer,
-  SignalTag,
+  SignalTagWrapper,
   TopSection,
   TitleWrapper,
 } from './styled';
@@ -32,25 +32,31 @@ export const StockCard: FC<StockCardProps> = ({ name, today, last, rank, signals
 
       <TopSection>
         <TitleWrapper>
-          <Typography variant="title" level={3}>
+          <Typography variant="title" level={6} bold>
             {name}
           </Typography>
           <PriceInfo>
-            <Typography variant="body" level={1} style={{ fontWeight: 600 }}>
+            <Typography variant="title" level={5} color="foreground.1" bold>
               {today.toLocaleString()}원
             </Typography>
-            <ChangeLabel isRising={isRising} variant="caption">
-              {isRising ? '▲' : '▼'} {Math.abs(change).toLocaleString()} (
-              {Math.abs(changePercent).toFixed(1)}
-              %)
-            </ChangeLabel>
+            <ChangeLabelWrapper isRising={isRising}>
+              <Typography variant="caption" color={isRising ? 'danger.1' : 'info.1'}>
+                {isRising ? '▲' : '▼'} {Math.abs(change).toLocaleString()} (
+                {Math.abs(changePercent).toFixed(1)}
+                %)
+              </Typography>
+            </ChangeLabelWrapper>
           </PriceInfo>
         </TitleWrapper>
 
         {signals && signals.length > 0 && (
           <SignalTagsContainer>
             {signals.map((signal, i) => (
-              <SignalTag key={i}>{signal}</SignalTag>
+              <SignalTagWrapper key={i}>
+                <Typography variant="caption" color="white" as="span">
+                  {signal}
+                </Typography>
+              </SignalTagWrapper>
             ))}
           </SignalTagsContainer>
         )}

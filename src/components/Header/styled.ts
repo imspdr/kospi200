@@ -27,7 +27,6 @@ export const TitleButton = styled.button`
   background: none;
   border: none;
   font-size: 1.25rem;
-  font-weight: 700;
   color: var(--imspdr-foreground-1);
   cursor: pointer;
   padding: 0;

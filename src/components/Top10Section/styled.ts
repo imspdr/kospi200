@@ -1,7 +1,7 @@
 import { Typography } from '@imspdr/ui';
 import styled from '@emotion/styled';
 
-export const SectionTitle = styled(Typography)`
+export const SectionTitleWrapper = styled.div`
   margin-bottom: 12px;
 `;
 
@@ -37,11 +37,8 @@ export const CompactStockItem = styled.div`
   }
 `;
 
-export const RankNumber = styled.span<{ rank: number }>`
-  font-weight: 800;
-  font-size: 14px;
+export const RankNumberWrapper = styled.div`
   min-width: 20px;
-  color: ${({ rank }) => (rank <= 3 ? 'var(--imspdr-primary-1)' : 'var(--imspdr-foreground-3)')};
 `;
 
 export const CompactInfo = styled.div`
@@ -49,4 +46,20 @@ export const CompactInfo = styled.div`
   justify-content: space-between;
   align-items: center;
   flex: 1;
+`;
+
+
+export const ValueSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;
+
+
+export const ChangeLabelWrapper = styled.div<{ isRising: boolean }>`
+  min-width: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: ${({ isRising }) => (isRising ? 'var(--imspdr-danger-1)' : 'var(--imspdr-info-1)')};
 `;

@@ -4,7 +4,7 @@ import { Typography } from '@imspdr/ui';
 import { useStocks } from '../../hooks/useKospiData';
 import { useDisplayStocks } from '../../hooks/useDisplayStocks';
 import { StockCard } from '../StockCard';
-import { LoadingContainer, SectionTitle, StockGrid } from './styled';
+import { LoadingContainer, SectionTitleWrapper, StockGrid, Container } from './styled';
 
 export const BuySignalSection: FC = () => {
   const navigate = useNavigate();
@@ -16,13 +16,15 @@ export const BuySignalSection: FC = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      <SectionTitle variant="title" level={2}>
-        매수 신호 종목
-      </SectionTitle>
+    <Container>
+      <SectionTitleWrapper>
+        <Typography variant="title" level={4} color="foreground.1" bold>
+          매수 신호 종목
+        </Typography>
+      </SectionTitleWrapper>
       {buySignalStocks.length === 0 ? (
         <LoadingContainer>
-          <Typography variant="body" level={2} color="foreground.3">
+          <Typography variant="body" level={2} color="foreground.3" bold>
             현재 매수 신호가 있는 종목이 없습니다.
           </Typography>
         </LoadingContainer>
@@ -41,6 +43,6 @@ export const BuySignalSection: FC = () => {
           ))}
         </StockGrid>
       )}
-    </div>
+    </Container>
   );
 };

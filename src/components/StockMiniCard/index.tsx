@@ -4,14 +4,13 @@ import { Typography } from '@imspdr/ui';
 import {
   BottomRow,
   CardContainer,
-  Change,
-  FoldedIcon,
+  ChangeWrapper,
+  FoldedIconWrapper,
   NameSection,
-  Price,
   SignalDot,
   SignalTag,
   StarButton,
-  StockName,
+  StockNameWrapper,
   TopRow,
 } from './styled';
 
@@ -46,9 +45,11 @@ export const StockMiniCard: FC<StockMiniCardProps> = ({
   if (isFolded) {
     return (
       <CardContainer isFolded onClick={onClick} title={name}>
-        <FoldedIcon variant="title" level={3}>
-          {name.substring(0, 1)}
-        </FoldedIcon>
+        <FoldedIconWrapper>
+          <Typography variant="title" level={3} color="primary.1">
+            {name.substring(0, 1)}
+          </Typography>
+        </FoldedIconWrapper>
         {hasBuySignal && <SignalDot />}
       </CardContainer>
     );
@@ -67,28 +68,35 @@ export const StockMiniCard: FC<StockMiniCardProps> = ({
           >
             {isStarred ? '★' : '☆'}
           </StarButton>
-          <StockName variant="body" level={2}>
-            {name}
-          </StockName>
+          <StockNameWrapper>
+            <Typography variant="body" level={2} color="foreground.1">
+              {name}
+            </Typography>
+          </StockNameWrapper>
         </NameSection>
         {hasBuySignal &&
           toBuy?.map((signal) => (
             <SignalTag key={signal}>
-              <Typography variant="caption" style={{ fontSize: '10px', fontWeight: 700 }}>
+              <Typography variant="caption" color="white" as="span">
                 {signal}
               </Typography>
             </SignalTag>
           ))}
       </TopRow>
       <BottomRow>
-        <Price variant="body" level={2} style={{ fontWeight: 600 }}>
+        <Typography variant="body" level={2} color="foreground.1">
           {price.toLocaleString()}원
-        </Price>
-        <Change variant="caption" trend={trend} style={{ fontWeight: 500 }}>
-          {trend === 'flat'
-            ? '-'
-            : `${trend === 'up' ? '▲' : '▼'} ${Math.abs(change).toLocaleString()} (${changePercent.toFixed(1)}%)`}
-        </Change>
+        </Typography>
+        <ChangeWrapper trend={trend}>
+          <Typography
+            variant="caption"
+            color={trend === 'up' ? 'danger.1' : trend === 'down' ? 'info.1' : 'foreground.3'}
+          >
+            {trend === 'flat'
+              ? '-'
+              : `${trend === 'up' ? '▲' : '▼'} ${Math.abs(change).toLocaleString()} (${changePercent.toFixed(1)}%)`}
+          </Typography>
+        </ChangeWrapper>
       </BottomRow>
     </CardContainer>
   );

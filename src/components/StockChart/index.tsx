@@ -1,8 +1,8 @@
-import { Button, useTheme } from '@imspdr/ui';
+import { Button, useTheme, Typography } from '@imspdr/ui';
 import ReactECharts from 'echarts-for-react';
 import { useMemo, FC, useState } from 'react';
 import { Analysis } from '../../hooks/useKospiData';
-import { ChartContainer, OverlayControls } from './styled';
+import { ChartContainer, OverlayControls, NoDataContainer, ChartWrapper } from './styled';
 
 interface StockChartProps {
   data: Analysis[];
@@ -499,7 +499,7 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
             const low = hasIndex ? values[3] : values[2];
             const high = hasIndex ? values[4] : values[3];
 
-            result += `<div style="font-weight: 600; margin-bottom: 4px;">${date}</div>`;
+            result += `<div style="font-weight: bold; margin-bottom: 4px;">${date}</div>`;
             result += `
               <div style="display: flex; justify-content: space-between; gap: 20px;">
                 <span>시가:</span> <b>${Math.round(Number(open)).toLocaleString()}</b>
@@ -516,7 +516,7 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
               ${params.length > 1 ? '<div style="margin: 4px 0; border-bottom: 1px solid var(--imspdr-background-3); opacity: 0.3;"></div>' : ''}
             `;
           } else if (params[0]) {
-            result += `<div style="font-weight: 600; margin-bottom: 4px;">${params[0].name}</div>`;
+            result += `<div style="font-weight: bold; margin-bottom: 4px;">${params[0].name}</div>`;
           }
 
           params.forEach((p: any) => {
@@ -587,16 +587,11 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
   if (data.length === 0) {
     return (
       <ChartContainer>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-          }}
-        >
-          No Data Available
-        </div>
+        <NoDataContainer>
+          <Typography variant="body" level={2} color="foreground.3">
+            No Data Available
+          </Typography>
+        </NoDataContainer>
       </ChartContainer>
     );
   }
@@ -605,56 +600,58 @@ export const StockChart: FC<StockChartProps> = ({ data }) => {
     <ChartContainer>
       <OverlayControls>
         <Button
-          variant={activeOverlays.volume ? 'box' : 'outlined'}
+          variant={activeOverlays.volume ? 'contained' : 'outlined'}
           onClick={() => toggleOverlay('volume')}
-          style={{ padding: '4px 8px', fontSize: '11px', height: 'unset', fontWeight: 500 }}
+          size="xs"
         >
           Vol
         </Button>
         <Button
-          variant={activeOverlays.rsi ? 'box' : 'outlined'}
+          variant={activeOverlays.rsi ? 'contained' : 'outlined'}
           onClick={() => toggleOverlay('rsi')}
-          style={{ padding: '4px 8px', fontSize: '11px', height: 'unset', fontWeight: 500 }}
+          size="xs"
         >
           RSI
         </Button>
         <Button
-          variant={activeOverlays.obv ? 'box' : 'outlined'}
+          variant={activeOverlays.obv ? 'contained' : 'outlined'}
           onClick={() => toggleOverlay('obv')}
-          style={{ padding: '4px 8px', fontSize: '11px', height: 'unset', fontWeight: 500 }}
+          size="xs"
         >
           OBV
         </Button>
         <Button
-          variant={activeOverlays.macd ? 'box' : 'outlined'}
+          variant={activeOverlays.macd ? 'contained' : 'outlined'}
           onClick={() => toggleOverlay('macd')}
-          style={{ padding: '4px 8px', fontSize: '11px', height: 'unset', fontWeight: 500 }}
+          size="xs"
         >
           MACD
         </Button>
         <Button
-          variant={activeOverlays.bb ? 'box' : 'outlined'}
+          variant={activeOverlays.bb ? 'contained' : 'outlined'}
           onClick={() => toggleOverlay('bb')}
-          style={{ padding: '4px 8px', fontSize: '11px', height: 'unset', fontWeight: 500 }}
+          size="xs"
         >
           BB
         </Button>
         <Button
-          variant={activeOverlays.ma5 ? 'box' : 'outlined'}
+          variant={activeOverlays.ma5 ? 'contained' : 'outlined'}
           onClick={() => toggleOverlay('ma5')}
-          style={{ padding: '4px 8px', fontSize: '11px', height: 'unset', fontWeight: 500 }}
+          size="xs"
         >
           MA5
         </Button>
         <Button
-          variant={activeOverlays.ma20 ? 'box' : 'outlined'}
+          variant={activeOverlays.ma20 ? 'contained' : 'outlined'}
           onClick={() => toggleOverlay('ma20')}
-          style={{ padding: '4px 8px', fontSize: '11px', height: 'unset', fontWeight: 500 }}
+          size="xs"
         >
           MA20
         </Button>
       </OverlayControls>
-      <ReactECharts option={option} style={{ height: '100%', width: '100%' }} notMerge={true} />
+      <ChartWrapper>
+        <ReactECharts option={option} notMerge={true} style={{ height: '100%', width: '100%' }} />
+      </ChartWrapper>
     </ChartContainer>
   );
 };

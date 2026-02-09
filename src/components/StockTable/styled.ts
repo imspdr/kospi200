@@ -17,20 +17,18 @@ export const Table = styled.table`
 export const Th = styled.th`
   padding: 12px 16px;
   text-align: left;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--imspdr-foreground-2);
   background: var(--imspdr-background-2);
   border-bottom: 2px solid var(--imspdr-background-3);
   position: sticky;
   top: 0;
   z-index: 1;
+
+  & > span {
+  }
 `;
 
 export const Td = styled.td`
   padding: 12px 16px;
-  font-size: 14px;
-  color: var(--imspdr-foreground-1);
   border-bottom: 1px solid var(--imspdr-background-3);
 `;
 
@@ -61,27 +59,23 @@ export const StarButton = styled.button<{ isStarred: boolean }>`
   }
 `;
 
-export const Change = styled.span<{ trend: 'up' | 'down' | 'flat' }>`
-  color: ${({ trend }) => (trend === 'up' ? 'var(--imspdr-danger-1)' : trend === 'down' ? 'var(--imspdr-info-1)' : 'var(--imspdr-foreground-3)')};
-  font-weight: 600;
-`;
 
-export const SignalBadge = styled.span`
+export const SignalBadgeWrapper = styled.div`
   display: inline-block;
   padding: 2px 8px;
   margin: 2px;
-  font-size: 11px;
-  font-weight: 600;
   border-radius: 4px;
   background: var(--imspdr-primary-1);
   color: white;
+
+  & > span {
+    font-size: 11px;
+  }
 `;
 
 export const EmptyState = styled.div`
   padding: 40px;
   text-align: center;
-  color: var(--imspdr-foreground-3);
-  font-size: 14px;
 `;
 
 export const StockNameWrapper = styled.div`

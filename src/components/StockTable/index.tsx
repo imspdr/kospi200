@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
+import { Typography } from '@imspdr/ui';
 import {
-  Change,
   EmptyState,
-  SignalBadge,
+  SignalBadgeWrapper,
   StarButton,
   StockNameWrapper,
   Table,
@@ -41,7 +41,11 @@ export const StockTable: FC<StockTableProps> = ({
   if (!stocks || stocks.length === 0) {
     return (
       <TableContainer maxHeight={maxHeight}>
-        <EmptyState>{emptyMessage}</EmptyState>
+        <EmptyState>
+          <Typography variant="body" level={2} color="foreground.3">
+            {emptyMessage}
+          </Typography>
+        </EmptyState>
       </TableContainer>
     );
   }
@@ -51,17 +55,33 @@ export const StockTable: FC<StockTableProps> = ({
       <Table>
         <thead>
           <tr>
-            <Th>종목</Th>
-            <Th>현재가</Th>
-            <Th>대비</Th>
-            <Th>신호</Th>
+            <Th>
+              <Typography variant="body" level={2} color="foreground.2" as="span">
+                종목
+              </Typography>
+            </Th>
+            <Th>
+              <Typography variant="body" level={2} color="foreground.2" as="span">
+                현재가
+              </Typography>
+            </Th>
+            <Th>
+              <Typography variant="body" level={2} color="foreground.2" as="span">
+                대비
+              </Typography>
+            </Th>
+            <Th>
+              <Typography variant="body" level={2} color="foreground.2" as="span">
+                신호
+              </Typography>
+            </Th>
           </tr>
         </thead>
         <tbody>
           {stocks.map((stock) => {
-            const change = stock.today - stock.last;
-            const trend = change > 0 ? 'up' : change < 0 ? 'down' : 'flat';
-            const changePercent = (change / stock.last) * 100;
+            const changeVal = stock.today - stock.last;
+            const trend = changeVal > 0 ? 'up' : changeVal < 0 ? 'down' : 'flat';
+            const changePercent = (changeVal / stock.last) * 100;
 
             return (
               <Tr key={stock.code} onClick={() => onStockClick(stock.code)}>
@@ -76,20 +96,35 @@ export const StockTable: FC<StockTableProps> = ({
                     >
                       {isStarred(stock.code) ? '★' : '☆'}
                     </StarButton>
-                    {stock.name}
+                    <Typography variant="body" level={2} color="foreground.1">
+                      {stock.name}
+                    </Typography>
                   </StockNameWrapper>
                 </Td>
-                <Td>{stock.today.toLocaleString()}원</Td>
                 <Td>
-                  <Change trend={trend}>
+                  <Typography variant="body" level={2} color="foreground.1">
+                    {stock.today.toLocaleString()}원
+                  </Typography>
+                </Td>
+                <Td>
+                  <Typography
+                    variant="body"
+                    level={2}
+                    color={trend === 'up' ? 'danger.1' : trend === 'down' ? 'info.1' : 'foreground.3'}
+                    bold
+                  >
                     {trend === 'flat'
                       ? '-'
-                      : `${trend === 'up' ? '▲' : '▼'} ${Math.abs(change).toLocaleString()} (${changePercent.toFixed(1)}%)`}
-                  </Change>
+                      : `${trend === 'up' ? '▲' : '▼'} ${Math.abs(changeVal).toLocaleString()} (${changePercent.toFixed(1)}%)`}
+                  </Typography>
                 </Td>
                 <Td>
                   {stock.toBuy?.map((signal, idx) => (
-                    <SignalBadge key={idx}>{signal}</SignalBadge>
+                    <SignalBadgeWrapper key={idx}>
+                      <Typography variant="caption" color="white" as="span">
+                        {signal}
+                      </Typography>
+                    </SignalBadgeWrapper>
                   ))}
                 </Td>
               </Tr>

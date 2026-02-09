@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Typography } from '@imspdr/ui';
-import { NewsItem, Section } from './styled';
+import { NewsItem, Section, NewsItemTitle, NewsItemDescription } from './styled';
 
 interface NewsItemData {
   title: string;
@@ -18,23 +18,18 @@ export const NewsSection: FC<NewsSectionProps> = ({ news }) => {
       {news && news.length > 0 ? (
         news.map((item, index) => (
           <NewsItem key={index} onClick={() => window.open(item.link, '_blank')}>
-            <Typography
-              variant="body"
-              level={2}
-              style={{ marginBottom: '8px', fontWeight: 'bold', lineHeight: 1.4 }}
-            >
-              {item.title}
-            </Typography>
-            <Typography
-              variant="caption"
-              level={1}
-              color="foreground.2"
-              style={{ lineHeight: 1.5 }}
-            >
-              {item.description.length > 150
-                ? item.description.substring(0, 150) + '...'
-                : item.description}
-            </Typography>
+            <NewsItemTitle>
+              <Typography variant="body" level={2} color="foreground.1" bold>
+                {item.title}
+              </Typography>
+            </NewsItemTitle>
+            <NewsItemDescription>
+              <Typography variant="caption" level={1} color="foreground.2">
+                {item.description.length > 150
+                  ? item.description.substring(0, 150) + '...'
+                  : item.description}
+              </Typography>
+            </NewsItemDescription>
           </NewsItem>
         ))
       ) : (

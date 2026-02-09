@@ -15,3 +15,15 @@ export const OverlayControls = styled.div`
   gap: 8px;
   pointer-events: auto;
 `;
+
+export const NoDataContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
+export const ChartWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+`;

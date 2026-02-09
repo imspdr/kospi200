@@ -14,7 +14,7 @@ const ListPage: FC = () => {
   if (isLoading) {
     return (
       <LoadingContainer>
-        <Typography variant="body" level={1}>
+        <Typography variant="body" level={1} bold>
           데이터를 불러오는 중입니다...
         </Typography>
       </LoadingContainer>
@@ -24,7 +24,7 @@ const ListPage: FC = () => {
   if (isError) {
     return (
       <LoadingContainer>
-        <Typography variant="body" level={1} color="danger.1">
+        <Typography variant="body" level={1} color="danger.1" bold>
           데이터를 불러오는 중 오류가 발생했습니다.
         </Typography>
       </LoadingContainer>

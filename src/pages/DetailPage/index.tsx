@@ -7,7 +7,7 @@ import { useStockDetailPage } from '../../hooks/useStockDetailPage';
 import { DetailHeader } from '../../components/DetailHeader';
 import { NewsSection } from '../../components/NewsSection';
 import { SimpleStockChart } from '../../components/SimpleStockChart';
-import { Container, LeftColumn, RightColumn, MobileContainer, ChartWrapper } from './styled';
+import { Container, LeftColumn, RightColumn, MobileContainer, ChartWrapper, MessageWrapper } from './styled';
 
 export const DetailPage: FC = () => {
   const { code } = useParams<{ code: string }>();
@@ -16,25 +16,31 @@ export const DetailPage: FC = () => {
 
   if (isLoading) {
     return (
-      <div style={{ padding: '24px' }}>
-        <Typography>데이터를 불러오는 중입니다...</Typography>
-      </div>
+      <MessageWrapper>
+        <Typography variant="body" level={2} color="foreground.2">
+          데이터를 불러오는 중입니다...
+        </Typography>
+      </MessageWrapper>
     );
   }
 
   if (isError) {
     return (
-      <div style={{ padding: '24px' }}>
-        <Typography color="danger.1">데이터를 불러오는 중 오류가 발생했습니다.</Typography>
-      </div>
+      <MessageWrapper>
+        <Typography variant="body" level={2} color="danger.1">
+          데이터를 불러오는 중 오류가 발생했습니다.
+        </Typography>
+      </MessageWrapper>
     );
   }
 
   if (!stock) {
     return (
-      <div style={{ padding: '24px' }}>
-        <Typography>주식 정보를 찾을 수 없습니다.</Typography>
-      </div>
+      <MessageWrapper>
+        <Typography variant="body" level={2} color="foreground.2">
+          주식 정보를 찾을 수 없습니다.
+        </Typography>
+      </MessageWrapper>
     );
   }
 

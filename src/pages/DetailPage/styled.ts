@@ -55,3 +55,6 @@ export const ChartWrapper = styled.div`
   height: 400px;
   flex-shrink: 0;
 `;
+export const MessageWrapper = styled.div`
+  padding: 24px;
+`;

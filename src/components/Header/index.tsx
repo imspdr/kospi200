@@ -21,7 +21,7 @@ const Header = ({ onHomeClick, searchOptions = [], onSearchSelect }: HeaderProps
     <HeaderContainer>
       <TitleSection>
         <TitleButton onClick={handleHomeClick}>
-          <Typography variant="title" level={2}>
+          <Typography variant="title" level={2} bold>
             KOSPI200
           </Typography>
         </TitleButton>

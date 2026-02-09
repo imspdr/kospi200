@@ -119,8 +119,9 @@ export const SidebarSection = styled.section`
 export const SectionTitle = styled.div`
   padding: 0 4px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  color: var(--imspdr-foreground-3);
+  gap: 8px;
 `;
 
 // ... existing code ...
