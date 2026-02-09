@@ -68,7 +68,7 @@ export default function Sidebar({ isFolded, onToggleFold }: SidebarProps) {
 
   const currentStocks = activeTab === "starred" ? starredStocks : recentlyViewedStocks;
   const tabLabel = activeTab === "starred" ? "관심 종목" : "최근 본 종목";
-  const tabIcon = activeTab === "starred" ? <HiStar /> : <HiClock />;
+  const tabIcon = activeTab === "starred" ? <HiStar size={24} /> : <HiClock size={24} />;
 
   const getFoldIcon = () => {
     if (isPc) {

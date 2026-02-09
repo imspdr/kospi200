@@ -122,6 +122,7 @@ export const SectionTitle = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 8px;
+  color: var(--imspdr-foreground-3);
 `;
 
 // ... existing code ...

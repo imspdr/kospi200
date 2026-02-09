@@ -1,4 +1,5 @@
 import { FC, MouseEvent } from 'react';
+import { HiOutlineStar, HiStar } from 'react-icons/hi';
 
 import { Typography } from '@imspdr/ui';
 import {
@@ -66,10 +67,10 @@ export const StockMiniCard: FC<StockMiniCardProps> = ({
               onToggleStar(e);
             }}
           >
-            {isStarred ? '★' : '☆'}
+            {isStarred ? <HiStar size={16} /> : <HiOutlineStar size={12} />}
           </StarButton>
           <StockNameWrapper>
-            <Typography variant="body" level={2} color="foreground.1">
+            <Typography variant="body" level={2} color="foreground.1" bold>
               {name}
             </Typography>
           </StockNameWrapper>
@@ -84,7 +85,7 @@ export const StockMiniCard: FC<StockMiniCardProps> = ({
           ))}
       </TopRow>
       <BottomRow>
-        <Typography variant="body" level={2} color="foreground.1">
+        <Typography variant="body" level={2} color="foreground.1" bold>
           {price.toLocaleString()}원
         </Typography>
         <ChangeWrapper trend={trend}>
