@@ -58,7 +58,7 @@ module.exports = (env, argv) => {
         favicon: path.resolve(__dirname, 'imspdr.png'),
       }),
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "src/404.html"),
+        template: path.resolve(__dirname, "public/404.html"),
         filename: "404.html",
       }),
       new CleanWebpackPlugin(),
