@@ -32,11 +32,11 @@ export const StockCard: FC<StockCardProps> = ({ name, today, last, rank, signals
 
       <TopSection>
         <TitleWrapper>
-          <Typography variant="title" level={6} bold>
+          <Typography variant="title" level={5}>
             {name}
           </Typography>
           <PriceInfo>
-            <Typography variant="title" level={5} color="foreground.1" bold>
+            <Typography variant="body" level={1} color="foreground.1" bold>
               {today.toLocaleString()}원
             </Typography>
             <ChangeLabelWrapper isRising={isRising}>

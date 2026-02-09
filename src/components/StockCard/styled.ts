@@ -50,7 +50,7 @@ export const TopSection = styled.div`
 export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 10px;
   flex: 1;
 `;
 
