@@ -3,9 +3,9 @@ import { Typography } from '@imspdr/ui';
 import { useDeviceType } from '@imspdr/ui';
 import { useStocks } from '@/hooks/useKospiData';
 import { FlexColumn, LoadingContainer, PageContainer } from './styled';
-import { Top10Section } from '@/components/List/Top10Section';
-import { BuySignalSection } from '@/components/List/BuySignalSection';
-import { MobileList } from '@/components/List/MobileList';
+import { Top10Section } from '@/pages/ListPage/components/Top10Section';
+import { BuySignalSection } from '@/pages/ListPage/components/BuySignalSection';
+import { MobileList } from '@/pages/ListPage/components/MobileList';
 
 const ListPage: FC = () => {
   const { isPc } = useDeviceType();
