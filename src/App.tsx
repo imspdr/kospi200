@@ -1,6 +1,6 @@
 import { useState, FC, useEffect } from 'react';
 import styled from '@emotion/styled';
-import { SIDEBAR_WIDTH, TAB_BAR_WIDTH } from './constants/layout';
+import { TAB_BAR_WIDTH } from './constants/layout';
 
 import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import { Layout, ModalProvider, ThemeProvider, ToastProvider } from '@imspdr/ui';
@@ -69,31 +69,39 @@ const AppLayout: FC = () => {
         />
       }
     >
-      <ContentWrapper isFolded={isFolded}>
-        <Routes>
-          <Route path="/list" element={<ListPage />} />
-          <Route path="/detail/:code" element={<DetailPage />} />
-          <Route path="/" element={<Navigate to="/list" replace />} />
-        </Routes>
+      <ContentWrapper>
+        <CenteredContainer>
+          <Routes>
+            <Route path="/list" element={<ListPage />} />
+            <Route path="/detail/:code" element={<DetailPage />} />
+            <Route path="/" element={<Navigate to="/list" replace />} />
+          </Routes>
+        </CenteredContainer>
       </ContentWrapper>
       <Sidebar isFolded={isFolded} onToggleFold={() => setIsFolded(!isFolded)} />
     </Layout>
   );
 };
 
-const ContentWrapper = styled.div<{ isFolded: boolean }>`
+const ContentWrapper = styled.div`
   height: 100%;
-  margin-right: ${({ isFolded }) =>
-    isFolded ? `${TAB_BAR_WIDTH}px` : `${SIDEBAR_WIDTH}px`};
-  transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-right: ${TAB_BAR_WIDTH}px;
+  box-sizing: border-box;
 
-  @media (max-width: 1080px) {
-    margin-right: ${TAB_BAR_WIDTH}px;
+  @media (min-width: 1200px) {
+    margin-right: ${TAB_BAR_WIDTH / 2}px;
   }
 
   @media (max-width: 767px) {
     margin-right: 0px;
   }
+`;
+
+const CenteredContainer = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
 `;
 
 export default App;
