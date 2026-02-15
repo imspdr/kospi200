@@ -1,16 +1,17 @@
 import { useState, FC, useEffect } from 'react';
+import styled from '@emotion/styled';
+import { SIDEBAR_WIDTH, TAB_BAR_WIDTH } from './constants/layout';
 
 import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import { ModalProvider, ThemeProvider, ToastProvider } from '@imspdr/ui';
+import { Layout, ModalProvider, ThemeProvider, ToastProvider } from '@imspdr/ui';
 import { useDeviceType } from '@imspdr/ui';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Header from './components/Header';
+import { SearchComponent } from './components/SearchComponent';
 import Sidebar from './components/Sidebar';
 import { useDisplayStocks } from './hooks/useDisplayStocks';
 import { useStocks } from './hooks/useKospiData';
 import { DetailPage } from './pages/DetailPage';
 import ListPage from './pages/ListPage';
-import { LayoutContainer, MainContent } from './styled';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -58,22 +59,41 @@ const AppLayout: FC = () => {
   };
 
   return (
-    <LayoutContainer>
-      <Header
-        onHomeClick={() => navigate('/list')}
-        searchOptions={searchOptions}
-        onSearchSelect={(opt) => handleStockClick(opt.value)}
-      />
-      <MainContent isFolded={isFolded}>
+    <Layout
+      title="KOSPI200"
+      onHomeClick={() => navigate('/list')}
+      middleContent={
+        <SearchComponent
+          searchOptions={searchOptions}
+          onSearchSelect={(opt) => handleStockClick(opt.value)}
+        />
+      }
+    >
+      <ContentWrapper isFolded={isFolded}>
         <Routes>
           <Route path="/list" element={<ListPage />} />
           <Route path="/detail/:code" element={<DetailPage />} />
           <Route path="/" element={<Navigate to="/list" replace />} />
         </Routes>
-      </MainContent>
+      </ContentWrapper>
       <Sidebar isFolded={isFolded} onToggleFold={() => setIsFolded(!isFolded)} />
-    </LayoutContainer>
+    </Layout>
   );
 };
+
+const ContentWrapper = styled.div<{ isFolded: boolean }>`
+  height: 100%;
+  margin-right: ${({ isFolded }) =>
+    isFolded ? `${TAB_BAR_WIDTH}px` : `${SIDEBAR_WIDTH}px`};
+  transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media (max-width: 1080px) {
+    margin-right: ${TAB_BAR_WIDTH}px;
+  }
+
+  @media (max-width: 767px) {
+    margin-right: 0px;
+  }
+`;
 
 export default App;
