@@ -16,9 +16,7 @@ export const SidebarContainer = styled.aside<{ isFolded: boolean }>`
   z-index: 900;
   overflow: hidden;
 
-  @media (max-width: 1080px) {
-    box-shadow: ${({ isFolded }) => (isFolded ? "none" : "-8px 0 24px var(--imspdr-shadow)")};
-  }
+  box-shadow: ${({ isFolded }) => (isFolded ? "none" : "-8px 0 24px var(--imspdr-shadow)")};
 
   @media (max-width: 767px) {
     width: 100vw;
@@ -97,10 +95,9 @@ const SidebarIconButton = styled.button`
   }
 `;
 
-export const TabButton = styled(SidebarIconButton) <{ isActive?: boolean }>`
+export const TabButton = styled(SidebarIconButton)<{ isActive?: boolean }>`
   background: ${({ isActive }) => (isActive ? "var(--imspdr-background-3)" : "transparent")};
-  color: ${({ isActive }) =>
-    isActive ? "var(--imspdr-primary-1)" : "var(--imspdr-foreground-2)"};
+  color: ${({ isActive }) => (isActive ? "var(--imspdr-primary-1)" : "var(--imspdr-foreground-2)")};
 `;
 
 export const FoldButton = styled(SidebarIconButton)`
