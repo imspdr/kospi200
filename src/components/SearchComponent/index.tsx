@@ -1,4 +1,5 @@
 import { AutoComplete, useDeviceType } from '@imspdr/ui';
+import { InnerWrapper, SearchWrapper } from './styled';
 
 interface SearchComponentProps {
   searchOptions: any[];
@@ -9,14 +10,14 @@ export const SearchComponent = ({ searchOptions, onSearchSelect }: SearchCompone
   const { isPc } = useDeviceType();
 
   return (
-    <div style={{ width: '100%', maxWidth: '400px', display: 'flex', justifyContent: 'center' }}>
-      <div style={{ width: '100%' }}>
+    <SearchWrapper>
+      <InnerWrapper>
         <AutoComplete
           options={searchOptions}
           onSelect={onSearchSelect}
           placeholder={isPc ? '종목명 검색' : '검색'}
         />
-      </div>
-    </div>
+      </InnerWrapper>
+    </SearchWrapper>
   );
 };

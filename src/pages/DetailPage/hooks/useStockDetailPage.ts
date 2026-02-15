@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useStockDetail } from './useKospiData';
-import { useRecentlyViewed } from './useRecentlyViewed';
+import { useStockDetail } from '@/hooks/useKospiData';
+import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 
 export const useStockDetailPage = (code: string | undefined) => {
   const { data: stock, isLoading, isError } = useStockDetail(code || null);

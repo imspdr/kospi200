@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { Typography, useDeviceType } from "@imspdr/ui";
 import { useStocks } from "@/hooks/useKospiData";
 import { useRecentlyViewed } from "@/hooks/useRecentlyViewed";
-import { useStarred } from "@/hooks/useStarred";
+import { useStarred } from './hooks/useStarred';
 import { StockMiniCard } from "./StockMiniCard";
 import {
   EmptyMessage,

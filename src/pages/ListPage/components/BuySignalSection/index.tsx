@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
 import { useStocks } from '@/hooks/useKospiData';
 import { useDisplayStocks } from '@/hooks/useDisplayStocks';
-import { StockCard } from '@/pages/ListPage/components/StockCard';
+import { StockCard } from './components/StockCard';
 import { LoadingContainer, SectionTitleWrapper, StockGrid, Container } from './styled';
 
 export const BuySignalSection: FC = () => {

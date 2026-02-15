@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
 import { useDeviceType } from '@imspdr/ui';
 import { StockChart } from './components/StockChart';
-import { useStockDetailPage } from '@/hooks/useStockDetailPage';
+import { useStockDetailPage } from './hooks/useStockDetailPage';
 import { DetailHeader } from './components/DetailHeader';
 import { NewsSection } from './components/NewsSection';
 import { SimpleStockChart } from './components/SimpleStockChart';
