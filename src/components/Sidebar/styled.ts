@@ -20,7 +20,7 @@ export const SidebarContainer = styled.aside<{ isFolded: boolean }>`
 
   @media (max-width: 767px) {
     width: 100vw;
-    height: ${({ isFolded }) => (isFolded ? "60px" : "50vh")};
+    height: ${({ isFolded }) => (isFolded ? `${TAB_BAR_WIDTH}px` : "50vh")};
     top: auto;
     bottom: 0;
     left: 0;
@@ -64,7 +64,7 @@ export const TabBar = styled.div`
 
   @media (max-width: 767px) {
     width: 100%;
-    height: 60px;
+    height: ${TAB_BAR_WIDTH}px;
     flex-direction: row;
     justify-content: space-around;
     padding-top: 0;
@@ -95,7 +95,7 @@ const SidebarIconButton = styled.button`
   }
 `;
 
-export const TabButton = styled(SidebarIconButton)<{ isActive?: boolean }>`
+export const TabButton = styled(SidebarIconButton) <{ isActive?: boolean }>`
   background: ${({ isActive }) => (isActive ? "var(--imspdr-background-3)" : "transparent")};
   color: ${({ isActive }) => (isActive ? "var(--imspdr-primary-1)" : "var(--imspdr-foreground-2)")};
 `;

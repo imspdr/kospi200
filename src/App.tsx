@@ -94,6 +94,8 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 767px) {
     margin-right: 0px;
+    padding-bottom: ${TAB_BAR_WIDTH}px;
+    transition: padding-bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
 

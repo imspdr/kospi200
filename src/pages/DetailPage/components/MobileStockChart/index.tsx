@@ -429,10 +429,13 @@ export const MobileStockChart: FC<StockChartProps> = ({ data }) => {
           axisLabel: {
             fontSize: 9,
             color: tokens.foreground[3],
-            formatter: (value: number) =>
-              value >= 1000000
-                ? `${(value / 1000000).toFixed(1)}M`
-                : Math.round(value).toLocaleString(),
+            formatter: (value: number) => {
+              const absValue = Math.abs(value);
+              if (absValue >= 1000000) {
+                return `${(value / 1000000).toFixed(1)}M`;
+              }
+              return Math.round(value).toLocaleString();
+            },
           },
           axisTick: { show: false },
           splitLine: { show: false },

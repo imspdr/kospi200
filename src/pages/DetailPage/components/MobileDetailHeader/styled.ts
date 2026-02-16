@@ -7,6 +7,7 @@ export const HeaderContainer = styled.div`
   padding: 8px 4px;
   border-bottom: 1px solid var(--imspdr-background-3);
   gap: 8px;
+  flex-shrink: 0;
 `;
 
 export const TitleSection = styled.div`

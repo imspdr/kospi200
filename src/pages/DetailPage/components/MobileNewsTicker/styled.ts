@@ -12,21 +12,25 @@ const slideOut = keyframes`
 `;
 
 export const TickerContainer = styled.div`
-  height: 32px;
+  height: 40px;
   overflow: hidden;
   background-color: var(--imspdr-background-2);
-  border-radius: 4px;
-  padding: 0 12px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 export const TickerItem = styled.div<{ status: 'current' | 'previous' | 'hidden' }>`
   position: absolute;
-  left: 12px;
-  right: 12px;
-  height: 32px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0 12px;
   display: flex;
   align-items: center;
   cursor: pointer;
