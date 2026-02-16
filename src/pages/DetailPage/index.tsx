@@ -7,7 +7,9 @@ import { useStockDetailPage } from './hooks/useStockDetailPage';
 import { DetailHeader } from './components/DetailHeader';
 import { NewsSection } from './components/NewsSection';
 import { MobileNewsTicker } from './components/MobileNewsTicker';
-import { Container, LeftColumn, RightColumn, MobileContainer, ChartWrapper, MessageWrapper } from './styled';
+import { MobileDetailHeader } from './components/MobileDetailHeader';
+import { MobileStockChart } from './components/MobileStockChart';
+import { Container, LeftColumn, RightColumn, MobileContainer, ChartWrapper, MessageWrapper, MobileChartWrapper } from './styled';
 
 export const DetailPage: FC = () => {
   const { code } = useParams<{ code: string }>();
@@ -68,16 +70,16 @@ export const DetailPage: FC = () => {
 
   return (
     <MobileContainer>
-      <DetailHeader
+      <MobileDetailHeader
         name={stock.name}
         code={stock.code}
         todayPrice={todayPrice || 0}
         changePercent={changePercent || 0}
       />
       <MobileNewsTicker news={stock.news} />
-      <ChartWrapper>
-        <StockChart data={stock.analysis} />
-      </ChartWrapper>
+      <MobileChartWrapper>
+        <MobileStockChart data={stock.analysis} />
+      </MobileChartWrapper>
     </MobileContainer>
   );
 };

@@ -55,6 +55,13 @@ export const ChartWrapper = styled.div`
   height: 400px;
   flex-shrink: 0;
 `;
+
+export const MobileChartWrapper = styled.div`
+  width: 100%;
+  height: 520px;
+  flex-shrink: 0;
+`;
+
 export const MessageWrapper = styled.div`
   padding: 24px;
 `;
