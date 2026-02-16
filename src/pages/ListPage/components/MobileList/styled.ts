@@ -64,9 +64,17 @@ export const TextContent = styled.div`
 `;
 
 export const StockNameWrapper = styled.div`
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  
+  & > *:first-of-type {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 
@@ -89,11 +97,3 @@ export const PriceRow = styled.div`
   gap: 8px;
 `;
 
-export const SignalBadge = styled.span`
-  background: var(--imspdr-primary-1);
-  color: white;
-  font-size: 10px;
-  padding: 1px 4px;
-  border-radius: 3px;
-  margin-left: 4px;
-`;

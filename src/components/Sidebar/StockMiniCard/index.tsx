@@ -9,11 +9,11 @@ import {
   FoldedIconWrapper,
   NameSection,
   SignalDot,
-  SignalTag,
   StarButton,
   StockNameWrapper,
   TopRow,
 } from './styled';
+import { SignalBadge } from '@/components/SignalBadge';
 
 interface StockMiniCardProps {
   name: string;
@@ -77,11 +77,9 @@ export const StockMiniCard: FC<StockMiniCardProps> = ({
         </NameSection>
         {hasBuySignal &&
           toBuy?.map((signal) => (
-            <SignalTag key={signal}>
-              <Typography variant="caption" color="white" as="span">
-                {signal}
-              </Typography>
-            </SignalTag>
+            <SignalBadge key={signal}>
+              {signal.toUpperCase()}
+            </SignalBadge>
           ))}
       </TopRow>
       <BottomRow>

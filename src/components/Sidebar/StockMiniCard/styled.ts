@@ -63,20 +63,6 @@ export const StockNameWrapper = styled.div`
   min-width: 0;
 `;
 
-export const SignalTag = styled.div`
-  background: var(--imspdr-primary-1);
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & > span {
-    font-size: 10px;
-  }
-`;
 
 export const BottomRow = styled.div`
   display: flex;

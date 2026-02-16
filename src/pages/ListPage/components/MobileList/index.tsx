@@ -17,6 +17,7 @@ import {
   ChangeLabelWrapper,
   EmptyMessageWrapper,
 } from './styled';
+import { SignalBadge } from '@/components/SignalBadge';
 
 export const MobileList: FC = () => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ export const MobileList: FC = () => {
       {/* Top 10 Section */}
       <Section>
         <MobileTitleWrapper>
-          <Typography variant="title" level={4} color="foreground.1" bold>
+          <Typography variant="title" level={5} color="foreground.1" bold>
             상위 10개 변동 종목
           </Typography>
         </MobileTitleWrapper>
@@ -51,13 +52,18 @@ export const MobileList: FC = () => {
                 <Info>
                   <TextContent>
                     <StockNameWrapper>
-                      <Typography variant="body" level={1} color="foreground.1" bold>
+                      <Typography variant="body" level={2} color="foreground.1" bold>
                         {stock.name}
                       </Typography>
+                      {stock.toBuy?.map((signal) => (
+                        <SignalBadge key={signal}>
+                          {signal.toUpperCase()}
+                        </SignalBadge>
+                      ))}
                     </StockNameWrapper>
                   </TextContent>
                   <PriceRow>
-                    <Typography variant="body" level={2} color="foreground.1" bold>
+                    <Typography variant="body" level={3} color="foreground.1" bold>
                       {stock.today.toLocaleString()}
                     </Typography>
                     <ChangeLabelWrapper isRising={isRising}>
@@ -76,7 +82,7 @@ export const MobileList: FC = () => {
       {/* Buy Signals Section */}
       <Section>
         <MobileTitleWrapper>
-          <Typography variant="title" level={4} color="foreground.1" bold>
+          <Typography variant="title" level={5} color="foreground.1" bold>
             매수 신호 종목
           </Typography>
         </MobileTitleWrapper>
@@ -92,13 +98,18 @@ export const MobileList: FC = () => {
                   <Info>
                     <TextContent>
                       <StockNameWrapper>
-                        <Typography variant="body" level={1} color="foreground.1" bold>
+                        <Typography variant="body" level={2} color="foreground.1" bold>
                           {stock.name}
                         </Typography>
+                        {stock.toBuy?.map((signal) => (
+                          <SignalBadge key={signal}>
+                            {signal.toUpperCase()}
+                          </SignalBadge>
+                        ))}
                       </StockNameWrapper>
                     </TextContent>
                     <PriceRow>
-                      <Typography variant="body" level={2} color="foreground.1" bold>
+                      <Typography variant="body" level={3} color="foreground.1" bold>
                         {stock.today.toLocaleString()}
                       </Typography>
                       <ChangeLabelWrapper isRising={isRising}>

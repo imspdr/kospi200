@@ -47,10 +47,12 @@ export const TopSection = styled.div`
   gap: 12px;
 `;
 
-export const TitleWrapper = styled.div`
+export const NameWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
   flex: 1;
 `;
 
@@ -75,8 +77,8 @@ export const PriceInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2px;
+  align-items: flex-end;
 `;
-
 
 export const ChangeLabelWrapper = styled.div<{ isRising: boolean }>`
   display: flex;
@@ -84,24 +86,3 @@ export const ChangeLabelWrapper = styled.div<{ isRising: boolean }>`
   gap: 4px;
 `;
 
-export const SignalTagsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-  flex-shrink: 0;
-  padding-top: 4px;
-`;
-
-export const SignalTagWrapper = styled.div`
-  padding: 4px 8px;
-  background: var(--imspdr-primary-1);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & > span {
-    font-size: 11px;
-  }
-`;
