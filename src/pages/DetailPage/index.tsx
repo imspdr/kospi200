@@ -6,7 +6,7 @@ import { StockChart } from './components/StockChart';
 import { useStockDetailPage } from './hooks/useStockDetailPage';
 import { DetailHeader } from './components/DetailHeader';
 import { NewsSection } from './components/NewsSection';
-import { MobileNewsTicker } from './components/MobileNewsTicker';
+import { MobileNewsTicker } from '@/components/MobileNewsTicker';
 import { MobileDetailHeader } from './components/MobileDetailHeader';
 import { MobileStockChart } from './components/MobileStockChart';
 import { Container, LeftColumn, RightColumn, MobileContainer, ChartWrapper, MessageWrapper, MobileChartWrapper } from './styled';

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { Typography } from '@imspdr/ui';
 import { useDeviceType } from '@imspdr/ui';
 import { useStocks } from '@/hooks/useKospiData';
-import { FlexColumn, LoadingContainer, PageContainer } from './styled';
+import { FlexColumn, LoadingContainer, PageContainer, SectionTitleWrapper } from './styled';
 import { Top10Section } from '@/pages/ListPage/components/Top10Section';
 import { BuySignalSection } from '@/pages/ListPage/components/BuySignalSection';
 import { MobileList } from '@/pages/ListPage/components/MobileList';
@@ -35,7 +35,14 @@ const ListPage: FC = () => {
     <PageContainer>
       {isPc ? (
         <>
-          <Top10Section />
+          <div>
+            <SectionTitleWrapper>
+              <Typography variant="title" level={4} color="foreground.1" bold>
+                상위 10개 변동 종목
+              </Typography>
+            </SectionTitleWrapper>
+            <Top10Section />
+          </div>
           <FlexColumn>
             <BuySignalSection />
           </FlexColumn>

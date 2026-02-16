@@ -37,3 +37,7 @@ export const FlexColumn = styled.div`
     width: 100%;
   }
 `;
+
+export const SectionTitleWrapper = styled.div`
+  margin-bottom: 12px;
+`;

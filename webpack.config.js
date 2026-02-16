@@ -9,9 +9,10 @@ const deps = require('./package.json').dependencies;
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production' || process.env.NODE_ENV === 'production';
+  const isWidgetTest = env && env.widgetTest === 'true';
 
   return {
-    entry: './src/index.tsx',
+    entry: isWidgetTest ? path.resolve(__dirname, 'src/test-widgets.tsx') : path.resolve(__dirname, 'src/index.tsx'),
     mode: isProduction ? 'production' : 'development',
     output: {
       path: path.resolve(__dirname, 'docs'),
@@ -44,13 +45,15 @@ module.exports = (env, argv) => {
         name: 'kospi200',
         filename: 'remoteEntry.js',
         exposes: {
-          './App': './src/App',
+          './Top10Section': './src/exports/Top10Section',
+          './TopGainerSection': './src/exports/TopGainerSection',
         },
         shared: {
           react: { singleton: true, requiredVersion: deps.react },
           'react-dom': { singleton: true, requiredVersion: deps['react-dom'] },
           '@emotion/react': { singleton: true, requiredVersion: deps['@emotion/react'] },
           '@emotion/styled': { singleton: true, requiredVersion: deps['@emotion/styled'] },
+          '@tanstack/react-query': { singleton: true, requiredVersion: deps['@tanstack/react-query'] },
         },
       }),
       new HtmlWebpackPlugin({
@@ -62,7 +65,7 @@ module.exports = (env, argv) => {
         filename: "404.html",
       }),
       new CleanWebpackPlugin(),
-      new Dotenv(),
+      new Dotenv({ silent: true }),
     ],
     devServer: {
       port: 3200,

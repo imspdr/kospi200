@@ -1,12 +1,13 @@
 {
   "name": "kospi200",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "homepage": "imspdr.github.io/kospi200",
   "engines": {
     "node": ">=20.0.0"
   },
   "scripts": {
     "dev": "webpack serve --mode development",
+    "widgets": "webpack serve --mode development --env widgetTest=true",
     "build": "webpack --mode production"
   },
   "dependencies": {
