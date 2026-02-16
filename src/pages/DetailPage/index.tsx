@@ -6,7 +6,7 @@ import { StockChart } from './components/StockChart';
 import { useStockDetailPage } from './hooks/useStockDetailPage';
 import { DetailHeader } from './components/DetailHeader';
 import { NewsSection } from './components/NewsSection';
-import { SimpleStockChart } from './components/SimpleStockChart';
+import { MobileNewsTicker } from './components/MobileNewsTicker';
 import { Container, LeftColumn, RightColumn, MobileContainer, ChartWrapper, MessageWrapper } from './styled';
 
 export const DetailPage: FC = () => {
@@ -74,10 +74,10 @@ export const DetailPage: FC = () => {
         todayPrice={todayPrice || 0}
         changePercent={changePercent || 0}
       />
+      <MobileNewsTicker news={stock.news} />
       <ChartWrapper>
-        <SimpleStockChart data={stock.analysis} />
+        <StockChart data={stock.analysis} />
       </ChartWrapper>
-      <NewsSection news={stock.news} />
     </MobileContainer>
   );
 };

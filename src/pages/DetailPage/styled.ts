@@ -40,8 +40,8 @@ export const RightColumn = styled.div`
 export const MobileContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 16px;
+  gap: 8px;
+  padding: 8px;
   height: 100%;
   overflow-y: auto;
   box-sizing: border-box;
