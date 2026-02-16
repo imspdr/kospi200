@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { SIDEBAR_WIDTH, TAB_BAR_WIDTH } from "@/constants/layout";
+import { SIDEBAR_WIDTH, TAB_BAR_WIDTH, MOBILE_TAB_BAR_WIDTH } from "@/constants/layout";
 
 export const SidebarContainer = styled.aside<{ isFolded: boolean }>`
   width: ${({ isFolded }) => (isFolded ? `${TAB_BAR_WIDTH}px` : `${SIDEBAR_WIDTH}px`)};
@@ -20,7 +20,7 @@ export const SidebarContainer = styled.aside<{ isFolded: boolean }>`
 
   @media (max-width: 767px) {
     width: 100vw;
-    height: ${({ isFolded }) => (isFolded ? `${TAB_BAR_WIDTH}px` : "50vh")};
+    height: ${({ isFolded }) => (isFolded ? `${MOBILE_TAB_BAR_WIDTH}px` : "50vh")};
     top: auto;
     bottom: 0;
     left: 0;
@@ -64,7 +64,7 @@ export const TabBar = styled.div`
 
   @media (max-width: 767px) {
     width: 100%;
-    height: ${TAB_BAR_WIDTH}px;
+    height: ${MOBILE_TAB_BAR_WIDTH}px;
     flex-direction: row;
     justify-content: space-around;
     padding-top: 0;

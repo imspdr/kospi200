@@ -1,6 +1,6 @@
 import { useState, FC, useEffect } from 'react';
 import styled from '@emotion/styled';
-import { TAB_BAR_WIDTH } from './constants/layout';
+import { TAB_BAR_WIDTH, MOBILE_TAB_BAR_WIDTH } from './constants/layout';
 
 import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import { Layout, ModalProvider, ThemeProvider, ToastProvider } from '@imspdr/ui';
@@ -94,7 +94,7 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 767px) {
     margin-right: 0px;
-    padding-bottom: ${TAB_BAR_WIDTH}px;
+    padding-bottom: ${MOBILE_TAB_BAR_WIDTH}px;
     transition: padding-bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
