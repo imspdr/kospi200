@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
 import { useDeviceType } from '@imspdr/ui';
 import { useStocks } from '@/hooks/useKospiData';
@@ -8,8 +9,13 @@ import { BuySignalSection } from '@/pages/ListPage/components/BuySignalSection';
 import { MobileList } from '@/pages/ListPage/components/MobileList';
 
 const ListPage: FC = () => {
+  const navigate = useNavigate();
   const { isPc } = useDeviceType();
   const { isLoading, isError } = useStocks();
+
+  const handleStockSelect = (code: string) => {
+    navigate(`/detail/${code}`);
+  };
 
   if (isLoading) {
     return (
@@ -41,7 +47,7 @@ const ListPage: FC = () => {
                 상위 10개 변동 종목
               </Typography>
             </SectionTitleWrapper>
-            <Top10Section />
+            <Top10Section onStockSelect={handleStockSelect} />
           </div>
           <FlexColumn>
             <BuySignalSection />

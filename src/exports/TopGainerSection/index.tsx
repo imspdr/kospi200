@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from '@imspdr/ui';
-import { MemoryRouter } from 'react-router-dom';
 import { TopGainerSection as InternalTopGainerSection } from '@/components/TopGainerSection';
 
 const queryClient = new QueryClient({
@@ -22,9 +21,7 @@ const TopGainerSectionExport = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <MemoryRouter>
-          <InternalTopGainerSection onStockSelect={handleSelect} />
-        </MemoryRouter>
+        <InternalTopGainerSection onStockSelect={handleSelect} />
       </ThemeProvider>
     </QueryClientProvider>
   );

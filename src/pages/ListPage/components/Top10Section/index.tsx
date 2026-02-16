@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Typography } from '@imspdr/ui';
 import { useStocks } from '@/hooks/useKospiData';
 import { useDisplayStocks } from '@/hooks/useDisplayStocks';
@@ -17,16 +16,11 @@ export interface Top10SectionProps {
 }
 
 export const Top10Section: FC<Top10SectionProps> = ({ onStockSelect }) => {
-  const navigate = useNavigate();
   const { data: stocks } = useStocks();
   const { top10Codes } = useDisplayStocks(stocks ?? []);
 
   const handleStockSelect = (code: string) => {
-    if (onStockSelect) {
-      onStockSelect(code);
-    } else {
-      navigate(`/detail/${code}`);
-    }
+    onStockSelect?.(code);
   };
 
   return (

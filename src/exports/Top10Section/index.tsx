@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from '@imspdr/ui';
-import { MemoryRouter } from 'react-router-dom';
 import { Top10Section as InternalTop10Section } from '@/pages/ListPage/components/Top10Section';
 
 const queryClient = new QueryClient({
@@ -22,9 +21,7 @@ const Top10SectionExport = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <MemoryRouter>
-          <InternalTop10Section onStockSelect={handleSelect} />
-        </MemoryRouter>
+        <InternalTop10Section onStockSelect={handleSelect} />
       </ThemeProvider>
     </QueryClientProvider>
   );

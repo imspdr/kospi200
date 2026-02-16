@@ -13,14 +13,11 @@ import {
   NewsWrapper,
 } from './styled';
 
-import { useNavigate } from 'react-router-dom';
-
 export interface TopGainerSectionProps {
   onStockSelect?: (code: string) => void;
 }
 
 export const TopGainerSection: FC<TopGainerSectionProps> = ({ onStockSelect }) => {
-  const navigate = useNavigate();
   const { data: stocks } = useStocks();
   const { top10Codes } = useDisplayStocks(stocks ?? []);
 
@@ -30,11 +27,7 @@ export const TopGainerSection: FC<TopGainerSectionProps> = ({ onStockSelect }) =
 
   const handleStockSelect = () => {
     if (!stock) return;
-    if (onStockSelect) {
-      onStockSelect(stock.code);
-    } else {
-      navigate(`/detail/${stock.code}`);
-    }
+    onStockSelect?.(stock.code);
   };
 
   const chartOption = useMemo(() => {
