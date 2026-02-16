@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Typography } from '@imspdr/ui';
-import { Header, PriceSummary } from './styled';
+import { Typography, useDeviceType } from '@imspdr/ui';
+import { Header, PriceSummary, TitleBlock } from './styled';
 
 interface DetailHeaderProps {
   name: string;
@@ -10,28 +10,29 @@ interface DetailHeaderProps {
 }
 
 export const DetailHeader: FC<DetailHeaderProps> = ({ name, code, todayPrice, changePercent }) => {
+  const { isPc } = useDeviceType();
   const absChangePercent = Math.abs(changePercent);
 
   return (
     <Header>
-      <div>
-        <Typography variant="title" level={2} bold>
+      <TitleBlock>
+        <Typography variant="title" level={isPc ? 2 : 5} bold>
           {name}
         </Typography>
         <Typography variant="caption" color="foreground.3">
           {code}
         </Typography>
-      </div>
+      </TitleBlock>
       <PriceSummary>
         <Typography
           variant="title"
-          level={1}
+          level={isPc ? 1 : 4}
           color={changePercent > 0 ? 'danger.1' : changePercent < 0 ? 'info.1' : 'foreground.3'}
           bold
         >
           {todayPrice.toLocaleString()}
         </Typography>
-        <Typography variant="body" level={2} color={changePercent >= 0 ? 'danger.1' : 'info.1'} bold>
+        <Typography variant="body" level={isPc ? 2 : 3} color={changePercent >= 0 ? 'danger.1' : 'info.1'} bold>
           {changePercent >= 0 ? '▲' : '▼'} {absChangePercent.toFixed(2)}%
         </Typography>
       </PriceSummary>
