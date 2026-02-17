@@ -4,7 +4,7 @@ import { Typography } from '@imspdr/ui';
 import { useDeviceType } from '@imspdr/ui';
 import { useStocks } from '@/hooks/useKospiData';
 import { FlexColumn, LoadingContainer, PageContainer, SectionTitleWrapper } from './styled';
-import { Top10Section } from '@/pages/ListPage/components/Top10Section';
+import { Top10Section } from '@/components/Top10Section';
 import { BuySignalSection } from '@/pages/ListPage/components/BuySignalSection';
 import { MobileList } from '@/pages/ListPage/components/MobileList';
 

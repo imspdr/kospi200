@@ -11,21 +11,21 @@ import {
   ChangeLabelWrapper,
 } from './styled';
 
-export interface Top10SectionProps {
-  onStockSelect?: (code: string) => void;
-}
-
-export const Top10Section: FC<Top10SectionProps> = ({ onStockSelect }) => {
+export const RankingList: FC = () => {
   const { data: stocks } = useStocks();
   const { top10Codes } = useDisplayStocks(stocks ?? []);
 
-  const handleStockSelect = (code: string) => {
-    onStockSelect?.(code);
+  // Top 2 ~ Top 5
+  const rankingCodes = top10Codes.slice(1, 5);
+
+  const handleStockSelect = () => {
+    window.location.href = 'https://imspdr.github.io/kospi200';
   };
 
   return (
     <CompactStockList>
-      {top10Codes.map((code, index) => {
+      {rankingCodes.map((code, index) => {
+        const actualRank = index + 2;
         const stock = stocks?.find((s) => s.code === code);
         if (!stock) return null;
 
@@ -34,16 +34,16 @@ export const Top10Section: FC<Top10SectionProps> = ({ onStockSelect }) => {
         const changePercent = (change / stock.last) * 100;
 
         return (
-          <CompactStockItem key={stock.code} onClick={() => handleStockSelect(stock.code)}>
+          <CompactStockItem key={stock.code} onClick={handleStockSelect}>
             <RankNumberWrapper>
               <Typography
                 variant="body"
                 level={2}
-                color={index < 3 ? 'primary.1' : 'foreground.3'}
+                color={actualRank <= 3 ? 'primary.1' : 'foreground.3'}
                 as="span"
                 bold
               >
-                {index + 1}
+                {actualRank}
               </Typography>
             </RankNumberWrapper>
             <CompactInfo>

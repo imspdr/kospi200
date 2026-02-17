@@ -45,8 +45,7 @@ module.exports = (env, argv) => {
         name: 'kospi200',
         filename: 'remoteEntry.js',
         exposes: {
-          './Top10Section': './src/exports/Top10Section',
-          './TopGainerSection': './src/exports/TopGainerSection',
+          './TopRankingSection': './src/exports/TopRankingSection',
         },
         shared: {
           react: { singleton: true, requiredVersion: deps.react },

@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from '@imspdr/ui';
-import { Top10Section as InternalTop10Section } from '@/pages/ListPage/components/Top10Section';
+import { TopRankingSection as InternalTopRankingSection } from '@/components/TopRankingSection';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -13,7 +13,7 @@ const queryClient = new QueryClient({
   },
 });
 
-const Top10SectionExport = () => {
+const TopRankingSectionExport = () => {
   const handleSelect = (code: string) => {
     window.location.href = `https://imspdr.github.io/kospi200/detail/${code}`;
   };
@@ -21,10 +21,10 @@ const Top10SectionExport = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <InternalTop10Section onStockSelect={handleSelect} />
+        <InternalTopRankingSection onStockSelect={handleSelect} />
       </ThemeProvider>
     </QueryClientProvider>
   );
 };
 
-export default Top10SectionExport;
+export default TopRankingSectionExport;

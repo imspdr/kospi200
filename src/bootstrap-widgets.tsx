@@ -1,8 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import styled from '@emotion/styled';
-import Top10SectionExport from './exports/Top10Section';
-import TopGainerSectionExport from './exports/TopGainerSection';
+import TopRankingSectionExport from './exports/TopRankingSection';
 
 const TestContainer = styled.div`
   padding: 40px;
@@ -51,13 +50,8 @@ const App = () => {
 
       <WidgetWrapper>
         <WidgetSection>
-          <h2 style={{ fontSize: '14px', color: '#0066cc' }}>Top10Section (Exported)</h2>
-          <Top10SectionExport />
-        </WidgetSection>
-
-        <WidgetSection>
-          <h2 style={{ fontSize: '14px', color: '#0066cc' }}>TopGainerSection (Exported)</h2>
-          <TopGainerSectionExport />
+          <h2 style={{ fontSize: '14px', color: '#0066cc' }}>TopRankingSection (Combined)</h2>
+          <TopRankingSectionExport />
         </WidgetSection>
       </WidgetWrapper>
 

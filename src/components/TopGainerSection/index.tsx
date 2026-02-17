@@ -11,6 +11,8 @@ import {
   PriceArea,
   ChartWrapper,
   NewsWrapper,
+  RankBadge,
+  NameWrapper,
 } from './styled';
 
 export interface TopGainerSectionProps {
@@ -26,8 +28,7 @@ export const TopGainerSection: FC<TopGainerSectionProps> = ({ onStockSelect }) =
   const { mode, tokens } = useTheme();
 
   const handleStockSelect = () => {
-    if (!stock) return;
-    onStockSelect?.(stock.code);
+    window.location.href = `https://imspdr.github.io/kospi200`;
   };
 
   const chartOption = useMemo(() => {
@@ -149,10 +150,15 @@ export const TopGainerSection: FC<TopGainerSectionProps> = ({ onStockSelect }) =
     <GainerContainer onClick={handleStockSelect} style={{ cursor: 'pointer', boxShadow: 'none' }}>
       <HeaderArea>
         <StockInfo>
-          <Typography variant="title" level={4} color="foreground.1" bold>
-            {stock.name}
-          </Typography>
-          <Typography variant="caption" color="foreground.3">
+          <NameWrapper>
+            <RankBadge>
+              <Typography variant="caption" color="white" bold>1위</Typography>
+            </RankBadge>
+            <Typography variant="title" level={4} color="foreground.1" bold>
+              {stock.name}
+            </Typography>
+          </NameWrapper>
+          <Typography variant="caption" color="foreground.3" style={{ paddingLeft: '34px' }}>
             {stock.code}
           </Typography>
         </StockInfo>
