@@ -44,15 +44,9 @@ const App: FC = () => {
 
 const AppLayout: FC = () => {
   const navigate = useNavigate();
-  const { isPc } = useDeviceType();
   const { data: stocks } = useStocks();
   const [isFolded, setIsFolded] = useState(true);
   const { searchOptions } = useDisplayStocks(stocks ?? []);
-
-  // Update isFolded when device type changes
-  useEffect(() => {
-    setIsFolded(!isPc);
-  }, [isPc]);
 
   const handleStockClick = (code: string) => {
     navigate(`/detail/${code}`);
