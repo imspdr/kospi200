@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Typography } from '@imspdr/ui';
-import { NewsItem, Section, NewsItemTitle, NewsItemDescription } from './styled';
+import { NewsItem, Section, NewsItemTitle } from './styled';
 
 interface NewsItemData {
   title: string;
@@ -23,13 +23,6 @@ export const NewsSection: FC<NewsSectionProps> = ({ news }) => {
                 {item.title}
               </Typography>
             </NewsItemTitle>
-            <NewsItemDescription>
-              <Typography variant="caption" level={1} color="foreground.2">
-                {item.description.length > 150
-                  ? item.description.substring(0, 150) + '...'
-                  : item.description}
-              </Typography>
-            </NewsItemDescription>
           </NewsItem>
         ))
       ) : (

@@ -48,12 +48,18 @@ export const TopGainerSection: FC<TopGainerSectionProps> = ({ onStockSelect, isW
 
     const data = stock.analysis.slice(-30);
     const dates = data.map(item => item.date);
-    const values = data.map(item => [
-      Number(item.start),
-      Number(item.end),
-      Number(item.low),
-      Number(item.high)
-    ]);
+    const values = data.map(item => {
+      const open = Number(item.start);
+      const close = Number(item.end);
+      const low = Number(item.low);
+      const high = Number(item.high);
+      return [
+        open === 0 ? close : open,
+        close,
+        low === 0 ? close : low,
+        high === 0 ? close : high,
+      ];
+    });
 
     return {
       grid: {
