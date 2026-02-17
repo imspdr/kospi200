@@ -4,7 +4,6 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
 `;
 
 export const SectionTitleWrapper = styled.div`
@@ -21,11 +20,4 @@ export const StockGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   padding: 8px;
   gap: 16px;
-  overflow-y: auto;
-  flex: 1;
-
-  @media (max-width: 767px) {
-    overflow-y: visible;
-    padding: 0;
-  }
 `;
