@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 
 export const WidgetContainer = styled.div`
-  width: 80px;
-  height: 80px;
   background: var(--imspdr-background-1);
   border-radius: 16px;
   display: flex;
@@ -15,6 +13,7 @@ export const WidgetContainer = styled.div`
   user-select: none;
   overflow: hidden;
   box-sizing: border-box;
+  aspect-ratio: 1;
 `;
 
 export const InfoWrapper = styled.div`

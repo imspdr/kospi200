@@ -10,7 +10,7 @@ export const PageContainer = styled.div`
   gap: 24px;
   align-items: flex-start;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: auto;
 
   @media (max-width: 767px) {
     flex-direction: column;

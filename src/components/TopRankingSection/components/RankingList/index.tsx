@@ -11,15 +11,24 @@ import {
   ChangeLabelWrapper,
 } from './styled';
 
-export const RankingList: FC = () => {
+interface RankingListProps {
+  limit?: number;
+  onStockSelect?: (code: string) => void;
+}
+
+export const RankingList: FC<RankingListProps> = ({ limit = 5, onStockSelect }) => {
   const { data: stocks } = useStocks();
   const { top10Codes } = useDisplayStocks(stocks ?? []);
 
-  // Top 2 ~ Top 5
-  const rankingCodes = top10Codes.slice(1, 5);
+  // Top 2 ~ limit
+  const rankingCodes = top10Codes.slice(1, limit);
 
-  const handleStockSelect = () => {
-    window.location.href = 'https://imspdr.github.io/kospi200';
+  const handleStockSelect = (code: string) => {
+    if (onStockSelect) {
+      onStockSelect(code);
+    } else {
+      window.location.href = 'https://imspdr.github.io/kospi200';
+    }
   };
 
   return (
@@ -34,7 +43,7 @@ export const RankingList: FC = () => {
         const changePercent = (change / stock.last) * 100;
 
         return (
-          <CompactStockItem key={stock.code} onClick={handleStockSelect}>
+          <CompactStockItem key={stock.code} onClick={() => handleStockSelect(stock.code)}>
             <RankNumberWrapper>
               <Typography
                 variant="body"

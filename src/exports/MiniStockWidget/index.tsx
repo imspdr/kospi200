@@ -32,35 +32,25 @@ const MiniStockWidget = () => {
     <WidgetContainer onClick={handleClick}>
       <InfoWrapper>
         <Typography
-          variant="caption"
-          level={6}
+          variant="body"
+          level={3}
           bold
           color="foreground.1"
-          style={{
-            fontSize: '10px',
-            lineHeight: 1,
-            whiteSpace: 'nowrap',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            width: '100%'
-          }}
         >
           {topStock.name}
         </Typography>
         <Typography
-          variant="caption"
-          level={5}
+          variant="body"
+          level={3}
           bold
           color={colorToken}
-          style={{ fontSize: '12px', lineHeight: 1 }}
         >
           {isPositive ? '+' : ''}{topStock.changePercent.toFixed(2)}%
         </Typography>
         <Typography
           variant="caption"
-          level={6}
+          level={2}
           color="foreground.3"
-          style={{ fontSize: '8px', lineHeight: 1 }}
         >
           KOSPI 200
         </Typography>
