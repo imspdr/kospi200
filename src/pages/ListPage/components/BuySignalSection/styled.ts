@@ -17,17 +17,12 @@ export const LoadingContainer = styled.div`
 `;
 
 export const StockGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   padding: 8px;
   gap: 16px;
   overflow-y: auto;
   flex: 1;
-
-  & > * {
-    flex: 1 1 210px;
-  }
 
   @media (max-width: 767px) {
     overflow-y: visible;
