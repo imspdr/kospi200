@@ -1,5 +1,20 @@
 import { useState, FC, useEffect } from 'react';
 import styled from '@emotion/styled';
+import { Global, css } from '@emotion/react';
+
+const globalStyles = css`
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--imspdr-background-3);
+    border-radius: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+`;
 import { TAB_BAR_WIDTH, MOBILE_TAB_BAR_WIDTH } from './constants/layout';
 
 import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
@@ -30,6 +45,7 @@ const App: FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
+        <Global styles={globalStyles} />
         <ToastProvider>
           <ModalProvider>
             <BrowserRouter basename={basename}>
@@ -78,16 +94,18 @@ const AppLayout: FC = () => {
 };
 
 const ContentWrapper = styled.div`
-  height: 100%;
-  margin-right: ${TAB_BAR_WIDTH}px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  width: calc(100% - ${TAB_BAR_WIDTH}px);
   box-sizing: border-box;
 
   @media (min-width: 1200px) {
-    margin-right: ${TAB_BAR_WIDTH / 2}px;
+    width: calc(100% - ${TAB_BAR_WIDTH}px);
   }
 
   @media (max-width: 767px) {
-    margin-right: 0px;
+    height: auto;
+    width: 100%;
     padding-bottom: ${MOBILE_TAB_BAR_WIDTH}px;
     transition: padding-bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }

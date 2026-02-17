@@ -19,14 +19,7 @@ export const LeftColumn = styled.div`
   gap: 24px;
   box-sizing: border-box;
 
-  /* Stylish scrollbar */
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--imspdr-background-3);
-    border-radius: 3px;
-  }
+  box-sizing: border-box;
 `;
 
 export const RightColumn = styled.div`
@@ -45,9 +38,6 @@ export const MobileContainer = styled.div`
   height: 100%;
   overflow-y: auto;
   box-sizing: border-box;
-
-  /* Remove horizontal padding for news items in mobile if needed, 
-     but let's keep it consistent first */
 `;
 
 export const ChartWrapper = styled.div`

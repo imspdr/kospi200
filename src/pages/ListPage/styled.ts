@@ -2,14 +2,12 @@ import styled from '@emotion/styled';
 
 export const PageContainer = styled.div`
   width: 100%;
-  height: 100%;
   padding: 24px 24px 0 24px;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   gap: 24px;
   align-items: flex-start;
-  overflow-y: auto;
 
   @media (max-width: 767px) {
     flex-direction: column;

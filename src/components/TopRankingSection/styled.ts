@@ -14,18 +14,6 @@ export const RankingContainer = styled.div`
   top: 0;
   flex-shrink: 0;
   max-height: calc(100vh - 104px); /* 100vh minus header 60 px - PageContainer padding (24px * 2) */
-
-  /* Subtle Custom Scrollbar */
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--imspdr-background-3);
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
 `;
 
 export const WidgetTitle = styled.div`
