@@ -14,9 +14,10 @@ import {
 interface RankingListProps {
   limit?: number;
   onStockSelect?: (code: string) => void;
+  isWidget?: boolean;
 }
 
-export const RankingList: FC<RankingListProps> = ({ limit = 5, onStockSelect }) => {
+export const RankingList: FC<RankingListProps> = ({ limit = 5, onStockSelect, isWidget }) => {
   const { data: stocks } = useStocks();
   const { top10Codes } = useDisplayStocks(stocks ?? []);
 
@@ -24,7 +25,9 @@ export const RankingList: FC<RankingListProps> = ({ limit = 5, onStockSelect }) 
   const rankingCodes = top10Codes.slice(1, limit);
 
   const handleStockSelect = (code: string) => {
-    if (onStockSelect) {
+    if (isWidget) {
+      window.location.href = 'https://imspdr.github.io/kospi200';
+    } else if (onStockSelect) {
       onStockSelect(code);
     } else {
       window.location.href = 'https://imspdr.github.io/kospi200';

@@ -8,11 +8,23 @@ export const RankingContainer = styled.div`
   background: var(--imspdr-background-1);
   border: 1px solid var(--imspdr-background-3);
   border-radius: 16px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  max-height: calc(100vh - 104px); /* 100vh minus header 60 px - PageContainer padding (24px * 2) */
 
-  @media (max-width: 767px) {
-    width: 100%;
-    box-sizing: border-box;
+  /* Subtle Custom Scrollbar */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--imspdr-background-3);
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
   }
 `;
 

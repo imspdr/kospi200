@@ -10,9 +10,10 @@ interface NewsItemData {
 
 interface MobileNewsTickerProps {
   news?: NewsItemData[];
+  onClick?: (item: NewsItemData) => void;
 }
 
-export const MobileNewsTicker: FC<MobileNewsTickerProps> = ({ news }) => {
+export const MobileNewsTicker: FC<MobileNewsTickerProps> = ({ news, onClick }) => {
   const [nowIndex, setNowIndex] = useState(0);
 
   useEffect(() => {
@@ -42,7 +43,14 @@ export const MobileNewsTicker: FC<MobileNewsTickerProps> = ({ news }) => {
           <TickerItem
             key={i}
             status={status}
-            onClick={() => window.open(item.link, '_blank')}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (onClick) {
+                onClick(item);
+              } else {
+                window.open(item.link, '_blank');
+              }
+            }}
           >
             <Typography variant="body" level={3} color="foreground.1" bold>
               {item.title}

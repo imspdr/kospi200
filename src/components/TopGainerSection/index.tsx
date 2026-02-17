@@ -17,9 +17,10 @@ import {
 
 export interface TopGainerSectionProps {
   onStockSelect?: (code: string) => void;
+  isWidget?: boolean;
 }
 
-export const TopGainerSection: FC<TopGainerSectionProps> = ({ onStockSelect }) => {
+export const TopGainerSection: FC<TopGainerSectionProps> = ({ onStockSelect, isWidget }) => {
   const { data: stocks } = useStocks();
   const { top10Codes } = useDisplayStocks(stocks ?? []);
 
@@ -28,7 +29,18 @@ export const TopGainerSection: FC<TopGainerSectionProps> = ({ onStockSelect }) =
   const { mode, tokens } = useTheme();
 
   const handleStockSelect = () => {
-    window.location.href = `https://imspdr.github.io/kospi200`;
+    if (isWidget) {
+      window.location.href = `https://imspdr.github.io/kospi200`;
+    } else if (onStockSelect && top1Code) {
+      onStockSelect(top1Code);
+    }
+  };
+
+  const handleNewsClick = () => {
+    if (isWidget) {
+      window.location.href = `https://imspdr.github.io/kospi200`;
+    }
+    // If not widget, let MobileNewsTicker handle default behavior (open link)
   };
 
   const chartOption = useMemo(() => {
@@ -183,7 +195,10 @@ export const TopGainerSection: FC<TopGainerSectionProps> = ({ onStockSelect }) =
       </ChartWrapper>
 
       <NewsWrapper>
-        <MobileNewsTicker news={stock.news} />
+        <MobileNewsTicker
+          news={stock.news}
+          onClick={isWidget ? handleNewsClick : undefined}
+        />
       </NewsWrapper>
     </GainerContainer>
   );

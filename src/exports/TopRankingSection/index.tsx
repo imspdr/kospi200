@@ -5,7 +5,7 @@ const TopRankingSectionExport = () => {
     window.location.href = `https://imspdr.github.io/kospi200/detail/${code}`;
   };
 
-  return <InternalTopRankingSection onStockSelect={handleSelect} />;
+  return <InternalTopRankingSection isWidget={true} onStockSelect={handleSelect} />;
 };
 
 export default TopRankingSectionExport;

@@ -7,17 +7,18 @@ import { RankingContainer, Top1Wrapper, TopListWrapper, Divider, WidgetTitle } f
 export interface TopRankingSectionProps {
   onStockSelect?: (code: string) => void;
   limit?: number;
+  isWidget?: boolean;
 }
 
-export const TopRankingSection: FC<TopRankingSectionProps> = ({ onStockSelect, limit = 5 }) => {
+export const TopRankingSection: FC<TopRankingSectionProps> = ({ onStockSelect, limit = 5, isWidget }) => {
   return (
     <RankingContainer>
       <Top1Wrapper>
-        <TopGainerSection onStockSelect={onStockSelect} />
+        <TopGainerSection onStockSelect={onStockSelect} isWidget={isWidget} />
       </Top1Wrapper>
       <Divider />
       <TopListWrapper>
-        <RankingList limit={limit} onStockSelect={onStockSelect} />
+        <RankingList limit={limit} onStockSelect={onStockSelect} isWidget={isWidget} />
       </TopListWrapper>
       <WidgetTitle>
         <Typography variant="caption" color="foreground.3" bold>
