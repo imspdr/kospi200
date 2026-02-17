@@ -46,6 +46,7 @@ module.exports = (env, argv) => {
         filename: 'remoteEntry.js',
         exposes: {
           './TopRankingSection': './src/exports/TopRankingSection',
+          './MiniStockWidget': './src/exports/MiniStockWidget',
         },
         shared: {
           react: { singleton: true, requiredVersion: deps.react },
