@@ -53,6 +53,7 @@ module.exports = (env, argv) => {
           '@emotion/react': { singleton: true, requiredVersion: deps['@emotion/react'] },
           '@emotion/styled': { singleton: true, requiredVersion: deps['@emotion/styled'] },
           '@tanstack/react-query': { singleton: true, requiredVersion: deps['@tanstack/react-query'] },
+          '@imspdr/ui': { singleton: true, requiredVersion: deps['@imspdr/ui'] },
         },
       }),
       new HtmlWebpackPlugin({
