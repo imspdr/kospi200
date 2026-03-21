@@ -59,7 +59,7 @@ if __name__ == "__main__":
                 "last": last_price,
                 "changePercent": change_percent,
                 "absChangePercent": abs(change_percent),
-                "analysis": analysis[20:],
+                "analysis": analysis,
                 "news": news,
                 "to_buy": to_buy
             }
